@@ -1,6 +1,8 @@
 # GAMES 101 现代计算机图形学入门
 
-Link: https://www.bilibili.com/video/BV1X7411F744?spm_id_from=333.337.search-card.all.click
+[原始课程链接](Link: https://www.bilibili.com/video/BV1X7411F744?spm_id_from=333.337.search-card.all.click)
+
+如有侵权，请联系删除
 
 # 主要内容
 
