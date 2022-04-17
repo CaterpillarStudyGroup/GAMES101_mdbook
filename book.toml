@@ -1,0 +1,15 @@
+[book]
+authors = ["windmissing", "poloog"]
+language = "en"
+description = "The note of GAMES101"
+multilingual = false
+src = "src"
+title = "GAMES101"
+
+
+[output.html]
+mathjax-support = true
+
+[output.html.fold]
+enable = true
+
