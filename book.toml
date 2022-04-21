@@ -13,3 +13,4 @@ mathjax-support = true
 [output.html.fold]
 enable = true
 
+[output.pdf]
