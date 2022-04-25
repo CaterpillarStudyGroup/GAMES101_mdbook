@@ -56,3 +56,8 @@
    \\]
 
 3. 如果object与camera做相对运动，那么即便view的坐标变换了，得到的视图也不会改变，也就是说，model也需要和view做相同的平移和旋转。
+
+
+> 本文出自Metaverse Study Group，转载请注明出处。
+>
+> https://metaversestudygroup.github.io/GAMES101_pages/

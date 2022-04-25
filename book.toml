@@ -6,9 +6,21 @@ multilingual = false
 src = "src"
 title = "GAMES101"
 
+[preprocessor.pagetoc]
 
 [output.html]
 mathjax-support = true
+git-repository-url = "https://metaversestudygroup.github.io/GAMES101_pages/"
+git-repository-icon = "fa-github"
+additional-css = ["theme/pagetoc.css"]
+additional-js  = ["theme/pagetoc.js"]
 
 [output.html.fold]
+
+[output.html.print]
 enable = true
+
+[output.html.search]
+enable = true
+
+[output.pdf]

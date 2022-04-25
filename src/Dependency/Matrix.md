@@ -551,3 +551,14 @@ R\left( \mathbf{n},\alpha \right) =\cos \left( \alpha \right) \mathbf{I}+\left( 
 > 两者能否结合？
 > 
 > 两者如何取舍？
+
+
+
+
+
+
+
+
+> 本文出自Metaverse Study Group，转载请注明出处。
+>
+> https://metaversestudygroup.github.io/GAMES101_pages/

@@ -268,3 +268,12 @@ M_{persp\rightarrow ortho}^{\left( 4\times 4 \right)}=\left( \begin{matrix}
 \\]
 
 透视投影的最终的变换矩阵是 **M = M（正交）M（透视）**
+
+
+
+
+
+
+> 本文出自Metaverse Study Group，转载请注明出处。
+>
+> https://metaversestudygroup.github.io/GAMES101_pages/
