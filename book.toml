@@ -10,7 +10,7 @@ title = "GAMES101"
 
 [output.html]
 mathjax-support = true
-git-repository-url = "https://metaversestudygroup.github.io/GAMES101_pages/"
+git-repository-url = "https://github.com/CaterpillarStudyGroup/GAMES101_pages.git"
 git-repository-icon = "fa-github"
 additional-css = ["theme/pagetoc.css"]
 additional-js  = ["theme/pagetoc.js"]
@@ -22,5 +22,3 @@ enable = true
 
 [output.html.search]
 enable = true
-
-[output.pdf]

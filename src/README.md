@@ -1,6 +1,6 @@
 # GAMES 101 现代计算机图形学入门
 
-[原始课程链接](Link: https://www.bilibili.com/video/BV1X7411F744?spm_id_from=333.337.search-card.all.click)
+[原始课程链接](https://www.bilibili.com/video/BV1X7411F744?spm_id_from=333.337.search-card.all.click)
 
 如有侵权，请联系删除
 
@@ -21,7 +21,9 @@
 
 - 动画/仿真 Animation/Simulation[31-45]
 
-# [04：52] 图形学 Dependencies 依赖项
+# 图形学 Dependencies 依赖项
+
+[04：52]
 
 数学：线代，微积分，概论  
 
@@ -43,7 +45,7 @@
 3. 思考算法背后所蕴含的思想，以及对自己的启发。
 
 
-
-> 本文出自Metaverse Study Group，转载请注明出处。
+---------------------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://metaversestudygroup.github.io/GAMES101_pages/
+> https://caterpillarstudygroup.github.io/GAMES101_pages/

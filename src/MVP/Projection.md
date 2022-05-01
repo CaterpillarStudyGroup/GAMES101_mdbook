@@ -1,4 +1,6 @@
-# Projection hangman 投影变换 [39.00]
+# Projection hangman 投影变换 
+
+[39.00]
 
 - 投影： 3D --> 2D
   
@@ -14,7 +16,9 @@
   
   透视投影: 相机位于无限远处
 
-## 正交投影 [43：00]
+## 正交投影 
+
+[43：00]
 
 ![](../assets/orthographic.jpg)
 
@@ -64,7 +68,9 @@ M_{ortho}=\left[ \begin{matrix}
 \end{matrix} \right] 
 \\]
 
-## 透视投影 [53:10]
+## 透视投影 
+
+[53:10]
 
 ![](../assets/perspective.jpg)
 
@@ -272,8 +278,8 @@ M_{persp\rightarrow ortho}^{\left( 4\times 4 \right)}=\left( \begin{matrix}
 
 
 
+------------------------------
 
-
-> 本文出自Metaverse Study Group，转载请注明出处。
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://metaversestudygroup.github.io/GAMES101_pages/
+> https://caterpillarstudygroup.github.io/GAMES101_pages/

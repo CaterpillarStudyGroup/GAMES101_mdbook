@@ -1,6 +1,8 @@
 # 向量
 
-## 向量性质[07：54]
+## 向量性质
+
+[07：54]
 
 - 方向:  \\( B - A \\) 或 \\( \vec{a} \\) 
 
@@ -100,7 +102,9 @@ $$
 > 
 >   右手手指指向 \\(\vec{a}\\) 方向，然后沿着去往 \\(\vec{b}\\) 的方向握紧四指，此时大拇指指向的方向，就是 \\(\vec{c}\\) 的方向。
 
-### 性质[34：15]
+### 性质
+
+[34：15]
 
 - \\( \vec{x}\times \vec{y}=+\vec{z} \\)
 - \\( \vec{y}\times \vec{x}=-\vec{z} \\)
@@ -117,7 +121,9 @@ $$
 
 > **&#x1F4CC;** 在一个三维坐标系中，如果\\( \vec{x}\times \vec{y}=\vec{z}\\)，那么这个坐标系称为右手坐标系。
 
-### 代数意义 [36:11]
+### 代数意义 
+
+[36:11]
 
 \\[
 \vec{a}\times \vec{b}=\left( \begin{array}{c}
@@ -168,8 +174,8 @@ $$
  
  
 
+----------------
 
-
-> 本文出自Metaverse Study Group，转载请注明出处。
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://metaversestudygroup.github.io/GAMES101_pages/
+> https://caterpillarstudygroup.github.io/GAMES101_pages/

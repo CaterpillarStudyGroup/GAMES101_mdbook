@@ -1,6 +1,8 @@
 # 矩阵
 
-## 矩阵运算性质 [45：00]
+## 矩阵运算性质 
+
+[45：00]
 
 - \\(AB\ne BA\\)
 - \\(\left( AB \right) C=A\left( BC \right) \\)
@@ -9,7 +11,9 @@
 - \\(AA^{-1}=A^{-1}A=I\\)
 - \\(\left( AB \right) ^{-1}=B^{-1}A^{-1}\\)
 
-## 2D变换(2D Transformation)[06：52]
+## 2D变换(2D Transformation)
+
+[06：52]
 
 ### 缩放变换(Scale)
 
@@ -422,7 +426,7 @@ R_{-\theta}=R_{\theta}^{-1}=R_{\theta}^{T}
 
 则一个齐次坐标 \\((x, y, z, w)^{T}\\) \\((w\ne 0)\\) 表示的点为  \\(\left( \frac{x}{w},  \frac{y}{w},  \frac{z}{w} \right)\\)
 
-### 缩放Scale
+### 缩放(Scale)
 
 \\[
 S\left( s_x, s_y, s_z \right) =\left( \begin{matrix}
@@ -433,7 +437,7 @@ S\left( s_x, s_y, s_z \right) =\left( \begin{matrix}
 \end{matrix} \right) 
 \\]
 
-### 平移Translation
+### 平移(Translation)
 
 \\[
 T\left( t_x, t_y, t_z \right) =\left( \begin{matrix}
@@ -444,7 +448,7 @@ T\left( t_x, t_y, t_z \right) =\left( \begin{matrix}
 \end{matrix} \right) 
 \\]
 
-### 旋转Rotation
+### 旋转(Rotation)
 
 #### 自然旋转
 
@@ -557,8 +561,8 @@ R\left( \mathbf{n},\alpha \right) =\cos \left( \alpha \right) \mathbf{I}+\left( 
 
 
 
+-----------
 
-
-> 本文出自Metaverse Study Group，转载请注明出处。
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://metaversestudygroup.github.io/GAMES101_pages/
+> https://caterpillarstudygroup.github.io/GAMES101_pages/

@@ -25,7 +25,9 @@
 
 本质原因：信号变化太快，采样速度跟不上
 
-## 反采样方法[14:05]
+## 反采样方法
+
+[14:05]
 
 object --> 模糊化 --> 采样
 
@@ -65,7 +67,9 @@ object --> 模糊化 --> 采样
 
 ![](../assets/采样两个函数.jpg)
 
-## 滤波：[29：32]：
+## 滤波：
+
+[29：32]
 
 把某些信息（即特定的频率分量）去掉
 
@@ -179,7 +183,9 @@ f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \om
 
 优点：速度快， 与采样无关
 
-#### TAA [1：15：10]
+#### TAA 
+
+[1：15：10]
 
 **T** ：Temporal .时间上的
 
@@ -203,7 +209,7 @@ f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \om
 
 
 
-
-> 本文出自Metaverse Study Group，转载请注明出处。
+----------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://metaversestudygroup.github.io/GAMES101_pages/
+> https://caterpillarstudygroup.github.io/GAMES101_pages/
