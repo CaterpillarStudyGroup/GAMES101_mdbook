@@ -11,11 +11,11 @@
 - \\(AA^{-1}=A^{-1}A=I\\)
 - \\(\left( AB \right) ^{-1}=B^{-1}A^{-1}\\)
 
-## 2D变换(2D Transformation)
+# 2D变换(2D Transformation)
 
 [06：52]
 
-### 缩放变换(Scale)
+## 缩放变换(Scale)
 
 <div align="center"> <img src="../assets/2d缩放.jpg" width = 500 /> </div>
 
@@ -25,7 +25,7 @@
 x'=sx \\\\
 y'=sy
 \\]
-其中，\\(x'\\) 是缩放后的坐标，\\(s\\) 是缩放尺度，\\(x\\) 是原坐标。
+其中，\\((x',y')\\) 是缩放后的坐标，\\(s\\) 是缩放尺度，\\((x,y)\\) 是原坐标。
 
 将该式子写成矩阵的形式为：
 
@@ -40,6 +40,18 @@ y'=sy
     x\\\\
     y\\\\
 \end{array} \right] 
+\\]
+
+即，得到缩放矩阵为：
+
+\\[
+S_{0.5}=\left[ \begin{matrix}
+	s&		0\\\\
+	0&		s\\\\
+\end{matrix} \right] =\left[ \begin{matrix}
+	0.5&		0\\\\
+	0&		0.5\\\\
+\end{matrix} \right] 
 \\]
 
 如果缩放不是均匀的，例如 \\(x\\) 轴缩小0.5，\\(y\\) 不变，则用矩阵表示为：
@@ -59,7 +71,19 @@ y'=sy
 \end{array} \right] 
 \\]
 
-### 反射(Reflection)
+即，得到缩放矩阵为：
+
+\\[
+S_{0.5,1.0}=\left[ \begin{matrix}
+	s_x&		0\\\\
+	0&		s_y\\\\
+\end{matrix} \right] =\left[ \begin{matrix}
+	0.5&		0\\\\
+	0&		1.0\\\\
+\end{matrix} \right] 
+\\]
+
+## 反射(Reflection)
 
 反射也称对称。
 
@@ -87,7 +111,7 @@ y'=y
 \end{array} \right] 
 \\]
 
-### 切变(Shear)
+## 切变(Shear)
 
 <div align="center"><img src="../assets/切变.jpg" width = 500 /></div>
 
@@ -108,7 +132,7 @@ y'=y
 
 > **&#x1F4CC;补充：** 找到变化规律，就能写出变换的表达式
 
-### 旋转(Rotate)
+## 旋转(Rotate)
 
 <div align="center"><img src="../assets/旋转.jpg" width = 500 /></div>
 
@@ -218,9 +242,9 @@ y'=cx+dy
 X'=MX
 \\]
 
-> **&#x2757;注意：** 要用相同维度的向量，去和X相乘
+> **&#x2757;注意：** 要用相同维度的向量，去和X相乘。旋转矩阵必须满足\\(R^{-1}=R^T\\)
 
-### 齐次坐标
+## 齐次坐标
 
 我们先看平移变换：
 
@@ -255,7 +279,7 @@ y'=y+t_y
 
 > **&#x1F4A1;思考：** 平移不是线性变换，不满足\\(X'=MX\\)
 
-为了解决平移变换能够线性表示的问题，将坐标或向量添加一项(2D)
+为了解决平移变换能够线性表示的问题，将坐标或向量添加一项(以2D为例)：
 
 - 2D point = \\((x, y, 1)^T\\)
 - 2D vector = \\((x, y, 0)^T\\)
@@ -295,7 +319,12 @@ point - point = vector\\\\
 point + point = 两点的中点（齐次坐标下）
 \\]
 
-### 仿射变换(Affine transformation)
+**齐次坐标的性质：**
+
+- 有 \\((x, y, z, 1)\\) 这样一个坐标，那么为该坐标乘以一个不为0的数 \\(k\\)，即 \\((kx, ky, kz, k)\\)，结果不变。 同理，给该坐标乘以坐标本身的 \\(z\\) 值，它仍然表示着3D中的相同点。
+  例如： \\((1, 0, 0, 1)\\) 和 \\((2, 0, 0, 2)\\) 都表示 \\((1, 0, 0)\\) 
+
+## 仿射变换(Affine transformation)
 
 线性变换 + 平移 = 仿射变换
 
@@ -312,7 +341,7 @@ point + point = 两点的中点（齐次坐标下）
 \end{array} \right] 
 \\]
 
-所有的仿射变换，可以变成齐次坐标的形式：
+所有的仿射变换，可以以齐次坐标的形式表达：
 
 仿射变换：
 
@@ -354,11 +383,13 @@ point + point = 两点的中点（齐次坐标下）
 \end{array} \right) 
 \\]
 
-### 逆变换(Inverse transform)
+## 逆变换(Inverse transform)
 
 <div align="left"><img src="../assets/逆变换.jpg" width = 400 /></div>
 
 > &#x1F4A1; 当一个变换是通过\\(M\\)得到的，那么可以通过\\(M\\)的逆\\(M^{-1}\\)来恢复变换。 
+
+## 变换合成与分解
 
 - 复杂变换可以通过简单变换一步一步达到
 - 变换顺序非常重要，ABC不等于ACB（矩阵乘法性质）
@@ -417,7 +448,7 @@ R_{\theta}^{-1}=R_{-\theta}
 R_{-\theta}=R_{\theta}^{-1}=R_{\theta}^{T}
 \\]
 
-## 3D变换(3D Transformation)
+# 3D变换(3D Transformation)
 
 如果用齐次坐标来表示三维的点或向量，和二维的情况相似：
 
@@ -426,7 +457,7 @@ R_{-\theta}=R_{\theta}^{-1}=R_{\theta}^{T}
 
 则一个齐次坐标 \\((x, y, z, w)^{T}\\) \\((w\ne 0)\\) 表示的点为  \\(\left( \frac{x}{w},  \frac{y}{w},  \frac{z}{w} \right)\\)
 
-### 缩放(Scale)
+## 缩放(Scale)
 
 \\[
 S\left( s_x, s_y, s_z \right) =\left( \begin{matrix}
@@ -437,7 +468,7 @@ S\left( s_x, s_y, s_z \right) =\left( \begin{matrix}
 \end{matrix} \right) 
 \\]
 
-### 平移(Translation)
+## 平移(Translation)
 
 \\[
 T\left( t_x, t_y, t_z \right) =\left( \begin{matrix}
@@ -448,13 +479,13 @@ T\left( t_x, t_y, t_z \right) =\left( \begin{matrix}
 \end{matrix} \right) 
 \\]
 
-### 旋转(Rotation)
+## 旋转(Rotation)
 
-#### 自然旋转
+### 自然旋转
 
 > **&#x1F4CC;自然旋转：** 绕着某一个轴旋转。
 
-> **&#x1F4A1;思考：** 当绕着x轴旋转时，矩阵在x轴上的坐标值是不变的，因此在变换矩阵中，与X相乘的部分，是 \\((1 0 0)\\)，绕y、z轴同理。
+> **&#x1F4A1;思考：** 当绕着x轴旋转时，矩阵在x轴上的坐标值是不变的，因此在变换矩阵中，与X相乘的部分，是 \\((1 ,0 , 0)\\)，绕y、z轴同理。
 
 绕x轴旋转：
 
@@ -508,7 +539,7 @@ R_z\left( \alpha \right) =\left( \begin{matrix}
 \end{matrix} \right) 
 \\]
 
-#### 一般旋转
+### 一般旋转
 
 任意一个3D旋转，可以写成：
 
@@ -528,9 +559,9 @@ R\left( \mathbf{n},\alpha \right) =\cos \left( \alpha \right) \mathbf{I}+\left( 
 \end{matrix} \right) }}
 \\]
 
-> 公式推导：
+> 公式推导：(暂无)
 
-为解决旋转插值问题，参考四元数[link]。
+为解决旋转插值问题，参考四元数[link](暂无)。
 
 > **&#x1F4A1;我的思考：** 
 > 
@@ -538,9 +569,9 @@ R\left( \mathbf{n},\alpha \right) =\cos \left( \alpha \right) \mathbf{I}+\left( 
 > 
 > 前面两处使用了这种思路
 > 
-> （1）PIO R. S.T.V 复杂仿射变换
+> （1）简单线性变换 复杂仿射变换
 > 
-> （2）基于不同轴的简单旋转 VS 基于特定方向的转轴
+> （2）基于不同轴的简单旋转 VS 基于特定方向的旋转
 > 
 >         但这两个问题的子问题都没有完全独立，因此都存在子问题的顺序要求。
 > 

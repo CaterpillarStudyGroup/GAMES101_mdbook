@@ -1,71 +1,148 @@
-Lecture 7
-Shading 着色 31
+# 可见性/遮挡
 
-# 可见性/蓬挡
+**背景：**
 
-讟
-有多个物理体，每个物体都有多个4，因此要处理摭挡
-问题。
-原是画䟑滚
-back-> front,覆盖
-ⓛ 排序 Olnhgn)
-ⓩ 光栅化
-局限性、 [09：26了无法决定深度
-Z-Buffer 算法[心403
-为了便于计算， object 上每个点的䂳标都取其绝对焦
-因此： 0 Z 20
-② Z 小→近， E 大→远
-每次生成2张图[14：38]
-o frame buffer:存最终结果
-② depth but。有某个俼谋点事对应的在0时上的最小
-的2（最近）
-ˊ 具体步骤
-ⓥ depth buffer 初始化为0
+有多个物体，每个物体都有多个三角形，因此要处理摭挡问题。
 
-② 每次绘制△时，计算当前12以比在△上的飞。
-苦 Z <buffer Gaels,
-制，绘制，并更新 butter 32
+**画家算法：**
+
+![](../assets/画家算法.jpg)
+
+由远及近的在画布上添加新物体
+
+back-> front，覆盖
+
+1. 排序 O(nlogn)
+2. 光栅化
+   
+局限性[09:26]：无法决定深度
+
+**Z-Buffer 算法**
+
+名称：depth buffer， Z buffer，或深度缓存
+
+> **&#x1F4CC;** 为了解决画家算法无法决定深度的局限性
+
+[10:40]
+
+为了便于计算，物体上每个点的Z坐标都取其绝对值（深度）
+
+因此：
+1. Z(depth) > 0
+2. Z(depth) 小-->近， Z 大-->远
+
+> **&#x1F4CC;** 我们约定摄像机在坐标原点，看向-Z轴，深度是一个物体距离摄像机的Z轴距离的绝对值。
+
+每次生成2张图：
+
+![](../assets/zbuffer.jpg)
+
+1. frame buffer：存最终结果
+2. depth buffer：存某个像素点对应的物体上的最小的depth（最近）
+
+> **&#x1F4CC;** 
+> 
+> ![](../assets/depthbuffer.jpg)
+> 
+>  图中，A点是距离视点（摄像机）较近的点，所以颜色比较黑，B点是距离视点较远的点，所以颜色比较白。距离视点近的像素点，颜色就比较黑，反之比较白，这就是depth/Z buffer。
+
+
+具体步骤
+
+```
+Initialize depth buffer to ∞
+during rasterization：
+    for triangle in triangles:
+        for (x, y, z) in triangle:
+            if z < zbuffer[x, y]:
+                framebuffer[x,y] = rgb
+                zbuffer[x,y] = z
+            else:
+                pass
+```
+
+1. depth buffer 所有像素初始化为无限远
+2. 对每个三角形做光栅化，每次绘制三角形时，计算当前像素在三角形上的深度Z
+   如果Z小于depth buffer上对应点的值，就绘制该点，且更新depth buffer。
+
+> **&#x1F4CC;** 深度缓存发生在每个像素内。
+
+
 算法特点
-0 0 M)
-② 与△的绘制顺序无关
-③ 可以与 MSAA 算法兼容
-④ 适合 GPU 优化（因为20） .
+1. O(n)
+2. 与三角形的绘制顺序无关
+3. 可以与MSAA算法兼容
+4. 适合GPU优化（因为与绘制顺序无关）
+
+
 # Shading 着色
-[32：31]不考虑着色的效果 .
-[32：55了期望达到的效果
-纯色立方体的每个面每个时刻呈现的颜色有变化。使
-整体效果更真实、
-课程中的 shading:
-The process of applying a material to an object.
-对一个物体应用一个材质的过程，不包含给0分比溢䙍足影的过年是.
 
-## Bling-Phong 反射模型
+![](../assets/着色对比.jpg)
 
-高光.。光线反射到镜面反射附近
-漫反射=光线被反射到各个方向上，
-环境光：主政伇任何一个点会接议到来自环境的常­量的光
-Speeder high, Dye Reflection, Ambient Lighting
+（左）不考虑着色的效果；（右）期望达到的效果。
 
-弊 hading point:当前要计算着色的点， 马了
-说于物体表面。
-A) Surface normal.假设点附近极小范围内是一个平面，
-n. 为毛面指向外的法向量。
-U) viewer direction 观测方向
-4） light direction。光源方向。
-与光照向 point 的方向相反
-object 在 point 处的属性 color. shininess
-漫反射[47游了
-打到 point 上的光线被均匀地反射出去，（与观测点没有䟀）
-[49：21] l 与几的夹角决定了 point 接收到的光线的强度(Lambert's
-[54-48了 圆心是点光源，向外辐射能量 余弦定律1
-能量守恒定理）不考虑传播损耗，每个圆上的能量之和不一。
-某宝处的能量与它到光源的距离是䂑
-平方
-管管唱器𤦉
-漫反射 1-牛璡而一避 有多少能量 从正面照射的 有咧能量
-对光的 到达了 point 光，浸反射才 iwm 接收
-的能量。 吸蝉
-有意义 .
+纯色立方体的每个面每个时刻呈现的颜色有变化。使整体效果更真实。
+
+课程中的shading:
+
+- The process of applying a material to an object.
+
+对不同物体应用不同材质的过程，不包含给object添加投影的过程。
+
+> **&#x1F4CC;** 场景不变，光源发生变化，物体的位置没有改变但是颜色却变化了，这个过程就是着色。
+
+> **&#x1F4CC;** 不同材质的物体看起来不一样，是因为不同材质与光源作用结果不同。
+
+
+
+## Blinn-Phong 反射模型
+
+（一个简单基础的模型）
+
+![](../assets/reflection.jpg)
+
+- 高光(Specular highlights): 光线反射到镜面反射附近
+- 漫反射(Diffuse reflection): 光线被反射到各个方向上，
+- 环境光(Ambient lighting): 假设任何一个点会接收到来自环境的常­量的光
+
+**定义**
+
+![](../assets/shadingpoint.jpg)
+
+- shading point：当前要计算着色的点，位于物体表面。
+- （n）Surface normal：假设点附近极小范围内是一个平面，n为平面指向外的法向量
+- （v）Viewer direction：观测方向
+- （l）Light direction：光源方向，与光照向point的方向相反
+
+object 在 point 处的属性: color、shininess
+
+**漫反射**
+
+[47:35]
+
+![](../assets/diffuse.jpg)
+
+打到 point 上的光线被均匀地反射出去，（与观测点v没有关系）
+
+![](../assets/lambert.jpg)
+
+l 与 n 的夹角决定了 point 接收到的光线的强度(Lambert's cosine law)
+
+![](../assets/lightfalloff.jpg)
+
+[54:48] 圆心是点光源，向外辐射能量。
+
+（能量守恒定理）不考虑传播损耗，每个圆上的能量之和不变，某点处的能量与它到光源的距离平方是反比。
+
+\\[
+L_d=k_d\left( I/r^2 \right) \max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) 
+\\]
+
+- \\(L_d\\) 漫反射的能量
+- \\(k_d\\) point对光的吸收率
+- \\(\left( I/r^2 \right)\\) 有多少能量到达了point
+- \\(\max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) \\) 从正面照射的光，漫反射才有意义
+- \\(\boldsymbol{n}\cdot \boldsymbol{l}\\) 表示有多少能量被point接收
 
 
 Lecture 8

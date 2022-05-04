@@ -37,9 +37,10 @@ object --> 模糊化 --> 采样
 
 ![](../assets/模糊采样.jpg)
 
-## Frequency Domain：频域
+## 频域(Frequency Domain)
 
-### 余弦波： \\(\cos 2\pi fx\\)
+### 余弦波
+\\(\cos 2\pi fx\\)
 
 - f是频率
 
@@ -51,7 +52,7 @@ object --> 模糊化 --> 采样
 
 ![](../assets/傅里叶展开.jpg)
 
-### 傅里叶变换（可逆的）
+### 傅里叶变换（可逆）
 
 <div align="center"> <img title="" src="../assets/傅里叶变换.jpg" width="589" /></div>
 
@@ -158,7 +159,9 @@ f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \om
    <img title="" src="../assets/采样.jpg" alt="" width="600">
 
 
-### Multi Sample 反走样算法[1：05：17]
+###  其他反走样算法
+
+[1：05：17]
 
 #### MSAA
 

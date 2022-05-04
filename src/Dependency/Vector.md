@@ -8,7 +8,7 @@
 
 - 长度：\\( ||B-A || \\) 或 \\( ||\vec{a}|| \\)  (与起点无关)
 
-- 单位向量：\\( \vec{e}=\frac{\vec{a}}{||\vec{a}||} \\)，模长为
+- 单位向量：\\( \vec{e}=\frac{\vec{a}}{||\vec{a}||} \\)，模长为1
 
 > **&#x1F4CC;补充：** 向量一般默认为列向量，所以书写公式时，一个向量写为 \\(\vec{a}=\left( x_1, y_1 \right) ^T\\)
 
@@ -28,14 +28,14 @@ $$
 
 <div align="center"> <img src="../assets/几何意义.jpg" width = 290 /> </div>
 
-## 向量点乘：
+## 向量点乘
 
 ### 几何意义
 
 <div align="center"> <img src="../assets/点乘几何意义.jpg" width = 290 /> </div>
 
 $$
-\vec{a}\cdot \vec{b}=||\vec{a}||\cdot ||\vec{b}||\cdot \cos <\vec{a}, \vec{b}>, \quad where\,<\vec{a},\vec{b}>\,is\,\,\theta
+\vec{a}\cdot \vec{b}=||\vec{a}||\cdot ||\vec{b}||\cdot \cos <\vec{a}, \vec{b}>
 $$
 
 - \\( \vec{a}\cdot\vec{b} \\)  是标量
@@ -54,7 +54,7 @@ $$
 
 ### 性质
 
-- 交换律：\\( \vec{x}\cdot \vec{b}=\vec{b}\cdot \vec{a} \\)
+- 交换律：\\( \vec{a}\cdot \vec{b}=\vec{b}\cdot \vec{a} \\)
 
 - 分配律： \\( \vec{a}\cdot(\vec{b}+\vec{c})=\vec{a}\cdot \vec{b}+\vec{a}\cdot \vec{c} \\)
 
@@ -70,13 +70,13 @@ $$
    
    <div align="left"> <img src="../assets/投影2.jpg" width = 290 /> </div>
    
-   > **&#x1F4CC;补充：** \\( length=||\vec{b}||\cos \theta \\)
+   > **&#x1F4CC;补充：** \\( length=||\vec{b}||\cos \theta =||\vec{b}||\frac{\vec{a}\cdot \vec{b}}{||\vec{b}||\cdot ||\vec{a}||}=\frac{\vec{a}}{||\vec{a}||}\vec{b}=\hat{a}\cdot \vec{b}\\)
 
 3. 把向量分解成垂直和平行的两个向量
    
    <img title="" src="../assets/分解2.jpg" alt="" width="307">
    
-   > **&#x1F4CC;补充：** \\( \vec{b}_{\bot}=\frac{\vec{a}}{||\vec{a}||}\cdot length=\frac{\vec{a}\cdot ||\vec{b}||\cdot \cos \theta}{||\vec{a}||} \\)
+   > **&#x1F4CC;补充：** \\( \vec{b}_{\bot}=\frac{\vec{a}}{||\vec{a}||}\cdot length=\frac{\vec{a}\cdot ||\vec{b}||\cdot \cos \theta}{||\vec{a}||}=\hat{a}\cdot \vec{b}\cdot \hat{a} \\)
 
 4. 计算两个向量有多接近
    
@@ -112,10 +112,10 @@ $$
 - \\( \vec{z}\times \vec{y}=-\vec{x} \\)
 - \\( \vec{z}\times \vec{x}=+\vec{y} \\)
 - \\( \vec{x}\times \vec{z}=-\vec{y} \\)
-- \\( \vec{a}\times \vec{b}=-\vec{b}\times \vec{a} \\)
+- \\( \vec{a}\times \vec{b}=-\vec{b}\times \vec{a} \\) (不满足交换律)
 - \\( \vec{a}\times \vec{a}=\vec{0} \\)
-- \\( \vec{a}\times \left( \vec{b}+\vec{c} \right) =\vec{a}\times \vec{b}+\vec{a}\times \vec{c} \\)
-- \\( \vec{a}\times \left( k\vec{b} \right) =k\left( \vec{a}\times \vec{b} \right)  \\)
+- \\( \vec{a}\times \left( \vec{b}+\vec{c} \right) =\vec{a}\times \vec{b}+\vec{a}\times \vec{c} \\)  （分配律）
+- \\( \vec{a}\times \left( k\vec{b} \right) =k\left( \vec{a}\times \vec{b} \right)  \\)  （结合律）
 
 左手则符号相反
 
@@ -133,7 +133,7 @@ $$
 \end{array} \right) 
 \\]
 
-> **&#x1F4A1;思考：** 这个式子中，\\( x_a,y_a,z_a \\) 是\\( \vec{a}\\) 在三维坐标系中的三个坐标分量的代数表示。
+> **&#x1F4A1;思考：** 这个式子中，\\( x_a,y_a,z_a \\) 是\\( \vec{a}\\) 在三维坐标系中的三个坐标分量的代数表示。 叉乘只用于3D中，在2D中没有定义。
 
 ### 在图形学中的作用
 
@@ -153,7 +153,8 @@ $$
    > 
    > \\( AB\times AP \\)，可以得到 \\(AP\\) 在 \\(AB\\) 的左侧。\\( BC\times BP \\)，可以得到 \\(BP\\) 在 \\(BC\\) 的左侧。\\( CA\times CP \\)，可以得到 \\(CP\\) 在 \\(CA\\) 的左侧。这样，就可以判断出P点在A、B、C的内部（P点在这三条边的同一侧）。
 
-3. 右手坐标系
+3. 构建右手坐标系
+   
    有三个单位向量，两两垂直：
    
    \\(||\vec{u}||=||\vec{v}||=||\vec{w}||=1\\)
