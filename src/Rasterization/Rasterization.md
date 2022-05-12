@@ -102,7 +102,7 @@ Triangle Mesh: 三角形面片
 
 \\[
 inside\left( t, x, y \right) =\begin{cases}
-    1&        point\left( x,y \right) \,\,in\,\,triangle\,\,t\\\\
+    1&        point\left( x,y \right) \,in\,triangle \,t\\\\
     0&        otherwise\\\\
 \end{cases}
 \\]
