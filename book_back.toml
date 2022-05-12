@@ -6,6 +6,8 @@ multilingual = false
 src = "src"
 title = "GAMES101"
 
+[preprocessor.pagetoc]
+
 [preprocessor.toc]
 command = "mdbook-toc"
 renderer = ["html"]
@@ -14,6 +16,8 @@ renderer = ["html"]
 mathjax-support = true
 git-repository-url = "https://github.com/CaterpillarStudyGroup/GAMES101_pages.git"
 git-repository-icon = "fa-github"
+additional-css = ["theme/pagetoc.css"]
+additional-js  = ["theme/pagetoc.js"]
 
 [output.html.fold]
 

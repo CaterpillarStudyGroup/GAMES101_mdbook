@@ -73,3 +73,12 @@ I?了为什么不直接用 real world 的8比）？
 可以选择影响最小的维度或最便于观察的维度。
 也可以画多张图，每次分别固定一个维度.­tt#HSV [1：20-46]
 ttttCIELABF.li:22-21]
+
+
+
+
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_pages/

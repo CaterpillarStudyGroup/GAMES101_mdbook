@@ -333,3 +333,11 @@ d w = dicier
 6. pixel reconstruction filter
 7. radiance → colon, gamma 校止
 
+
+
+
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_pages/

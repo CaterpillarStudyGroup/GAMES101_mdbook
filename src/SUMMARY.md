@@ -13,4 +13,6 @@
 - [Rasterization 光栅化](Rasterization/Rasterization.md)
   - [Antialiasing 抗锯齿](Rasterization/Antialiasing.md)
   - [Shading 着色](Rasterization/Shading.md)
+  - [Pipeline 渲染管道](Rasterization/Pipeline.md)
+  - [Texture 纹理](Rasterization/Texture.md)
 

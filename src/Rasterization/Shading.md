@@ -107,20 +107,23 @@ during rasterization：
 
 **定义**
 
-![](../assets/shadingpoint.jpg)
+<div align="center"> <img src="../assets/shadingpoint.jpg" width = 290 /> </div>
 
 - shading point：当前要计算着色的点，位于物体表面。
 - （n）Surface normal：假设点附近极小范围内是一个平面，n为平面指向外的法向量
 - （v）Viewer direction：观测方向
 - （l）Light direction：光源方向，与光照向point的方向相反
 
-object 在 point 处的属性: color、shininess
+> **&#x1F4CC;** \\(\hat{l}\\)如何计算？
+> 
+> 光源的位置减去shading point的位置，得到向量，然后求出单位长度\\(\hat{l}\\)
+
 
 **漫反射**
 
 [47:35]
 
-![](../assets/diffuse.jpg)
+<div align="center"> <img src="../assets/diffuse.jpg" width = 290 /> </div>
 
 打到 point 上的光线被均匀地反射出去，（与观测点v没有关系）
 
@@ -128,7 +131,7 @@ object 在 point 处的属性: color、shininess
 
 l 与 n 的夹角决定了 point 接收到的光线的强度(Lambert's cosine law)
 
-![](../assets/lightfalloff.jpg)
+<div align="center"> <img src="../assets/lightfalloff.jpg" width = 400 /> </div>
 
 [54:48] 圆心是点光源，向外辐射能量。
 
@@ -139,81 +142,132 @@ L_d=k_d\left( I/r^2 \right) \max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \ri
 \\]
 
 - \\(L_d\\) 漫反射的能量
-- \\(k_d\\) point对光的吸收率
+- \\(k_d\\) point对光的吸收率 (例如，不同的颜色对光的吸收能力不同)
 - \\(\left( I/r^2 \right)\\) 有多少能量到达了point
-- \\(\max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) \\) 从正面照射的光，漫反射才有意义
+- \\(\max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) \\) 从正面照射的光，漫反射才有意义 （非正面射入，\\(\boldsymbol{n}\cdot \boldsymbol{l}\\)的值小于零）
 - \\(\boldsymbol{n}\cdot \boldsymbol{l}\\) 表示有多少能量被point接收
 
+![](../assets/diffuseappearance.jpg)
 
-Lecture 8
-Shading 2 34
 
-## Fi Bling-Phong 反射模型
 
-高光项
-R 为物体事镜面反射的方向。
-当0和 R 接近时，会看到高光
-108-25]：当0和几接近时，世1）的方向与几接近。
-h. = |蕊、代表了 Ctl)的方向，
-h. 称为半程向量 half vector
-L. 二点_沁（1 maxton
-通常认为 肯多少能量到 小儿和人的接近程度
-高光颜色 达了 point.
-是白色
-Ls 同样应考虑有多少能量被接收，但 Bling thong 模型
-将这个因素简化了。
-Note..注意光线袚接收和被"吸收"的区别。
-问：为什么用 n_n 代替 R.io?
-答。因为 n.in 更容易计算
-间、公式中为什么会有指数12？
-答。[12：14]在保证函数趋势不变的同时让高光范围更集中
-p 通管敬上心-200]
+**高光项**
 
-环境光照项
-假设。所有 point 接收到来自环境光的强度 35
-相同，且为常数
-[a = K a I a 与1和0无关
-L-l.cl t lot La
-间。为什么不考虑 point 到0的距离对能量的影响？
-答：这部分比较复杂、 Bling-phong 模型没有考虑这个问题
-#着色频率[心打
-图1.着色应用于一个平面上。整个平面共用一个人。(Flat Shading)
-图2.着色应用三角形面片的顶点上，每个顶点计算乱 Garand
-三角玛内通过插值计算出 L Shading)
-图3、着色应用于像素，每个借谋计算一个 Lil Phong Shading
-所40了不同着色频率和着色几何体的效果比较
+<div align="center"> <img src="../assets/highlight.jpg" width = 600 /> </div>
 
-## 计算一个点的法向量。
+R 为物体镜面反射的方向。
 
-方法-利用几何特征
-例如已知 object 是个球体。可直接球出球表面荒点的几
-方法二。利用涌形面片。[3008]
-N。= 医 Ni
-Hirth 相邻面的 N 的平均
-或加权平均一
-方法三：利用插值[31229]
+当 v 和 R 接近时，会看到高光
 
-式 Real-time Rendering Pipeline
-实时渲染管线1332123 36
-[35：24]
-建模→几何处理一光栅化
-→ 着色→帧缓存
-基于 OpenGL 的着色编程是工程问题，跳过
-井纹理映射 Texture Mapping [54：50]
-[55：59]
-[a = K d *(I / k'） *(n.LI
-Yfhlhtnht tnrnneezrott
-不同点的颜色不同 小球上所有点处于相同的一光照环境下
-object 在不同豳处的点需要定义不同的属性，
-上面例子中的1化是其中一种属继
+[08:25] 当v和R接近时，v+l 的方向(h)与n接近:
 
-## 表面
+\\(h=\frac{v+l}{||v+l||}\\) 代表了 v+l 的方向。
 
-3 D 物体的表面是21日敏、
-纹理：一张有弹性、可拉伸的2口图
-纹理映射。把2口图赚贴在的物体表面的的过程
-假设映射关系是已知的
-纹理坐标用 LU,0）表示， 范围[0，1]
-映射关系只包含0顶点对应的(U、以
-△ 内部点的 uh 通过插值得到
+h 称为半程向量 half vector
 
+\\[
+L_s=k_s\left( I/r^2 \right) \max \left( 0, \cos \alpha \right) =k_s\left( I/r^2 \right) \max \left( 0, n\cdot h \right) ^p
+\\]
+
+- \\(k_s\\) 吸收率，通常认为高光是白色，也就是全吸收
+- \\(\left( I/r^2 \right)\\) 表示有多少能量到达了point
+- \\(\max \left( 0, n\cdot l \right) ^p\\) 表示n和h的接近程度
+- \\(L_s)\\) 同样应该考虑有多少有多少能量被接收，但Blinn Phong模型将这个因素简化了
+
+<img src="../assets/speculate.jpg" width = 600 />
+
+
+> **&#x1F4A1;** 为什么用\\(n\cdot h\\)代替\\(v\cdot R\\)？
+>
+> 因为\\(n\cdot h\\)更容易计算
+
+
+> **&#x1F4A1;** 公式中为什么会有指数p？
+>
+> 在保证函数趋势不变的同时，让高光更集中，通常取[100, 200]
+>
+> <img src="../assets/p.jpg" width = 400 />
+
+
+
+**环境光照项**
+
+Blinn Phong模型假设所有 point 接收到来自环境光的强度相同，且为常数:
+\\[
+L_a=k_aI_a
+\\]
+
+与\\(l\\)和\\(v\\)无关
+
+**模型总述**
+
+![](../assets/blinn-phong.jpg)
+
+\\[
+L=L_a+L_d+L_s=k_aI_a+k_d\left( I/r^2 \right) \max \left( 0,n\cdot l \right) +k_s\left( I/r^2 \right) \max \left( 0,n\cdot h \right) ^p
+\\]
+
+> **&#x1F4A1;** 为什么不考虑point到v的距离对能量的影响？？
+>
+> 这部分比较复杂,Blinn-phong模型没有考虑这个问题
+
+
+# 着色频率
+
+[20:50]
+
+1. 着色应用于一个平面上,整个平面共用一个L（Flat Shading）
+   
+   <img src="../assets/flatshading.jpg" width = 300 />
+
+2. 着色应用三角形面片的顶点上，每个顶点计算一个L，三角形内通过插值计算出L（Gouraud Shading）
+   
+   <img src="../assets/gouraudshading.jpg" width = 300 />
+
+3. 着色应用于像素，每个像素计算一个L（Phong Shading）
+   
+   <img src="../assets/phongshading.jpg" width = 300 />
+
+
+
+不同着色频率和着色几何体的效果比较：
+
+<div align="center"> <img src="../assets/shadingcompare.jpg" width = 600 /> </div>
+
+
+## 计算一个点的法向量
+
+方法一：利用几何特征
+
+例如，已知object是个球体。可直接球出球表面某点的n（法向量）
+
+<img src="../assets/利用几何特征.jpg" width = 300 />
+
+
+方法二：利用三角形面片
+
+[30:08]
+
+\\[
+N_v=\frac{\sum{N_i}}{||\sum{N_i}||}
+\\]
+
+相邻的三角形的n的平均或加权平均
+
+> **&#x1F4CC;** 一个点可做多个三角形的顶点，将这些三角形（面）的法向量求均值，可简单的看做是这个点的法向量
+
+<img src="../assets/利用三角形.jpg" width = 300 />
+
+
+方法三：利用插值
+
+[31:29]
+
+
+
+
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_pages/
