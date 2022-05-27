@@ -4,16 +4,17 @@
 
 将观测的物体在屏幕上显示，就是**光栅化**。
 
-## 定义
+## 定义一些符号
 
 <img src="../assets/观察.jpg" title="" alt="" width="419">
 
-1. cube：l，r，u，d，f，n
+1. 描述立方体的符号：l，r，u，d，f，n
 - l = -r
 - b = -t
-2. 宽高比（Aspect ratio）
+2. 描述屏幕的符号：
+- 宽高比（Aspect ratio）
 - width/height
-3. 视角（Field of view）
+- 视角（Field of view）
 
 <img src="../assets/%E8%A7%86%E8%A7%92.jpg" title="" alt="" width="297">
 
