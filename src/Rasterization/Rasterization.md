@@ -6,12 +6,13 @@
 
 ## 定义一些符号
 
-<img src="../assets/观察.jpg" title="" alt="" width="419">
-
 1. 描述立方体的符号：l，r，u，d，f，n
 - l = -r
 - b = -t
 2. 描述屏幕的符号：
+
+<img src="../assets/观察.jpg" title="" alt="" width="419">
+
 - 宽高比（Aspect ratio）
 - width/height
 - 视角（Field of view）
