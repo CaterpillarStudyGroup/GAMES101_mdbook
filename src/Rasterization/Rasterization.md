@@ -19,7 +19,7 @@
 
 <img src="../assets/%E8%A7%86%E8%A7%92.jpg" title="" alt="" width="297">
 
-### 如何把视角和宽高比转换为l、r、b、t？
+3. 用符号 如何把视角和宽高比转换为l、r、b、t？
 
 ![](../assets/视角转换.jpg)
 
