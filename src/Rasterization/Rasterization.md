@@ -145,7 +145,7 @@ M_{viewport}=\left( \begin{matrix}
 ```
 
 > &#x1F50E;**判断三角形的内和外：**  
-https://caterpillarstudygroup.github.io/GAMES101_pages/Dependency/Vector.html#%E5%9C%A8%E5%9B%BE%E5%BD%A2%E5%AD%A6%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%
+https://caterpillarstudygroup.github.io/GAMES101_mdbook/Dependency/Vector.html#%E5%9C%A8%E5%9B%BE%E5%BD%A2%E5%AD%A6%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%
 
 缺点：必须要依次check每个pixel
 
@@ -180,4 +180,4 @@ https://caterpillarstudygroup.github.io/GAMES101_pages/Dependency/Vector.html#%E
 -----------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
 >
-> https://caterpillarstudygroup.github.io/GAMES101_pages/
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/
