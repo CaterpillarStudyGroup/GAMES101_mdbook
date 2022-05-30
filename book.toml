@@ -6,8 +6,6 @@ multilingual = false
 src = "src"
 title = "GAMES101"
 
-[preprocessor.pagetoc]
-
 [output.html]
 mathjax-support = true
 git-repository-url = "https://github.com/CaterpillarStudyGroup/GAMES101_mdbook"
@@ -22,3 +20,5 @@ enable = true
 
 [output.html.search]
 enable = true
+
+[output.pdf]
