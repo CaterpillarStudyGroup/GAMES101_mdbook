@@ -21,4 +21,4 @@ enable = true
 [output.html.search]
 enable = true
 
-[output.pdf]
+# [output.pdf]
