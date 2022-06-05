@@ -53,7 +53,7 @@ f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \om
 
 > &#x1F4A1; \\(f_1\left( x \right)\\) 是信号（a）， \\(f_2\left( x \right)\\)是采样信号（c）， \\(F_1\left( \omega \right)\\) 是a的频谱（b）  \\(F_2\left( \omega \right)\\) 是采样信号的频谱（d）0
 
-采样就是把原信号的频谱以特定周期呈现。
+结论：**采样就是把原信号的频谱以特定周期呈现。**
 
 采样周期长 \\(\Longrightarrow \\)
 
@@ -61,8 +61,13 @@ f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \om
 
 \\(\Longrightarrow \\) (b)以更密的形式重复
 
-\\(\Longrightarrow \\) (f)的频谱出现混叠
+\\(\Longrightarrow \\) (f)的频谱出现混叠[55:59]
 
 \\(\Longrightarrow \\) 时域上表现为走样
 
 <img title="" src="../assets/周期混叠.jpg" alt="" width="600">
+
+----------------------------
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/
