@@ -16,7 +16,8 @@
   - [时域 *VS.* 频域](Rasterization/TimeVsFrequency.md)
   - [反走样算法](Rasterization/AntialiasingMore.md)
   - [Others](Rasterization/Others.md)
-  - [Shading 着色](Rasterization/Shading.md)
+  - [可见性/遮挡](Rasterization/Occlusion.md)
+- [Shading 着色](Shading/Shading.md)
   - [Pipeline 渲染管道](Rasterization/Pipeline.md)
   - [Texture 纹理](Rasterization/Texture.md)
 
