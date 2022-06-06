@@ -27,29 +27,31 @@
 
 [47:35]
 
+漫反射具有以下特点：
+
+1. 打到 point 上的光线被均匀地反射出去，（与观测点v没有关系）
+
 <div align="center"> <img src="../assets/diffuse.jpg" width = 290 /> </div>
 
-打到 point 上的光线被均匀地反射出去，（与观测点v没有关系）
+2. l 与 n 的夹角决定了 point 接收到的光线的强度(Lambert's cosine law)
 
 ![](../assets/lambert.jpg)
 
-l 与 n 的夹角决定了 point 接收到的光线的强度(Lambert's cosine law)
+3. [54:48] 圆心是点光源，向外辐射能量。根据能量守恒定理（不考虑传播损耗），每个圆上的能量之和不变，因此某点处的能量与它到光源的距离平方是反比。
 
 <div align="center"> <img src="../assets/lightfalloff.jpg" width = 400 /> </div>
 
-[54:48] 圆心是点光源，向外辐射能量。
-
-（能量守恒定理）不考虑传播损耗，每个圆上的能量之和不变，某点处的能量与它到光源的距离平方是反比。
+通过以上分析，定义漫反射的能量公式为：
 
 \\[
 L_d=k_d\left( I/r^2 \right) \max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) 
 \\]
 
-- \\(L_d\\) 漫反射的能量
-- \\(k_d\\) point对光的吸收率 (例如，不同的颜色对光的吸收能力不同)
-- \\(\left( I/r^2 \right)\\) 有多少能量到达了point
-- \\(\max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) \\) 从正面照射的光，漫反射才有意义 （非正面射入，\\(\boldsymbol{n}\cdot \boldsymbol{l}\\)的值小于零）
-- \\(\boldsymbol{n}\cdot \boldsymbol{l}\\) 表示有多少能量被point接收
+- \\(L_d\\)： 漫反射的能量
+- \\(k_d\\)： point对光的吸收率 (例如，不同的颜色对光的吸收能力不同)
+- \\(\left( I/r^2 \right)\\)： 有多少能量到达了point
+- \\(\max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) \\)： 从正面照射的光，漫反射才有意义 （非正面射入，\\(\boldsymbol{n}\cdot \boldsymbol{l}\\)的值小于零）
+- \\(\boldsymbol{n}\cdot \boldsymbol{l}\\)： 表示有多少能量被point接收
 
 ![](../assets/diffuseappearance.jpg)
 
