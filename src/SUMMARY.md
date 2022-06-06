@@ -18,6 +18,7 @@
   - [Others](Rasterization/Others.md)
   - [可见性/遮挡](Rasterization/Occlusion.md)
 - [Shading 着色](Shading/Shading.md)
+  - [Blinn-Phong 反射模型](Shading/BlinnPhong.md)
   - [Pipeline 渲染管道](Rasterization/Pipeline.md)
   - [Texture 纹理](Rasterization/Texture.md)
 
