@@ -20,6 +20,7 @@
 - [Shading 着色](Shading/Shading.md)
   - [Blinn-Phong 反射模型](Shading/BlinnPhong.md)
   - [着色频率](Shading/Style.md)
+  - [计算一个点的法向量](Shading/Normal.md)
   - [Pipeline 渲染管道](Rasterization/Pipeline.md)
   - [Texture 纹理](Rasterization/Texture.md)
 
