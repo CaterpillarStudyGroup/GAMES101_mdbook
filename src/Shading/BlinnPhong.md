@@ -47,29 +47,31 @@
 L_d=k_d\left( I/r^2 \right) \max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) 
 \\]
 
-- \\(L_d\\)： 漫反射的能量
-- \\(k_d\\)： point对光的吸收率 (例如，不同的颜色对光的吸收能力不同)
+- \\(L_d\\)： shading point接收到的漫反射能量
+- \\(k_d\\)： shading point对光的吸收率 (例如，不同的颜色对光的吸收能力不同)
 - \\(\left( I/r^2 \right)\\)： 有多少能量到达了point
 - \\(\max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) \\)： 从正面照射的光，漫反射才有意义 （非正面射入，\\(\boldsymbol{n}\cdot \boldsymbol{l}\\)的值小于零）
 - \\(\boldsymbol{n}\cdot \boldsymbol{l}\\)： 表示有多少能量被point接收
+
+效果：
 
 ![](../assets/diffuseappearance.jpg)
 
 
 
-**高光项**
+## 高光项
 
 <div align="center"> <img src="../assets/highlight.jpg" width = 600 /> </div>
 
-R 为物体镜面反射的方向。
+R 为物体镜面反射的方向，当 v 和 R 接近时，会看到高光。
 
-当 v 和 R 接近时，会看到高光
+\\(h=\frac{v+l}{||v+l||}\\) 代表了 v+l 的方向， h 称为半程向量 half vector。 [08:25] 当v和R接近时，v+l 的方向(h)与n接近:
 
-[08:25] 当v和R接近时，v+l 的方向(h)与n接近:
+> **&#x1F4A1;** 为什么用\\(n\cdot h\\)代替\\(v\cdot R\\)？
+>
+> 因为\\(n\cdot h\\)更容易计算
 
-\\(h=\frac{v+l}{||v+l||}\\) 代表了 v+l 的方向。
-
-h 称为半程向量 half vector
+通过以上分析，定义高光项的能量公式为：
 
 \\[
 L_s=k_s\left( I/r^2 \right) \max \left( 0, \cos \alpha \right) =k_s\left( I/r^2 \right) \max \left( 0, n\cdot h \right) ^p
@@ -78,15 +80,7 @@ L_s=k_s\left( I/r^2 \right) \max \left( 0, \cos \alpha \right) =k_s\left( I/r^2 
 - \\(k_s\\) 吸收率，通常认为高光是白色，也就是全吸收
 - \\(\left( I/r^2 \right)\\) 表示有多少能量到达了point
 - \\(\max \left( 0, n\cdot l \right) ^p\\) 表示n和h的接近程度
-- \\(L_s)\\) 同样应该考虑有多少有多少能量被接收，但Blinn Phong模型将这个因素简化了
-
-<img src="../assets/speculate.jpg" width = 600 />
-
-
-> **&#x1F4A1;** 为什么用\\(n\cdot h\\)代替\\(v\cdot R\\)？
->
-> 因为\\(n\cdot h\\)更容易计算
-
+- \\(L_s\\) 同样应该考虑有多少有多少能量被接收，但Blinn Phong模型将这个因素简化了
 
 > **&#x1F4A1;** 公式中为什么会有指数p？
 >
@@ -94,18 +88,22 @@ L_s=k_s\left( I/r^2 \right) \max \left( 0, \cos \alpha \right) =k_s\left( I/r^2 
 >
 > <img src="../assets/p.jpg" width = 400 />
 
+效果：
 
+<img src="../assets/speculate.jpg" width = 600 />
 
-**环境光照项**
+## 环境光照项
 
 Blinn Phong模型假设所有 point 接收到来自环境光的强度相同，且为常数:
+
 \\[
 L_a=k_aI_a
 \\]
 
 与\\(l\\)和\\(v\\)无关
 
-**模型总述**
+
+# 模型总述
 
 ![](../assets/blinn-phong.jpg)
 
