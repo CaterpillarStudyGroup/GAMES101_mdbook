@@ -66,15 +66,20 @@ L_d=k_d\left( I/r^2 \right) \left( n\cdot l \right)
 在此定义下，可得出：
 
 \\[
-A=\left( 1,0,0 \right) \,\,  B=\left( 0,1,0 \right) \, C=\left( 0,0,1 \right) \\ 
+A=\left( 1,0,0 \right) \,\,  B=\left( 0,1,0 \right) \, C=\left( 0,0,1 \right)
+\\]
+
+\\[
 重心 = \\(\left( \frac{1}{3},\frac{1}{3},\frac{1}{3} \right) \\)
 \\]
 
 <img src="../assets/重心.jpg" width = 600 />
 
-任意点(x,y)的重心坐标公式：
+以2D为例，任意点(x,y)的重心坐标公式：
 
 ![](../assets/重心坐标公式.jpg)
+
+解得：
 
 \\[
 \alpha =\frac{-\left( x-x_B \right) \left( y_C-y_B \right) +\left( y-y_B \right) \left( x_C-x_B \right)}{-\left( x_A-x_B \right) \left( y_C-y_B \right) +\left( y_A-y_B \right) \left( x_C-x_B \right)}
