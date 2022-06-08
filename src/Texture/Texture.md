@@ -70,7 +70,7 @@ A=\left( 1,0,0 \right) \,\,  B=\left( 0,1,0 \right) \, C=\left( 0,0,1 \right)
 \\]
 
 \\[
-重心 = \\(\left( \frac{1}{3},\frac{1}{3},\frac{1}{3} \right) \\)
+重心 = \left( \frac{1}{3},\frac{1}{3},\frac{1}{3} \right)
 \\]
 
 <img src="../assets/重心.jpg" width = 600 />
@@ -100,9 +100,15 @@ A=\left( 1,0,0 \right) \,\,  B=\left( 0,1,0 \right) \, C=\left( 0,0,1 \right)
 
 <img src="../assets/重心坐标插值.jpg" width = 500 />
 
-点P的重心坐标为\\(\left( \alpha , \beta , \gamma \right) \\)
+P是三角形内的一个点，根据P的坐标求出其重心坐标为\\(\left( \alpha , \beta , \gamma \right) \\)
 
-那么，\\(V_P=\alpha V_A+\beta V_B+\gamma V_C\\)
+\\(V_A, V_B, V_C\\)分别是三角形顶点上的属性值，
+
+那么，P点处的属性值为：
+
+\\[
+V_P=\alpha V_A+\beta V_B+\gamma V_C
+\\]
 
 优点：计算方便
 
