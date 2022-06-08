@@ -1,6 +1,4 @@
-# 纹理映射 
-
-Texture Mapping 
+# 漫反射公式的拓展
 
 [55：59]
 
@@ -8,30 +6,31 @@ Texture Mapping
 L_d=k_d\left( I/r^2 \right) \left( n\cdot l \right) 
 \\]
 
+这是Blinn-Phong模型中计算漫反射项的公式。上述公式的特点是：  
 - \\(k_d\\) 不同点的颜色不同 
 - \\(\left( I/r^2 \right) \left( n\cdot l \right) \\) 小球上所有点处于相同的一光照环境下
 
-object在不同处的点需要定义不同的属性
+由于这个公式可以描述不同颜色的点在同一光照环境下的不同表现。
 
-上面例子中的\\(k_d\\)是其中一种属性
+这只是将公式应用于漫反射的一个例子，它也可以适用于物体表面的其它属性。例如用它来做纹理贴图，只需要把\\(k_d\\)换成一种可以表示纹理的属性。
 
-## 表面
+# 纹理映射 Texture Mapping
 
 3D物体的表面是2D的
 
 <img src="../assets/3D2D.jpg" width = 400 />
 
-纹理：一张有弹性、可拉伸的2D图
+纹理：可以看作是一张有弹性、可拉伸的2D图。
 
-纹理映射：把2D图贴在的物体表面的过程
+纹理映射：是把2D纹理图贴在的物体表面的过程
 
 ![](../assets/texture.jpg)
 
-假设映射关系是已知的
+映射关系：物体表面三角形面片上的顶点，与纹理图上的点的对应关系。  
 
-纹理坐标用（u，v）表示， 范围[0，1]
+纹理坐标：纹理图上的点的坐标，用符号(u, v)表示，u和v的范围都是[0, 1]
 
-映射关系只包含三角形顶点对应的(u，v)，三角形内部点的(u，v)通过插值得到
+插值：映射关系只包含三角形顶点对应的(u，v)，三角形内部点的(u，v)通过插值得到
 
 ![](../assets/texture2.jpg)
 
@@ -48,9 +47,7 @@ object在不同处的点需要定义不同的属性
 
 答：纹理坐标、颜色、法向量等
 
-## 重心坐标 
-
-Barycentric Coordinates
+## 重心坐标 Barycentric Coordinates
 
 **三角形的 \\(\left( \alpha , \beta , \gamma \right) \\) 坐标系统**
 
@@ -64,15 +61,14 @@ Barycentric Coordinates
 
 三角形内部的点需要满足：\\(\alpha +\beta +\gamma =1\\)   \\(\alpha \geqslant 0, \beta \geqslant 0,\gamma \geqslant 0\\)
 
-\\(\left( \alpha , \beta , \gamma \right)\\) 称为在三角形平面上的任意一点在三角形重心坐标系下的表示，简称为重心坐标。
+\\(\left( \alpha , \beta , \gamma \right)\\) 称为三角形平面上的任意一点在三角形重心坐标系下的表示，简称为重心坐标。
 
 在此定义下，可得出：
 
 \\[
-A=\left( 1,0,0 \right) \,\,  B=\left( 0,1,0 \right) \,\, C=\left( 0,0,1 \right) 
-\\]
-
+A=\left( 1,0,0 \right) \,\,  B=\left( 0,1,0 \right) \, C=\left( 0,0,1 \right) \\ 
 重心 = \\(\left( \frac{1}{3},\frac{1}{3},\frac{1}{3} \right) \\)
+\\]
 
 <img src="../assets/重心.jpg" width = 600 />
 
