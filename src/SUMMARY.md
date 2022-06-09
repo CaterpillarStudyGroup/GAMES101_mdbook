@@ -23,3 +23,4 @@
   - [计算一个点的法向量](Shading/Normal.md)
   - [实时渲染管线](Shading/Pipeline.md)
 - [Texture Mapping 纹理映射](Texture/Texture.md)
+  - [重心坐标插值](Texture/BarycentricCoordinates.md)
