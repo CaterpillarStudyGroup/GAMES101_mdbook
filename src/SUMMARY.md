@@ -26,3 +26,4 @@
   - [重心坐标插值](Texture/BarycentricCoordinates.md)
   - [纹理放大](Texture/TextureMagnification.md)
   - [纹理像素分辨率过大](Texture/TextureTooBig.md)
+  - [纹理应用](Texture/Application.md)
