@@ -30,3 +30,4 @@
 - [几何](Geometry/Geometry.md)
   - [曲线](Geometry/Curve.md)
   - [曲面](Geometry/Surface.md)
+- [阴影](Shadow.md)
