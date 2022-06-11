@@ -27,3 +27,5 @@
   - [纹理放大](Texture/TextureMagnification.md)
   - [纹理像素分辨率过大](Texture/TextureTooBig.md)
   - [纹理应用](Texture/Application.md)
+- [几何](Geometry/Geometry.md)
+  - [隐式表达](Geometry/Implicit.md)
