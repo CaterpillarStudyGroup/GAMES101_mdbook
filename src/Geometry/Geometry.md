@@ -1,3 +1,5 @@
+# 几何的表达方式
+
 几何的表达方式分为隐式表达和显式表达。  
 
 隐式表达[46:35]是指，不提供点的具体位置，只提供点应满足的约束f(x,y,z)=0
@@ -6,7 +8,8 @@
 
 实际场景中，会根据需要使用不同的表达方式
 
-###隐式表达举例
+# 隐式表达举例
+
 Algebraic She。[58-10] x 班飞到
 一 Constructive solid Come my。[58.233 hole 运算 .
 Distinct Function Til 啊可对距离欧敌 blending .
