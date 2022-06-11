@@ -11,14 +11,12 @@
 - 光栅化 Rasterization [29:11］  
 定义：把3D空间中的几何形体显示在屏幕上  
 特点：速度快，能达到实时，30 fps。但质量一般。
-
 - 曲线和曲面 Curves And Meshes  [30:13]   
 目的：用简单图形表示曲线和曲面
-
+- 阴影
 - 光线追踪 Ray Tracing  
 目的：产生非常真实的画面  
 慢
-
 - 动画/仿真 Animation/Simulation[31-45]
 
 # 图形学 Dependencies 依赖项
