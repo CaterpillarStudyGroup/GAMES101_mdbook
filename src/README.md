@@ -4,7 +4,7 @@
 
 如有侵权，请联系删除
 
-# 主要内容
+# 课程主要内容
 
 - 数学基础
 - MVP
@@ -16,8 +16,8 @@
 - 阴影
 - 光线追踪 Ray Tracing  
 目的：产生非常真实的画面  
-慢
-- 动画/仿真 Animation/Simulation[31-45]
+特点：慢
+- 动画/仿真 Animation/Simulation[31：45]
 
 # 图形学 Dependencies 依赖项
 
