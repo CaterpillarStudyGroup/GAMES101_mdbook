@@ -8,41 +8,46 @@
 
 实际场景中，会根据需要使用不同的表达方式
 
-第45页
-
 # 隐式表达举例
 
-Algebraic She。[58-10] x 班飞到
-一 Constructive solid Come my。[58.233 hole 运算 .
-Distinct Function Til 啊可对距离欧敌 blending .
-level St Method tho:22]
-Fractals 分形 [1：12：44了
-优点容易描述， compact 表达 .
-容易计算离表面的距离'
-容易插通牌光线与表面的头角
-缺点难以描述兄来对家
-.
+|类型|举例|表达方式|
+|---|---|---|
+|Algebraic Surface|[58：10]| \\(x^2 + y^2 + z^2 = 1\\)|
+|Constructive solid Geometry|[58.23]| bool 运算 |
+|Distinct Function| [1:01:23]|可对距离函数做blending|
+|level Set Method| [1:10:22]||
+|Fractals 分形 |[1：12：44]|
 
-第46页
+优点：  
+- 容易描述
+- compact 表达
+- 容易计算离表面的距离
+- 容易计算光线与表面的夹角
+缺点：
+- 难以描述复杂对象
 
 # 显式几何
 
 ## 点云 point cloud
 
-list of pants
+list of points
+
 可以表示任意的几何形状
+
 常用于扫描输出
+
 常被转换为其它方式的使用
 
 ## Polygon Mesh
 
 应用最广泛。
-以三角形、四边形为主
-obj 文件格式：
-1 0：顶点坐标
-M:法点，数量同0
-比：纹理坐标，最多为顶点数糆片数个
 
+以三角形、四边形为主
+
+**obj 文件格式**：
+- v：顶点坐标
+- vn:顶点法向量，数量同v
+- vt：纹理坐标，最多为（顶点数 * 面片数）个
 
 ----------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
