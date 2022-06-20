@@ -308,7 +308,7 @@ M_{persp\rightarrow ortho}^{\left( 4\times 4 \right)}=\left( \begin{matrix}
 
 ## 从数学上
 
-定义z'为变换后的z坐标。
+定义z'为变换后的z坐标，那么z' = (n+f)-nf/z
 
 \\[
 \begin{aligned}
@@ -318,7 +318,13 @@ zf & = -z^2 + (n+f)z - nf
 \end{aligned}
 \\]
 
-zf是一个开口向下的二次曲线。
+zf是一个开口向下的二次曲线。它与x轴的交点在z=n处和z=f处。当z位于(f, n)区间时，zf>0。  
+
+由于f<0且z<0，当z位于(f, n)区间时，f>0，即z'-z>0
+
+z'>z，因此z会变近。
+
+> &#x2753; 这个结论应该不对，哪里错了呢？
 
 ## 从直觉上
 
