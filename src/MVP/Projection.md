@@ -311,11 +311,12 @@ M_{persp\rightarrow ortho}^{\left( 4\times 4 \right)}=\left( \begin{matrix}
 定义z'为变换后的z坐标，那么z' = (n+f)-nf/z
 
 \\[
-\begin{aligned}
-f & = z' - z 
-  = (n+f) - nf/z -z \\
+f = z' - z 
+  = (n+f) - nf/z -z
+\\]
+
+\\[
 zf & = -z^2 + (n+f)z - nf
-\end{aligned}
 \\]
 
 zf是一个开口向下的二次曲线。它与x轴的交点在z=n处和z=f处。当z位于(f, n)区间时，zf>0。  
