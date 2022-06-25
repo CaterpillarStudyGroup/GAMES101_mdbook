@@ -40,7 +40,8 @@ b^n(t) = b_0^n(t) = \sum^n_{j=0} b_j B^n_j(t)
 - \\(b^n(t)\\) 为一组控制点的线性组合，组合的系数是B，即与t有关的多项式
 
 \\[
-B^n_j(t) = \sum_{j=0}^n b_j \begin{pmatrix}n \\ j \end{pmatrix} t^j(1-t)^{n-j}
+B^n_j(t) = \sum_{j=0}^n b_j \begin{pmatrix}n \\
+ j \end{pmatrix} t^j(1-t)^{n-j}
 \\]
 
 ### Berstein多项
