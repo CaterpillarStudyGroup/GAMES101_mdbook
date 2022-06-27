@@ -30,5 +30,6 @@
 - [几何](Geometry/Geometry.md)
   - [曲线](Geometry/Curve.md)
   - [曲面](Geometry/Surface.md)
+  - [Mesh](Geometry/Mesh.md)
 - [阴影](Shadow.md)
 - [光线追踪](RayTracing/RayTracing.md)
