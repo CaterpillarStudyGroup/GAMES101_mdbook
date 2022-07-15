@@ -33,3 +33,6 @@
   - [Mesh](Geometry/Mesh.md)
 - [阴影](Shadow.md)
 - [光线追踪](RayTracing/RayTracing.md)
+  - [Baseline算法](RayTracing/Baseline.md)
+  - [Whitted算法](RayTracing/Whitted.md)
+  - [Ray-Surface交点](RayTracing/RaySurfaceIntersection.md)
