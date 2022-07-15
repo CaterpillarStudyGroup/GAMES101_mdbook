@@ -36,3 +36,4 @@
   - [Baseline算法](RayTracing/Baseline.md)
   - [Whitted算法](RayTracing/Whitted.md)
   - [Ray-Surface交点](RayTracing/RaySurfaceIntersection.md)
+  - [辐射度量学](RayTracing/BasicRadiometry.md)
