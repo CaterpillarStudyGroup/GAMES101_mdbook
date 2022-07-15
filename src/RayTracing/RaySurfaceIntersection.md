@@ -84,46 +84,59 @@ AABB平面：\\(t = \frac{(p'_x- o_x) }{d_x}\\)
 
 #### 均匀的格子 Uniform Grids [8：13]
 
+假设：光线与 Grid 求交很快，与 object 求交很慢
+
 1. 找到场景的 Bounding Volumn
-2. 捌孔划分成格子
-3.每判断每个 Grid 是否有物理体
-4假设，光线与 Grid 求交很快，与 object 救很慢
-判断光线与 Grid 是否相交，
-皉内是否有 object
-光线与 grid 内的 object 是否求交
-grid 不能太疏或密 木邀一.位置均可
-适用于 object 的大小和任罚一
-不适用于 obpr 分在不均匀的场景
-##空间划分 Spatial Partition
-[18-59] Octree, KD tree, 138 P tree
-视频以1的 Tree 为例子。
-### 如母划的 Tree 的数据结构
+2. BV划分成格子
+3. 判断每个 Grid 是否有物体
+4. 判断光线与 Grid 是否相交，
+5. 如果Grid内有 object且光线与Grid相交，再计算光线与 grid 内的 object 是否相交
+
+算法特点：
+1. grid 不能太疏或密
+2. 适用于 object 的大小接近且位置均匀
+3. 不适用于 object 分布不均匀的场景
+
+#### 空间划分 Spatial Partition
+
+[18：59] Octree, KD tree, BSP tree
+视频以KD Tree 为例子。
+
+#### KD Tree 的数据结构
+
 - 中间结点
-划分轴：人以飞轮氵礼
 
-划分点根据特定的策嗨选择
-child:2个
-object: 不存 object 数据 60
--叶子结色
-、 存 list of objects.
-###Traverse.
-𨫡归
-##*1局限性
-如何判断1孔与0相交。
-{object 存在于多个1-叶子结蚛
-##物体划分 Object linen
-##=11 But [40：00]
-优点解蚍让2全问题
-局限性： BV 有重叠，
-好的划分使重叠尽量少
-####Gate
-l. 计算 B V
-2对吼内的将划分9
-####在比比一
-选择划分轴藜最长的轴划分
-选择划分点20取中间的物体。
-譢牛：13中的0个数
+划分轴：x,y,z轴流  
+划分点：根据特定的策略选择  
+child: 2个  
+object: 不存 object 数据
 
-####Traverse
-同上 6/
-KD Tree 的 But [54河
+- 叶子结色
+ 存 list of objects.
+
+#### Traverse.
+
+递归
+
+#### 局限性
+
+1. 如何判断BV与三角形相交。
+2. object 存在于多个叶子结点中
+
+## 物体划分 Object Partition
+
+### BVH  [40：00]
+
+优点：解决以上2个问题  
+局限性： BV 有重叠，好的划分使重叠尽量少
+
+#### Create
+
+1. 计算 B V
+2. 对BV内的obj划分
+以上两步交替进行，通常选择对最长的轴进行划分，取中间位置作为划分点。当BV中的三角形个数少于门限时停止
+
+#### Traverse
+同上
+
+#### KD Tree VS. BVH [54:25]
