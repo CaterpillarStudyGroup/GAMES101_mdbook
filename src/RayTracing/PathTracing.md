@@ -15,16 +15,26 @@ Whited Style 算法有局限性，但 rendering 公式是正确的。正确解�
 ## 用 Monto Calio 方法解定积分
 
 ### 场景1[32：18]
+
 只考虑直接光照，且被照射点不发光。则入射光线为上半球所有Wi，出射光线为 Wo,求 Wo
 
-hip, who hii lp.wi.frlp.wi.ws cnwilawi
-无自身发光页 儿照云霞来自光源、 G
-用 Mate 继解定积分
-hi MM =尤之「箭 佬薟蒲均匀采样
-连续问题转化为离散问题
-二式 ELilPNilfrlP.wi.wohnui.nrr.­hr/2E
-其中心来目采样
-Ft Ft#场景2 v 这是我自己抽象出来的
+\\[
+L_o(p, w_o) = \int_{\omega^+}L_i(p, w_i)f_r(p, w_i, w_o)(n\dot w_i)dw_i
+\\]
+
+从公式可以看出，无自身发光项，且直接光照只来自光源。  
+
+用Monto Carlio解定积分，假设使用均匀采样，将公式代入以上公式，可将连续问题转化为离散问题，得到：  
+
+\\[
+L_o(p, w_o) = \approx \frac{1}{N} \sum \frac{L_i(p, w_i)f_r(p, w_i, w_o)(n\dot w_i)dw_i}{1/2\pi}
+\\]
+
+其中wi来自采样
+
+### 场景2[42:41]
+
+ v 这是我自己抽象出来的
 一个函数
 [42-41] fml Wi)
 Lol p, Wil 元 È Etienne
