@@ -37,3 +37,4 @@
   - [Whitted算法](RayTracing/Whitted.md)
   - [Ray-Surface交点](RayTracing/RaySurfaceIntersection.md)
   - [辐射度量学](RayTracing/BasicRadiometry.md)
+  - [BRDF - 双向反射分布函数](RayTracing/BRDF.md)
