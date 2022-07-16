@@ -140,3 +140,9 @@ object: 不存 object 数据
 同上
 
 #### KD Tree VS. BVH [54:25]
+
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

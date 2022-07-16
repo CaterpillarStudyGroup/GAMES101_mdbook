@@ -59,3 +59,8 @@ L = E + KE + K^2E + k^3E + \dots
 1次项KE为直接光照  
 后面项为间接光照  
 
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

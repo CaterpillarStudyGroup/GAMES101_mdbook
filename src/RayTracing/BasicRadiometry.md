@@ -44,3 +44,8 @@ unit solid angle = \\(\sin \theta d \theta d \phi\\)
 所有方向到达dA的能量的总和为 Irradiance
 
 
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

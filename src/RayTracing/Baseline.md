@@ -13,3 +13,10 @@
 3. 交点与光源连线，判断定是否在阴影中
 4. 算着色 
 5. 写回像素值
+
+
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

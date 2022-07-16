@@ -12,3 +12,9 @@
 反射能量 + 折射能量 = 1
 
 一些名词： primary ray, secondary ray, shadow ray
+
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。
+>
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/
