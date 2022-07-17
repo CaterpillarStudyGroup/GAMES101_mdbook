@@ -1,32 +1,17 @@
-# 给角色添加指定的动作
+# 要解决的问题
 
-## Rigging 绑定
+- 场景一：
 
+已知：初始的 position x0，任意时刻的速度
+求：某个时间刻的 position
 
-给角色定义控制点，通过拉动控制点控制角色的动作。
+- 场景二：
 
-## Blend Shape 
+已知：初始的 position X0，速度场，即在任意 position 上的速度 [06：40]  
+求：某时刻的 position
 
-通过混合控制点来控制角色
+# 欧拉方法
 
-## Moton Capture 动捕
-
-从真人提取控制点上的动作，再把动作用于角色的控制点
-
-Lecture 22.
-Animation 91
--#Single Particle Simulation
-① 已知
-初始的 position.人
-任意时刻的速度
-求
-某个时间刻的 position
-② 已知。
-初始的 position X。
-速度场：在任意 position 上的速度 [06：40了
-• 求。
-某时刻的 position
-## 瓯投方法。
 x.tt 心 =心 tot it 连续问题离散化
 这租思想在课程中
 义七七比 =必 taxi 境运用
