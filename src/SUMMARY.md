@@ -52,3 +52,4 @@
   - [关键帧动画](Animation/KeyFrame.md)
   - [物理仿真](Animation/PhysicalSimulation.md)
   - [运动学](Animation/Kinematics.md)
+  - [给角色添加指定动作](Animation/Motion.md)
