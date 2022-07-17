@@ -46,5 +46,5 @@
   - [BRDF](Material/BRDF.md)
 - [Advanced Topics in Rendering]()
   - [高级光线传播](AdvancedRendering/AdvancedRayTracing.md.md)
-  - [高级Appreance建模]
+  - [高级Appreance建模](AdvancedRendering/AdcancedAppearcing.md)
 - [颜色](Color.md)
