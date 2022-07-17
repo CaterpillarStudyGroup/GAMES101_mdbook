@@ -50,3 +50,5 @@
 - [颜色](Color.md)
 - [动画]()
   - [关键帧动画](Animation/KeyFrame.md)
+  - [物理仿真](Animation/PhysicalSimulation.md)
+  - [运动学](Animation/Kinematics.md)
