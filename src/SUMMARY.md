@@ -40,3 +40,7 @@
   - [BRDF - 双向反射分布函数](RayTracing/BRDF.md)
   - [蒙特卡罗积分](RayTracing/MontoCarloIntegration.md)
   - [路径追踪](RayTracing/PathTracing.md)
+- [材质]()
+  - [漫反射材质](Material/Diffuse.md)
+  - [微表面材质](Material/Microfacet.md)
+  - [BRDF](Material/BRDF.md)
