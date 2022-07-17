@@ -44,3 +44,4 @@
   - [漫反射材质](Material/Diffuse.md)
   - [微表面材质](Material/Microfacet.md)
   - [BRDF](Material/BRDF.md)
+- [Advanced Topics in Rendering](AdvancedRendering.md)
