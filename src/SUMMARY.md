@@ -51,6 +51,7 @@
 - [动画]()
   - [关键帧动画](Animation/KeyFrame.md)
   - [物理仿真](Animation/PhysicalSimulation.md)
-  - [Single Particle Simulation](Animation/SingleParticleSimulation.md)
+  - [单个粒子模拟](Animation/SingleParticleSimulation.md)
+  - [刚体模拟](RigidSimulation.md)
   - [运动学](Animation/Kinematics.md)
   - [给角色添加指定动作](Animation/Motion.md)
