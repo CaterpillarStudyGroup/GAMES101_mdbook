@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ray-Surface交点 - GAMES101</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of GAMES101">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>GAMES101</div></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction 介绍</a></li><li class="chapter-item expanded "><a href="../Dependency/dependency.html"><strong aria-hidden="true">2.</strong> Dependencies 前置知识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Dependency/Vector.html"><strong aria-hidden="true">2.1.</strong> Vector 向量</a></li><li class="chapter-item expanded "><a href="../Dependency/Matrix.html"><strong aria-hidden="true">2.2.</strong> Matrix 矩阵</a></li></ol></li><li class="chapter-item expanded "><a href="../MVP/MVP.html"><strong aria-hidden="true">3.</strong> MVP 模型，视图，投影</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MVP/View.html"><strong aria-hidden="true">3.1.</strong> View 视图</a></li><li class="chapter-item expanded "><a href="../MVP/Model.html"><strong aria-hidden="true">3.2.</strong> Model 模型</a></li><li class="chapter-item expanded "><a href="../MVP/Projection.html"><strong aria-hidden="true">3.3.</strong> Projection 投影</a></li></ol></li><li class="chapter-item expanded "><a href="../Rasterization/Rasterization.html"><strong aria-hidden="true">4.</strong> Rasterization 光栅化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Rasterization/Antialiasing.html"><strong aria-hidden="true">4.1.</strong> Antialiasing 反走样</a></li><li class="chapter-item expanded "><a href="../Rasterization/AntialiasingInFrequency.html"><strong aria-hidden="true">4.2.</strong> 从频域的角度分析走样</a></li><li class="chapter-item expanded "><a href="../Rasterization/TimeVsFrequency.html"><strong aria-hidden="true">4.3.</strong> 时域 VS. 频域</a></li><li class="chapter-item expanded "><a href="../Rasterization/AntialiasingMore.html"><strong aria-hidden="true">4.4.</strong> 反走样算法</a></li><li class="chapter-item expanded "><a href="../Rasterization/Others.html"><strong aria-hidden="true">4.5.</strong> Others</a></li><li class="chapter-item expanded "><a href="../Rasterization/Occlusion.html"><strong aria-hidden="true">4.6.</strong> 可见性/遮挡</a></li></ol></li><li class="chapter-item expanded "><a href="../Shading/Shading.html"><strong aria-hidden="true">5.</strong> Shading 着色</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Shading/BlinnPhong.html"><strong aria-hidden="true">5.1.</strong> Blinn-Phong 反射模型</a></li><li class="chapter-item expanded "><a href="../Shading/Style.html"><strong aria-hidden="true">5.2.</strong> 着色频率</a></li><li class="chapter-item expanded "><a href="../Shading/Normal.html"><strong aria-hidden="true">5.3.</strong> 计算一个点的法向量</a></li><li class="chapter-item expanded "><a href="../Shading/Pipeline.html"><strong aria-hidden="true">5.4.</strong> 实时渲染管线</a></li></ol></li><li class="chapter-item expanded "><a href="../Texture/Texture.html"><strong aria-hidden="true">6.</strong> Texture Mapping 纹理映射</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Texture/BarycentricCoordinates.html"><strong aria-hidden="true">6.1.</strong> 重心坐标插值</a></li><li class="chapter-item expanded "><a href="../Texture/TextureMagnification.html"><strong aria-hidden="true">6.2.</strong> 纹理放大</a></li><li class="chapter-item expanded "><a href="../Texture/TextureTooBig.html"><strong aria-hidden="true">6.3.</strong> 纹理像素分辨率过大</a></li><li class="chapter-item expanded "><a href="../Texture/Application.html"><strong aria-hidden="true">6.4.</strong> 纹理应用</a></li></ol></li><li class="chapter-item expanded "><a href="../Geometry/Geometry.html"><strong aria-hidden="true">7.</strong> 几何</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Geometry/Curve.html"><strong aria-hidden="true">7.1.</strong> 曲线</a></li><li class="chapter-item expanded "><a href="../Geometry/Surface.html"><strong aria-hidden="true">7.2.</strong> 曲面</a></li><li class="chapter-item expanded "><a href="../Geometry/Mesh.html"><strong aria-hidden="true">7.3.</strong> Mesh</a></li></ol></li><li class="chapter-item expanded "><a href="../Shadow.html"><strong aria-hidden="true">8.</strong> 阴影</a></li><li class="chapter-item expanded "><a href="../RayTracing/RayTracing.html"><strong aria-hidden="true">9.</strong> 光线追踪</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../RayTracing/Baseline.html"><strong aria-hidden="true">9.1.</strong> Baseline算法</a></li><li class="chapter-item expanded "><a href="../RayTracing/Whitted.html"><strong aria-hidden="true">9.2.</strong> Whitted算法</a></li><li class="chapter-item expanded "><a href="../RayTracing/RaySurfaceIntersection.html" class="active"><strong aria-hidden="true">9.3.</strong> Ray-Surface交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/BasicRadiometry.html"><strong aria-hidden="true">9.4.</strong> 辐射度量学</a></li><li class="chapter-item expanded "><a href="../RayTracing/BRDF.html"><strong aria-hidden="true">9.5.</strong> BRDF - 双向反射分布函数</a></li><li class="chapter-item expanded "><a href="../RayTracing/MontoCarloIntegration.html"><strong aria-hidden="true">9.6.</strong> 蒙特卡罗积分</a></li><li class="chapter-item expanded "><a href="../RayTracing/PathTracing.html"><strong aria-hidden="true">9.7.</strong> 路径追踪</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> 材质</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Material/Diffuse.html"><strong aria-hidden="true">10.1.</strong> 漫反射材质</a></li><li class="chapter-item expanded "><a href="../Material/Microfacet.html"><strong aria-hidden="true">10.2.</strong> 微表面材质</a></li><li class="chapter-item expanded "><a href="../Material/BRDF.html"><strong aria-hidden="true">10.3.</strong> BRDF</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Advanced Topics in Rendering</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../AdvancedRendering/AdvancedRayTracing.md.html"><strong aria-hidden="true">11.1.</strong> 高级光线传播</a></li><li class="chapter-item expanded "><a href="../AdvancedRendering/AdcancedAppearcing.html"><strong aria-hidden="true">11.2.</strong> 高级Appreance建模</a></li></ol></li><li class="chapter-item expanded "><a href="../Color.html"><strong aria-hidden="true">12.</strong> 颜色</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> 动画</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Animation/KeyFrame.html"><strong aria-hidden="true">13.1.</strong> 关键帧动画</a></li><li class="chapter-item expanded "><a href="../Animation/PhysicalSimulation.html"><strong aria-hidden="true">13.2.</strong> 物理仿真</a></li><li class="chapter-item expanded "><a href="../Animation/SingleParticleSimulation.html"><strong aria-hidden="true">13.3.</strong> 单个粒子模拟</a></li><li class="chapter-item expanded "><a href="../Animation/RigidSimulation.html"><strong aria-hidden="true">13.4.</strong> 刚体模拟</a></li><li class="chapter-item expanded "><a href="../Animation/FluidSimulation.html"><strong aria-hidden="true">13.5.</strong> 流体模拟</a></li><li class="chapter-item expanded "><a href="../Animation/EulerVsLagrangian.html"><strong aria-hidden="true">13.6.</strong> 欧拉 Vs Lagrangion</a></li><li class="chapter-item expanded "><a href="../Animation/Kinematics.html"><strong aria-hidden="true">13.7.</strong> 运动学</a></li><li class="chapter-item expanded "><a href="../Animation/Motion.html"><strong aria-hidden="true">13.8.</strong> 给角色添加指定动作</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">GAMES101</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/GAMES101_mdbook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="ray-surface-交点"><a class="header" href="#ray-surface-交点">Ray-Surface 交点</a></h1>
+<h2 id="定义"><a class="header" href="#定义">定义</a></h2>
+<p>光线：(o, t)，即（起点，方向）<br />
+光线上的某一点： o+td, t&gt;=0</p>
+<h2 id="光线与球的交点"><a class="header" href="#光线与球的交点">光线与球的交点</a></h2>
+<p>ray: \(R(t) = o + td\)<br />
+圆: \((p - c) ^ 2 - R^2 = 0\)<br />
+⇒ \((o + td - c) ^ 2 - R^2 = 0\)</p>
+<p>解出t，取大于0且较小的t</p>
+<h2 id="光线与隐式曲面的交点"><a class="header" href="#光线与隐式曲面的交点">光线与隐式曲面的交点</a></h2>
+<p>ray: \(R(t) = o + td\)<br />
+曲面： f(p) = 0</p>
+<p>⇒ f(o + td)=0
+解出t</p>
+<h2 id="光线与三角形面片的交点"><a class="header" href="#光线与三角形面片的交点">光线与三角形面片的交点</a></h2>
+<p>任意一个点与封闭 mesh 求交，
+交点个数为奇数则点在内
+交点个数为偶数则点在外</p>
+<h3 id="光线与三角形的交点"><a class="header" href="#光线与三角形的交点">光线与三角形的交点</a></h3>
+<ol>
+<li>光线与三角形面片所在的平面求交点
+ray: \(R(t) = o + td\)<br />
+平面：\((p-p') \dot N = 0\)<br />
+平面公式解释：点乘为0代表垂直，N是平面的法向量，p'为平面上任意一点</li>
+</ol>
+<p>⇒ \((o + td - p') \dot N = 0\)<br />
+解得：\(t = \frac{(p'- o) \dot N}{d \dot N}\)</p>
+<ol start="2">
+<li>判断交点是否在三角形内</li>
+</ol>
+<p>或 MT 算法。 (P 37）</p>
+<p>点在三角形内 \(\Leftrightarrow\) 点用三角形的重心坐标表示且满是 constrain</p>
+<p>0 + t D =（1-b1 - b2)P0 + b1P1 + b2p2</p>
+<p>其中大写为3D已知向量，小写为未知标量</p>
+<p>解得：
+<img src="../assets/16.PNG" alt="" /></p>
+<p>判定结果AC的条件：r&gt;0, b1&gt;0, b2&gt;0, 1-b1-b2&gt;0</p>
+<h3 id="算法加速"><a class="header" href="#算法加速">算法加速</a></h3>
+<p>Bounding Volumes 包围盒[56：40]</p>
+<p>1.长方体，即3个不同的对面（slab）形成的交集[58:36]</p>
+<p>AABB = Axis Aligned Bounding Box</p>
+<p><img src="../assets/17.PNG" alt="" /><br />
+求光线与每个轴上的对面相交的时间，tmin和tmax</p>
+<p>光线进入 AABB 的时间为所有[tmin, tmax] 的交集</p>
+<p>tenter = max{tmin}, texit = min{tmax}</p>
+<p>tenter &lt; texit ⇒ 光线与AABB 相交</p>
+<p>texit &lt; 0 ⇒ 不相交</p>
+<p>tenter &lt; 0 &lt; texit ⇒ 光源在 AABB 内</p>
+<p>Q:为什么要用 AABB
+A:光线与朋平面求交的计算简单[1:15:49]</p>
+<p>普通平面：\(t = \frac{(p'- o) \dot N}{d \dot N}\)</p>
+<p>AABB平面：\(t = \frac{(p'_x- o_x) }{d_x}\)</p>
+<h3 id="怎样利用-aabb-加速-ray-tracing"><a class="header" href="#怎样利用-aabb-加速-ray-tracing">怎样利用 AABB 加速 ray tracing</a></h3>
+<h4 id="均匀的格子-uniform-grids-813"><a class="header" href="#均匀的格子-uniform-grids-813">均匀的格子 Uniform Grids [8：13]</a></h4>
+<p>假设：光线与 Grid 求交很快，与 object 求交很慢</p>
+<ol>
+<li>找到场景的 Bounding Volumn</li>
+<li>BV划分成格子</li>
+<li>判断每个 Grid 是否有物体</li>
+<li>判断光线与 Grid 是否相交，</li>
+<li>如果Grid内有 object且光线与Grid相交，再计算光线与 grid 内的 object 是否相交</li>
+</ol>
+<p>算法特点：</p>
+<ol>
+<li>grid 不能太疏或密</li>
+<li>适用于 object 的大小接近且位置均匀</li>
+<li>不适用于 object 分布不均匀的场景</li>
+</ol>
+<h4 id="空间划分-spatial-partition"><a class="header" href="#空间划分-spatial-partition">空间划分 Spatial Partition</a></h4>
+<p>[18：59] Octree, KD tree, BSP tree
+视频以KD Tree 为例子。</p>
+<h4 id="kd-tree-的数据结构"><a class="header" href="#kd-tree-的数据结构">KD Tree 的数据结构</a></h4>
+<ul>
+<li>中间结点</li>
+</ul>
+<p>划分轴：x,y,z轴流<br />
+划分点：根据特定的策略选择<br />
+child: 2个<br />
+object: 不存 object 数据</p>
+<ul>
+<li>叶子结色
+存 list of objects.</li>
+</ul>
+<h4 id="traverse"><a class="header" href="#traverse">Traverse.</a></h4>
+<p>递归</p>
+<h4 id="局限性"><a class="header" href="#局限性">局限性</a></h4>
+<ol>
+<li>如何判断BV与三角形相交。</li>
+<li>object 存在于多个叶子结点中</li>
+</ol>
+<h2 id="物体划分-object-partition"><a class="header" href="#物体划分-object-partition">物体划分 Object Partition</a></h2>
+<h3 id="bvh--4000"><a class="header" href="#bvh--4000">BVH  [40：00]</a></h3>
+<p>优点：解决以上2个问题<br />
+局限性： BV 有重叠，好的划分使重叠尽量少</p>
+<h4 id="create"><a class="header" href="#create">Create</a></h4>
+<ol>
+<li>计算 B V</li>
+<li>对BV内的obj划分
+以上两步交替进行，通常选择对最长的轴进行划分，取中间位置作为划分点。当BV中的三角形个数少于门限时停止</li>
+</ol>
+<h4 id="traverse-1"><a class="header" href="#traverse-1">Traverse</a></h4>
+<p>同上</p>
+<h4 id="kd-tree-vs-bvh-5425"><a class="header" href="#kd-tree-vs-bvh-5425">KD Tree VS. BVH [54:25]</a></h4>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../RayTracing/Whitted.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../RayTracing/BasicRadiometry.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../RayTracing/Whitted.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../RayTracing/BasicRadiometry.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>

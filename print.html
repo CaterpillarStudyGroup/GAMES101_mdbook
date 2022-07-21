@@ -1,0 +1,3092 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>GAMES101</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of GAMES101">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>GAMES101</div></li><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Introduction 介绍</a></li><li class="chapter-item expanded "><a href="Dependency/dependency.html"><strong aria-hidden="true">2.</strong> Dependencies 前置知识</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Dependency/Vector.html"><strong aria-hidden="true">2.1.</strong> Vector 向量</a></li><li class="chapter-item expanded "><a href="Dependency/Matrix.html"><strong aria-hidden="true">2.2.</strong> Matrix 矩阵</a></li></ol></li><li class="chapter-item expanded "><a href="MVP/MVP.html"><strong aria-hidden="true">3.</strong> MVP 模型，视图，投影</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="MVP/View.html"><strong aria-hidden="true">3.1.</strong> View 视图</a></li><li class="chapter-item expanded "><a href="MVP/Model.html"><strong aria-hidden="true">3.2.</strong> Model 模型</a></li><li class="chapter-item expanded "><a href="MVP/Projection.html"><strong aria-hidden="true">3.3.</strong> Projection 投影</a></li></ol></li><li class="chapter-item expanded "><a href="Rasterization/Rasterization.html"><strong aria-hidden="true">4.</strong> Rasterization 光栅化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Rasterization/Antialiasing.html"><strong aria-hidden="true">4.1.</strong> Antialiasing 反走样</a></li><li class="chapter-item expanded "><a href="Rasterization/AntialiasingInFrequency.html"><strong aria-hidden="true">4.2.</strong> 从频域的角度分析走样</a></li><li class="chapter-item expanded "><a href="Rasterization/TimeVsFrequency.html"><strong aria-hidden="true">4.3.</strong> 时域 VS. 频域</a></li><li class="chapter-item expanded "><a href="Rasterization/AntialiasingMore.html"><strong aria-hidden="true">4.4.</strong> 反走样算法</a></li><li class="chapter-item expanded "><a href="Rasterization/Others.html"><strong aria-hidden="true">4.5.</strong> Others</a></li><li class="chapter-item expanded "><a href="Rasterization/Occlusion.html"><strong aria-hidden="true">4.6.</strong> 可见性/遮挡</a></li></ol></li><li class="chapter-item expanded "><a href="Shading/Shading.html"><strong aria-hidden="true">5.</strong> Shading 着色</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Shading/BlinnPhong.html"><strong aria-hidden="true">5.1.</strong> Blinn-Phong 反射模型</a></li><li class="chapter-item expanded "><a href="Shading/Style.html"><strong aria-hidden="true">5.2.</strong> 着色频率</a></li><li class="chapter-item expanded "><a href="Shading/Normal.html"><strong aria-hidden="true">5.3.</strong> 计算一个点的法向量</a></li><li class="chapter-item expanded "><a href="Shading/Pipeline.html"><strong aria-hidden="true">5.4.</strong> 实时渲染管线</a></li></ol></li><li class="chapter-item expanded "><a href="Texture/Texture.html"><strong aria-hidden="true">6.</strong> Texture Mapping 纹理映射</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Texture/BarycentricCoordinates.html"><strong aria-hidden="true">6.1.</strong> 重心坐标插值</a></li><li class="chapter-item expanded "><a href="Texture/TextureMagnification.html"><strong aria-hidden="true">6.2.</strong> 纹理放大</a></li><li class="chapter-item expanded "><a href="Texture/TextureTooBig.html"><strong aria-hidden="true">6.3.</strong> 纹理像素分辨率过大</a></li><li class="chapter-item expanded "><a href="Texture/Application.html"><strong aria-hidden="true">6.4.</strong> 纹理应用</a></li></ol></li><li class="chapter-item expanded "><a href="Geometry/Geometry.html"><strong aria-hidden="true">7.</strong> 几何</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Geometry/Curve.html"><strong aria-hidden="true">7.1.</strong> 曲线</a></li><li class="chapter-item expanded "><a href="Geometry/Surface.html"><strong aria-hidden="true">7.2.</strong> 曲面</a></li><li class="chapter-item expanded "><a href="Geometry/Mesh.html"><strong aria-hidden="true">7.3.</strong> Mesh</a></li></ol></li><li class="chapter-item expanded "><a href="Shadow.html"><strong aria-hidden="true">8.</strong> 阴影</a></li><li class="chapter-item expanded "><a href="RayTracing/RayTracing.html"><strong aria-hidden="true">9.</strong> 光线追踪</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="RayTracing/Baseline.html"><strong aria-hidden="true">9.1.</strong> Baseline算法</a></li><li class="chapter-item expanded "><a href="RayTracing/Whitted.html"><strong aria-hidden="true">9.2.</strong> Whitted算法</a></li><li class="chapter-item expanded "><a href="RayTracing/RaySurfaceIntersection.html"><strong aria-hidden="true">9.3.</strong> Ray-Surface交点</a></li><li class="chapter-item expanded "><a href="RayTracing/BasicRadiometry.html"><strong aria-hidden="true">9.4.</strong> 辐射度量学</a></li><li class="chapter-item expanded "><a href="RayTracing/BRDF.html"><strong aria-hidden="true">9.5.</strong> BRDF - 双向反射分布函数</a></li><li class="chapter-item expanded "><a href="RayTracing/MontoCarloIntegration.html"><strong aria-hidden="true">9.6.</strong> 蒙特卡罗积分</a></li><li class="chapter-item expanded "><a href="RayTracing/PathTracing.html"><strong aria-hidden="true">9.7.</strong> 路径追踪</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> 材质</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Material/Diffuse.html"><strong aria-hidden="true">10.1.</strong> 漫反射材质</a></li><li class="chapter-item expanded "><a href="Material/Microfacet.html"><strong aria-hidden="true">10.2.</strong> 微表面材质</a></li><li class="chapter-item expanded "><a href="Material/BRDF.html"><strong aria-hidden="true">10.3.</strong> BRDF</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Advanced Topics in Rendering</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="AdvancedRendering/AdvancedRayTracing.md.html"><strong aria-hidden="true">11.1.</strong> 高级光线传播</a></li><li class="chapter-item expanded "><a href="AdvancedRendering/AdcancedAppearcing.html"><strong aria-hidden="true">11.2.</strong> 高级Appreance建模</a></li></ol></li><li class="chapter-item expanded "><a href="Color.html"><strong aria-hidden="true">12.</strong> 颜色</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> 动画</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="Animation/KeyFrame.html"><strong aria-hidden="true">13.1.</strong> 关键帧动画</a></li><li class="chapter-item expanded "><a href="Animation/PhysicalSimulation.html"><strong aria-hidden="true">13.2.</strong> 物理仿真</a></li><li class="chapter-item expanded "><a href="Animation/SingleParticleSimulation.html"><strong aria-hidden="true">13.3.</strong> 单个粒子模拟</a></li><li class="chapter-item expanded "><a href="Animation/RigidSimulation.html"><strong aria-hidden="true">13.4.</strong> 刚体模拟</a></li><li class="chapter-item expanded "><a href="Animation/FluidSimulation.html"><strong aria-hidden="true">13.5.</strong> 流体模拟</a></li><li class="chapter-item expanded "><a href="Animation/EulerVsLagrangian.html"><strong aria-hidden="true">13.6.</strong> 欧拉 Vs Lagrangion</a></li><li class="chapter-item expanded "><a href="Animation/Kinematics.html"><strong aria-hidden="true">13.7.</strong> 运动学</a></li><li class="chapter-item expanded "><a href="Animation/Motion.html"><strong aria-hidden="true">13.8.</strong> 给角色添加指定动作</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">GAMES101</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/GAMES101_mdbook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <div style="break-before: page; page-break-before: always;"></div><h1 id="games-101-现代计算机图形学入门"><a class="header" href="#games-101-现代计算机图形学入门">GAMES 101 现代计算机图形学入门</a></h1>
+<p><a href="https://www.bilibili.com/video/BV1X7411F744?spm_id_from=333.337.search-card.all.click">原始课程链接</a></p>
+<p>如有侵权，请联系删除</p>
+<h1 id="课程主要内容"><a class="header" href="#课程主要内容">课程主要内容</a></h1>
+<ul>
+<li>数学基础</li>
+<li>MVP</li>
+<li>光栅化 Rasterization [29:11］<br />
+定义：把3D空间中的几何形体显示在屏幕上<br />
+特点：速度快，能达到实时，30 fps。但质量一般。</li>
+<li>曲线和曲面 Curves And Meshes  [30:13]<br />
+目的：用简单图形表示曲线和曲面</li>
+<li>阴影</li>
+<li>光线追踪 Ray Tracing<br />
+目的：产生非常真实的画面<br />
+特点：慢</li>
+<li>动画/仿真 Animation/Simulation[31：45]</li>
+</ul>
+<h1 id="图形学-dependencies-依赖项"><a class="header" href="#图形学-dependencies-依赖项">图形学 Dependencies 依赖项</a></h1>
+<p>[04：52]</p>
+<p>数学：线代，微积分，概论</p>
+<p>物理：光学，力学</p>
+<p>其它：信号，数值分析，美学</p>
+<h1 id="说明"><a class="header" href="#说明">说明</a></h1>
+<p>这个是GAMES-Webinar提供的一个课程系列。<br />
+作者闫令琪大佬在内容上非常专业。课程逻辑清晰有条理。尤其是光栅化和光线追踪这两个话题，能够把复杂的内容讲得深入浅出。但对于其他话题，确实只限于入门。<br />
+大佬在讲课方面也很专业。每节课都有上集回顾、本集预告，课程以大约半小时为一个段落，按照易-难-答疑编排。
+总之，听大佬上课，不仅能学到知识，更是一种享受。</p>
+<h1 id="学习方法"><a class="header" href="#学习方法">学习方法</a></h1>
+<ol>
+<li>学习课程提供的主要应用与相关算法，知道算法的主要过程。</li>
+<li>根据算法要解决的问题对算法进行归纳整理，对于一个算法的不同演进版本，进行纵向比较，思考算法为什么这样发展。对于同一算法的不同变种进行横向比较，思考每个算法的优缺点和应用场景。</li>
+<li>思考算法背后所蕴含的思想，以及对自己的启发。</li>
+</ol>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="向量"><a class="header" href="#向量">向量</a></h1>
+<h2 id="向量性质"><a class="header" href="#向量性质">向量性质</a></h2>
+<p>[07：54]</p>
+<ul>
+<li>
+<p>方向:  \( B - A \) 或 \( \vec{a} \) </p>
+</li>
+<li>
+<p>长度：\( ||B-A || \) 或 \( ||\vec{a}|| \)  (与起点无关)</p>
+</li>
+<li>
+<p>单位向量：\( \vec{e}=\frac{\vec{a}}{||\vec{a}||} \)，模长为1</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>📌补充：</strong> 向量一般默认为列向量，所以书写公式时，一个向量写为 \(\vec{a}=\left( x_1, y_1 \right) ^T\)</p>
+</blockquote>
+<h2 id="向量加法"><a class="header" href="#向量加法">向量加法</a></h2>
+<h3 id="代数意义"><a class="header" href="#代数意义">代数意义</a></h3>
+<p>$$
+\vec{a}=\left( x_1, y_1 \right) ^T  ,  \vec{b}=\left( x_2, y_2 \right) ^T
+$$</p>
+<p>$$
+\vec{a}+\vec{b}=\left( x_1+x_2, y_1+y_2 \right) ^T
+$$</p>
+<h3 id="几何意义"><a class="header" href="#几何意义">几何意义</a></h3>
+<div align="center"> <img src="Dependency/../assets/几何意义.jpg" width = 290 /> </div>
+<h2 id="向量点乘"><a class="header" href="#向量点乘">向量点乘</a></h2>
+<h3 id="几何意义-1"><a class="header" href="#几何意义-1">几何意义</a></h3>
+<div align="center"> <img src="Dependency/../assets/点乘几何意义.jpg" width = 290 /> </div>
+<p>$$
+\vec{a}\cdot \vec{b}=||\vec{a}||\cdot ||\vec{b}||\cdot \cos &lt;\vec{a}, \vec{b}&gt;
+$$</p>
+<ul>
+<li>\( \vec{a}\cdot\vec{b} \)  是标量</li>
+</ul>
+<blockquote>
+<p><strong>📌补充：</strong> 由 \( \vec{a} \) 到 \( \vec{b} \) 的夹角 \( &lt;\vec{a},\vec{b}&gt; \) 是 \( \theta \) , 如果是由 \( \vec{b} \) 到 \( \vec{a} \) 的夹角 \( &lt;\vec{b}, \vec{a}&gt; \) , 则为 \( -\theta \) 。</p>
+</blockquote>
+<h3 id="代数意义-1"><a class="header" href="#代数意义-1">代数意义</a></h3>
+<p>$$
+\vec{a}=\left( x_1, y_1 \right) ^T  ,  \vec{b}=\left( x_2, y_2 \right) ^T
+$$</p>
+<p>$$
+\vec{a}\cdot \vec{b}=x_1y_1+x_2y_2
+$$</p>
+<h3 id="性质"><a class="header" href="#性质">性质</a></h3>
+<ul>
+<li>
+<p>交换律：\( \vec{a}\cdot \vec{b}=\vec{b}\cdot \vec{a} \)</p>
+</li>
+<li>
+<p>分配律： \( \vec{a}\cdot(\vec{b}+\vec{c})=\vec{a}\cdot \vec{b}+\vec{a}\cdot \vec{c} \)</p>
+</li>
+<li>
+<p>结合律： \( (k\cdot \vec{a})\cdot \vec{b}=\vec{a}\cdot (k\cdot \vec{b})=k\cdot(\vec{a}\cdot \vec{b}) \)</p>
+</li>
+</ul>
+<h3 id="作用"><a class="header" href="#作用">作用</a></h3>
+<ol>
+<li>
+<p>找到两个向量之间的夹角</p>
+<p>\( \cos \theta =\frac{\vec{a}\cdot \vec{b}}{||\vec{a}||\cdot ||\vec{b}||} \)</p>
+</li>
+<li>
+<p>一个向量投影到另一个向量</p>
+<div align="left"> <img src="Dependency/../assets/投影2.jpg" width = 290 /> </div>
+<blockquote>
+<p><strong>📌补充：</strong> \( length=||\vec{b}||\cos \theta =||\vec{b}||\frac{\vec{a}\cdot \vec{b}}{||\vec{b}||\cdot ||\vec{a}||}=\frac{\vec{a}}{||\vec{a}||}\vec{b}=\hat{a}\cdot \vec{b}\)</p>
+</blockquote>
+</li>
+<li>
+<p>把向量分解成垂直和平行的两个向量</p>
+<img title="" src="Dependency/../assets/分解2.jpg" alt="" width="307">
+<blockquote>
+<p><strong>📌补充：</strong> \( \vec{b}_{\bot}=\frac{\vec{a}}{||\vec{a}||}\cdot length=\frac{\vec{a}\cdot ||\vec{b}||\cdot \cos \theta}{||\vec{a}||}=\hat{a}\cdot \vec{b}\cdot \hat{a} \)</p>
+</blockquote>
+</li>
+<li>
+<p>计算两个向量有多接近</p>
+<p>两个向量做点乘，可以反映二者的“接近”程度</p>
+<img src="Dependency/../assets/接近.jpg" title="" alt="" width="329">
+<blockquote>
+<p><strong>💡思考：</strong> 我们假设 \( \vec{a} \) 已给定，如果一个向量的终点落在虚线上半部分，例如 \( \vec{b} \) ，则可以认为该向量在方向上与 \( \vec{a} \) 是相同的或是说都是向前的；如果一个向量，例如 \( \vec{c}\)，终点落在虚线下半部分，则可以认为 \( \vec{a} \) 和 \( \vec{c}\) 两个向量的方向基本是相反的。且点乘结果落在 \([-1, 1]\) 上，可以表示接近程度。</p>
+</blockquote>
+<blockquote>
+<p><strong>📌补充：</strong>（点乘： \( \vec{a}\cdot \vec{b} &gt; 0 \) ，方向相同；   \( \vec{a}\cdot \vec{c} &lt; 0 \) ，方向相反）</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="向量叉乘"><a class="header" href="#向量叉乘">向量叉乘</a></h2>
+<h3 id="几何意义-2"><a class="header" href="#几何意义-2">几何意义</a></h3>
+<p>\( \vec{c}=\vec{a}\times \vec{b} \)</p>
+<p>\(\vec{c}\) 是一个向量，方向同时与 \(\vec{a}\) 和 \(\vec{b}\) 垂直（右手法则），大小为 \(||\vec{a}||\cdot ||\vec{b}||\cdot \sin \theta \)  (\(\theta\) 是a到b的夹角)</p>
+<blockquote>
+<p><strong>✅右手螺旋法则</strong>：</p>
+<p>\(\vec{c}=\vec{a}\times \vec{b}\) </p>
+<p>右手手指指向 \(\vec{a}\) 方向，然后沿着去往 \(\vec{b}\) 的方向握紧四指，此时大拇指指向的方向，就是 \(\vec{c}\) 的方向。</p>
+</blockquote>
+<h3 id="性质-1"><a class="header" href="#性质-1">性质</a></h3>
+<p>[34：15]</p>
+<ul>
+<li>\( \vec{x}\times \vec{y}=+\vec{z} \)</li>
+<li>\( \vec{y}\times \vec{x}=-\vec{z} \)</li>
+<li>\( \vec{y}\times \vec{z}=+\vec{x} \)</li>
+<li>\( \vec{z}\times \vec{y}=-\vec{x} \)</li>
+<li>\( \vec{z}\times \vec{x}=+\vec{y} \)</li>
+<li>\( \vec{x}\times \vec{z}=-\vec{y} \)</li>
+<li>\( \vec{a}\times \vec{b}=-\vec{b}\times \vec{a} \) (不满足交换律)</li>
+<li>\( \vec{a}\times \vec{a}=\vec{0} \)</li>
+<li>\( \vec{a}\times \left( \vec{b}+\vec{c} \right) =\vec{a}\times \vec{b}+\vec{a}\times \vec{c} \)  （分配律）</li>
+<li>\( \vec{a}\times \left( k\vec{b} \right) =k\left( \vec{a}\times \vec{b} \right)  \)  （结合律）</li>
+</ul>
+<p>左手则符号相反</p>
+<blockquote>
+<p><strong>📌</strong> 在一个三维坐标系中，如果\( \vec{x}\times \vec{y}=\vec{z}\)，那么这个坐标系称为右手坐标系。</p>
+</blockquote>
+<h3 id="代数意义-2"><a class="header" href="#代数意义-2">代数意义</a></h3>
+<p>[36:11]</p>
+<p>\[
+\vec{a}\times \vec{b}=\left( \begin{array}{c}
+y_az_b-y_bz_a\\
+z_ax_b-x_az_b\\
+x_ay_b-y_ax_b
+\end{array} \right) 
+\]</p>
+<blockquote>
+<p><strong>💡思考：</strong> 这个式子中，\( x_a,y_a,z_a \) 是\( \vec{a}\) 在三维坐标系中的三个坐标分量的代数表示。 叉乘只用于3D中，在2D中没有定义。</p>
+</blockquote>
+<h3 id="在图形学中的作用"><a class="header" href="#在图形学中的作用">在图形学中的作用</a></h3>
+<ol>
+<li>
+<p>判定左和右</p>
+<img src="Dependency/../assets/左右.png" title="" alt="" width="290">
+<p>如果\( \vec{a}\times \vec{b} \) 的结果是正值，即与 \(Z\) 轴方向相同，就表示 \(\vec{b}\) 在 \(\vec{a}\) 的左侧。</p>
+<blockquote>
+<p><strong>📌左右：</strong> 目标向量逆时针旋转指向的区域，是目标向量的左侧，反之是右侧。</p>
+</blockquote>
+</li>
+<li>
+<p>判断内和外</p>
+<img src="Dependency/../assets/内外.jpg" title="" alt="" width="290">
+<blockquote>
+<p><strong>✅如何判断P点在A、B、C的内部？</strong></p>
+<p>\( AB\times AP \)，可以得到 \(AP\) 在 \(AB\) 的左侧。\( BC\times BP \)，可以得到 \(BP\) 在 \(BC\) 的左侧。\( CA\times CP \)，可以得到 \(CP\) 在 \(CA\) 的左侧。这样，就可以判断出P点在A、B、C的内部（P点在这三条边的同一侧）。</p>
+</blockquote>
+</li>
+<li>
+<p>构建右手坐标系</p>
+<p>有三个单位向量，两两垂直：</p>
+<p>\(||\vec{u}||=||\vec{v}||=||\vec{w}||=1\)</p>
+<p>\(\vec{u}\cdot \vec{v}=\vec{v}\cdot \vec{w}=\vec{u}\cdot \vec{w}=0\)</p>
+<p>且 \(\vec{w}=\vec{u}\times \vec{v}\)</p>
+<p>则这三个向量构成一个右手坐标系。</p>
+<p>可以把任意一个向量分解到轴上去：</p>
+<p>\(\vec{p}=\left( \vec{p}\cdot \vec{u} \right) \vec{u}+\left( \vec{p}\cdot \vec{v} \right) \vec{v}+\left( \vec{p}\cdot \vec{w} \right) \vec{w}\)</p>
+<ul>
+<li>\(\left( \vec{p}\cdot \vec{u} \right)\) 是投影长度</li>
+<li>\(\vec{u}\) 是方向</li>
+</ul>
+</li>
+</ol>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="矩阵"><a class="header" href="#矩阵">矩阵</a></h1>
+<h2 id="矩阵运算性质"><a class="header" href="#矩阵运算性质">矩阵运算性质</a></h2>
+<p>[45：00]</p>
+<ul>
+<li>\(AB\ne BA\)</li>
+<li>\(\left( AB \right) C=A\left( BC \right) \)</li>
+<li>\(\left( A+B \right) C=AC+BC\)</li>
+<li>\(\left( AB \right) ^T=B^TA^T\)</li>
+<li>\(AA^{-1}=A^{-1}A=I\)</li>
+<li>\(\left( AB \right) ^{-1}=B^{-1}A^{-1}\)</li>
+</ul>
+<h1 id="2d变换2d-transformation"><a class="header" href="#2d变换2d-transformation">2D变换(2D Transformation)</a></h1>
+<p>[06：52]</p>
+<h2 id="缩放变换scale"><a class="header" href="#缩放变换scale">缩放变换(Scale)</a></h2>
+<div align="center"> <img src="Dependency/../assets/2d缩放.jpg" width = 500 /> </div>
+<p>图中，横轴和纵轴都缩小了\(\frac{1}{2}\)，用数学形式表达：</p>
+<p>\[
+x'=sx \\
+y'=sy
+\]
+其中，\((x',y')\) 是缩放后的坐标，\(s\) 是缩放尺度，\((x,y)\) 是原坐标。</p>
+<p>将该式子写成矩阵的形式为：</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left[ \begin{matrix}
+s&amp;        0\\
+0&amp;        s\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<p>即，得到缩放矩阵为：</p>
+<p>\[
+S_{0.5}=\left[ \begin{matrix}
+s&amp;		0\\
+0&amp;		s\\
+\end{matrix} \right] =\left[ \begin{matrix}
+0.5&amp;		0\\
+0&amp;		0.5\\
+\end{matrix} \right] 
+\]</p>
+<p>如果缩放不是均匀的，例如 \(x\) 轴缩小0.5，\(y\) 不变，则用矩阵表示为：</p>
+<div align="center"><img src="Dependency/../assets/2d缩放2.jpg" width = 500 /></div>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left[ \begin{matrix}
+s_x&amp;        0\\
+0&amp;        s_y\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<p>即，得到缩放矩阵为：</p>
+<p>\[
+S_{0.5,1.0}=\left[ \begin{matrix}
+s_x&amp;		0\\
+0&amp;		s_y\\
+\end{matrix} \right] =\left[ \begin{matrix}
+0.5&amp;		0\\
+0&amp;		1.0\\
+\end{matrix} \right] 
+\]</p>
+<h2 id="反射reflection"><a class="header" href="#反射reflection">反射(Reflection)</a></h2>
+<p>反射也称对称。</p>
+<div align="center"><img src="Dependency/../assets/反射.jpg" width = 500 /></div>
+<p>上图中，原图相对于 \(y\) 轴做了反转，用等式表示为：</p>
+<p>\[
+x'=-x\\
+y'=y
+\]</p>
+<p>该等式可以用矩阵表示为：</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left[ \begin{matrix}
+-1&amp;        0\\
+0&amp;        1\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<h2 id="切变shear"><a class="header" href="#切变shear">切变(Shear)</a></h2>
+<div align="center"><img src="Dependency/../assets/切变.jpg" width = 500 /></div>
+<p>上图是切变的例子。可以看到，图像上任意一点的 \(y\) 轴坐标值并未改变，仅 \(x\) 轴坐标改变了。则可以确定的是 \(y'=y\)，继续观察，当 \(y\) 为0时， \(x\) 没有变化，当 \(y\) 为1时， \(x\) 都水平右移了 \(a\) 长度，当 \(y\) 为1/2时， \(x\) 移动了 \(\frac{a}{2}\)，所以，找到了规律， \(x\) 移动距离为 \(ay\)。用矩阵表示为：</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left[ \begin{matrix}
+1&amp;        a\\
+0&amp;        1\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<blockquote>
+<p><strong>📌补充：</strong> 找到变化规律，就能写出变换的表达式</p>
+</blockquote>
+<h2 id="旋转rotate"><a class="header" href="#旋转rotate">旋转(Rotate)</a></h2>
+<div align="center"><img src="Dependency/../assets/旋转.jpg" width = 500 /></div>
+<blockquote>
+<p>✅旋转默认是绕<font color=green>原点</font>(0,0)旋转；默认旋转方向是<font color=green>逆时针</font>旋转。</p>
+</blockquote>
+<div align="center"><img src="Dependency/../assets/旋转2.jpg" width = 500 /></div>
+<p><strong>旋转的矩阵表达式推导：</strong></p>
+<blockquote>
+<p><strong>💡思路：</strong> 旋转的图像每一点都需要符合表达式，那么，特殊的点也必须符合，所以从特殊点入手，找出旋转的规律，从而推导出旋转的矩阵形式表达。</p>
+</blockquote>
+<p>假设有一个正方形，如图所示。</p>
+<div align="left"><img src="Dependency/../assets/旋转推导1.jpg" width = 290 /></div>
+<p>将其旋转 \(\theta\) 角度。</p>
+<div align="left"><img src="Dependency/../assets/旋转推导2.jpg" width = 250 /></div>
+<p>我们的目的是得到 \(\left( x,y \right) -&gt;\left( x',y' \right) \)</p>
+<p>矩阵的形式为：
+\(\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left( \begin{matrix}
+A&amp;        B\\
+C&amp;        D\\
+\end{matrix} \right) \left( \begin{array}{c}
+x\\
+y\\
+\end{array} \right) \)</p>
+<p>只要找出规律，求出ABCD即可。</p>
+<p>我们将目光先聚集在下图中的红点。</p>
+<div align="left"><img src="Dependency/../assets/旋转推导3.jpg" width = 500 /></div>
+<p>最基本的，我们可以知道一些信息，例如，原本的(1,0)点被旋转成为(\(cos\theta，sin\theta\))，</p>
+<div align="left"><img src="Dependency/../assets/旋转推导4.jpg" width = 500 /></div>
+<p>于是，我们就可以初步得到：</p>
+<p>\(
+\left( \begin{array}{c}
+\cos \theta\\
+\sin \theta\\
+\end{array} \right) =\left( \begin{matrix}
+A&amp;        B\\
+C&amp;        D\\
+\end{matrix} \right) \left( \begin{array}{c}
+1\\
+0\\
+\end{array} \right) 
+\)</p>
+<p>也就是：</p>
+<p>\(\cos \theta =A\cdot 1+B\cdot 0 = A\)</p>
+<p>\(\sin \theta =C\cdot 1+D\cdot 0 =C\)</p>
+<p>现在，已经得到了A和C。接着，我们选择另一个点。</p>
+<div align="left"><img src="Dependency/../assets/旋转推导5.jpg" width = 500 /></div>
+<p>不难得到，\( B=-sin\theta, D=cos\theta \)</p>
+<p>所以有</p>
+<p>\(
+\left( \begin{array}{c}
+\cos \theta\\
+\sin \theta\\
+\end{array} \right) =\left( \begin{matrix}
+cos\theta&amp;        -sin\theta\\
+sin\theta&amp;        cos\theta\\
+\end{matrix} \right) \left( \begin{array}{c}
+1\\
+0\\
+\end{array} \right) 
+\)</p>
+<p>上述缩放、反射、切变和旋转，都称为<strong>线性变换</strong>，可以统一由下面的表达式来表达：</p>
+<p>\[
+x'=ax+by\\
+y'=cx+dy
+\]</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right] =\left[ \begin{matrix}
+a&amp;        b\\
+c&amp;        d\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<p>\[
+X'=MX
+\]</p>
+<blockquote>
+<p><strong>❗注意：</strong> 要用相同维度的向量，去和X相乘。旋转矩阵必须满足\(R^{-1}=R^T\)</p>
+</blockquote>
+<h2 id="齐次坐标"><a class="header" href="#齐次坐标">齐次坐标</a></h2>
+<p>我们先看平移变换：</p>
+<div align="left"><img src="Dependency/../assets/平移变换.jpg" width = 500 /></div>
+<p>平移变换非常简单，可以由下面的式子表示：</p>
+<p>\[
+x'=x+t_x\\
+y'=y+t_y
+\]</p>
+<p>但是有一个问题，我们不能把上述式子直接用矩阵的形式表达，需要在矩阵运算后再加一个偏移量：</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right] =\left[ \begin{matrix}
+a&amp;        b\\
+c&amp;        d\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] +\left[ \begin{array}{c}
+t_x\\
+t_y\\
+\end{array} \right] 
+\]</p>
+<blockquote>
+<p>📌如果只有平移，则 \(a,b,c,d\) 是一个单位矩阵</p>
+</blockquote>
+<blockquote>
+<p><strong>💡思考：</strong> 平移不是线性变换，不满足\(X'=MX\)</p>
+</blockquote>
+<p>为了解决平移变换能够线性表示的问题，将坐标或向量添加一项(以2D为例)：</p>
+<ul>
+<li>2D point = \((x, y, 1)^T\)</li>
+<li>2D vector = \((x, y, 0)^T\)</li>
+</ul>
+<p>于是，就有了矩阵表达式：</p>
+<p>\[
+\left( \begin{array}{c}
+x'\\
+y'\\
+w'\\
+\end{array} \right) =\left( \begin{matrix}
+1&amp;        0&amp;        t_x\\
+0&amp;        1&amp;        t_y\\
+0&amp;        0&amp;        1\\
+\end{matrix} \right) \cdot \left( \begin{array}{c}
+x\\
+y\\
+1\\
+\end{array} \right) =\left( \begin{array}{c}
+x+t_x\\
+y+t_y\\
+1\\
+\end{array} \right) 
+\]</p>
+<blockquote>
+<p>💡 为point增加一项1，因为point移动后不再是原来的point。为vector添加一项0，是因为向量具有平移不变性，向量平移后仍然是原向量。</p>
+</blockquote>
+<blockquote>
+<p>📌 \((x, y, w)^T\) 如果用于表达2D点，等同于\((\frac{x}{w}, \frac{y}{w}, 1)\)</p>
+</blockquote>
+<p>添加项是否存在，不影响point与vector之间运算的意义：</p>
+<p>\[
+vector + vector = vector\\
+point + vector = point\\
+point - point = vector\\
+point + point = 两点的中点（齐次坐标下）
+\]</p>
+<p><strong>齐次坐标的性质：</strong></p>
+<ul>
+<li>有 \((x, y, z, 1)\) 这样一个坐标，那么为该坐标乘以一个不为0的数 \(k\)，即 \((kx, ky, kz, k)\)，结果不变。 同理，给该坐标乘以坐标本身的 \(z\) 值，它仍然表示着3D中的相同点。
+例如： \((1, 0, 0, 1)\) 和 \((2, 0, 0, 2)\) 都表示 \((1, 0, 0)\) </li>
+</ul>
+<h2 id="仿射变换affine-transformation"><a class="header" href="#仿射变换affine-transformation">仿射变换(Affine transformation)</a></h2>
+<p>线性变换 + 平移 = 仿射变换</p>
+<p>\[
+\left[ \begin{array}{c}
+X'\\
+1\\
+\end{array} \right] =\left[ \begin{matrix}
+SR&amp;        T\\
+0&amp;        1\\
+\end{matrix} \right] \left[ \begin{array}{c}
+X\\
+1\\
+\end{array} \right] 
+\]</p>
+<p>所有的仿射变换，可以以齐次坐标的形式表达：</p>
+<p>仿射变换：</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right] =\left[ \begin{matrix}
+a&amp;        b\\
+c&amp;        d\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] +\left[ \begin{array}{c}
+t_x\\
+t_y\\
+\end{array} \right] 
+\]</p>
+<p>齐次坐标：</p>
+<p>\[
+\left( \begin{array}{c}
+x'\\
+y'\\
+1\\
+\end{array} \right) =\left( \begin{matrix}
+a&amp;        b&amp;        t_x\\
+c&amp;        d&amp;        t_y\\
+0&amp;        0&amp;        1\\
+\end{matrix} \right) \cdot \left( \begin{array}{c}
+x\\
+y\\
+1\\
+\end{array} \right) =\left( \begin{array}{c}
+x+t_x\\
+y+t_y\\
+1\\
+\end{array} \right) 
+\]</p>
+<h2 id="逆变换inverse-transform"><a class="header" href="#逆变换inverse-transform">逆变换(Inverse transform)</a></h2>
+<div align="left"><img src="Dependency/../assets/逆变换.jpg" width = 400 /></div>
+<blockquote>
+<p>💡 当一个变换是通过\(M\)得到的，那么可以通过\(M\)的逆\(M^{-1}\)来恢复变换。 </p>
+</blockquote>
+<h2 id="变换合成与分解"><a class="header" href="#变换合成与分解">变换合成与分解</a></h2>
+<ul>
+<li>复杂变换可以通过简单变换一步一步达到</li>
+<li>变换顺序非常重要，ABC不等于ACB（矩阵乘法性质）</li>
+</ul>
+<p>变换合成：</p>
+<div align="left"><img src="Dependency/../assets/结合律.jpg" width = 400 /></div>
+<p>变换分解：</p>
+<div align="left"><img src="Dependency/../assets/分解.jpg" width = 500 /></div>
+<p>以C点为中心的旋转，可以分解为：</p>
+<ol>
+<li>从C点平移到原点</li>
+<li>旋转</li>
+<li>再从原点平移到C点</li>
+</ol>
+<p>即：\(X'=MX=T\left( c \right) \cdot R\left( \alpha \right) \cdot T\left( -c \right) \cdot X\)</p>
+<p>再次来看矩阵旋转 \(X'=R_{\theta}X\) :</p>
+<p>我们将 \(X\) 旋转 \(\theta\) 度， \(R_{\theta}\) 为：</p>
+<p>\[
+R_{\theta}=\left( \begin{matrix}
+\cos \theta&amp;        -\sin \theta\\
+\sin \theta&amp;        \cos \theta\\
+\end{matrix} \right) 
+\]</p>
+<p>如果要逆转回来，恢复原来的矩阵，需要旋转 \(-\theta\) 度，根据上述旋转的推导，可以得到：</p>
+<p>\[
+R_{-\theta}=\left( \begin{matrix}
+\cos \theta&amp;        \sin \theta\\
+-\sin \theta&amp;        \cos \theta\\
+\end{matrix} \right) 
+\]</p>
+<p>而 \(R_{-\theta}\) 恰好是 \(R_{\theta}\) 的转置矩阵 \(R_{\theta}^{T}\)， 即：</p>
+<p>\[
+R_{-\theta}=R_{\theta}^{T}
+\]</p>
+<p>由 “当一个变换是通过\(M\)得到的，那么可以通过\(M\)的逆\(M^{-1}\)来恢复变换” 可知，\(R_{\theta}^{-1}\) 与刚刚旋转 \(-\theta\) 推导得到的 \(R_{\theta}\) 相等，即：</p>
+<p>\[
+R_{\theta}^{-1}=R_{-\theta}
+\]</p>
+<p>于是有：</p>
+<p>\[
+R_{-\theta}=R_{\theta}^{-1}=R_{\theta}^{T}
+\]</p>
+<h1 id="3d变换3d-transformation"><a class="header" href="#3d变换3d-transformation">3D变换(3D Transformation)</a></h1>
+<p>如果用齐次坐标来表示三维的点或向量，和二维的情况相似：</p>
+<ul>
+<li>3D point = \((x, y, z, 1)^{T}\)</li>
+<li>3D vector = \((x, y, z, 0)^{T}\)</li>
+</ul>
+<p>则一个齐次坐标 \((x, y, z, w)^{T}\) \((w\ne 0)\) 表示的点为  \(\left( \frac{x}{w},  \frac{y}{w},  \frac{z}{w} \right)\)</p>
+<h2 id="缩放scale"><a class="header" href="#缩放scale">缩放(Scale)</a></h2>
+<p>\[
+S\left( s_x, s_y, s_z \right) =\left( \begin{matrix}
+s_x&amp;        0&amp;        0&amp;        0\\
+0&amp;        s_y&amp;        0&amp;        0\\
+0&amp;        0&amp;        s_z&amp;        0\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right) 
+\]</p>
+<h2 id="平移translation"><a class="header" href="#平移translation">平移(Translation)</a></h2>
+<p>\[
+T\left( t_x, t_y, t_z \right) =\left( \begin{matrix}
+1&amp;        0&amp;        0&amp;        t_x\\
+0&amp;        1&amp;        0&amp;        t_y\\
+0&amp;        0&amp;        1&amp;        t_z\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right) 
+\]</p>
+<h2 id="旋转rotation"><a class="header" href="#旋转rotation">旋转(Rotation)</a></h2>
+<h3 id="自然旋转"><a class="header" href="#自然旋转">自然旋转</a></h3>
+<blockquote>
+<p><strong>📌自然旋转：</strong> 绕着某一个轴旋转。</p>
+</blockquote>
+<blockquote>
+<p><strong>💡思考：</strong> 当绕着x轴旋转时，矩阵在x轴上的坐标值是不变的，因此在变换矩阵中，与X相乘的部分，是 \((1 ,0 , 0)\)，绕y、z轴同理。</p>
+</blockquote>
+<p>绕x轴旋转：</p>
+<p>\[
+R_x\left( \alpha \right) =\left( \begin{matrix}
+1&amp;        0&amp;        0&amp;        0\\
+0&amp;        \cos \alpha&amp;        -\sin \alpha&amp;        0\\
+0&amp;        \sin \alpha&amp;        \cos \alpha&amp;        0\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right) 
+\]</p>
+<p>绕y轴旋转：</p>
+<p>\[
+R_y\left( \alpha \right) =\left( \begin{matrix}
+\cos \alpha&amp;        0&amp;        \sin \alpha&amp;        0\\
+0&amp;        1&amp;        0&amp;        0\\
+-\sin \alpha&amp;        0&amp;        \cos \alpha&amp;        0\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right) 
+\]</p>
+<blockquote>
+<p><strong>💡思考：</strong> 上式的变换矩阵，与x、z不同，是 \(R_{-\theta}\) 而不是 \(R_{\theta}\)，这是为什么呢？</p>
+<p>因为绕y旋转，如果使用 \(R_\theta\)，那么可以认为在计算过程中x和z坐标在变化，有 \(\left( \begin{array}{c}
+X'\\
+Z'\\
+\end{array} \right) =R_{\theta}\cdot \left( \begin{array}{c}
+X\\
+Z\\
+\end{array} \right) =\left( \begin{matrix}
+\cos \theta&amp;        -\sin \theta\\
+\sin \theta&amp;        \cos \theta\\
+\end{matrix} \right) \left( \begin{array}{c}
+X\\
+Z\\
+\end{array} \right) \) , 但是， \(\vec{x}\times \vec{z}=-\vec{y}\)，也就是说，使用 \(R_\theta\) 会导致绕y旋转是顺时针旋转，而我们约定了，旋转默认是逆时针旋转，所以需要用 \(R_{-\theta}=\left( \begin{matrix}
+\cos \theta&amp;        \sin \theta\\
+-\sin \theta&amp;        \cos \theta\\
+\end{matrix} \right) \)</p>
+</blockquote>
+<p>绕z轴旋转：</p>
+<p>\[
+R_z\left( \alpha \right) =\left( \begin{matrix}
+\cos \alpha&amp;        -\sin \alpha&amp;        0&amp;        0\\
+\sin \alpha&amp;        \cos \alpha&amp;        0&amp;        0\\
+0&amp;        0&amp;        1&amp;        0\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right) 
+\]</p>
+<h3 id="一般旋转"><a class="header" href="#一般旋转">一般旋转</a></h3>
+<p>任意一个3D旋转，可以写成：</p>
+<p>\[
+R_{xyz}\left( \alpha , \beta , \gamma \right) =R_x\left( \alpha \right) R_y\left( \beta \right) R_z\left( \gamma \right) 
+\]</p>
+<p>也就是说，一般旋转可以由绕x、y、z轴的自然旋转组合而成。</p>
+<p>在图形学中，任意旋转用矩阵表达为（Rodrigues' Rotation Formula）：</p>
+<p>\[
+R\left( \mathbf{n},\alpha \right) =\cos \left( \alpha \right) \mathbf{I}+\left( 1-\cos \left( \alpha \right) \right) \mathbf{nn}^{\mathrm{T}}+\sin \left( \mathrm{\alpha} \right) \underset{\mathrm{N}}{\underbrace{\left( \begin{matrix}
+0&amp;        -n_z&amp;        n_y\\
+n_z&amp;        0&amp;        -n_x\\
+-n_y&amp;        n_x&amp;        0\\
+\end{matrix} \right) }}
+\]</p>
+<blockquote>
+<p>公式推导：(暂无)</p>
+</blockquote>
+<p>为解决旋转插值问题，参考四元数<a href="Dependency/%E6%9A%82%E6%97%A0">link</a>。</p>
+<blockquote>
+<p><strong>💡我的思考：</strong> </p>
+<p>1.复杂问题都可以分解为互相独立的简单问题，但需要保证分解出的子问题是独立的。简单操作也可以组合成复杂操作，但需要保证组合的效果是预期的，而不会引入奇怪的问题。</p>
+<p>前面两处使用了这种思路</p>
+<p>（1）简单线性变换 复杂仿射变换</p>
+<p>（2）基于不同轴的简单旋转 VS 基于特定方向的旋转</p>
+<p>        但这两个问题的子问题都没有完全独立，因此都存在子问题的顺序要求。</p>
+<p>2.当学到一个新的概念/方法时，可以想一想，为什么要引入这个概念/方法？</p>
+<p>是为了了解什么问题？</p>
+<p>以前是用什么方法来解决的？它有什么问题？</p>
+<p>这个方法是否解决了以前方法的问题？这个方法有什么局限性？</p>
+<p>两者能否结合？</p>
+<p>两者如何取舍？</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="background"><a class="header" href="#background">Background</a></h1>
+<h2 id="mvp"><a class="header" href="#mvp">MVP：</a></h2>
+<ol>
+<li>
+<p>view变换 --&gt; V</p>
+<blockquote>
+<p>确定camera的position和rotation</p>
+</blockquote>
+</li>
+<li>
+<p>model变换 --&gt; M</p>
+<blockquote>
+<p>确定object的position和rotation</p>
+</blockquote>
+</li>
+<li>
+<p>projection变换 --&gt; P</p>
+<blockquote>
+<p>建立object到camera的映射，使物体处于坐标中心的\([-1, 1]^3\)这个立方体中。</p>
+</blockquote>
+</li>
+</ol>
+<p>本节主要描述：对物体的观测，最终会让物体处于坐标中心的\([-1, 1]^3\)这个立方体中。</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="view-transformation"><a class="header" href="#view-transformation">View Transformation</a></h1>
+<h2 id="定义camera的view"><a class="header" href="#定义camera的view">定义camera的view</a></h2>
+<table><thead><tr><th></th><th>说明</th><th>camera当前的view</th><th>期望的view</th></tr></thead><tbody>
+<tr><td>position</td><td>摄像机位置</td><td>\(\vec{e}\)</td><td>原点</td></tr>
+<tr><td>gaze direction</td><td>摄像机朝向</td><td>\(\hat{g}\)</td><td>-Z轴(0,0,-1)</td></tr>
+<tr><td>up direction</td><td>摄像机向上的方向</td><td>\(\hat{t}\)</td><td>Y轴(0,1,0)</td></tr>
+</tbody></table>
+<p><img src="MVP/../assets/tge.jpg" alt="" /> </p>
+<p>我们期望一个摄像机（view）能够有如上参数，这样方便计算，但是真实的camera view不会和我们期望的相同，所以我们需要对camera的上述三个向量做转换，使得view在原点上。</p>
+<h2 id="view的变换"><a class="header" href="#view的变换">view的变换</a></h2>
+<h3 id="平移"><a class="header" href="#平移">平移</a></h3>
+<p>平移 \(\vec{e}\) 到原点：</p>
+<p>需要计算：原点 = \(T_{view} \cdot \vec{e}\)</p>
+<p>用齐次坐标表达：</p>
+<p>\[
+\left[ \begin{array}{c}
+0\\
+0\\
+0\\
+1\\
+\end{array} \right] =\left[ \begin{matrix}
+1&amp;		0&amp;		0&amp;		?\\
+0&amp;		1&amp;		0&amp;		?\\
+0&amp;		0&amp;		1&amp;		?\\
+0&amp;		0&amp;		0&amp;		1\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x_e\\
+y_e\\
+z_e\\
+1\\
+\end{array} \right] 
+\]</p>
+<p>解得：</p>
+<p>\[
+T_{view}=\left[ \begin{matrix}
+1&amp;        0&amp;        0&amp;        -x_e\\
+0&amp;        1&amp;        0&amp;        -y_e\\
+0&amp;        0&amp;        1&amp;        -z_e\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right] 
+\]</p>
+<h3 id="旋转"><a class="header" href="#旋转">旋转</a></h3>
+<p>旋转\(\hat{g}\)和\(\hat{t}\)将 \(\hat{g}\) 和 \(\hat{t}\) 旋转到-Z轴和Y轴，求出旋转矩阵 \(R\) 并不容易，但是由-Z轴和Y轴旋转到 \(\hat{g}\) 和 \(\hat{t}\) 就比较简单了，当我们得到 \(R^{-1}\) 后，如何进行逆运算，将 \(R^{-1}\) 转换为 \(R\) 呢？ </p>
+<p>需要注意，约定的 \(\hat{g}\) 和 \(\hat{t}\) 是垂直的，那么就满足 \(R^{-1}=R^{T}\)，于是有 \(R=(R^{-1})^{T}\)。</p>
+<p>\[
+R_{view}^{-1}=\left[ \begin{matrix}
+x_{\hat{g}\times \hat{t}}&amp;        x_t&amp;        x_{-g}&amp;        0\\
+y_{\hat{g}\times \hat{t}}&amp;        y_t&amp;        y_{-g}&amp;        0\\
+z_{\hat{g}\times \hat{t}}&amp;        z_t&amp;        z_{-g}&amp;        0\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right] 
+\]</p>
+<p>\[
+R_{view}^{}=\left[ \begin{matrix}
+x_{\hat{g}\times \hat{t}}&amp;        y_{\hat{g}\times \hat{t}}&amp;        z_{\hat{g}\times \hat{t}}&amp;        0\\
+x_t&amp;        y_t&amp;        y_{-g}&amp;        0\\
+x_{-g}&amp;        y_{-g}&amp;        z_{-g}&amp;        0\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right] 
+\]</p>
+<h3 id="旋转--平移"><a class="header" href="#旋转--平移">旋转 + 平移</a></h3>
+<p>通过对camera进行旋转和平移，使camera满足指定view旋转与平移结合的方式有两种：</p>
+<ol>
+<li>先旋转后平移</li>
+<li>先平移后旋转</li>
+</ol>
+<p>根据常识可知，应该先旋转在平移。</p>
+<p>因此有变换矩阵：</p>
+<p>\[
+M_{view}^{}=\left[ \begin{matrix}
+x_{\hat{g}\times \hat{t}}&amp;        y_{\hat{g}\times \hat{t}}&amp;        z_{\hat{g}\times \hat{t}}&amp;        -x_e\\
+x_t&amp;        y_t&amp;        y_{-g}&amp;        -y_e\\
+x_{-g}&amp;        y_{-g}&amp;        z_{-g}&amp;        -z_e\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right] 
+\]</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>如果object与camera做相对运动，那么即便view的坐标变换了，得到的视图也不会改变，也就是说，model也需要和view做相同的平移和旋转。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="projection-投影变换"><a class="header" href="#projection-投影变换">Projection 投影变换</a></h1>
+<p>[39：00]目的：物体处于坐标中心的\([-1, 1]^3\)这个立方体中。</p>
+<h2 id="正交投影vs透视投影"><a class="header" href="#正交投影vs透视投影">正交投影vs透视投影</a></h2>
+<ul>
+<li>
+<p>投影： 3D --&gt; 2D</p>
+<p>正交投影:（左），用于工程制图</p>
+<p>透视投影：（右），呈现出近大远小的效果，类似于人眼</p>
+<p><img src="MVP/../assets/%E4%B8%A4%E7%A7%8D%E6%8A%95%E5%BD%B1.jpg" alt="" /></p>
+</li>
+<li>
+<p>数学上的区别:</p>
+<p>正交投影: 认为相机是近处的一个点</p>
+<p>透视投影: 认为相机位于无限远处</p>
+</li>
+</ul>
+<h1 id="正交投影"><a class="header" href="#正交投影">正交投影</a></h1>
+<p>[43：00]</p>
+<p><img src="MVP/../assets/orthographic.jpg" alt="" /></p>
+<h2 id="准备工作"><a class="header" href="#准备工作">准备工作</a></h2>
+<p>把相机 view 变换为期望 view（转换到原点），方法是让相机参数乘以一个矩阵。</p>
+<p>为了保持camera和object的相对位置不变，object也要同样乘以这样一个矩阵。</p>
+<p>这样调整之后，在Projection阶段，只需要使用object调整之后的坐标，所以实际上只需要让object调整就可以。</p>
+<p><a href="MVP/View.html">参见view</a></p>
+<h2 id="正交投影中的平移"><a class="header" href="#正交投影中的平移">正交投影中的平移</a></h2>
+<p><img src="MVP/../assets/%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1%E5%B9%B3%E7%A7%BB.jpg" alt="" /></p>
+<table><thead><tr><th></th><th>当前位置</th><th>期望位置</th></tr></thead><tbody>
+<tr><td>左右</td><td>[l,r]</td><td>[-(r-l)/2, (r-l)/2]</td></tr>
+<tr><td>上下</td><td>[b,t]</td><td>[-(t-b)/2, (t-b)/2]</td></tr>
+<tr><td>远近</td><td>[f,n]</td><td>[-(n-f)/2, (n-f)/2]</td></tr>
+</tbody></table>
+<blockquote>
+<p><strong>📌补充：</strong> 由于投影的设定，l在坐标值上，小于r；b小于t，f小于n（因为朝向-Z轴）</p>
+</blockquote>
+<p>正交投影的平移矩阵为：</p>
+<p>\[
+M_{trans}=\left[ \begin{matrix}
+1&amp;        0&amp;        0&amp;        -\frac{r+l}{2}\\
+0&amp;        1&amp;        0&amp;        -\frac{t+b}{2}\\
+0&amp;        0&amp;        1&amp;        -\frac{n+f}{2}\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right] 
+\]</p>
+<h2 id="正交投影中的缩放"><a class="header" href="#正交投影中的缩放">正交投影中的缩放</a></h2>
+<p><img src="MVP/../assets/%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1%E7%BC%A9%E6%94%BE.jpg" alt="" /></p>
+<p>与平移同理。</p>
+<p>正交投影的缩放矩阵为：</p>
+<p>\[
+M_{scale}=\left[ \begin{matrix}
+\frac{2}{r-l}&amp;        0&amp;        0&amp;        0\\
+0&amp;        \frac{2}{t-b}&amp;        0&amp;        0\\
+0&amp;        0&amp;        \frac{2}{n-f}&amp;        0\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right]
+\]</p>
+<h2 id="正交投影中的旋转"><a class="header" href="#正交投影中的旋转">正交投影中的旋转</a></h2>
+<p>正交投影过程不涉及object的旋转，因此旋转矩阵\(\M_{rotation})是单位阵。</p>
+<h1 id="透视投影"><a class="header" href="#透视投影">透视投影</a></h1>
+<p>[53:10]</p>
+<p><img src="MVP/../assets/perspective.jpg" alt="" /></p>
+<p>透视投影的过程是先将Frustum（截锥体）转换为Cuboid（长方体），然后再用上面的方法对长方体做正交投影：</p>
+<p><img src="MVP/../assets/%E9%80%8F%E8%A7%86%E6%8A%95%E5%BD%B1%E8%BF%87%E7%A8%8B.jpg" alt="" /></p>
+<p>要把Frustum转换为Cubuid是仿射变换的过程，主要方法仍是求出仿射变换的矩阵。</p>
+<p>在正交投影中，是根据正交变换的过程，将仿射变换矩阵分解为S, R, T三个部分，依次计算出S， R, T再将它们合并。</p>
+<p>在透视投影中，仍然不涉及旋转，但是平移和缩放的过程是揉合在一起的，难以拆分，因此采用选取特殊点的方式，直接求出投视投影的变换矩阵。</p>
+<h2 id="m_persprightarrow-ortho"><a class="header" href="#m_persprightarrow-ortho">\(M_{persp\rightarrow ortho}\)</a></h2>
+<h3 id="侧面分析"><a class="header" href="#侧面分析">侧面分析</a></h3>
+<p>从侧面看，存在相似三角形（图中很容易看出）</p>
+<p><img src="MVP/../assets/%E9%80%8F%E8%A7%86%E6%8A%95%E5%BD%B12.jpg" alt="" /></p>
+<h3 id="推导"><a class="header" href="#推导">推导</a></h3>
+<p>通过相似三角形，可以得到：</p>
+<p>\[
+y'=\frac{n}{z}y\\
+x'=\frac{n}{z}x
+\]</p>
+<p>我们的目的是将 \((x, y, z)\) 转换为 \((x', y', z)\)。</p>
+<p>现在可以得到：</p>
+<p>\[
+\left( \begin{array}{c}
+x\\
+y\\
+z\\
+1\\
+\end{array} \right) \Rightarrow \left( \begin{array}{c}
+nx/z\\
+ny/z\\
+unknown\\
+1\\
+\end{array} \right) 
+\]</p>
+<p>为坐标乘以 \(z\)，得：</p>
+<p>\[
+\left( \begin{array}{c}
+x\\
+y\\
+z\\
+1\\
+\end{array} \right) \Rightarrow \left( \begin{array}{c}
+nx/z\\
+ny/z\\
+unknown\\
+1\\
+\end{array} \right) ==\left( \begin{array}{c}
+nx\\
+ny\\
+still,,unknown\\
+z\\
+\end{array} \right) 
+\]</p>
+<p>想要将 \(\left( \begin{array}{c}
+x\\
+y\\
+z\\
+1\\
+\end{array} \right)\) 投影为 \(\left( \begin{array}{c}
+nx\\
+ny\\
+unknown\\
+z\\
+\end{array} \right) \)，需要求一个投影矩阵：</p>
+<p>\[
+M_{persp\rightarrow ortho}^{\left( 4\times 4 \right)}\left( \begin{array}{c}
+x\\
+y\\
+z\\
+1\\
+\end{array} \right) =\left( \begin{array}{c}
+nx\\
+ny\\
+unknown\\
+z\\
+\end{array} \right) 
+\]</p>
+<p>我们已经知道一些数据了，所以能求出M的一些值（显然，由上式可得）：</p>
+<p>\[
+M_{persp\rightarrow ortho}^{\left( 4\times 4 \right)}=\left( \begin{matrix}
+n&amp;        0&amp;        0&amp;        0\\
+0&amp;        n&amp;        0&amp;        0\\
+?&amp;        ?&amp;        ?&amp;        ?\\
+0&amp;        0&amp;        1&amp;        0\\
+\end{matrix} \right) 
+\]</p>
+<h3 id="n面分析和f面分析"><a class="header" href="#n面分析和f面分析">n面分析和f面分析</a></h3>
+<ul>
+<li>
+<p>Frustum的n（近处）面，所有坐标是不变化的。</p>
+</li>
+<li>
+<p>f面的Z轴坐标值，是不变化的；Z轴穿过的中心点的坐标值，是不变化的。</p>
+</li>
+</ul>
+<p><img src="MVP/../assets/%E9%80%8F%E8%A7%86%E6%8A%95%E5%BD%B11.jpg" alt="" /></p>
+<h3 id="继续推导"><a class="header" href="#继续推导">继续推导</a></h3>
+<p>M已经被解决不少了，但还差一些，不过，我们还有一些坐标点不变的性质可以使用：</p>
+<p>n面，所有坐标点不变，那么取一个n面上随便一点，该点的Z轴坐标值为n，即：</p>
+<p>\[
+\left( \begin{array}{c}
+x\\
+y\\
+n\\
+1\\
+\end{array} \right)
+\]</p>
+<p>为坐标乘以n：</p>
+<p>\[
+\left( \begin{array}{c}
+nx\\
+ny\\
+n^2\\
+n\\
+\end{array} \right)
+\]</p>
+<p>既然这一点在投影前后不会变化，我们可以列出下面的式子：</p>
+<p>\[
+\left( \begin{array}{c}
+nx\\
+ny\\
+n^2\\
+n\\
+\end{array} \right) =\left( \begin{matrix}
+n&amp;        0&amp;        0&amp;        0\\
+0&amp;        n&amp;        0&amp;        0\\
+?&amp;        ?&amp;        ?&amp;        ?\\
+0&amp;        0&amp;        1&amp;        0\\
+\end{matrix} \right) \left( \begin{array}{c}
+x\\
+y\\
+n\\
+1\\
+\end{array} \right) 
+\]</p>
+<p>上式其实只剩下下面这个式子要求：</p>
+<p>\[
+n^2=\left( ?,  ?,  ?,  ? \right) \left( \begin{array}{c}
+x\\
+y\\
+n\\
+1\\
+\end{array} \right) 
+\]</p>
+<p>具体来说，是这样的：</p>
+<p>\[
+n^2=\left( 0,  0,  A,  B \right) \left( \begin{array}{c}
+x\\
+y\\
+n\\
+1\\
+\end{array} \right) 
+\]</p>
+<p>于是可以得到：</p>
+<p>\[
+An+B=n^2
+\]</p>
+<p>同理，在f面上，所有点的Z轴坐标值不变，可以得到：</p>
+<p>\[
+Af+B=f^2
+\]</p>
+<p>联立上述AB方程，解得：</p>
+<p>\[
+A=n+f\\
+B=-nf
+\]</p>
+<p>所以我们推导出了透视投影的一个变换矩阵：</p>
+<p>\[
+M_{persp\rightarrow ortho}^{\left( 4\times 4 \right)}=\left( \begin{matrix}
+n&amp;        0&amp;        0&amp;        0\\
+0&amp;        n&amp;        0&amp;        0\\
+0&amp;        0&amp;        n+f&amp;        -nf\\
+0&amp;        0&amp;        1&amp;        0\\
+\end{matrix} \right) 
+\]</p>
+<h2 id="透视投影矩阵"><a class="header" href="#透视投影矩阵">透视投影矩阵</a></h2>
+<p>透视投影的最终的变换矩阵是 <strong>M = M（正交）M（透视）</strong></p>
+<h1 id="为什么透视投影会z会后移"><a class="header" href="#为什么透视投影会z会后移">为什么透视投影会z会后移</a></h1>
+<h2 id="从数学上"><a class="header" href="#从数学上">从数学上</a></h2>
+<p>定义z'为变换后的z坐标，那么z' = (n+f)-nf/z</p>
+<p>\[
+f = z' - z 
+= (n+f) - nf/z -z
+\]</p>
+<p>\[
+zf = -z^2 + (n+f)z - nf
+\]</p>
+<p>zf是一个开口向下的二次曲线。它与x轴的交点在z=n处和z=f处。当z位于(f, n)区间时，zf&gt;0。</p>
+<p>由于f&lt;0且n&lt;0，当z位于(f, n)区间时，z&lt;0，因此f&lt;0，即z'-z&lt;0</p>
+<p>z'&lt;z，因此z会变远。</p>
+<h2 id="从直觉上"><a class="header" href="#从直觉上">从直觉上</a></h2>
+<p>一开始会觉得有点奇怪，违反直觉。细想之后觉得是很合理。<br />
+因为透视投影要表现出近大远小的效果。近大不止是x轴和y轴的大，z轴上也会大。即同一个物体，如果放得近，它在z轴上会更大点。<br />
+空间上也是如此，透视前的空间，把它以z=0分成前后均匀的两半，近的那一半，在透视后必然要占更大的z轴范围，因此z会往后。</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>当观测结束后，所有物体到了[-1, 1]的三次方这个立方体中，那么，下一步是什么？将其放在屏幕上。</p>
+<h1 id="什么是光栅化"><a class="header" href="#什么是光栅化">什么是光栅化</a></h1>
+<blockquote>
+<p>🔎<br />
+pixel：像素，picture element，一个小方块，且方块内颜色不变 
+Raster:屏幕，由像素组成二维数组<br />
+Rasterize: 光栅化<br />
+Triangle Mesh: 三角形面片</p>
+</blockquote>
+<p>光栅化，即把对象（object）画在屏幕（raster）上。对象是指cubic中的内容，常用用三角形面片表示对象的表面。屏幕，由像素（pixel）组成的2D数组。数组的大小代码的屏幕的分辨率。<br />
+具体过程可以描述为：找到对象表面在cubic中的位置，根据cubic与raster的关系，确定它在raster上应出现的位置。在raster的正确的位置上渲染对象。</p>
+<p>将观测的物体在屏幕上显示，就是<strong>光栅化</strong>。</p>
+<h1 id="定义一些符号"><a class="header" href="#定义一些符号">定义一些符号</a></h1>
+<ol>
+<li>描述立方体的符号：l，r，u，d，f，n</li>
+</ol>
+<ul>
+<li>l = -r = 1</li>
+<li>b = -t = 1</li>
+<li>f = -n = 1, 物体在z轴负方向，因此n &lt; 0</li>
+</ul>
+<ol start="2">
+<li>描述屏幕的符号：</li>
+</ol>
+<img src="Rasterization/../assets/观察.jpg" title="" alt="" width="419">
+<ul>
+<li>宽高比（Aspect ratio）</li>
+<li>width/height</li>
+<li>视角（Field of view）</li>
+</ul>
+<img src="Rasterization/../assets/%E8%A7%86%E8%A7%92.jpg" title="" alt="" width="297">
+<ol start="3">
+<li>用符号描述屏幕和立方体的关系</li>
+</ol>
+<p>把视角和宽高比转换为l、r、b、t</p>
+<p><img src="Rasterization/../assets/%E8%A7%86%E8%A7%92%E8%BD%AC%E6%8D%A2.jpg" alt="" /></p>
+<p>由图可得以下关系：</p>
+<p>\[
+\tan \frac{fovY}{2}=\frac{t}{|n|}
+\]</p>
+<p>\[
+aspect=\frac{r}{t}
+\]</p>
+<blockquote>
+<p><strong>📌补充：</strong> 定义一个视锥，只需要视角和宽高比即可，其他参数可以转换。</p>
+</blockquote>
+<h1 id="光栅化的最基本的流程"><a class="header" href="#光栅化的最基本的流程">光栅化的最基本的流程</a></h1>
+<h2 id="step-1-选取cubic中物体的表面三角形"><a class="header" href="#step-1-选取cubic中物体的表面三角形">Step 1: 选取cubic中物体的表面三角形</a></h2>
+<p>3D空间中的物体，通常使用三角形面片来描述物体的表面。所谓把物体画到屏幕上，实际上就是把这些三角形面片画到屏幕上。</p>
+<p>为什么用三角形描述物体表面？</p>
+<ol>
+<li>
+<p>三角形是最基本的多边形（其他多边形可以由三角形拼成）</p>
+</li>
+<li>
+<p>一个三角形一定在一个平面上</p>
+</li>
+<li>
+<p>三角形关于“内”、“外”的定义是明确的</p>
+</li>
+<li>
+<p>给定三角形三个顶点的属性，其内部任意点的属性可以通过插值得出</p>
+</li>
+</ol>
+<h2 id="step-2-根据三角形在cubic内的坐标计算出它在屏幕上的位置浮点数"><a class="header" href="#step-2-根据三角形在cubic内的坐标计算出它在屏幕上的位置浮点数">Step 2: 根据三角形在cubic内的坐标计算出它在屏幕上的位置（浮点数）</a></h2>
+<p>坐标系的变换，只需要计算出正确的变换矩阵就可以实现。</p>
+<p><img src="Rasterization/../assets/%E5%B1%8F%E5%B9%95%E6%98%A0%E5%B0%84.jpg" alt="" /></p>
+<p>\[
+\begin{bmatrix}
+x' \\
+y' \\
+1 \\
+1 \\
+\end{bmatrix} = \begin{bmatrix}
+S &amp; T \\
+0 &amp; 1 \\
+\end{bmatrix}\begin{bmatrix}
+x \\
+y \\
+z \\
+1
+\end{bmatrix}
+\]</p>
+<p>其中S是指缩放，T是指平移，这里面不涉及到旋转。</p>
+<p>对变换做以下假设：</p>
+<ol>
+<li>忽略Z轴</li>
+<li>将xy平面：[-1,1]^2 转换到 [0, width] X [0, height]</li>
+<li>不涉及旋转</li>
+</ol>
+<p>选取部分特殊点，代入计算，即可得出变换矩阵为：</p>
+<p>\[
+M_{viewport}=\left( \begin{matrix}
+\frac{width}{2}&amp;        0&amp;        0&amp;        \frac{width}{2}\\
+0&amp;        \frac{height}{2}&amp;        0&amp;        \frac{height}{2}\\
+0&amp;        0&amp;        1&amp;        0\\
+0&amp;        0&amp;        0&amp;        1\\
+\end{matrix} \right) 
+\]</p>
+<h2 id="step-3-把三角形画在屏幕上"><a class="header" href="#step-3-把三角形画在屏幕上">Step 3: 把三角形画在屏幕上</a></h2>
+<p>根据上面的转换公式，可以得出三角形上每个点对应在屏幕上的位置（浮点数）。但屏幕上像素的下标是整数。如下图：</p>
+<p><img src="Rasterization/../assets/%E5%9D%90%E6%A0%87%E5%88%B0%E5%83%8F%E7%B4%A0.jpg" alt="" /></p>
+<p>怎么确定每个像素格子是否需要被渲染成三角形的颜色？<br />
+最简单的方法是：判断<strong>屏幕空间</strong>中每个像素的中心是否在三角形的内部。</p>
+<img src="Rasterization/../assets/三角形.jpg" title="" alt="" width="239">
+<h3 id="屏幕空间"><a class="header" href="#屏幕空间">屏幕空间</a></h3>
+<p>在屏幕上的坐标系</p>
+<p><img src="Rasterization/../assets/%E5%B1%8F%E5%B9%95%E5%9D%90%E6%A0%87.jpg" alt="" /></p>
+<ul>
+<li>每个像素的坐标是整数，范围为[0, width)  [0, height)</li>
+<li>像素(x， y)的中心位置：(x+0.5, y+0.5)</li>
+</ul>
+<blockquote>
+<p>❗注意区分<strong>坐标</strong>与<strong>位置</strong>的不同含义</p>
+</blockquote>
+<h3 id="方法一采样方法"><a class="header" href="#方法一采样方法">方法一：采样方法</a></h3>
+<pre><code>依次遍历每个像素(x, y)：
+    取像素中心的位置(x+0.5, y+0.5)
+    判断像素中心是否在三角形内部（叉乘）
+    如果在内：
+        渲染
+    如果在外：
+        渲染
+    如果在三角形边上：
+        自己决定是否渲染
+</code></pre>
+<blockquote>
+<p>🔎<strong>判断三角形的内和外：</strong><br />
+https://caterpillarstudygroup.github.io/GAMES101_mdbook/Dependency/Vector.html#%E5%9C%A8%E5%9B%BE%E5%BD%A2%E5%AD%A6%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%</p>
+</blockquote>
+<p>缺点：必须要依次check每个pixel</p>
+<h3 id="方法二bounding-box-5600"><a class="header" href="#方法二bounding-box-5600">方法二：Bounding Box [56:00]</a></h3>
+<p>对整个屏幕遍历，然后判断每个像素的中心是否在三角形内，这太傻了。</p>
+<p>正确的做法是，只遍历包围三角形的最小矩阵，称之为三角形的包围盒。</p>
+<img src="Rasterization/../assets/包围盒.jpg" title="" alt="" width="303">
+<p>局限性：<br />
+对于这种情况仍有较大的计算量。</p>
+<p><img src="Rasterization/../assets/bbox.PNG" alt="" /></p>
+<h3 id="方法三incremental-5655"><a class="header" href="#方法三incremental-5655">方法三：Incremental [56:55]</a></h3>
+<p>一种启发式的方法，比较容易想到，也懒得记了。</p>
+<blockquote>
+<p>📌课程中关于显示器的部分被我跳过了，因为我认为与算法相关度不大。</p>
+</blockquote>
+<h1 id="光栅化的结果"><a class="header" href="#光栅化的结果">光栅化的结果</a></h1>
+<p>[1:02:38], [1:03:01]</p>
+<img src="Rasterization/../assets/走样.jpg" title="" alt="" width="425">
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="走样"><a class="header" href="#走样">走样</a></h1>
+<img src="Rasterization/../assets/走样.jpg" title="" alt="" width="425">
+<p>当按照像素中心是否在三角形内的采样方式采样后，得到了不理想的结果。</p>
+<p>产生了锯齿！（jaggies）</p>
+<p>消除锯齿是图像学致力于解决的重要问题。</p>
+<p>抗锯齿，也叫反走样。</p>
+<h1 id="反走样antialiasing的定性分析与解决方法"><a class="header" href="#反走样antialiasing的定性分析与解决方法">反走样（Antialiasing）的定性分析与解决方法</a></h1>
+<h2 id="采样理论"><a class="header" href="#采样理论">采样理论</a></h2>
+<p>Photo是对image的采样<br />
+video是在时间维度的采样[07:33]<br />
+它们都是将连续的信息离散化。</p>
+<p>采样会产生 Artifact，例如：</p>
+<ul>
+<li>锯齿[09:17]</li>
+<li>摩尔纹[09:30]</li>
+<li>车轮效应</li>
+</ul>
+<p>Artifact的本质原因：信号变化太快，采样速度跟不上</p>
+<h2 id="反走样方法"><a class="header" href="#反走样方法">反走样方法</a></h2>
+<p>[14:05]</p>
+<p>先对object模糊化，然后再采样</p>
+<p>模糊化的过程使用滤波实现。</p>
+<p>采样后，中心点红色，边界点粉红色</p>
+<p><img src="Rasterization/../assets/%E6%A8%A1%E7%B3%8A%E9%87%87%E6%A0%B7.jpg" alt="" /></p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>上节提到，走样的本质原因是信号的变化速度太快，采样的速度跟不上。</p>
+<p>变化速度与采样速度，都是与频率相关的概念，因此本节从频域的角度来分析走样问题。</p>
+<h1 id="频域的相关概念"><a class="header" href="#频域的相关概念">频域的相关概念</a></h1>
+<h2 id="余弦波"><a class="header" href="#余弦波">余弦波</a></h2>
+<p>\(\cos 2\pi fx\)，其中f代表频率。f越大，则信号变化越快。</p>
+<div align="center"> <img src="Rasterization/../assets/余弦函数.jpg" width = 485 /> </div>
+<h2 id="傅里叶级数展开"><a class="header" href="#傅里叶级数展开">傅里叶级数展开：</a></h2>
+<p>任何一个周期函数可以写成：不同频率的正/余弦函数的线性组合，以及一个常数。</p>
+<p><img src="Rasterization/../assets/%E5%82%85%E9%87%8C%E5%8F%B6%E5%B1%95%E5%BC%80.jpg" alt="" /></p>
+<blockquote>
+<p>❓ 非周期函数会怎么样呢？</p>
+</blockquote>
+<h2 id="傅里叶变换可逆"><a class="header" href="#傅里叶变换可逆">傅里叶变换（可逆）</a></h2>
+<div align="center"> <img title="" src="Rasterization/../assets/傅里叶变换.jpg" width="589" /></div>
+<p>傅里叶变换是指把函数转为它在频域上级数展开的形式。</p>
+<h1 id="函数与采样的关系"><a class="header" href="#函数与采样的关系">函数与采样的关系</a></h1>
+<h2 id="函数的频率"><a class="header" href="#函数的频率">函数的频率</a></h2>
+<p>基于傅里叶变换，可以把函数分解为不同的频率的函数[24：51]<br />
+频率高，即代表信号变化快。也就是说，一个函数是由各种不同频率的信号混合而成的。</p>
+<h2 id="采样的频率"><a class="header" href="#采样的频率">采样的频率</a></h2>
+<p>[24:51]</p>
+<p>以相同采样频率对以上函数采样</p>
+<p>通过采样点能恢复出低频信息，不能恢复出高频信息。</p>
+<p>[29:00]</p>
+<p>走样的本质原因的数学描述：两个不同频率（蓝黑）的信号，在某采样频率下，得到了完全相同的采样点，因此无法区分。</p>
+<p><img src="Rasterization/../assets/%E9%87%87%E6%A0%B7%E4%B8%A4%E4%B8%AA%E5%87%BD%E6%95%B0.jpg" alt="" /></p>
+<p>因此<strong>函数中的低频部分的信号就被当成了另一种信号</strong>。</p>
+<h1 id="图像中的频率成分2932"><a class="header" href="#图像中的频率成分2932">图像中的频率成分[29：32]</a></h1>
+<p>即：把某些信息（即特定的频率分量）去掉。以图像为例，把图像（时域信息）转成频域信息[31：01]：</p>
+<img src="Rasterization/../assets/低频高频.jpg" title="" alt="" width="337">
+<p>图像的频域图具有以下特点：</p>
+<ul>
+<li>
+<p>图中点越亮代表此处频率的能量越高</p>
+</li>
+<li>
+<p>图像中的信息大部分为低频信息</p>
+</li>
+<li>
+<p>由于强行把图像周期化，红色框中的亮线是图像跨越边界时产生的高频信息</p>
+<img src="Rasterization/../assets/频率图.jpg" title="" alt="" width="337">
+</li>
+</ul>
+<h2 id="高通-filter-3421"><a class="header" href="#高通-filter-3421">高通 filter [34：21]</a></h2>
+<p>保留频域图中的高频信息，再把频域图恢复成原始图像。发现图像只剩下了原图的轮廓部分。</p>
+<img title="" src="Rasterization/../assets/高通.jpg" alt="" width="476">
+<p>解释：</p>
+<p>保留的高频信息对应于图像边界。因为图像边缘为信号的剧变处。</p>
+<h2 id="低通-filter-3619"><a class="header" href="#低通-filter-3619">低通 filter [36：19]</a></h2>
+<p>同理，只保留图像的低频信息，图像会变模糊，失去边界</p>
+<img title="" src="Rasterization/../assets/低通.jpg" alt="" width="476">
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="滤波-vs-卷积-vs-平均"><a class="header" href="#滤波-vs-卷积-vs-平均">滤波 VS 卷积 VS 平均</a></h1>
+<h2 id="卷积-vs-平均"><a class="header" href="#卷积-vs-平均">卷积 VS 平均</a></h2>
+<p>结论1： <strong>卷积可以看作是个局部区域的加权平均， 卷积kernel即局部加权</strong></p>
+<h2 id="卷积-vs-滤波"><a class="header" href="#卷积-vs-滤波">卷积 VS 滤波</a></h2>
+<p>图像的卷积操作是从信号的卷积运算中借鉴过来的概念。虽然不完全相同，其本质是一样的。<br />
+图像的卷积操作可以看作中对图像的时域信息做卷积运算，时域信息的卷积运算又可以转化为频域上的乘积运算。前面所讲的滤波操作实际上就是用频域上的乘积运算来实现的。因此图像的时域卷积操作与频域滤波操作本质上是一致的。</p>
+<p>结论2：<strong>时域卷积 = 频域滤波， 卷积kernel = 频域filter</strong></p>
+<h2 id="结论"><a class="header" href="#结论">结论：</a></h2>
+<p>时域卷积 = 频域滤波 = 局部加权平均</p>
+<p>卷积kernel = 频域filter = 局部加权</p>
+<p>以低通滤波为例：</p>
+<img title="" src="Rasterization/../assets/时域卷积.jpg" alt="" width="507">  
+<h1 id="采样-vs-频域卷积"><a class="header" href="#采样-vs-频域卷积">采样 VS 频域卷积</a></h1>
+<h2 id="例子"><a class="header" href="#例子">例子</a></h2>
+<img title="" src="Rasterization/../assets/时域采样和频域采样.jpg" alt="" width="536">  
+<p>解释：</p>
+<p>a：时域信号</p>
+<p>b：a对应的频域信号</p>
+<p>c：对a进行采样的周期采样函数</p>
+<p>d：采样函数的频域表示</p>
+<p>e：对a进行采样的结果，即a与c乘积的结果</p>
+<p>f：采样结果的频域表示。由于时域乘积=频域卷积，这也中b与d卷积的结果</p>
+<h2 id="分析"><a class="header" href="#分析">分析</a></h2>
+<p>采样是通过时域上的乘积操作实现的。</p>
+<p>时域乘积 = 频域卷积</p>
+<p>\[
+f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \omega \right) \otimes F_2\left( \omega \right) 
+\]</p>
+<blockquote>
+<p>💡 \(f_1\left( x \right)\) 是信号（a）， \(f_2\left( x \right)\)是采样信号（c）， \(F_1\left( \omega \right)\) 是a的频谱（b）  \(F_2\left( \omega \right)\) 是采样信号的频谱（d）0</p>
+</blockquote>
+<p>结论：<strong>采样就是把原信号的频谱以特定周期呈现。</strong></p>
+<p>采样周期长 \(\Longrightarrow \)</p>
+<p>\(\Longrightarrow \) \(F_2\left( \omega \right)\) 的频谱间隔小</p>
+<p>\(\Longrightarrow \) (b)以更密的形式重复</p>
+<p>\(\Longrightarrow \) (f)的频谱出现混叠[55:59]</p>
+<p>\(\Longrightarrow \) 时域上表现为走样</p>
+<img title="" src="Rasterization/../assets/周期混叠.jpg" alt="" width="600">
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="提升分辨率"><a class="header" href="#提升分辨率">提升分辨率</a></h1>
+<img title="" src="Rasterization/../assets/时域采样和频域采样.jpg" alt="" width="536">  
+<p>分辨率上升 \(\Longrightarrow \) 像素格子小 \(\Longrightarrow \) 像素采样率上升 \(\Longrightarrow \) （b）间隔大 \(\Longrightarrow \) 混叠少 \(\Longrightarrow \) 减轻走样现象</p>
+<p>缺点：受制于物理限制</p>
+<h1 id="反走样算法-5949"><a class="header" href="#反走样算法-5949">反走样算法 [59:49]</a></h1>
+<ol>
+<li>
+<p>图像转为频域信号</p>
+</li>
+<li>
+<p>对频域信号做低通filter，过滤掉高频信息，使（b）变窄</p>
+</li>
+<li>
+<p>正常采样</p>
+<img title="" src="Rasterization/../assets/采样.jpg" alt="" width="600">
+</li>
+</ol>
+<h1 id="msaa-10517"><a class="header" href="#msaa-10517">MSAA [1：05：17]</a></h1>
+<p>Multi Sample Anti-aliasing算法</p>
+<ol>
+<li>Supersampling：一个象素内部划分成多个子（sub）像素 [1:05:17]</li>
+<li>判断每个子像素是否在三角形内 [1:06:59]</li>
+<li>对判断结果求平均值 [1:07:22], [1:08:55]</li>
+</ol>
+<p><img src="Rasterization/../assets/MSAA.jpg" alt="" /></p>
+<p>缺点：增加计算量</p>
+<blockquote>
+<p><strong>❗注意:</strong> Supersampling 与提升分辨率的区别：
+本算法并没有实质性地增加像素点</p>
+</blockquote>
+<h1 id="fxaa"><a class="header" href="#fxaa">FXAA</a></h1>
+<ol>
+<li>用常规方法得到带锯齿图像</li>
+<li>通过图像匹配的方法找到边界</li>
+<li>把边界换成没有锯齿的边界</li>
+</ol>
+<p>优点：速度快， 与采样无关</p>
+<h1 id="taa-11510"><a class="header" href="#taa-11510">TAA [1：15：10]</a></h1>
+<p>Temporal Sample Anti-aliasing算法</p>
+<blockquote>
+<p>🔎
+Temporal： 时间上的</p>
+</blockquote>
+<p>大概意思是，边界上的点，有时显示在上一帧，有时显示在这一帧</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>采样除了会带来走样问题，还有其它问题。</p>
+<h1 id="super-resolution-超分辨率"><a class="header" href="#super-resolution-超分辨率">Super Resolution 超分辨率</a></h1>
+<p>问题描述： 低分辨率图拉大成高分辨率出现的锯齿问题
+解决方法：DLSS，即Deep Learning Super Sampling</p>
+<h1 id="super-sampling-上采样"><a class="header" href="#super-sampling-上采样">Super Sampling 上采样</a></h1>
+<p>好像跟上面是同一个问题。</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="背景"><a class="header" href="#背景">背景</a></h1>
+<p>有多个物体，每个物体都有多个三角形，因此要处理摭挡问题。</p>
+<h1 id="画家算法"><a class="header" href="#画家算法">画家算法</a></h1>
+<p><img src="Rasterization/../assets/%E7%94%BB%E5%AE%B6%E7%AE%97%E6%B3%95.jpg" alt="" /></p>
+<p>由远及近的在画布上添加新物体，新添加的物体将已有的物体覆盖</p>
+<p>主要步骤：</p>
+<ol>
+<li>排序 O(nlogn)</li>
+<li>光栅化</li>
+</ol>
+<p>局限性[09:26]：无法决定深度</p>
+<h1 id="z-buffer-算法"><a class="header" href="#z-buffer-算法">Z-Buffer 算法</a></h1>
+<p>名称：depth buffer， Z buffer，或深度缓存</p>
+<blockquote>
+<p><strong>📌</strong> 可以解决画家算法无法决定深度的局限性</p>
+</blockquote>
+<h2 id="预处理"><a class="header" href="#预处理">预处理</a></h2>
+<p>[10:40]由于MVP之后，约定摄像机在坐标原点，物体在视角的z轴负方向，因此物体的z都是负的。为了便于计算，物体上每个点的Z坐标都取其绝对值（深度）。</p>
+<p>因此：</p>
+<ol>
+<li>Z(depth) &gt; 0</li>
+<li>Z(depth) 小--&gt;近， Z 大--&gt;远</li>
+<li>深度是一个物体距离摄像机的Z轴距离的绝对值。</li>
+</ol>
+<h2 id="具体步骤"><a class="header" href="#具体步骤">具体步骤</a></h2>
+<p>算法过程中维护两个数据:</p>
+<ol>
+<li>frame buffer：存每个像素点当前绘制的像素值。当算法完成时，这里面的数据就是最终输出结果。</li>
+<li>depth buffer：存每个像素点对应的物体上的最小的depth（最近）</li>
+</ol>
+<p>两个buffer都是逐像素的，因此将buffer数据可视化[14:38]。<br />
+<img src="Rasterization/../assets/zbuffer.jpg" alt="" /></p>
+<blockquote>
+<p><strong>📌</strong> </p>
+<p><img src="Rasterization/../assets/depthbuffer.jpg" alt="" /></p>
+<p>图中，A点是距离视点（摄像机）较近的点，所以颜色比较黑，B点是距离视点较远的点，所以颜色比较白。距离视点近的像素点，颜色就比较黑，反之比较白，这就是depth/Z buffer。</p>
+</blockquote>
+<p>具体步骤：</p>
+<pre><code>Initialize depth buffer to ∞
+during rasterization：
+    for triangle in triangles:
+        for (x, y, z) in triangle:
+            if z &lt; zbuffer[x, y]:
+                framebuffer[x,y] = rgb
+                zbuffer[x,y] = z
+            else:
+                pass
+</code></pre>
+<ol>
+<li>depth buffer 所有像素初始化为无限远</li>
+<li>对每个三角形做光栅化，每次绘制三角形时，计算当前像素在三角形上的深度Z
+如果Z小于depth buffer上对应点的值，就绘制该点，且更新depth buffer。</li>
+</ol>
+<blockquote>
+<p><strong>📌</strong> 深度缓存发生在每个像素内。</p>
+</blockquote>
+<h2 id="算法特点"><a class="header" href="#算法特点">算法特点</a></h2>
+<ol>
+<li>O(n)</li>
+<li>与三角形的绘制顺序无关</li>
+<li>可以与MSAA算法兼容</li>
+<li>适合GPU优化（因为与绘制顺序无关）</li>
+</ol>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shading-着色"><a class="header" href="#shading-着色">Shading 着色</a></h1>
+<p><img src="Shading/../assets/%E7%9D%80%E8%89%B2%E5%AF%B9%E6%AF%94.jpg" alt="" /></p>
+<p>（左）不考虑着色的效果；（右）期望达到的效果。</p>
+<p>纯色立方体的每个面每个时刻呈现的颜色有变化。使整体效果更真实。</p>
+<blockquote>
+<p><strong>📌</strong> 为什么纯色物体的不同时刻和不同位置，其颜色看不去会不同？<br />
+答：颜色是差别是物体的材质与光源作用的结果。同一时刻，不同位置上的像素点，与光源的关系不同，呈现的颜色就会不同。不同时刻，光源发生了变化，同一像素点与光源的关系也变了，导致呈现出的颜色的变化。</p>
+</blockquote>
+<p>根据物体的材质，以及物体与光源的关系，对物体的颜色加以调整，这个过程就是着色。</p>
+<p>即：The process of applying a material to an object.</p>
+<p>本课程中不包含给object添加投影的过程。</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="blinn-phong-反射模型"><a class="header" href="#blinn-phong-反射模型">Blinn-Phong 反射模型</a></h1>
+<p>这是一个简单基础的模型，它将光分成了三种成分，分别针对这三种成分的光，模拟光源对物体的作用。</p>
+<p><img src="Shading/../assets/reflection.jpg" alt="" /></p>
+<ul>
+<li>高光(Specular highlights): 光线反射到镜面反射附近</li>
+<li>漫反射(Diffuse reflection): 光线被反射到各个方向上</li>
+<li>环境光(Ambient lighting): 假设任何一个点会接收到来自环境的常­量的光</li>
+</ul>
+<h1 id="定义"><a class="header" href="#定义">定义</a></h1>
+<div align="center"> <img src="Shading/../assets/shadingpoint.jpg" width = 290 /> </div>
+<ul>
+<li>shading point：当前要计算着色的点，位于物体表面。物体在shading point处的属性包含color, shinness。</li>
+<li>（n）Surface normal：假设点附近极小范围内是一个平面，n为平面指向外的法向量</li>
+<li>（v）Viewer direction：观测方向</li>
+<li>（l）Light direction：光源方向，与光照向point的方向相反</li>
+</ul>
+<blockquote>
+<p><strong>📌</strong> \(\hat{l}\)如何计算？</p>
+<p>光源的位置减去shading point的位置，得到向量，然后求出单位长度\(\hat{l}\)</p>
+</blockquote>
+<h1 id="三种成分"><a class="header" href="#三种成分">三种成分</a></h1>
+<h2 id="漫反射"><a class="header" href="#漫反射">漫反射</a></h2>
+<p>[47:35]</p>
+<p>漫反射具有以下特点：</p>
+<ol>
+<li>打到 point 上的光线被均匀地反射出去，（与观测点v没有关系）</li>
+</ol>
+<div align="center"> <img src="Shading/../assets/diffuse.jpg" width = 290 /> </div>
+<ol start="2">
+<li>l 与 n 的夹角决定了 point 接收到的光线的强度(Lambert's cosine law)</li>
+</ol>
+<p><img src="Shading/../assets/lambert.jpg" alt="" /></p>
+<ol start="3">
+<li>[54:48] 圆心是点光源，向外辐射能量。根据能量守恒定理（不考虑传播损耗），每个圆上的能量之和不变，因此某点处的能量与它到光源的距离平方是反比。</li>
+</ol>
+<div align="center"> <img src="Shading/../assets/lightfalloff.jpg" width = 400 /> </div>
+<p>通过以上分析，定义漫反射的能量公式为：</p>
+<p>\[
+L_d=k_d\left( I/r^2 \right) \max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) 
+\]</p>
+<ul>
+<li>\(L_d\)： shading point接收到的漫反射能量</li>
+<li>\(k_d\)： shading point对光的吸收率 (例如，不同的颜色对光的吸收能力不同)</li>
+<li>\(\left( I/r^2 \right)\)： 有多少能量到达了point</li>
+<li>\(\max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \right) \)： 从正面照射的光，漫反射才有意义 （非正面射入，\(\boldsymbol{n}\cdot \boldsymbol{l}\)的值小于零）</li>
+<li>\(\boldsymbol{n}\cdot \boldsymbol{l}\)： 表示有多少能量被point接收</li>
+</ul>
+<p>效果：</p>
+<p><img src="Shading/../assets/diffuseappearance.jpg" alt="" /></p>
+<h2 id="高光项"><a class="header" href="#高光项">高光项</a></h2>
+<div align="center"> <img src="Shading/../assets/highlight.jpg" width = 600 /> </div>
+<p>R 为物体镜面反射的方向，当 v 和 R 接近时，会看到高光。</p>
+<p>\(h=\frac{v+l}{||v+l||}\) 代表了 v+l 的方向， h 称为半程向量 half vector。 [08:25] 当v和R接近时，v+l 的方向(h)与n接近:</p>
+<blockquote>
+<p><strong>💡</strong> 为什么用\(n\cdot h\)代替\(v\cdot R\)？</p>
+<p>因为\(n\cdot h\)更容易计算</p>
+</blockquote>
+<p>通过以上分析，定义高光项的能量公式为：</p>
+<p>\[
+L_s=k_s\left( I/r^2 \right) \max \left( 0, \cos \alpha \right) =k_s\left( I/r^2 \right) \max \left( 0, n\cdot h \right) ^p
+\]</p>
+<ul>
+<li>\(k_s\) 吸收率，通常认为高光是白色，也就是全吸收</li>
+<li>\(\left( I/r^2 \right)\) 表示有多少能量到达了point</li>
+<li>\(\max \left( 0, n\cdot l \right) ^p\) 表示n和h的接近程度</li>
+<li>\(L_s\) 同样应该考虑有多少有多少能量被接收，但Blinn Phong模型将这个因素简化了</li>
+</ul>
+<blockquote>
+<p><strong>💡</strong> 公式中为什么会有指数p？</p>
+<p>在保证函数趋势不变的同时，让高光更集中，通常取[100, 200]</p>
+<img src="Shading/../assets/p.jpg" width = 400 />
+</blockquote>
+<p>效果：</p>
+<img src="Shading/../assets/speculate.jpg" width = 600 />
+<h2 id="环境光照项"><a class="header" href="#环境光照项">环境光照项</a></h2>
+<p>Blinn Phong模型假设所有 point 接收到来自环境光的强度相同，且为常数:</p>
+<p>\[
+L_a=k_aI_a
+\]</p>
+<p>与\(l\)和\(v\)无关</p>
+<h1 id="模型总述"><a class="header" href="#模型总述">模型总述</a></h1>
+<p><img src="Shading/../assets/blinn-phong.jpg" alt="" /></p>
+<p>\[
+L=L_a+L_d+L_s=k_aI_a+k_d\left( I/r^2 \right) \max \left( 0,n\cdot l \right) +k_s\left( I/r^2 \right) \max \left( 0,n\cdot h \right) ^p
+\]</p>
+<blockquote>
+<p><strong>💡</strong> 为什么不考虑point到v的距离对能量的影响？？</p>
+<p>这部分比较复杂,Blinn-phong模型没有考虑这个问题</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="着色频率"><a class="header" href="#着色频率">着色频率</a></h1>
+<p>[20:50]</p>
+<ol>
+<li>
+<p>着色应用于一个平面上,整个平面共用一个L（Flat Shading）</p>
+<img src="Shading/../assets/flatshading.jpg" width = 300 />
+</li>
+<li>
+<p>着色应用三角形面片的顶点上，每个顶点计算一个L，三角形内通过插值计算出L（Gouraud Shading）</p>
+<img src="Shading/../assets/gouraudshading.jpg" width = 300 />
+</li>
+<li>
+<p>着色应用于像素，每个像素计算一个L（Phong Shading）</p>
+<img src="Shading/../assets/phongshading.jpg" width = 300 />
+</li>
+</ol>
+<p>不同着色频率和着色几何体的效果比较：</p>
+<div align="center"> <img src="Shading/../assets/shadingcompare.jpg" width = 600 /> </div>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="计算一个点的法向量"><a class="header" href="#计算一个点的法向量">计算一个点的法向量</a></h1>
+<p>方法一：利用几何特征</p>
+<p>例如，已知object是个球体。可直接球出球表面某点的n（法向量）</p>
+<img src="Shading/../assets/利用几何特征.jpg" width = 300 />
+<p>方法二：利用三角形面片</p>
+<p>[30:08]</p>
+<p>\[
+N_v=\frac{\sum{N_i}}{||\sum{N_i}||}
+\]</p>
+<p>相邻的三角形的n的平均或加权平均</p>
+<blockquote>
+<p><strong>📌</strong> 一个点可做多个三角形的顶点，将这些三角形（面）的法向量求均值，可简单的看做是这个点的法向量</p>
+</blockquote>
+<img src="Shading/../assets/利用三角形.jpg" width = 300 />
+<p>方法三：利用插值</p>
+<p>[31:29]</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="real-time-rendering-pipeline"><a class="header" href="#real-time-rendering-pipeline">Real-time Rendering Pipeline</a></h1>
+<p>实时渲染管线</p>
+<blockquote>
+<p><strong>📌</strong> 一个场景，最后到一张图，中间经历了什么过程，这个过程就是管线（pipeline），即一系列不同的操作。</p>
+</blockquote>
+<p>[35：24]</p>
+<p>建模 --&gt; 几何处理 --&gt; 光栅化 --&gt; 着色 --&gt; 帧缓存</p>
+<p>基于OpenGL的着色编程是工程问题，跳过</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="漫反射公式的拓展"><a class="header" href="#漫反射公式的拓展">漫反射公式的拓展</a></h1>
+<p>[55：59]</p>
+<p>\[
+L_d=k_d\left( I/r^2 \right) \left( n\cdot l \right) 
+\]</p>
+<p>这是Blinn-Phong模型中计算漫反射项的公式。上述公式的特点是：</p>
+<ul>
+<li>\(k_d\) 不同点的颜色不同 </li>
+<li>\(\left( I/r^2 \right) \left( n\cdot l \right) \) 小球上所有点处于相同的一光照环境下</li>
+</ul>
+<p>由于这个公式可以描述不同颜色的点在同一光照环境下的不同表现。</p>
+<p>这只是将公式应用于漫反射的一个例子，它也可以适用于物体表面的其它属性。例如用它来做纹理贴图，只需要把\(k_d\)换成一种可以表示纹理的属性。</p>
+<h1 id="纹理映射-texture-mapping"><a class="header" href="#纹理映射-texture-mapping">纹理映射 Texture Mapping</a></h1>
+<p>3D物体的表面是2D的</p>
+<img src="Texture/../assets/3D2D.jpg" width = 400 />
+<p>纹理：可以看作是一张有弹性、可拉伸的2D图。</p>
+<p>纹理映射：是把2D纹理图贴在的物体表面的过程</p>
+<p><img src="Texture/../assets/texture.jpg" alt="" /></p>
+<p>映射关系：物体表面三角形面片上的顶点，与纹理图上的点的对应关系。</p>
+<p>纹理坐标：纹理图上的点的坐标，用符号(u, v)表示，u和v的范围都是[0, 1]</p>
+<p>插值：映射关系只包含三角形顶点对应的(u，v)，三角形内部点的(u，v)通过插值得到</p>
+<p><img src="Texture/../assets/texture2.jpg" alt="" /></p>
+<h1 id="应用纹理"><a class="header" href="#应用纹理">应用纹理</a></h1>
+<p>目的：为屏幕上的点p=(x,y)设置颜色</p>
+<ol>
+<li>找出p在投影前的坐标p'=(x,y,z)</li>
+<li>计算p'的(u,v)</li>
+<li>从texture中取出(u,v)点的值pv</li>
+<li>设置p的值为(u,v)点的值为pv</li>
+</ol>
+<blockquote>
+<p>❓ pv值对应漫反射公式中的kd，那么漫反射公式的后面两项跟纹理有什么关系？</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="background-1"><a class="header" href="#background-1">Background</a></h1>
+<p>为什么需要计算三角形内插值？</p>
+<p>答：很多特殊值的计算都是只计算顶点，而内部点的值通过插值得到平滑的结果。</p>
+<p>插值可以用于哪些数据？</p>
+<p>答：纹理坐标、颜色、法向量等</p>
+<h1 id="重心坐标-barycentric-coordinates"><a class="header" href="#重心坐标-barycentric-coordinates">重心坐标 Barycentric Coordinates</a></h1>
+<p><strong>三角形的 \(\left( \alpha , \beta , \gamma \right) \) 坐标系统</strong></p>
+<img src="Texture/../assets/coordinate.jpg" width = 400 />
+<p>假设三角形的三个顶点分别是 A、B、C，则三角形所在平面上的任意一点可描述为A、B、C的线性组合，即：</p>
+<p>\[
+\left( x,y \right) =\alpha A+\beta B+\gamma C
+\]</p>
+<p>三角形内部的点需要满足：\(\alpha +\beta +\gamma =1\)   \(\alpha \geqslant 0, \beta \geqslant 0,\gamma \geqslant 0\)</p>
+<p>\(\left( \alpha , \beta , \gamma \right)\) 称为三角形平面上的任意一点在三角形重心坐标系下的表示，简称为重心坐标。</p>
+<p>在此定义下，可得出：</p>
+<p>\[
+A=\left( 1,0,0 \right) ,,  B=\left( 0,1,0 \right) , C=\left( 0,0,1 \right)
+\]</p>
+<p>\[
+重心 = \left( \frac{1}{3},\frac{1}{3},\frac{1}{3} \right)
+\]</p>
+<img src="Texture/../assets/重心.jpg" width = 600 />
+<p>以2D为例，任意点(x,y)的重心坐标公式：</p>
+<p><img src="Texture/../assets/%E9%87%8D%E5%BF%83%E5%9D%90%E6%A0%87%E5%85%AC%E5%BC%8F.jpg" alt="" /></p>
+<p>解得：</p>
+<p>\[
+\alpha =\frac{-\left( x-x_B \right) \left( y_C-y_B \right) +\left( y-y_B \right) \left( x_C-x_B \right)}{-\left( x_A-x_B \right) \left( y_C-y_B \right) +\left( y_A-y_B \right) \left( x_C-x_B \right)}
+\]</p>
+<p>\[
+\beta =\frac{-\left( x-x_C \right) \left( y_A-y_C \right) +\left( y-y_C \right) \left( x_A-x_C \right)}{-\left( x_B-x_C \right) \left( y_A-y_C \right) +\left( y_B-y_C \right) \left( x_A-x_C \right)}
+\]</p>
+<p>\[
+\gamma =1-\alpha -\beta
+\]</p>
+<blockquote>
+<p><strong>📌</strong> 重心坐标不是指某个点的坐标，而是根据三角形顶点定义的一套坐标系</p>
+</blockquote>
+<h1 id="利用重心坐标做插值"><a class="header" href="#利用重心坐标做插值">利用重心坐标做插值</a></h1>
+<img src="Texture/../assets/重心坐标插值.jpg" width = 500 />
+<p>P是三角形内的一个点，根据P的坐标求出其重心坐标为\(\left( \alpha , \beta , \gamma \right) \)</p>
+<p>\(V_A, V_B, V_C\)分别是三角形顶点上的属性值，</p>
+<p>那么，P点处的属性值为：</p>
+<p>\[
+V_P=\alpha V_A+\beta V_B+\gamma V_C
+\]</p>
+<p>优点：计算方便</p>
+<p>局限性：空间三角形在平面上投影以后，同一个点在投影前后的重心坐标会改变，因此，插值所有的重心坐标必须是投影前的重心坐标</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="问题描述"><a class="header" href="#问题描述">问题描述</a></h1>
+<p>Texture Map 是256X256的，而要投影的屏幕是4K的，会导致多个屏幕像素对应一个纹理像素。</p>
+<p>效果：</p>
+<img src="Texture/../assets/nearest.jpg" width = 400 />
+<h1 id="双线性插值-bilinear-interpolation"><a class="header" href="#双线性插值-bilinear-interpolation">双线性插值 Bilinear Interpolation</a></h1>
+<h2 id="原理"><a class="header" href="#原理">原理</a></h2>
+<img src="Texture/../assets/bilinear.jpg" width = 500 />
+<ol>
+<li>取对应格子的值</li>
+<li>取邻近四个纹理像素(a,b,c,d)再根据(u,v)在a,b,c,d中的位置插值出(u,v)处的值，即分别做一个横向插值和竖向插值</li>
+</ol>
+<h2 id="具体步骤-1"><a class="header" href="#具体步骤-1">具体步骤</a></h2>
+<p>Linear interpolation(1D)：</p>
+<p>\[lerp\left( x,v_0,v_1 \right) =v_0+x\left( v_1-v_0 \right) \]</p>
+<p>Two helper lerps:</p>
+<p>\[u_0=lerp\left( s,u_{00},u_{10} \right) \]</p>
+<p>\[u_1=lerp\left( s,u_{01},u_{11} \right) \]</p>
+<p>Final vertical lerp, to get result:</p>
+<p>\[f\left( x,y \right) =lerp\left( t,u_0,u_1 \right) \]</p>
+<h2 id="效果"><a class="header" href="#效果">效果</a></h2>
+<p>虽然还有点模糊，但不是颗粒感的</p>
+<img src="Texture/../assets/bilinear2.jpg" width = 400 />
+<h1 id="双向三次插值-bicubic"><a class="header" href="#双向三次插值-bicubic">双向三次插值 Bicubic</a></h1>
+<ol>
+<li>取周围16个点</li>
+<li>三阶插值</li>
+</ol>
+<p>效果：</p>
+<img src="Texture/../assets/bicubic.jpg" width = 400 />
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="问题描述-1"><a class="header" href="#问题描述-1">问题描述</a></h1>
+<p>纹理像素分辨率过大，比被贴图的表面更精细，也会出现问题。例如：</p>
+<img src="Texture/../assets/problem2.jpg" width = 600 />
+<p>由于透视的原因，不同距离的屏幕像素对应的纹理像素区域不同</p>
+<p>在近处，物体表面比纹理图更精细，即Texture Magnification问题，见上一页，表现为锯齿。</p>
+<p>在远处，纹理图比物体表面精细，一个屏幕像素对应一片纹理像素，但只取一个纹理像素来代表这一片点，也会出现问题，表现为摩尔纹</p>
+<blockquote>
+<p><strong>📌</strong> 有的像素对应一小部分纹理像素，有的像素对应较大区域的纹理像素</p>
+<p><img src="Texture/../assets/footprint.jpg" alt="" /></p>
+</blockquote>
+<h1 id="解决方法一超采样-msaa"><a class="header" href="#解决方法一超采样-msaa">解决方法一：超采样 MSAA</a></h1>
+<blockquote>
+<p>🔎<a href="Texture/">MSAA</a></p>
+</blockquote>
+<p>可解决，但costly。</p>
+<h1 id="解决方法二-mip-map4420"><a class="header" href="#解决方法二-mip-map4420">解决方法二： Mip map[44:20]</a></h1>
+<p>原理：点查询（采样）--&gt;范围查询（取一个范围的平均）。</p>
+<p>特点：快，不精确（近似），方形区域</p>
+<h2 id="具体步骤-2"><a class="header" href="#具体步骤-2">具体步骤</a></h2>
+<ol>
+<li>
+<p>根据原始纹理，预处理出低分辨率的纹理，仅消耗额外1/3存储。</p>
+<p>[47:17]</p>
+<p><img src="Texture/../assets/mip.jpg" alt="" /></p>
+</li>
+<li>
+<p>找出屏幕上的一个像素对应的纹理上的近似方形区域。</p>
+<p>[52:30]</p>
+<p><img src="Texture/../assets/mipmap3.jpg" alt="" /></p>
+</li>
+<li>
+<p>根据mipmap计算边长为L的纹理方形区域的均值。边长为L的方形区域，会在第\(\log _2L\)层变成一个像素。直接查在\(\log _2L\)层纹理上查(u,v)的值即可。</p>
+</li>
+</ol>
+<h2 id="效果-1"><a class="header" href="#效果-1">效果</a></h2>
+<p>[56：20]</p>
+<p><img src="Texture/../assets/mipmapresult.jpg" alt="" /></p>
+<p>不同颜色代表查询不同的层，但是，存在两层之间的边界，边界处可能存在突变</p>
+<h1 id="改进三线性插值"><a class="header" href="#改进三线性插值">改进：三线性插值</a></h1>
+<p>这是一种基于mip map的改进，把层数变成一个连续的值，能够解决层数边界上的突变</p>
+<p>方法：根据层数再做一次插值，例如需要计算第1.8层的值，就把第1层的插值结果与第2层的插值结果再做一次插值 [57:52]</p>
+<h2 id="效果-2"><a class="header" href="#效果-2">效果</a></h2>
+<p>[1：00：20]</p>
+<p><img src="Texture/../assets/mipmapresult2.jpg" alt="" /></p>
+<p>MipMap解决“问题描述”中问题的效果：</p>
+<p><img src="Texture/../assets/mipmapresult3.jpg" alt="" /></p>
+<p>远处没有摩尔纹，但是变成了一片灰色，这是因为mipmap只能计算方形区域。而根据上图可以看出，屏幕的方形区域不对应纹理图上的方形区域。</p>
+<h1 id="改进各项异性过滤anisotropic-littering"><a class="header" href="#改进各项异性过滤anisotropic-littering">改进：各项异性过滤(Anisotropic littering)</a></h1>
+<p>对原始纹理做不均匀压缩，这样，方形压缩区域对应原始的矩形区域。[103：35]</p>
+<p><img src="Texture/../assets/anisotropic.jpg" alt="" /></p>
+<p>屏幕的方形区域实际上是对应纹理空间的不规律形状，如果用正方形来代表这长条，会发生过渡blur。 [1：04：40]</p>
+<p>各项异性过滤能解决水平或竖直长方形的问题，不能解决倾斜长方形的问题。</p>
+<h1 id="改进ewa-filtering"><a class="header" href="#改进ewa-filtering">改进：EWA Filtering</a></h1>
+<p>[1:06:31] </p>
+<p><img src="Texture/../assets/EWA.jpg" alt="" /></p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>纹理，原义为贴图。广义上，纹理=内存 + 范围查询（滤图）。通过这样的技术，可以得到很多实用的功能。</p>
+<h1 id="用纹理记录环境光照"><a class="header" href="#用纹理记录环境光照">用纹理记录环境光照</a></h1>
+<p>以一个点出发，向其四周都能看到光，把这些光记录下来，就是环境光照。用纹理来描述环境光照，并环境光照渲染其他物体。</p>
+<p>例如：这是某个点的环境光照</p>
+<img src="Texture/../assets/environment1.jpg" width = 400 />
+<p>用这个环境光照来渲染茶壶，就得到了这样的效果</p>
+<img src="Texture/../assets/environment2.jpg" width = 400 />
+<p>用纹理记录环境光照时，对光做了一些假设和简化：</p>
+<ul>
+<li>假设环境光的光源无限远，只记录某个方向上的光的信息（强度、颜色等），不记录光源的深度。</li>
+<li>在记录光照信息时，不区分光照的种类。</li>
+</ul>
+<h2 id="1235-spherical-环境图"><a class="header" href="#1235-spherical-环境图">[12:35] Spherical 环境图：</a></h2>
+<p>如果对一个点的周围均匀采样，得到的是一个球。因此，记录环境光照的纹理图是一个球面的图（左）。</p>
+<img src="Texture/../assets/environment3.jpg" width = 600 />
+<p>但把球面的环境光照纹理图展开，会出现扭曲：</p>
+<img src="Texture/../assets/environment4.jpg" width = 600 />
+<h2 id="cube-map"><a class="header" href="#cube-map">Cube Map</a></h2>
+<p>球表面点和立方体表面点可以一一对应。只要计算出这种对应关系，就能球面上的光照信息存储到立方体表面。</p>
+<p><img src="Texture/../assets/cubemap.jpg" alt="" /></p>
+<p>Cube Map展开后不会扭曲</p>
+<p><img src="Texture/../assets/cubemap2.jpg" alt="" /></p>
+<h1 id="凹凸贴图---用复杂纹理代替复杂几何"><a class="header" href="#凹凸贴图---用复杂纹理代替复杂几何">凹凸贴图 - 用复杂纹理代替复杂几何</a></h1>
+<p>用纹理定义某个点的相对高度，在object triangle mesh不变的条件下，得到视觉上的表面凹凸效果，即：用复杂纹理代替复杂几何</p>
+<p>原理：高度--&gt;法线--&gt;着色或法线--&gt;着色</p>
+<h2 id="法线贴图---用纹理记录顶点的法线"><a class="header" href="#法线贴图---用纹理记录顶点的法线">法线贴图 - 用纹理记录顶点的法线</a></h2>
+<p>Bump Mapping效果：</p>
+<img src="Texture/../assets/bump1.jpg" width = 600 />
+<p>以2D为例：</p>
+<ol>
+<li>在p点定义局部坐标系，令原始方向向上，为(0,1)或(0,0,1)</li>
+<li>想要让p表现出在p'处的效果，需要计算出在局部坐标系下，p'处的切线方向和法线方向
+<img src="Texture/../assets/bump.jpg" width = 600 /></li>
+<li>根据dp（通过纹理记录的值），直接使用以下公式就可以计算出p'处的切线方向和法线方向
+<img src="Texture/../assets/bump2.jpg" width = 600 /></li>
+</ol>
+<table><thead><tr><th></th><th>2D</th><th>3D</th></tr></thead><tbody>
+<tr><td>p的法线方向</td><td>(0,1)</td><td>(0,0,1)</td></tr>
+<tr><td>p'的切线方向</td><td>(1,dp)</td><td>(1, dp/du, dp/dv)</td></tr>
+<tr><td>p'的法线方向</td><td>(-dp, 1)</td><td>(-dp/du, -dp/dv, 1)</td></tr>
+</tbody></table>
+<ol start="4">
+<li>
+<p>在此局部坐标系中求切线方向和法线方向，求出后再切回实际坐标系。</p>
+</li>
+<li>
+<p>根据新的切线</p>
+</li>
+</ol>
+<p>凹凸贴图的局限性：</p>
+<p><img src="Texture/../assets/displacement.jpg" alt="" /></p>
+<ol>
+<li>边缘处会露馅</li>
+<li>缺少“自己阴影投影到自己身上”</li>
+</ol>
+<h2 id="位移贴图---用纹理记录顶点的高度偏移"><a class="header" href="#位移贴图---用纹理记录顶点的高度偏移">位移贴图 - 用纹理记录顶点的高度偏移</a></h2>
+<p>输入：原始mesh，高度贴图</p>
+<p>输出：mesh的顶点被改变</p>
+<p>代价：要求原始mesh的三角形足够细</p>
+<p>改进：动态三角形细分</p>
+<h1 id="3d纹理"><a class="header" href="#3d纹理">3D纹理</a></h1>
+<img src="Texture/../assets/displacement2.jpg" width = 600 />
+<p>纹理不只有表面，内部也有值，即空间任意一点都有值。</p>
+<p>纹理并非实际定义，而是通过noise生成（[35:01]右）</p>
+<h2 id="3d纹理用于体积渲染"><a class="header" href="#3d纹理用于体积渲染">3D纹理用于体积渲染</a></h2>
+<p>用于记录3D空间信息</p>
+<h1 id="用纹理记录之前算好的信息"><a class="header" href="#用纹理记录之前算好的信息">用纹理记录之前算好的信息</a></h1>
+<p>[35:35]</p>
+<p>好处：很多计算可以提前算好</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="几何的表达方式"><a class="header" href="#几何的表达方式">几何的表达方式</a></h1>
+<p>几何的表达方式分为隐式表达和显式表达。</p>
+<p>隐式表达[46:35]是指，不提供点的具体位置，只提供点应满足的约束f(x,y,z)=0</p>
+<p>显式表达是指，直接给出所有点的具体位置，或者给出点的映射关系，例如\(f:R^2 \rightarrow R^3\)</p>
+<p>实际场景中，会根据需要使用不同的表达方式</p>
+<h1 id="隐式表达举例"><a class="header" href="#隐式表达举例">隐式表达举例</a></h1>
+<table><thead><tr><th>类型</th><th>举例</th><th>表达方式</th></tr></thead><tbody>
+<tr><td>Algebraic Surface</td><td>[58：10]</td><td>\(x^2 + y^2 + z^2 = 1\)</td></tr>
+<tr><td>Constructive solid Geometry</td><td>[58.23]</td><td>bool 运算</td></tr>
+<tr><td>Distinct Function</td><td>[1:01:23]</td><td>可对距离函数做blending</td></tr>
+<tr><td>level Set Method</td><td>[1:10:22]</td><td></td></tr>
+<tr><td>Fractals 分形</td><td>[1：12：44]</td><td></td></tr>
+</tbody></table>
+<p>优点：</p>
+<ul>
+<li>容易描述</li>
+<li>compact 表达</li>
+<li>容易计算离表面的距离</li>
+<li>容易计算光线与表面的夹角
+缺点：</li>
+<li>难以描述复杂对象</li>
+</ul>
+<h1 id="显式几何"><a class="header" href="#显式几何">显式几何</a></h1>
+<h2 id="点云-point-cloud"><a class="header" href="#点云-point-cloud">点云 point cloud</a></h2>
+<p>list of points</p>
+<p>可以表示任意的几何形状</p>
+<p>常用于扫描输出</p>
+<p>常被转换为其它方式的使用</p>
+<h2 id="polygon-mesh"><a class="header" href="#polygon-mesh">Polygon Mesh</a></h2>
+<p>应用最广泛。</p>
+<p>以三角形、四边形为主</p>
+<p><strong>obj 文件格式</strong>：</p>
+<ul>
+<li>v：顶点坐标</li>
+<li>vn:顶点法向量，数量同v</li>
+<li>vt：纹理坐标，最多为（顶点数 * 面片数）个</li>
+</ul>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<p>Lecture 11
+Geometry 2 46</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bezier曲线"><a class="header" href="#bezier曲线">Bezier曲线</a></h1>
+<p>[13：24] 用一系列控制点定义曲线</p>
+<p>起始点同p0位置，方向同\(\vec{p_0p_1}\)</p>
+<p>终点同为p3位置，方向同\(\vec{p_2p_3}\)</p>
+<h2 id="de-casteliau算法"><a class="header" href="#de-casteliau算法">de Casteliau算法</a></h2>
+<p>榭根据给定点序列画Bezier曲线</p>
+<h3 id="给定3个点画bezier曲线"><a class="header" href="#给定3个点画bezier曲线">给定3个点，画Bezier曲线</a></h3>
+<p>把起点看作是t=0时刻，终点看作是t=1时刻，画Bezier曲线，相当于求t=[0,1]区间时pt所在的位置。把范围所有时刻的pt连起来就是Bezier曲线。</p>
+<p><img src="Geometry/../assets/7.PNG" alt="" /></p>
+<ol>
+<li>算出b0b1中的t位置的点为a</li>
+<li>算出b1b2中的t位置的点为b</li>
+<li>ab连成一条线，算是ab中的t位置的点为c</li>
+<li>c是 Pt 的位置，</li>
+</ol>
+<h3 id="给定4个点画bezier曲线"><a class="header" href="#给定4个点画bezier曲线">给定4个点，画Bezier曲线</a></h3>
+<p><img src="Geometry/../assets/8.PNG" alt="" /></p>
+<p>[23:24]</p>
+<h3 id="以上算法的代数表示"><a class="header" href="#以上算法的代数表示">以上算法的代数表示</a></h3>
+<p>推导过程省略，最后的结论是：</p>
+<p>\[
+b^n(t) = b_0^n(t) = \sum^n_{j=0} b_j B^n_j(t)
+\]</p>
+<ul>
+<li>\(b_j\) 为定义的控制点。</li>
+<li>\(b^n(t)\) 为一组控制点的线性组合，组合的系数是B，即与t有关的多项式</li>
+</ul>
+<p>\[
+B^n_j(t) = \sum_{j=0}^n b_j \begin{pmatrix}n \
+j \end{pmatrix} t^j(1-t)^{n-j}
+\]</p>
+<h3 id="berstein多项"><a class="header" href="#berstein多项">Berstein多项</a></h3>
+<p>[30:40]
+ˊ</p>
+<h1 id="piece-wise-bezier曲线"><a class="header" href="#piece-wise-bezier曲线">Piece-wise Bezier曲线</a></h1>
+<p>[38:23] 多个点的Bezier曲线通常不利于控制，因此把多个点分段，每4个点画一条曲线，例如photoshop中的钢笔功能。</p>
+<p>C0连续：数值上连续</p>
+<p>C1连续：切线方向连续，即光滑</p>
+<p>C2连续：曲率连续</p>
+<p>要使分段的Bezier曲线光滑（C1连续），需要让上一段的终点和下一段的起点切线方向一致。这可能通过控制点的位置来实现。</p>
+<h1 id="splint-样条"><a class="header" href="#splint-样条">Splint 样条</a></h1>
+<p>定义： 一条曲线，由一系列控制点来控制，且满足一定的连续性</p>
+<h2 id="b-spines"><a class="header" href="#b-spines">B-spines</a></h2>
+<p>B: basis，基函数，即与以一定方式将基函数组合，得到一个复杂函数</p>
+<p>局部性：移到一个控制点，只在一定范围内影响这个曲线</p>
+<p>（这个内容比较复杂，本课不展开了</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bezier-曲面5440"><a class="header" href="#bezier-曲面5440">Bezier 曲面[54：40]</a></h1>
+<p>在两个方向上分别应用插值</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="basic"><a class="header" href="#basic">Basic</a></h1>
+<p>通过定义点的位置和点之间的连续关系，来描述一个曲面。</p>
+<p>在mesh上的操作有：</p>
+<ul>
+<li>网速细分：引入更多三角形，并调整顶点坐标。使表面更光滑</li>
+<li>网格简化</li>
+<li>网格 Regularization：使网格更接近正三角形</li>
+</ul>
+<h1 id="网格细分-0926"><a class="header" href="#网格细分-0926">网格细分 [09：26]</a></h1>
+<p>目的：引入更多三角形，并调整顶点坐标。使表面更光滑</p>
+<h2 id="loop-细分算法"><a class="header" href="#loop-细分算法">Loop 细分算法</a></h2>
+<p>[11:30] (loop 是人名，不代表循环）</p>
+<ul>
+<li>第一步： 划分三角形</li>
+</ul>
+<p>![../assets/9.PNG]</p>
+<ul>
+<li>第二步：更新new顶点的位置</li>
+</ul>
+<p><img src="Geometry/../assets/10.PNG" alt="" /></p>
+<p>new顶点被两个old三角形共享，更新公式为：</p>
+<p>\[
+p = frac{3}{8}(A+B) + frac{1}{8}(C+D)
+\]</p>
+<ul>
+<li>更新old顶点的位置</li>
+</ul>
+<p><img src="Geometry/../assets/11.PNG" alt="" /></p>
+<p>old 顶贞被多个 old 三角形共享</p>
+<p>更新公式为：</p>
+<p>\[
+p = (1 - n * u) * v + n * v'
+\]</p>
+<p>n:与old顶点连接的边数</p>
+<p>u:一个经验值</p>
+<p>v:old顶点更新前的位置</p>
+<p>v': old顶点的邻居的位置 # [?]邻居的平均值？</p>
+<h2 id="catmull-clark-细分"><a class="header" href="#catmull-clark-细分">Catmull-Clark 细分</a></h2>
+<p>loop 细分只能用于三角形面片，而此算法则更通用</p>
+<h3 id="定义-1"><a class="header" href="#定义-1">定义</a></h3>
+<p>Quad face：四边形面片</p>
+<p>Non-quad face：非四边形面片</p>
+<p>奇异点： degree不为4的点，degree 表示与点相邻的边数</p>
+<h3 id="具体步骤-3"><a class="header" href="#具体步骤-3">具体步骤</a></h3>
+<ul>
+<li>第一步：取所有边上的中点与面上的中点</li>
+</ul>
+<p>把边中点与面中总用一条线连起来
+操作后，增加的奇异点个数与 操作前的non-quad face 数相同，且所有的面都变为 quad face</p>
+<ul>
+<li>第二步： 更新面中心的新增点，</li>
+</ul>
+<p><img src="Geometry/../assets/12.PNG" alt="" /></p>
+<p>更新公式为：</p>
+<p>\[
+f = \frac{v_1 + v_2 + v_3 + v_4}{4}
+\]</p>
+<ul>
+<li>第三步： 更新边中心的新增点</li>
+</ul>
+<p><img src="Geometry/../assets/13.PNG" alt="" /></p>
+<p>更新公式为：</p>
+<p>\[
+e = \frac{v_1 + v_2 + f_1 + f_2}{4}
+\]</p>
+<ul>
+<li>更新 old 顶点</li>
+</ul>
+<p><img src="Geometry/../assets/14.PNG" alt="" /></p>
+<p>更新公式为：</p>
+<p>\[
+p' = \frac{f_1 + f_2 + f_3 + f_4 + 2(e_1 + e_2 + e_3 + e_4)}{16}
+\]</p>
+<h1 id="mesh-简化"><a class="header" href="#mesh-简化">Mesh 简化</a></h1>
+<h2 id="边坍缩-edge-collapse"><a class="header" href="#边坍缩-edge-collapse">边坍缩 Edge Collapse</a></h2>
+<h3 id="quadris-error-matrics-二次误差度量"><a class="header" href="#quadris-error-matrics-二次误差度量">Quadris Error Matrics 二次误差度量</a></h3>
+<p>二次误差度量用于选择被坍缩的边</p>
+<p>如果用一个点来代替原始的多个点，怎么放这个点得到的形状与原始形状最接近？</p>
+<p>答：使用二次说美来度量。[41：17]。即 new point 到 old edge 的距离平方和最小</p>
+<p>对任意一条边，坍缩并把 new point 放在与原始 mesh 的误­差最小的地方。 </p>
+<p>把所有边都尝试坍缩，并计算坍缩误差，看哪条边坍缩产生的误差最小，就实际地坍缩这条边。</p>
+<p>存在的问题：</p>
+<p>坍缩一条边会对它周围的边造成影响。因此不能提前离线算好所有过的误差大小和排序</p>
+<p>解触方法：</p>
+<p>优先队列。动态更新受影响的边</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="阴影"><a class="header" href="#阴影">阴影</a></h1>
+<h2 id="shadow-mapping-算法"><a class="header" href="#shadow-mapping-算法">Shadow Mapping 算法</a></h2>
+<p>在生成阴影的这一步，不需要知道场景的几何信息</p>
+<p>缺点：1.走样 2.该算法只能处理点光源</p>
+<p>原理： 如果一个点不在阴影里，那么（camera）人可以看见点&amp;&amp;光源可以看见点</p>
+<p>具体步骤：</p>
+<ol>
+<li>从光源看向场景[55：13]，记录能看到的点的深度(shadow map)。</li>
+<li>从眼睛看向场景[56：41]，记录眼睛能看到的点。</li>
+<li>把眼睛能看到的点投影回相机的呈像平面，即推出它会出现在图像的哪个像素上</li>
+<li>如果点到光源的深度与叫step1记录的这个方向的深度一致，
+则：这个点可被光源和 camera 同时看到，不在阴影中。否则：在阴影中</li>
+</ol>
+<p>存在点的问题：</p>
+<ol>
+<li>step 4判断距离是否相等，但距离是浮点数</li>
+<li>shadow map 的分辨率</li>
+<li>只能做硬阴影。</li>
+</ol>
+<h2 id="硬阴影-us-软阴影"><a class="header" href="#硬阴影-us-软阴影">硬阴影 Us 软阴影</a></h2>
+<p>硬阴影[1：11：40]边缘锐利
+软阴影[1：12：09]，形成原因：半影[1：13：31】，因为光源有大小</p>
+<div style="break-before: page; page-break-before: always;"></div><p>光线追踪与光栅化是两种不同的呈像方式，但光栅化具有“can't handle global effect well”的局限性，不能呈现出以下的效果：</p>
+<ul>
+<li>轮阴影</li>
+<li>glossy反射，即有点粗糙的镜子，或打模非常光滑的金属</li>
+<li>间接光照，即光线弹射不止一次
+因此有了光线追踪技术。</li>
+</ul>
+<p>光栅化速度快，质量差， 能达到real-time，光线追踪速度慢，质量好，通常用于offline。</p>
+<h1 id="定义-2"><a class="header" href="#定义-2">定义</a></h1>
+<ol>
+<li>光线沿直线传播</li>
+<li>光线可以交叉但不发生碰撞</li>
+<li>光线从光源出发，经过不断弹射，打入眼中。即光路可逆</li>
+</ol>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="baseline-算法2040"><a class="header" href="#baseline-算法2040">Baseline 算法[20：40]</a></h1>
+<h2 id="假设"><a class="header" href="#假设">假设</a></h2>
+<ol>
+<li>光源是点光源。</li>
+<li>camera 是一个点</li>
+<li>完美折射</li>
+</ol>
+<h2 id="具体步骤-4"><a class="header" href="#具体步骤-4">具体步骤</a></h2>
+<ol>
+<li>从眼睛向每个像素投出一根光线</li>
+<li>光线和场景相交，求最近的交点</li>
+<li>交点与光源连线，判断定是否在阴影中</li>
+<li>算着色 </li>
+<li>写回像素值</li>
+</ol>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="whitted-风格算法递归"><a class="header" href="#whitted-风格算法递归">Whitted-风格算法(递归)</a></h1>
+<p>[23：20]</p>
+<ol>
+<li>经过反射和折射会经过多个弹射点[25:25]</li>
+<li>对每个弹射点都计算着色的值[25：42]</li>
+<li>如果某个弹射点能被光源照时，其着色值都会被加到所看的像素上去[26：23]</li>
+</ol>
+<p><img src="RayTracing/../assets/15.PNG" alt="" /></p>
+<p>反射能量 + 折射能量 = 1</p>
+<p>一些名词： primary ray, secondary ray, shadow ray</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ray-surface-交点"><a class="header" href="#ray-surface-交点">Ray-Surface 交点</a></h1>
+<h2 id="定义-3"><a class="header" href="#定义-3">定义</a></h2>
+<p>光线：(o, t)，即（起点，方向）<br />
+光线上的某一点： o+td, t&gt;=0</p>
+<h2 id="光线与球的交点"><a class="header" href="#光线与球的交点">光线与球的交点</a></h2>
+<p>ray: \(R(t) = o + td\)<br />
+圆: \((p - c) ^ 2 - R^2 = 0\)<br />
+⇒ \((o + td - c) ^ 2 - R^2 = 0\)</p>
+<p>解出t，取大于0且较小的t</p>
+<h2 id="光线与隐式曲面的交点"><a class="header" href="#光线与隐式曲面的交点">光线与隐式曲面的交点</a></h2>
+<p>ray: \(R(t) = o + td\)<br />
+曲面： f(p) = 0</p>
+<p>⇒ f(o + td)=0
+解出t</p>
+<h2 id="光线与三角形面片的交点"><a class="header" href="#光线与三角形面片的交点">光线与三角形面片的交点</a></h2>
+<p>任意一个点与封闭 mesh 求交，
+交点个数为奇数则点在内
+交点个数为偶数则点在外</p>
+<h3 id="光线与三角形的交点"><a class="header" href="#光线与三角形的交点">光线与三角形的交点</a></h3>
+<ol>
+<li>光线与三角形面片所在的平面求交点
+ray: \(R(t) = o + td\)<br />
+平面：\((p-p') \dot N = 0\)<br />
+平面公式解释：点乘为0代表垂直，N是平面的法向量，p'为平面上任意一点</li>
+</ol>
+<p>⇒ \((o + td - p') \dot N = 0\)<br />
+解得：\(t = \frac{(p'- o) \dot N}{d \dot N}\)</p>
+<ol start="2">
+<li>判断交点是否在三角形内</li>
+</ol>
+<p>或 MT 算法。 (P 37）</p>
+<p>点在三角形内 \(\Leftrightarrow\) 点用三角形的重心坐标表示且满是 constrain</p>
+<p>0 + t D =（1-b1 - b2)P0 + b1P1 + b2p2</p>
+<p>其中大写为3D已知向量，小写为未知标量</p>
+<p>解得：
+<img src="RayTracing/../assets/16.PNG" alt="" /></p>
+<p>判定结果AC的条件：r&gt;0, b1&gt;0, b2&gt;0, 1-b1-b2&gt;0</p>
+<h3 id="算法加速"><a class="header" href="#算法加速">算法加速</a></h3>
+<p>Bounding Volumes 包围盒[56：40]</p>
+<p>1.长方体，即3个不同的对面（slab）形成的交集[58:36]</p>
+<p>AABB = Axis Aligned Bounding Box</p>
+<p><img src="RayTracing/../assets/17.PNG" alt="" /><br />
+求光线与每个轴上的对面相交的时间，tmin和tmax</p>
+<p>光线进入 AABB 的时间为所有[tmin, tmax] 的交集</p>
+<p>tenter = max{tmin}, texit = min{tmax}</p>
+<p>tenter &lt; texit ⇒ 光线与AABB 相交</p>
+<p>texit &lt; 0 ⇒ 不相交</p>
+<p>tenter &lt; 0 &lt; texit ⇒ 光源在 AABB 内</p>
+<p>Q:为什么要用 AABB
+A:光线与朋平面求交的计算简单[1:15:49]</p>
+<p>普通平面：\(t = \frac{(p'- o) \dot N}{d \dot N}\)</p>
+<p>AABB平面：\(t = \frac{(p'_x- o_x) }{d_x}\)</p>
+<h3 id="怎样利用-aabb-加速-ray-tracing"><a class="header" href="#怎样利用-aabb-加速-ray-tracing">怎样利用 AABB 加速 ray tracing</a></h3>
+<h4 id="均匀的格子-uniform-grids-813"><a class="header" href="#均匀的格子-uniform-grids-813">均匀的格子 Uniform Grids [8：13]</a></h4>
+<p>假设：光线与 Grid 求交很快，与 object 求交很慢</p>
+<ol>
+<li>找到场景的 Bounding Volumn</li>
+<li>BV划分成格子</li>
+<li>判断每个 Grid 是否有物体</li>
+<li>判断光线与 Grid 是否相交，</li>
+<li>如果Grid内有 object且光线与Grid相交，再计算光线与 grid 内的 object 是否相交</li>
+</ol>
+<p>算法特点：</p>
+<ol>
+<li>grid 不能太疏或密</li>
+<li>适用于 object 的大小接近且位置均匀</li>
+<li>不适用于 object 分布不均匀的场景</li>
+</ol>
+<h4 id="空间划分-spatial-partition"><a class="header" href="#空间划分-spatial-partition">空间划分 Spatial Partition</a></h4>
+<p>[18：59] Octree, KD tree, BSP tree
+视频以KD Tree 为例子。</p>
+<h4 id="kd-tree-的数据结构"><a class="header" href="#kd-tree-的数据结构">KD Tree 的数据结构</a></h4>
+<ul>
+<li>中间结点</li>
+</ul>
+<p>划分轴：x,y,z轴流<br />
+划分点：根据特定的策略选择<br />
+child: 2个<br />
+object: 不存 object 数据</p>
+<ul>
+<li>叶子结色
+存 list of objects.</li>
+</ul>
+<h4 id="traverse"><a class="header" href="#traverse">Traverse.</a></h4>
+<p>递归</p>
+<h4 id="局限性"><a class="header" href="#局限性">局限性</a></h4>
+<ol>
+<li>如何判断BV与三角形相交。</li>
+<li>object 存在于多个叶子结点中</li>
+</ol>
+<h2 id="物体划分-object-partition"><a class="header" href="#物体划分-object-partition">物体划分 Object Partition</a></h2>
+<h3 id="bvh--4000"><a class="header" href="#bvh--4000">BVH  [40：00]</a></h3>
+<p>优点：解决以上2个问题<br />
+局限性： BV 有重叠，好的划分使重叠尽量少</p>
+<h4 id="create"><a class="header" href="#create">Create</a></h4>
+<ol>
+<li>计算 B V</li>
+<li>对BV内的obj划分
+以上两步交替进行，通常选择对最长的轴进行划分，取中间位置作为划分点。当BV中的三角形个数少于门限时停止</li>
+</ol>
+<h4 id="traverse-1"><a class="header" href="#traverse-1">Traverse</a></h4>
+<p>同上</p>
+<h4 id="kd-tree-vs-bvh-5425"><a class="header" href="#kd-tree-vs-bvh-5425">KD Tree VS. BVH [54:25]</a></h4>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>Basic radio meting 辐射度量学</p>
+<h1 id="定义-4"><a class="header" href="#定义-4">定义</a></h1>
+<p>这是一种基于物理的方法。首先对光的单位和属性做一些定义</p>
+<table><thead><tr><th>定义</th><th>说明</th><th>符号</th><th>单位</th><th>关系</th></tr></thead><tbody>
+<tr><td>Radiant Energy</td><td>能量</td><td>Q</td><td>J</td><td></td></tr>
+<tr><td>Radiant Flux</td><td>power，即单位时间的能量[1：09：56]</td><td>\(\phi\)</td><td>W</td><td>\(\phi = \frac{dQ}{dt}\)</td></tr>
+<tr><td>Radiant Intensity</td><td>power per unit solid angle，即单位时间单位面积上的能量</td><td>I</td><td>\([\frac{W}{Sr}]\)</td><td>\(I(w) = \frac{d(\phi)}{dw}\)，其中分子代码power，分母代表per unit solid angle</td></tr>
+<tr><td>Irradiance</td><td>power per unit area</td><td>E</td><td>\([\frac{W}{m^2}]\)</td><td>\(E(x) = \frac{d(\phi(x))}{dA}\)，其中A代表光线垂直接触的面积</td></tr>
+<tr><td>Radiance [19:30]</td><td>power per unit solid angle per unit area</td><td>L</td><td>\([\frac{W}{Srm^2}]\)</td><td>\(L(p, w) = \frac{d^2(\phi(p, w))}{dwdA\cos\theta}\)</td></tr>
+</tbody></table>
+<ul>
+<li>补充1：立体角</li>
+</ul>
+<p>立体角：[1：13：19下]</p>
+<p>2D：\(\theta = \frac{l}{r}, \in [0, 2\pi]\)
+3D：\(\omega = \frac{A}{r^2}, \in [0, 4\pi]\)</p>
+<p>单位立体角：[1:17:43]，表示空间中一个方向，符号为：\(\theta\)或\(\phi\)</p>
+<p>unit solid angle = \(\sin \theta d \theta d \phi\)</p>
+<ul>
+<li>补充2：单位面积上的Irradiance</li>
+</ul>
+<p><img src="RayTracing/../assets/18.PNG" alt="" /></p>
+<p>单位面积上的Irradiance为：\(E = \frac{\phi}{4\pi r^2}\)
+当 r 变大.不是 Intensity 在衰减，而是 Irradiant 在衰减</p>
+<ul>
+<li>理解1： Irradiance per 立体角</li>
+</ul>
+<p><img src="RayTracing/../assets/19.PNG" alt="" /></p>
+<p>这是一个unit Area.
+它辐射的总能量为 Irradiance
+它向方向 W 辐射的能量强度为 Radiance</p>
+<ul>
+<li>理解2：</li>
+</ul>
+<p>沿着 w 方向到达dA的能量为 Radiance
+所有方向到达dA的能量的总和为 Irradiance</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="brdf-双向反射分布函数"><a class="header" href="#brdf-双向反射分布函数">BRDF, 双向反射分布函数</a></h1>
+<p>输入：一个入射光线的角度和能量<br />
+输出：各个反射光线的能量分布，包含镜面反射和漫反射</p>
+<p>[36:16]</p>
+<p>\[
+f_r(w_i-&gt;w_r) = \frac{dL_r(w_r)}{dE_i(w_i)} = \frac{dL_r(w_r)}{L_i(w_r)\cos\theta_idw_i}
+\]</p>
+<p>其中分子表示unit area向wr辐射的能量，分母表示unit area从wi接收到的能量</p>
+<p>\[
+L_r(p,w_r) = \int_{H_2}f_r(p, w_1-&gt;w_2)Li(p, w_i)\cos\theta_idw_i
+\]</p>
+<p>其中：<br />
+fr：把radiance分给某个出射角<br />
+Li：radiance<br />
+dwi：每个入射角wi对同一出射方向wr的贡献的累积</p>
+<p>任何的出射的 radiance 都会变成其它的入射的 radiance，即公式中的 Li(p, wi)不一定来自光源</p>
+<h1 id="渲染方程"><a class="header" href="#渲染方程">渲染方程</a></h1>
+<p>Lo(p, wo) = 自己发光 + 来自其它的反射或直射光。<br />
+定义的积分域为上半球，即不考虑折射。</p>
+<ul>
+<li>理解1：1个入射光线。[47:44]</li>
+<li>理解2：多个八入射光线 [47：57]</li>
+<li>理解3：1个面光源 [48：30]</li>
+<li>理解4：考虑其它物体的反射光作为入射光线[49:31]
+这里涉及到递归，简化公式得：</li>
+</ul>
+<p>\[
+I(u) = e(u) + \intI(v)k(u,v)dw
+\]</p>
+<p>其中：<br />
+I(u)：未知量<br />
+e(u)：自己发的光<br />
+I(v)：未知量<br />
+k(u,v)dw：材料属性</p>
+<p>进一步简化得:</p>
+<p>L = E + K L </p>
+<p>解得:</p>
+<p>\[
+L = E + KE + K^2E + k^3E + \dots
+\]</p>
+<p>其中：<br />
+前2项为光栅化信息<br />
+除第一项以外都是全局光照<br />
+1次项KE为直接光照<br />
+后面项为间接光照</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="概率论基础"><a class="header" href="#概率论基础">概率论基础</a></h1>
+<p>省略，见<a href="https://windmissing.github.io/mathematics_basic_for_ML/">机器学习数学基础</a></p>
+<p>PDF：概率密度函数</p>
+<h1 id="复习渲染方程"><a class="header" href="#复习渲染方程">复习渲染方程</a></h1>
+<p>复习渲染方程，回顾求积分的业务背景</p>
+<p>\[
+L_o(p, w_o) = L_e(p, w_o) + \int_{\omega^+}L_i(p, w_i)f_r(p, w_i, w_o)(n\dot w_i)dw_i
+\]</p>
+<p>其中：<br />
+第一项：自己发的光<br />
+Li：接收到的光<br />
+fr：反射参数，与材料有关<br />
+n*wi：夹角<br />
+dwi：积累所有的方向</p>
+<h1 id="蒙特卡罗积分-monto-carlo-integration"><a class="header" href="#蒙特卡罗积分-monto-carlo-integration">蒙特卡罗积分 Monto Carlo Integration</a></h1>
+<p>目标：求定积分\(\int_a^bf(x)dx\)<br />
+方法：在积分域内不断地采样，并对采样结果平均，则：<br />
+\[
+\int_a^bf(x)dx \approx E(f(x))(b-a)
+\]</p>
+<p>另一种理解：<br />
+使用\(X_i ~ p(x)\)为[a, b]的随机采样，可以是任意的采样方式。则：</p>
+<p>\[
+F_N = \frac{1}{N}\sum\frac{f(X_i)}{p(X_i)}
+\]</p>
+<p>好处：只需要能对[a b]以一定方式采样，就可以求出定积分</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="path-tracing-路径追踪"><a class="header" href="#path-tracing-路径追踪">Path Tracing 路径追踪</a></h1>
+<h2 id="whited-style-ray-racing-的假设"><a class="header" href="#whited-style-ray-racing-的假设">Whited Style ray racing 的假设</a></h2>
+<p>光线打到光滑/小物体，会反射。<br />
+打到透明物体，会折射<br />
+打到普通物体，会漫反射</p>
+<p>局限性:<br />
+[24：13]， glossy 物体被使用镜面反射处理了。<br />
+[26：36] 漫反射也应该有多次弹射</p>
+<p>Whited Style 算法有局限性，但 rendering 公式是正确的。正确解出 rendering 公式，会得到正确的算法。</p>
+<h2 id="用-monto-calio-方法解定积分"><a class="header" href="#用-monto-calio-方法解定积分">用 Monto Calio 方法解定积分</a></h2>
+<h3 id="场景13218"><a class="header" href="#场景13218">场景1[32：18]</a></h3>
+<p>只考虑直接光照，且被照射点不发光。则入射光线为上半球所有Wi，出射光线为 Wo,求 Wo</p>
+<p>\[
+L_o(p, w_o) = \int_{\omega^+}L_i(p, w_i)f_r(p, w_i, w_o)(n\dot w_i)dw_i
+\]</p>
+<p>从公式可以看出，无自身发光项，且直接光照只来自光源。</p>
+<p>用Monto Carlio解定积分，假设使用均匀采样，将公式代入以上公式，可将连续问题转化为离散问题，得到：</p>
+<p>\[
+L_o(p, w_o) \approx \frac{1}{N} \sum \frac{L_i(p, w_i)f_r(p, w_i, w_o)(n\dot w_i)dw_i}{1/2\pi}
+\]</p>
+<p>其中wi来自采样</p>
+<h3 id="场景24241"><a class="header" href="#场景24241">场景2[42:41]</a></h3>
+<p>\[
+L_o(p, w_o) \approx \frac{1}{N} \sum \frac{func(w_i)}{1/2\pi}
+\]</p>
+<p>当wi来自光源时，</p>
+<p>\[
+fun = Li * Fr * cos
+\]</p>
+<p>当wi来自其它物体q时，</p>
+<p>\[
+fun = shade(q - wi) * fr * cos
+\]</p>
+<p>[46：48] 光线路径数rays = \(N^{#bouns}\) 这个量级下计算量会爆炸</p>
+<p>因此取 N = l （即 path tracing)</p>
+<p>[49：4] path足够多，会缓解N=1带来的噪声</p>
+<h2 id="ray-generation-5117"><a class="header" href="#ray-generation-5117">ray generation [51:17]</a></h2>
+<ol>
+<li>在一个像素内采样N个sample</li>
+<li>sample shoot a rag</li>
+<li>如果 ray 碰中物体 p，则pixel-radiance += 1/N * shade (p, sample)</li>
+<li>return pixel_radiance</li>
+</ol>
+<h2 id="如何解递归问题"><a class="header" href="#如何解递归问题">如何解递归问题</a></h2>
+<p>人为定义 bounce 的次数，后面的cut掉，这会带来能量损失。
+解决方案： Russian Roulette 俄罗斯轮盘赌
+即不明确定义次数，而是以一定概率决定是否继续 bounce，最后得到的结果除以p.
+其期望结果与无限 bounce 的理论结果相同
+E = P * (Lo/ P) + (1-P) * 0 = Lo</p>
+<h2 id="path-tracing-的性能与效率10032"><a class="header" href="#path-tracing-的性能与效率10032">Path Tracing 的性能与效率[1:00:32]</a></h2>
+<h3 id="分析10212"><a class="header" href="#分析10212">分析[1：02：12]</a></h3>
+<p>当光源大时，N=1随机采样比较容易遇到光源
+当光源小时，大多数次随机采样被“浪费”了。</p>
+<p>解决方法：上半球均匀采样-&gt;只在光源上采样，</p>
+<blockquote>
+<p>如果我来做会指使高斯分布来采样.可以控制重点</p>
+</blockquote>
+<p>采样区域的位置和大小
+在上半球积分-&gt;在光源上积分</p>
+<p>\[
+dw = \frac{dA \cos\theta'}{||x'-x||^2}
+\]</p>
+<p>立体角定义</p>
+<h2 id="总结-11126"><a class="header" href="#总结-11126">总结 [1：11：26]</a></h2>
+<p>直接光照和间接光照分开处理
+在光源上积分需要判断一个 sample 出的光线是否被挡住</p>
+<h2 id="其它"><a class="header" href="#其它">其它</a></h2>
+<ol>
+<li>点光源当成面积很小的光源处理</li>
+<li>怎样对一个函数均匀采样？</li>
+<li>均匀采样→重要性采样</li>
+<li>随机数质量对算法的影响</li>
+<li>把上半球采样与光源采样结合起来</li>
+<li>pixel reconstruction filter</li>
+<li>radiance → color, gamma 校正</li>
+</ol>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="材质与处观"><a class="header" href="#材质与处观">材质与处观</a></h1>
+<p>材质是渲染方程中的 BRDF 项</p>
+<h1 id="漫反射材质"><a class="header" href="#漫反射材质">漫反射材质</a></h1>
+<h2 id="场景一"><a class="header" href="#场景一">场景一</a></h2>
+<p>假设：入射光是 Uniform 的，出射光是漫反射，也是 uniform 的，那么BRDF项为fr = c（c 的数值与颜色有关）</p>
+<p>\[
+L_o(w_o) = \int L_i * f_r * cos dw_i
+\]</p>
+<p>这种情况下，Li*fr这一部分是常数，可以提取到wi外面，得：</p>
+<p>\[
+L_o(w_o) = L_i * f_r * \int_{H^2}cos\theta_i dw_i = \pi f_r L_i
+\]</p>
+<p>\[
+fr = frac{1}{\pi} frac{L_o}{L_i}
+\]</p>
+<p>\(frac{L_o}{L_i}\)是散射率albedo，范围[0，1]，数值与颜色有关</p>
+<h2 id="场景二1614"><a class="header" href="#场景二1614">场景二[16:14]</a></h2>
+<p>类似镜面反射的材质。例如铜镜</p>
+<h2 id="场景三1740"><a class="header" href="#场景三1740">场景三[17:40]</a></h2>
+<p>折射 + 反射，例如玻璃和水</p>
+<h3 id="反射公式"><a class="header" href="#反射公式">反射公式</a></h3>
+<p>入射角 = 出射角</p>
+<p>\[
+w_i + w_o = 2(w_i \ dot n ) n
+\]</p>
+<p>说明：<br />
+\(w_i\)：入射光<br />
+\(w_o\)：出射光<br />
+\(2(w_i \ dot n )\)：大小为wi在n的投影长度的2倍<br />
+n：方法向法线方向相同</p>
+<p>[?]第2种方法没听懂？</p>
+<h3 id="折射"><a class="header" href="#折射">折射</a></h3>
+<p>折射定率[28:00]：</p>
+<p>\[
+\eta_i sin \theta_i = \eta_t \sin \theta_t
+\]</p>
+<p>说明：<br />
+\(eta_i\)：不同材质有不同折射率。<br />
+\(theta_i\)：入射角<br />
+\(theta_t\)：出射角</p>
+<p>当入射材质折射率&gt;出射材质折射率，有可能折射变为全反射</p>
+<p>BSDF(散射) = BRDF(反射) + TDF(折射)</p>
+<h1 id="菲涅耳项-3611"><a class="header" href="#菲涅耳项-3611">菲涅耳项 [36：11]</a></h1>
+<p>反射和折射同时发生时，分别各多少<br />
+答：与入射角有关，计算公式[41：55]</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="微表面模型-micro-facet-material-4328"><a class="header" href="#微表面模型-micro-facet-material-4328">微表面模型 Micro facet Material [43：28]</a></h1>
+<p>[46：13]。当物体很远很小时，从远处看， 是平面且粗糙的。从近处看，是几何且镜面反射。[49：09]</p>
+<p>微表面的粗糙成度可以用法线分布来表示：</p>
+<p>\[
+f(i, o) = \frac{F(i, h)G(i, o, h)D(h)}{4(n, i)(n, 0)}
+\]</p>
+<p>说明：<br />
+F：Fresnel项<br />
+G：几何项<br />
+D：法线方向的分布
+i：几何遮挡项，表示微表面的互相遮挡。发生情况：光线几乎平的打到表面上时。</p>
+<h1 id="各项同性各项异性材质10004"><a class="header" href="#各项同性各项异性材质10004">各项同性/各项异性材质[1：00：04]</a></h1>
+<p>各项同性，即物体微表面不存在一定的方向性，反之则是各项异性。各项异性材质一般是人为制造的材质。</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="brdf-的性质"><a class="header" href="#brdf-的性质">BRDF 的性质</a></h1>
+<p>非负性：\(fr(wi -&gt; wo) &gt; 0 \)
+线性 ： [1：07：12] 可折分再叠加
+可逆性: \(fr(wi -&gt; wo) = fr(wo -&gt; wr) \)，即交换入射方向与出射方向，BRDF不变
+能量守恒：\(\int_{H^2}fr(wi -&gt; wo)\cos\theta_idw_i \le 1\)，总能量不可能变多，但有可能被吸收
+各向同性：[1:09:40] \(fr(\theta_i, \phi_i;\theta_r, \phi_r) = fr(\theta_i, \phi_i, \phi_r - \phi_i)\)，其中\(\theta_r\), \(\phi_r\为方位角)
+fldi.qiioridrktl.ae、出一出）</p>
+<h1 id="测量brdf"><a class="header" href="#测量brdf">测量BRDF</a></h1>
+<p>[1：12：53]
+MERL BRDF database</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="高级光线传播"><a class="header" href="#高级光线传播">高级光线传播</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="高级-appreǎue-建模"><a class="header" href="#高级-appreǎue-建模">高级 Appreǎue 建模</a></h1>
+<h2 id="非表面模型-3838"><a class="header" href="#非表面模型-3838">非表面模型 [38：38]</a></h2>
+<h3 id="反射介质"><a class="header" href="#反射介质">反射介质</a></h3>
+<p>例如：雾、云
+特点：
+光线打到一个介质颗粒上，会被分散（散射）至到各个方向上（图3），也会接受到来自其它方向散射而来的光（图4）
+怎么散射：</p>
+<ol>
+<li>diffuse 表面：均匀散射到各个方向</li>
+<li>介质颗粒：散射由 phase function 来定义
+怎么生成 path? [42：07]</li>
+<li>根据 phase function 决定 bounce 方向</li>
+<li>根据介质对光线吸收呈度决定 distance</li>
+<li>形成 ray path</li>
+</ol>
+<h3 id="hair-表面-4545"><a class="header" href="#hair-表面-4545">Hair 表面 [45:45]</a></h3>
+<p>无色高光，有色高光</p>
+<h4 id="kajiya-kay-模型"><a class="header" href="#kajiya-kay-模型">kajiya-Kay 模型</a></h4>
+<p>把每一根头发看成是圆柱，会把光线产生圆雉形的反射和各个方向的散射
+效果：[47：05]</p>
+<h4 id="marahner-模型"><a class="header" href="#marahner-模型">Marahner 模型</a></h4>
+<p>把光线的效果分解。</p>
+<ol>
+<li>反射，圆锥形方向。 R</li>
+<li>进入（折射） + 出去（折射），圆雉， T T</li>
+<li>进入（折射） + 内壁（反射） + 出去（折射）， IRT
+[49：24右]<br />
+效果：[49：46]</li>
+</ol>
+<h3 id="fur-表面"><a class="header" href="#fur-表面">Fur 表面</a></h3>
+<p>Hair 模型缺少 Medulla 的模拟，因此用在动物上效果不好。</p>
+<h4 id="double-cylinder-模型-5513"><a class="header" href="#double-cylinder-模型-5513">Double Cylinder 模型 [55：13]</a></h4>
+<p>增加 TTs 和 TRTs</p>
+<h3 id="granular-材质"><a class="header" href="#granular-材质">Granular 材质</a></h3>
+<p>[58：37] 颗粒物质的建模，非常耗时</p>
+<h2 id="表面模型"><a class="header" href="#表面模型">表面模型</a></h2>
+<h3 id="半透明材质"><a class="header" href="#半透明材质">半透明材质</a></h3>
+<p>例如：玉
+物理特点： [1：01：58]左<br />
+次表面反射：入射点 \(\ne\) 出射点 (BSSRDF)
+BRDF的入射点=出射点，因此要把BRDF中各个方向积分改为各个方向积分各个入射点积分</p>
+<h4 id="dipole-近似"><a class="header" href="#dipole-近似">Dipole 近似</a></h4>
+<p>用两个光源照射表面，能得到类似次表面映射的结果.[1:05:07]</p>
+<h3 id="布料-cloth"><a class="header" href="#布料-cloth">布料 Cloth</a></h3>
+<p>布料结构[1：09：24]
+纤维(fiber) → 股(ply) → 线(yarn) → 布(cloth)</p>
+<h4 id="rendering-as-surface"><a class="header" href="#rendering-as-surface">Rendering as Surface</a></h4>
+<p>根据编织的形状请计算
+适用场景：[1：11：28左] 布料表面是平面<br />
+不适用场景：[1：11：28右] 布料表面不是平面</p>
+<h4 id="render-as-participating-media"><a class="header" href="#render-as-participating-media">Render as Participating Media</a></h4>
+<p>把 cloth 看作是空间体积，划分为细小的格子.</p>
+<h4 id="render-as-fiber"><a class="header" href="#render-as-fiber">Render as Fiber</a></h4>
+<p>暴力计算</p>
+<h3 id="细节模型"><a class="header" href="#细节模型">细节模型</a></h3>
+<h1 id="程序化生成外观-12721"><a class="header" href="#程序化生成外观-12721">程序化生成外观 [1:27:21]</a></h1>
+<p>定义函数f(x, y, z)，用于查询空间中某一点的纹理</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="光场-light-field--lumigraph"><a class="header" href="#光场-light-field--lumigraph">光场 Light Field / lumigraph­</a></h1>
+<h2 id="定义-5"><a class="header" href="#定义-5">定义</a></h2>
+<p>Plenptic Function（全光函数）：
+用于描述 the set of all things that we can ever see.</p>
+<p>函数定义：</p>
+<p>\[
+P(\theta, \phi, \lambda, t, V_x, V_y, V_z)
+\]</p>
+<p>说明：<br />
+\(\theta, \phi\)：朝某个方向看<br />
+\(\lambda\)：颜色<br />
+t：时间<br />
+\(V_x, V_y, V_z\)：在某个位置器</p>
+<p>光场：在任意一个位置，朝任一个方向，发出的光的强度、</p>
+<p>把光场信息提前算好.存储于一个包围盒中。</p>
+<h2 id="光场参数化"><a class="header" href="#光场参数化">光场参数化</a></h2>
+<p>方式一：</p>
+<p><img src="../assets/20.PNG" alt="" /></p>
+<p>参数为2D position和2D direction</p>
+<p>方式二：[25：04]</p>
+<p><img src="../assets/21.PNG" alt="" /></p>
+<p>参数为2D position (u, v)和2D position (s, t)</p>
+<p>[27:41]
+<img src="../assets/22.PNG" alt="" /><br />
+怎么理解这两个图？</p>
+<h1 id="flys-eye-光线"><a class="header" href="#flys-eye-光线">Fly's Eye 光线</a></h1>
+<p>[32：49] 左图三个颜色代表来自三个方向的光，不是代表光的三元色成分
+通过 f 将像素接收到的 irradiane 分­解成 radiance 分别存储，</p>
+<h1 id="physical-basis-of-color"><a class="header" href="#physical-basis-of-color">Physical Basis of Color</a></h1>
+<p>白光分解原理：不同颜色的光有不同的波长和折射率<br />
+谱功率密度= Spectral Power Distribution = SPD，用于描述混合光中不同波长的光的分布[51：41]<br />
+SPD 的特点： 线性，可相加
+不关心眼睛的是呈像原理，跳过，结论是：[1：10：43]</p>
+<p>\[
+y = \int r(\lambda)s(\lambda)d\lambda
+\]</p>
+<p>说明：<br />
+y:人看到的某光线的结果<br />
+r:从眼对不同波长光线的感受
+s:某种光线的SPD</p>
+<p>应用：<br />
+根据公式可知，不同的\(s(\lambda)\)（可得到相同的 y（同色异谱）
+color matching：人为调和出\(s(\lambda)\)，使得到的效果与 real world 相同.
+[?] 为什么不直接用 real world 的\(s(\lambda)\)？</p>
+<h1 id="additive-color-加色系统"><a class="header" href="#additive-color-加色系统">Additive Color 加色系统</a></h1>
+<p>[1：11：44]</p>
+<p>\[
+R = \int  s(\lambda)r(\lambda)d\lambda
+\]</p>
+<p>说明：<br />
+s:SPD<br />
+r: 某个频谱的RGB primary<br />
+d：某种光线的所有频谱</p>
+<p><strong>基于人眼的 color matching 和基于加色系统的 color matching，公式相似，但原理不同</strong></p>
+<h1 id="颜色空间"><a class="header" href="#颜色空间">颜色空间</a></h1>
+<h2 id="cie-xyz-11302"><a class="header" href="#cie-xyz-11302">CIE XYZ [1：13：02]</a></h2>
+<p>一套人造的 color system，色域为颜色空间中所有可表示的颜色</p>
+<h2 id="srgb"><a class="header" href="#srgb">sRGB</a></h2>
+<p>[1：18：28]</p>
+<p>这部分内容对我不太重要。有一项内容值得借鉴。
+如何在二维空间中可视化三维信息。</p>
+<ol>
+<li>归一化
+任何可视化都是要先归一化的。在一个标准的尺度如分析才有意义</li>
+<li>固定一个维度。
+选择固定哪个维度是有策略的。可以选择影响最小的维度或最便于观察的维度。也可以画多张图，每次分别固定一个维度.</li>
+</ol>
+<h2 id="hsv-12046"><a class="header" href="#hsv-12046">HSV [1：20：46]</a></h2>
+<h2 id="cielab-12221"><a class="header" href="#cielab-12221">CIELAB [1:22:21]</a></h2>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>Film：24fps，video： 30 fps, VR: 90fps，否则会晕</p>
+<h1 id="关键帧动画-key-frame"><a class="header" href="#关键帧动画-key-frame">关键帧动画 key frame</a></h1>
+<p>key frame定义整个动画的走向，中间帧通过插值得到</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>物理仿真：Physical Simulation [21：10]
+通过推导或实现物理公式，来计算出物体的形状和位置的变化。</p>
+<h1 id="质量弹簧系统-mass-spring-system"><a class="header" href="#质量弹簧系统-mass-spring-system">质量弹簧系统 Mass Spring System</a></h1>
+<p>Mass：质量， Sping：弹簧</p>
+<h2 id="a-simple-spring"><a class="header" href="#a-simple-spring">A simple Spring</a></h2>
+<p><img src="Animation/../assets/23.PNG" alt="" /></p>
+<p>\[
+f_{a-&gt;b} = K_s(b - a)
+\]
+相当于rest length = 0</p>
+<p>\[
+f_{b-&gt;a} =  - f_{a-&gt;b}
+\]</p>
+<p>\(f_{a-&gt;b}\)代表a 点受到的往 b 方向去的力</p>
+<h2 id="non-zero-length-spring"><a class="header" href="#non-zero-length-spring">Non-zero Length Spring</a></h2>
+<p>\[
+f_{b-&gt;a} =  K_s \frac{b-a}{||b-a||}(||b-a||-l)
+\]</p>
+<p>说明：<br />
+分母||b-a||：归一化
+l：rest length，弹簧长度为1时不受力，与方向无关</p>
+<p>符号：<br />
+\(x\)：位置 \(\dot x\)：速度 \(\ddot x\)：加速度</p>
+<h2 id="有摩擦力的弹簧"><a class="header" href="#有摩擦力的弹簧">有摩擦力的弹簧</a></h2>
+<p>\[
+f_b = -K_d \frac{b-a}{||b-a||}(\dot b - ]dot a) \frac{b-a}{||b-a||}
+\]</p>
+<p>说明：<br />
+fb：摩擦力<br />
+第一项Kd：弹性系数<br />
+第二项：在弹簧力的方向上的速度分量<br />
+第三项：力的大小与b相对于a的速度有关<br />
+第四项：力的方向
+第二、三项：在特定方向上的相对速度的大小，向量点乘，得到的是一个标量</p>
+<p>摩擦力与弹簧本身长度没有关系。</p>
+<h2 id="sheets-用于布料"><a class="header" href="#sheets-用于布料">Sheets 用于布料</a></h2>
+<p>增加用于切变的力：</p>
+<p><img src="Animation/../assets/24.PNG" alt="" /></p>
+<p>局限性：各项异性，且不能对抗弯折</p>
+<h1 id="有限元方法-finite-element"><a class="header" href="#有限元方法-finite-element">有限元方法 Finite Element</a></h1>
+<p>用于模拟汽车碰撞，考虑碰撞体内力的传导。</p>
+<h1 id="粒子系统-particle-system-4938"><a class="header" href="#粒子系统-particle-system-4938">粒子系统 particle System [49:38]</a></h1>
+<p>分别对每一个粒子建模</p>
+<p>动力：重力、吸引力、电磁力、斥力<br />
+阻力：摩擦力、粘滞力
+碰撞</p>
+<p>说明：
+模拟和渲染是两个独立的步骤[56：31]</p>
+<p>粒子系统的更多应用场景：水、星系、鸟群、分子结构</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="要解决的问题"><a class="header" href="#要解决的问题">要解决的问题</a></h1>
+<ul>
+<li>场景一：</li>
+</ul>
+<p>已知：初始的 position x0，任意时刻的速度
+求：某个时间刻的 position</p>
+<ul>
+<li>场景二：</li>
+</ul>
+<p>已知：初始的 position X0，速度场，即在任意 position 上的速度 [06：40]<br />
+求：某时刻的 position</p>
+<h1 id="欧拉方法"><a class="header" href="#欧拉方法">欧拉方法</a></h1>
+<p>\[
+x^{t+\delta t} = x^t + \delta t \dot x^t<br />
+\]</p>
+<p>\[
+\dot x^{t+\delta t} = \dot x^t + \delta t \ddot x^t
+\]</p>
+<p>连续问题离散化，这种思想在课程中大量运用<br />
+[?]为什么有第二个公式？如果是问题一，\(\dot x^t\)已知。如果是问题二，\(\dot x^t\)跟\(x^t\)有关，应该用不到\(\ddot x^t\)。而且\(\ddot x^t\)未知，用到了也没法算<br />
+特点：</p>
+<ul>
+<li>简单，直观迭代。</li>
+<li>不稳定</li>
+<li>\(\delta t\)越小越精确</li>
+<li>[1：18：54] 不稳定性与步长无关，</li>
+</ul>
+<p>用数值方法解微分方程的共性问题：</p>
+<ol>
+<li>误差 VS 精度</li>
+<li>不稳定， <strong>divergence</strong></li>
+</ol>
+<p>我的思考：<br />
+有点像花书里的&quot;病态问题'。输入的微小改变导到输出的巨大变化。<br />
+也可以理解为函数在不同方向上的敏感度差着很大.</p>
+<h2 id="对抗欧拉方法的不稳定性"><a class="header" href="#对抗欧拉方法的不稳定性">对抗欧拉方法的不稳定性</a></h2>
+<h3 id="中点法-midpoint-method"><a class="header" href="#中点法-midpoint-method">中点法 Midpoint Method</a></h3>
+<ol>
+<li>当前点为\(x^t\)，用欧拉方法计算\(x^{t+\delta t}\)</li>
+<li>取中点\(x_{mid} = x^t + x^{t+\delta t}\)</li>
+<li>取电点位置的速度\(\dot x_{mid}\)</li>
+<li>把\(\dot x_{mid}\)当成\(\dot x^t\),再算一次\(x^{t+\delta t}\)，</li>
+</ol>
+<p>直观上看，很奇怪中点法更准确。展开后发现，中点法比原方法多了二次项函\(\frac{(\delta t)^2}{2}\)</p>
+<h3 id="adaptive-step-size"><a class="header" href="#adaptive-step-size">Adaptive Step Size</a></h3>
+<ol>
+<li>定义初始的\(delta t\)为\(delta_0\)</li>
+<li>用欧拉方法计算\(x^{t+\delta_0}\)。←用\(delta_0\)算一遍欧拉方法</li>
+<li>用欧拉方计算\(x^{t+2*\frac{1}{2}\delta_0}\)。 ←用\(2*\frac{1}{2}delta_0\)算两遍欧拉方法</li>
+<li>如果\(x^{t+\delta_0}\)与\(x^{t+2*\frac{1}{2}\delta_0}\)差别比较大，取后者，且将\(delta_0\)更新为\(\frac{1}{2}delta_0\)。</li>
+</ol>
+<h3 id="implicit-隐式的-euler-method"><a class="header" href="#implicit-隐式的-euler-method">Implicit （隐式的） Euler Method</a></h3>
+<p>原问题：已知\(x^t\)和\(\dot x^t\)，求\(x^{t+\delta t}\)<br />
+转化为新问题：\(x^t\)和\(\dot x^{t+\delta t}\)，求\(x^{t+\delta t}\)</p>
+<p>部分已知，部分未知，变成了一个优化问题。</p>
+<p>我的思考：<br />
+显式和隐式，有种FK和IK的感觉。利用被依顿现计算依赖项，用数学公式。利用依顿现计算被依赖项，用优化问题，近似</p>
+<p>优点：稳定。</p>
+<h2 id="衡量欧拉方法的稳定性"><a class="header" href="#衡量欧拉方法的稳定性">衡量欧拉方法的稳定性</a></h2>
+<p>指标：局部截断误差、全局积累误差</p>
+<p>计算误差与\(\delta t\)的关系，例如 Implicit 方法为O(h)，即1阶。阶数越高越好。</p>
+<h3 id="runge-kutta-方法"><a class="header" href="#runge-kutta-方法">Runge-kutta 方法</a></h3>
+<p>欧拉方法用于解线性ODE（常微分方程）
+Rk 4. 4代表4阶</p>
+<p>已知：</p>
+<p>\[
+\frac{dy}{dt} = f(t, y)
+\]</p>
+<p>\[
+y(t_0) = y_0
+\]</p>
+<p>RK 4解法:</p>
+<p>\[
+y_{n+1} = y_n + \frac{1}{6}h(k_1 + 2k_2 + 2k_3 + k_4)<br />
+\]</p>
+<p>说明： 
+这个公式里的h就是\(\Delta t\)<br />
+()中的四个加法项是基于中点法的中间结果，系数是精心设计的</p>
+<p>\[
+t_{n+1} = t_n + h
+\]</p>
+<p>如果说中点法是泰勒展开的即视感，那么这里的公式是对泰勒展开更精确的模拟</p>
+<p>问：为什么说RK系列擅长非线性呢？都是以欧拉方法为基础，在哪里引入的非线性的设计？
+答：1阶是处理线性问题，高于1阶才能处理非线性。理解类似泰勒公式的近似截断。</p>
+<p>#1=1#Position Basdhder 积分
+勰、理：
+只是通过调整位置使得能够满足某些限制
+鬻化弹奏的物理推导过程
+优点快简单
+缺点不是基于真实的物理过程可自绘有错误</p>
+<h1 id="rigid-body-制体模拟"><a class="header" href="#rigid-body-制体模拟">Rigid Body （制体）模拟</a></h1>
+<p>例金体运动本身不会发生形变可以简单看作是粒子扩充</p>
+<p>#流体 Fluid 模拟
+把水看作是很多个 rigid body sphere 的水滴
+通过模拟的有水滴的位置，来模拟所剩的运动. 95
+做 the 水珠不可压缩（刚体）
+运动修正修正为崃的密度。（前面都是修正位置）
+㸃 hi 前面的 pain based 方法。
+#这㝴之以 拉格朗日 Lagrangian
+区啦。把物体看作网格，分析网格运动 （网格法）
+雌朗日，把物体看作大量粒子，分析每个数子的运动。1质点、润
+混合法：粴子→网格→模拟→网格→粒子
+有点的月的感觉
+生下一步，
+时速渲染： 《real time rendering》 to peng 编程
+光栅化：新的着色器
+几何：微分几何。离龇嬲啊拓朴-流行。
+光线传播。 GAMES 心
+模拟。 GAMES 201</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rigid-body-制体模拟-1"><a class="header" href="#rigid-body-制体模拟-1">Rigid Body （制体）模拟</a></h1>
+<p>刚体运动本身不会发生形变，可以简单看作是粒子扩充</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="流体-fluid-模拟"><a class="header" href="#流体-fluid-模拟">流体 Fluid 模拟</a></h1>
+<p>把水看作是很多个 rigid body sphere 的水滴，通过模拟的有水滴的位置，来模拟水的运动.<br />
+假设水珠不可压缩（刚体），修正目标为水珠的密度（与前面都是修正位置不同），类似前面的 position based 方法。</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="欧拉-vs-拉格朗日-lagrangian"><a class="header" href="#欧拉-vs-拉格朗日-lagrangian">欧拉 Vs. 拉格朗日 Lagrangian</a></h1>
+<p>欧拉：把物体看作网格，分析网格运动 （网格法）<br />
+拉格朗日：把物体看作大量粒子，分析每个质子的运动。（质点法）<br />
+混合法：粒子→网格→模拟→网格→粒子（有点的BVH的感觉）</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="正向运动学-forward-kinematic"><a class="header" href="#正向运动学-forward-kinematic">正向运动学 Forward kinematic</a></h1>
+<h2 id="关节类型"><a class="header" href="#关节类型">关节类型。</a></h2>
+<p>Pin： 1D旋转<br />
+Ball： 2D旋转<br />
+Prismatic joint：旋转 + 平移</p>
+<h2 id="fk-要解决的问题10219"><a class="header" href="#fk-要解决的问题10219">Fk 要解决的问题。[1：02：19]</a></h2>
+<p>已知每个关节的旋转角度，求末端结点的位置<br />
+优点：实现简单<br />
+缺点：通过角度来控制不直观</p>
+<h2 id="逆向运动学"><a class="header" href="#逆向运动学">逆向运动学</a></h2>
+<p>已知末端的位置，调整关节角度，使末端处于预期的位置[1:04：40]</p>
+<p>局限性：计算复杂、解不雌一、可能无解<br />
+通常被当作优化问题来解决</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="给角色添加指定的动作"><a class="header" href="#给角色添加指定的动作">给角色添加指定的动作</a></h1>
+<h2 id="rigging-绑定"><a class="header" href="#rigging-绑定">Rigging 绑定</a></h2>
+<p>给角色定义控制点，通过拉动控制点控制角色的动作。</p>
+<h2 id="blend-shape"><a class="header" href="#blend-shape">Blend Shape</a></h2>
+<p>通过混合控制点来控制角色</p>
+<h2 id="moton-capture-动捕"><a class="header" href="#moton-capture-动捕">Moton Capture 动捕</a></h2>
+<p>从真人提取控制点上的动作，再把动作用于角色的控制点</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。</p>
+<p>https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="theme/pagetoc.js"></script>
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+    </body>
+</html>
