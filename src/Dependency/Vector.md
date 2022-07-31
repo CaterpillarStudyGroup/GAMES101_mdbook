@@ -1,16 +1,18 @@
 # 向量
 
-## 向量性质
+全篇以2D为例，但对高维同样适用。  
 
-[07：54]
+## 向量性质 [07：54]
+
+![](../assets/25.PNG)
 
 - 方向:  \\( B - A \\) 或 \\( \vec{a} \\) 
 
 - 长度：\\( ||B-A || \\) 或 \\( ||\vec{a}|| \\)  (与起点无关)
 
-- 单位向量：\\( \vec{e}=\frac{\vec{a}}{||\vec{a}||} \\)，模长为1
+- 单位向量：\\( \vec{e}=\frac{\vec{a}}{||\vec{a}||} \\)，模长为1，通常用于表示方向
 
-> **&#x1F4CC;补充：** 向量一般默认为列向量，所以书写公式时，一个向量写为 \\(\vec{a}=\left( x_1, y_1 \right) ^T\\)
+向量一般默认为列向量，所以书写公式时，一个向量写为 \\(\vec{a}=\left( x, y \right) ^T\\)，其长度为\\(||\vec{a}|| = \sqrt{x^2 + y^2}\\)
 
 ## 向量加法
 
@@ -38,7 +40,7 @@ $$
 \vec{a}\cdot \vec{b}=||\vec{a}||\cdot ||\vec{b}||\cdot \cos <\vec{a}, \vec{b}>
 $$
 
-- \\( \vec{a}\cdot\vec{b} \\)  是标量
+向量点乘的结果是标量
 
 > **&#x1F4CC;补充：** 由 \\( \vec{a} \\) 到 \\( \vec{b} \\) 的夹角 \\( <\vec{a},\vec{b}> \\) 是 \\( \theta \\) , 如果是由 \\( \vec{b} \\) 到 \\( \vec{a} \\) 的夹角 \\( <\vec{b}, \vec{a}> \\) , 则为 \\( -\theta \\) 。
 
@@ -62,29 +64,47 @@ $$
 
 ### 作用
 
-1. 找到两个向量之间的夹角
+1. 计算两个向量之间的夹角
    
    \\( \cos \theta =\frac{\vec{a}\cdot \vec{b}}{||\vec{a}||\cdot ||\vec{b}||} \\)
 
-2. 一个向量投影到另一个向量
+当a和b都是单位向量时，可简化为：
+
+$$
+\cos \theta = \vec{a}\cdot \vec{b}
+$$
+
+2. 计算一个向量投影在另一个向量上的投影
    
    <div align="left"> <img src="../assets/投影2.jpg" width = 290 /> </div>
    
-   > **&#x1F4CC;补充：** \\( length=||\vec{b}||\cos \theta =||\vec{b}||\frac{\vec{a}\cdot \vec{b}}{||\vec{b}||\cdot ||\vec{a}||}=\frac{\vec{a}}{||\vec{a}||}\vec{b}=\hat{a}\cdot \vec{b}\\)
+b在a的投影为\\(\vec{b}_{\bot}\\)，其长度为：  
+
+$$
+length=||\vec{b}||\cos \theta =||\vec{b}||\frac{\vec{a}\cdot \vec{b}}{||\vec{b}||\cdot ||\vec{a}||}=\frac{\vec{a}}{||\vec{a}||}\vec{b}=\hat{a}\cdot \vec{b}
+$$
+
+其方向同a。
+
+因此：
+
+$$
+\vec{b}_{\bot} = (\hat{a}\cdot \vec{b}) \hat a
+$$
 
 3. 把向量分解成垂直和平行的两个向量
    
    <img title="" src="../assets/分解2.jpg" alt="" width="307">
    
-   > **&#x1F4CC;补充：** \\( \vec{b}_{\bot}=\frac{\vec{a}}{||\vec{a}||}\cdot length=\frac{\vec{a}\cdot ||\vec{b}||\cdot \cos \theta}{||\vec{a}||}=\hat{a}\cdot \vec{b}\cdot \hat{a} \\)
-
 4. 计算两个向量有多接近
    
-   两个向量做点乘，可以反映二者的“接近”程度
+   两个向量做点乘，可以反映二者方向的“接近”程度
    
    <img src="../assets/接近.jpg" title="" alt="" width="329">
    
-   > **&#x1F4A1;思考：** 我们假设 \\( \vec{a} \\) 已给定，如果一个向量的终点落在虚线上半部分，例如 \\( \vec{b} \\) ，则可以认为该向量在方向上与 \\( \vec{a} \\) 是相同的或是说都是向前的；如果一个向量，例如 \\( \vec{c}\\)，终点落在虚线下半部分，则可以认为 \\( \vec{a} \\) 和 \\( \vec{c}\\) 两个向量的方向基本是相反的。且点乘结果落在 \\([-1, 1]\\) 上，可以表示接近程度。
+   表示方向是否相同 ： 我们假设 \\( \vec{a} \\) 已给定，如果一个向量的终点落在虚线上半部分，例如 \\( \vec{b} \\) ，则可以认为该向量在方向上与 \\( \vec{a} \\) 是相同的或是说都是向前的，此时\\(\hat a \cdot \hat b > 0\\)；如果一个向量，例如 \\( \vec{c}\\)，终点落在虚线下半部分，则可以认为 \\( \vec{a} \\) 和 \\( \vec{c}\\) 两个向量的方向基本是相反的，此时\\(\hat a \cdot \hat b < 0\\)  
+   
+   表示接近程度 ：点乘结果落在 \\([-1, 1]\\) 上，数值越大越接近，结果为1时方向相同。数值越小方向越远，为-1时方向正好相反。
    
    > **&#x1F4CC;补充：**（点乘： \\( \vec{a}\cdot \vec{b} > 0 \\) ，方向相同；   \\( \vec{a}\cdot \vec{c} < 0 \\) ，方向相反）
 
@@ -113,7 +133,7 @@ $$
 - \\( \vec{z}\times \vec{x}=+\vec{y} \\)
 - \\( \vec{x}\times \vec{z}=-\vec{y} \\)
 - \\( \vec{a}\times \vec{b}=-\vec{b}\times \vec{a} \\) (不满足交换律)
-- \\( \vec{a}\times \vec{a}=\vec{0} \\)
+- \\( \vec{a}\times \vec{a}=\vec{0} \\) （不是0，而是**长度为0的向量**）
 - \\( \vec{a}\times \left( \vec{b}+\vec{c} \right) =\vec{a}\times \vec{b}+\vec{a}\times \vec{c} \\)  （分配律）
 - \\( \vec{a}\times \left( k\vec{b} \right) =k\left( \vec{a}\times \vec{b} \right)  \\)  （结合律）
 
@@ -130,20 +150,39 @@ $$
     y_az_b-y_bz_a\\\\
     z_ax_b-x_az_b\\\\
     x_ay_b-y_ax_b
-\end{array} \right) 
+\end{array} \right) = \left[ \begin{matrix}
+	0&		-z_a&    y_a\\\\
+	z_a&    0&    -x_a\\\\
+   -y_a&    x_a&    0\\\\ 
+\end{matrix} \right] \left[ \begin{matrix}
+	x_b\\\\
+	y_b\\\\
+   z_b\\\\
+\end{matrix} \right]
 \\]
 
-> **&#x1F4A1;思考：** 这个式子中，\\( x_a,y_a,z_a \\) 是\\( \vec{a}\\) 在三维坐标系中的三个坐标分量的代数表示。 叉乘只用于3D中，在2D中没有定义。
+> **&#x1F4A1;思考：** 这个式子中，\\( x_a,y_a,z_a \\) 是\\( \vec{a}\\) 在三维坐标系中的三个坐标分量的代数表示。 叉乘只用于3D中，在2D中没有定义。  
+
+式子中的矩阵称为dual matrix of a
+
+> &#x2757; 在本课程中默认使用右手坐标系，OPENGL, UE, unity等api默认使用左手坐标系。  
 
 ### 在图形学中的作用
 
 1. 判定左和右
-   
+
+   > **&#x1F4CC;左右：** 目标向量逆时针旋转指向的区域，是目标向量的左侧，反之是右侧。
+
    <img src="../assets/左右.png" title="" alt="" width="290">
    
    如果\\( \vec{a}\times \vec{b} \\) 的结果是正值，即与 \\(Z\\) 轴方向相同，就表示 \\(\vec{b}\\) 在 \\(\vec{a}\\) 的左侧。
    
-   > **&#x1F4CC;左右：** 目标向量逆时针旋转指向的区域，是目标向量的左侧，反之是右侧。
+> &#x2753; 叉乘的结果是一个向量，向量没有正负属性，什么叫**结果是正的**？  
+> 答：这里假设a和b都是xy平面上的向量，即  
+$$
+a^\top = (x_a, y_a, 0) \\\\
+b^\top = (x_b, y_b, 0)
+$$
 
 2. 判断内和外
    
