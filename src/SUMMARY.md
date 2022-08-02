@@ -9,6 +9,7 @@
   - [2D线性变换](Dependency/2DTransformation.md)
   - [2D仿射变换](Dependency/2DAffineTransformation.md)
   - [逆变换](Dependency/Inverse.md)
+  - [变换的合成与分解](Dependency/ComplexTransformation.md)
 - [MVP 模型，视图，投影](MVP/MVP.md)
   - [View 视图](MVP/View.md)
   - [Model 模型](MVP/Model.md)
