@@ -1,18 +1,12 @@
-# Background
+# MVP：
 
-## MVP：
-
-
-1. view变换 --> V
-   
-   > 确定camera的position和rotation
-
-
-
-2. model变换 --> M
+1. model变换 --> M
    
    > 确定object的position和rotation
 
+2. view变换 --> V
+   
+   > 确定camera的position和rotation
 
 
 3. projection变换 --> P
