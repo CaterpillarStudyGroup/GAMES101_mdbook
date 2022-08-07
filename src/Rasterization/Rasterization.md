@@ -1,53 +1,32 @@
 当观测结束后，所有物体到了[-1, 1]的三次方这个立方体中，那么，下一步是什么？将其放在屏幕上。
 
-# 什么是光栅化
+# [14:40] 什么是光栅化
 
 > &#x1F50E;  
-> pixel：像素，picture element，一个小方块，且方块内颜色不变 
+> pixel：像素，picture element，一个小方块，且方块内颜色不变  
 > Raster:屏幕，由像素组成二维数组  
 > Rasterize: 光栅化  
 > Triangle Mesh: 三角形面片
 
-光栅化，即把对象（object）画在屏幕（raster）上。对象是指cubic中的内容，常用用三角形面片表示对象的表面。屏幕，由像素（pixel）组成的2D数组。数组的大小代码的屏幕的分辨率。  
+光栅化，即把对象（object）画在屏幕（raster）上。对象是指cubic中的内容，常用三角形面片表示对象的表面。屏幕，由像素（pixel）组成的2D数组。数组的大小代码的屏幕的分辨率。  
 具体过程可以描述为：找到对象表面在cubic中的位置，根据cubic与raster的关系，确定它在raster上应出现的位置。在raster的正确的位置上渲染对象。
 
 将观测的物体在屏幕上显示，就是**光栅化**。  
 
 
-# 定义一些符号
+# 定义屏幕空间
 
-1. 描述立方体的符号：l，r，u，d，f，n
-- l = -r = 1
-- b = -t = 1
-- f = -n = 1, 物体在z轴负方向，因此n < 0  
+在屏幕上的坐标系
 
-2. 描述屏幕的符号：
+![](../assets/屏幕坐标.jpg)
 
-<img src="../assets/观察.jpg" title="" alt="" width="419">
+- 原点在左下角，向右为x正方向，向上为y正方向
+- 每个像素的坐标是整数，范围为[0, width)  [0, height)  
+- 像素(x， y)的中心位置：(x+0.5, y+0.5)
 
-- 宽高比（Aspect ratio）
-- width/height
-- 视角（Field of view）
+> &#x2757;注意区分**坐标**与**位置**的不同含义
 
-<img src="../assets/%E8%A7%86%E8%A7%92.jpg" title="" alt="" width="297">
-
-3. 用符号描述屏幕和立方体的关系
-
-把视角和宽高比转换为l、r、b、t
-
-![](../assets/视角转换.jpg)
-
-由图可得以下关系：
-
-\\[
-\tan \frac{fovY}{2}=\frac{t}{|n|}
-\\]
-
-\\[
-aspect=\frac{r}{t}
-\\]
-
-> **&#x1F4CC;补充：** 定义一个视锥，只需要视角和宽高比即可，其他参数可以转换。
+> &#x1F4CC;课程中关于显示器的部分被我跳过了，因为我认为与算法相关度不大。
 
 
 # 光栅化的最基本的流程
@@ -120,16 +99,6 @@ M_{viewport}=\left( \begin{matrix}
 
 <img src="../assets/三角形.jpg" title="" alt="" width="239">
 
-### 屏幕空间
-
-在屏幕上的坐标系
-
-![](../assets/屏幕坐标.jpg)
-
-- 每个像素的坐标是整数，范围为[0, width)  [0, height)  
-- 像素(x， y)的中心位置：(x+0.5, y+0.5)
-
-> &#x2757;注意区分**坐标**与**位置**的不同含义
 
 ### 方法一：采样方法
 
@@ -168,8 +137,7 @@ https://caterpillarstudygroup.github.io/GAMES101_mdbook/Dependency/Vector.html#%
 
 一种启发式的方法，比较容易想到，也懒得记了。   
 
-
-> &#x1F4CC;课程中关于显示器的部分被我跳过了，因为我认为与算法相关度不大。  
+![](../assets/27.PNG)
 
 
 # 光栅化的结果
@@ -177,6 +145,14 @@ https://caterpillarstudygroup.github.io/GAMES101_mdbook/Dependency/Vector.html#%
 [1:02:38], [1:03:01]
 
 <img src="../assets/走样.jpg" title="" alt="" width="425">
+
+当按照像素中心是否在三角形内的采样方式采样后，得到了不理想的结果。
+
+产生了锯齿！（jaggies）
+
+消除锯齿是图像学致力于解决的重要问题。
+
+抗锯齿，也叫反走样。
 
 -----------------------------
 > 本文出自CaterpillarStudyGroup，转载请注明出处。

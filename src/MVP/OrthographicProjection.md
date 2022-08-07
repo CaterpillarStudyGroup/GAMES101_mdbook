@@ -68,7 +68,7 @@ M_{scale}=\left[ \begin{matrix}
 
 ## 正交投影中的旋转
 
-正交投影过程不涉及object的旋转，因此旋转矩阵\\(\M_{rotation}\\)是单位阵。  
+正交投影过程不涉及object的旋转，因此旋转矩阵\\(M_{rotation}\\)是单位阵。  
 
 
 
