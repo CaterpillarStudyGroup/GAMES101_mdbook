@@ -28,6 +28,8 @@
 
 [47:35]
 
+### 漫反射的特点
+
 漫反射具有以下特点：
 
 1. 打到 point 上的光线被均匀地反射出去（与观测点v没有关系）
@@ -46,6 +48,8 @@
 
 > &#x2705;如果考虑三维空间，则应该是距离的立方。
 
+### 漫反射项公式
+
 通过以上分析，定义漫反射的能量公式为：
 
 \\[
@@ -59,11 +63,13 @@ L_d=k_d\left( I/r^2 \right) \max \left( 0,\boldsymbol{n}\cdot \boldsymbol{l} \ri
 - \\(\boldsymbol{n}\cdot \boldsymbol{l}\\)： 表示有多少能量被point接收
 - 漫反射与观察者方向无关，因此公式中没有v的体现。
 
-效果：
+### 漫反射项的效果
 
 ![](../assets/diffuseappearance.jpg)
 
 ## 高光项
+
+### 高光的特点
 
 <div align="center"> <img src="../assets/highlight.jpg" width = 600 /> </div>
 
@@ -74,6 +80,8 @@ R 为物体镜面反射的方向，当 v 和 R 接近时，会看到高光。
 > **&#x1F4A1;** 为什么用\\(n\cdot h\\)代替\\(v\cdot R\\)？
 >
 > 因为\\(n\cdot h\\)更容易计算
+
+### 高光项的公式
 
 通过以上分析，定义高光项的能量公式为：
 
@@ -92,9 +100,13 @@ L_s=k_s\left( I/r^2 \right) \max \left( 0, \cos \alpha \right) =k_s\left( I/r^2 
 >
 > <img src="../assets/p.jpg" width = 400 />
 
-效果：
+### 高光项的效果
 
-<img src="../assets/speculate.jpg" width = 600 />
+<img src="../assets/speculate.jpg" width = 600 />   
+
+> &#x1F446; 漫反射项 + 高光项
+
+Ks变大，高光变亮。p变大，高光范围变小。
 
 ## 环境光照项
 
@@ -123,5 +135,4 @@ L=L_a+L_d+L_s=k_aI_a+k_d\left( I/r^2 \right) \max \left( 0,n\cdot l \right) +k_s
 ------------------------------
 
 > 本文出自CaterpillarStudyGroup，转载请注明出处。
->
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/
