@@ -23,7 +23,7 @@
   - [时域 *VS.* 频域](Rasterization/TimeVsFrequency.md)
   - [反走样算法](Rasterization/AntialiasingMore.md)
   - [Others](Rasterization/Others.md)
-  - [可见性/遮挡](Rasterization/Occlusion.md)
+- [可见性/遮挡](Occlusion.md)
 - [Shading 着色](Shading/Shading.md)
   - [Blinn-Phong 反射模型](Shading/BlinnPhong.md)
   - [着色频率](Shading/Style.md)
