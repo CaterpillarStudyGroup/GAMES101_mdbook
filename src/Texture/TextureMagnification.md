@@ -2,11 +2,11 @@
 
 Texture Map 是256X256的，而要投影的屏幕是4K的，会导致多个屏幕像素(pixel)对应一个纹理像素(texel)。
 
-- 效果
+## 效果
 
 <img src="../assets/nearest.jpg" width = 400 />
 
-- 原因
+## 原因
 
 <img src="../assets/bilinear.jpg" width = 500 />
 
