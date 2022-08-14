@@ -74,6 +74,6 @@ B: basis，基函数，即与以一定方式将基函数组合，得到一个复
 
 
 ----------------------------
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

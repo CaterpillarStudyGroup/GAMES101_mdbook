@@ -75,6 +75,5 @@ N 太小会有噪声，N太大会糊
 
 ------------------------------
 
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

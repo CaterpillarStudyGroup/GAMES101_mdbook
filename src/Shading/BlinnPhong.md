@@ -134,5 +134,5 @@ L=L_a+L_d+L_s=k_aI_a+k_d\left( I/r^2 \right) \max \left( 0,n\cdot l \right) +k_s
 
 ------------------------------
 
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

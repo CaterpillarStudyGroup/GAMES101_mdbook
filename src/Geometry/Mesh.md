@@ -126,6 +126,6 @@ p' = \frac{f_1 + f_2 + f_3 + f_4 + 2(e_1 + e_2 + e_3 + e_4)}{16}
 
 
 ----------------------------
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

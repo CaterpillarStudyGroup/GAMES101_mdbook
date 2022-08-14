@@ -25,3 +25,6 @@
 
 硬阴影[1：11：40]边缘锐利
 软阴影[1：12：09]，形成原因：半影[1：13：31】，因为光源有大小
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

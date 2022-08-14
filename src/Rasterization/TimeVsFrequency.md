@@ -79,6 +79,6 @@ f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \om
 <img title="" src="../assets/周期混叠.jpg" alt="" width="600">
 
 ----------------------------
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

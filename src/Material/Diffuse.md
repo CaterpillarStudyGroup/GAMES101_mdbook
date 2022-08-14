@@ -73,6 +73,5 @@ BSDF(散射) = BRDF(反射) + TDF(折射)
 
 ------------------------------
 
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

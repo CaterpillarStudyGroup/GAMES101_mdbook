@@ -82,6 +82,5 @@ BRDF的入射点=出射点，因此要把BRDF中各个方向积分改为各个�
 
 ------------------------------
 
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

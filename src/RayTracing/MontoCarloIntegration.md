@@ -39,6 +39,5 @@ F_N = \frac{1}{N}\sum\frac{f(X_i)}{p(X_i)}
 
 ------------------------------
 
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

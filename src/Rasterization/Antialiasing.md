@@ -40,6 +40,6 @@ video是在时间维度的采样[07:33]
 2. 为什么采样速度跟不上信号变化的速度会产生走样？  
 
 ----------------------------
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

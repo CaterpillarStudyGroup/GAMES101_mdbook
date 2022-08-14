@@ -61,6 +61,5 @@ L = E + KE + K^2E + k^3E + \dots
 
 ------------------------------
 
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

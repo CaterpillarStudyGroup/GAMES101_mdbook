@@ -36,6 +36,5 @@ I：单位矩阵，对角线上全1、其余元素全0的矩阵
 
 -----------
 
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/

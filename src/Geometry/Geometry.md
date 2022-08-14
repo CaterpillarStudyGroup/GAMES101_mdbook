@@ -50,14 +50,6 @@ list of points
 - vt：纹理坐标，最多为（顶点数 * 面片数）个
 
 ----------------------------
-> 本文出自CaterpillarStudyGroup，转载请注明出处。
->
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/
-
-
-Lecture 11
-Geometry 2 46
-
-
-
-
