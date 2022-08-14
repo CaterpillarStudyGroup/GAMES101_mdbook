@@ -4,7 +4,7 @@
 
 # 画家算法
 
-![](../assets/画家算法.jpg)
+![](assets/画家算法.jpg)
 
 ## 原理
 
@@ -19,7 +19,7 @@
 
 1. 难以决定被画对象的深度，深度估计错了，排序就错了，画出来就不对
 2. 无法处理深度嵌套的场景
-![](../assets/34.PNG)
+![](assets/34.PNG)
 
 # Z-Buffer 算法
 
@@ -49,11 +49,11 @@
 2. depth buffer：存每个像素点对应的物体上的最小的depth（最近）。当发现在这个像素点上有更近的物体时更新。  
 
 两个buffer都是逐像素的，因此将buffer数据可视化[14:38]。  
-![](../assets/zbuffer.jpg)
+![](assets/zbuffer.jpg)
 
 > **&#x1F4CC;** 
 > 
-> ![](../assets/depthbuffer.jpg)
+> ![](assets/depthbuffer.jpg)
 > 
 >  图中，A点是距离视点（摄像机）较近的点，所以颜色比较黑，B点是距离视点较远的点，所以颜色比较白。距离视点近的像素点，颜色就比较黑，反之比较白，这就是depth/Z buffer。
 
