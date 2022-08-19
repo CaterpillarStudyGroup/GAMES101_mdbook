@@ -20,13 +20,25 @@
 |---|---|---|
 |Algebraic Surface|![](../assets/49.PNG)| \\(x^2 + y^2 + z^2 = 1\\)|
 |Constructive solid Geometry|![](../assets/50.PNG)| 通过基本几何之间的运算来定义新的几何 |
-|Distinct Function| [1:01:23]|定将一个函数，来描述任意一个点到物体表面的最近的距离。可对距离函数做blending|
-|level Set Method| [1:10:22]||
-|Fractals 分形 |[1：12：44]|
+|Distinct Function| [1:01:23]![](../assets/51.PNG)|定将一个函数，来描述任意一个点到物体表面的最近的距离。距离为0的点就是边界。|
+|Distinct Function|[1:02:20]![](../assets/52.PNG)|可对距离函数做blending|
+|Fractals 分形 |[1：12：44]![](../assets/56.PNG)|自相似。容易引入走样|
+
+距离函数blend相关的补充：
+1. 距离函数blend可以用于物体运动过程的插值。  
+![](../assets/53.PNG)  
+图中A和B代表模型在两个动态状态的效果，如果用非SDF(signed distance field)的方式表达，对A和B做线性混合之后会得到这样的效果：  
+![](../assets/54.PNG)  
+我们实际想到的是物体从A状态运动到B状态的效果。这个效果与我们预期的不一致。  
+如果用SDF来描述A和B，对两个SDF做blend就能够达到目的了。  
+2. 两个SDF做blend得到新的SDF，怎么再根据SDF恢复出物体的表面？  
+答：marching cube。在格子上找出f(x)=0的点，然后把点连起来。  
+![](../assets/55.PNG)  
 
 优点：  
 - 容易描述
 - compact 表达
+- 容易判断一个点是否在模型的内部/外部
 - 容易计算离表面的距离
 - 容易计算光线与表面的夹角
 缺点：
@@ -34,15 +46,19 @@
 
 # 显式几何
 
+## 映射[P10]
+
+![](../assets/57.PNG)  
+
 ## 点云 point cloud
 
 list of points
 
-可以表示任意的几何形状
+足够可以表示任意的几何形状
 
 常用于扫描输出
 
-常被转换为其它方式的使用
+常被转换为其它表达方式再使用
 
 ## Polygon Mesh
 
@@ -54,6 +70,7 @@ list of points
 - v：顶点坐标
 - vn:顶点法向量，数量同v
 - vt：纹理坐标，最多为（顶点数 * 面片数）个
+- f：面片，v/vt/vn
 
 ----------------------------
 
