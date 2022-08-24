@@ -95,27 +95,84 @@ $$
 
 # Irradiance
 
+power per unit area，表示物体在单位面积上接收到的能量。
 
- 补充2：单位面积上的Irradiance
+$$
+E(x) = \frac{d(\Phi(x))}{dA}
+$$
+
+> &#x2757; 面积是指与入射光线垂直的区域的面积。如果物体表面与入射光线不垂直，则需要乘以\\(\cos \theta\\)
+
+|入射角|Irradiance|
+|---|---|
+|![](../assets/116.PNG)|\\(E(x) = \frac{\Phi}{A}\\)|
+|![](../assets/117.PNG)|\\(E(x) = \frac{1}{2}\frac{\Phi}{A}\\)|
+|![](../assets/118.PNG)|\\(E(x) = \frac{\Phi}{A}\cos\theta\\)|
+
+## Intensity VS Irradiance
 
 ![](../assets/18.PNG)
 
-单位面积上的Irradiance为：\\(E = \frac{\phi}{4\pi r^2}\\)
-当 r 变大.不是 Intensity 在衰减，而是 Irradiant 在衰减
+Intensity为光源向某个立体角辐射的能量，与距离不无。因此Intensity不对随着距离变远而衰减，始终是\\(\frac{\Phi}{4\pi}\\)  
 
-- 理解1： Irradiance per 立体角
+Irradiance为单位面积上接收到的能量。距离越远，总面积越大，单位面积上的能量就会越小。因此Irradiance会随着距离变远而衰减，为\\(\frac{E}{r^2}\\)。
 
-![](../assets/19.PNG)
+# Radiance
 
-这是一个unit Area.
-它辐射的总能量为 Irradiance
-它向方向 W 辐射的能量强度为 Radiance
+Radiance   
+= power per unit solid angle per projected unit area  
+= Irradiance per solid angle  
+= Intensity per projected unit area  
+
+用于描述光线在传播过程中的属性。
+
+$$
+L(p, \omega) = \frac{d^2(\Phi(p, \omega))}{d\omega dA\cos\theta}
+$$
+
+![](../assets/119.PNG)
+
+考虑一个朝向为\\(\theta\\)的区域dA，朝方向\\(\omega\\)上辐射的能量。  
+
+## Radiance Vs Irradiance
+
+Radiance = Irradiance per solid angle  
+
+$$
+L(p, \omega) = \frac{dE(p)}{d\omega\cos\theta}
+$$
+
+- 理解1：
+
+dA区域的能量会向各个方向辐射，辐射的总能量为Irradiance，Radiance描述其中向\\(\omega\\)辐射的能量有多少
 
 - 理解2：
 
-沿着 w 方向到达dA的能量为 Radiance
-所有方向到达dA的能量的总和为 Irradiance
+![](../assets/120.PNG)
 
+dA区域会接收来自各个方向的能量，接收到的总能量为Irradiance，其中来自\\(\omega\\)方向的能量为Radiance。  
+
+- 反过来理解
+
+Irradiance是区域dA从不同角度收到的Irradiance的积分。  
+
+![](../assets/121.PNG)
+
+$$
+E(p) = \int_{H^2}L_i(p, \omega)\cos\theta d\omega
+$$
+
+> &#x2705; \\(H^2\\)代表上半球，不考虑来自背面的光
+
+## Radiance Vs Intensity
+
+Radiance = Intensity per projected unit area
+
+$$
+L(p, \omega) = \frac{dI(p, \omega)}{dA\cos\theta}
+$$
+
+与上面类似，也可以有三种理解方式
 
 ------------------------------
 
