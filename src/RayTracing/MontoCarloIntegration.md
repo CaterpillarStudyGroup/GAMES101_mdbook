@@ -1,4 +1,4 @@
-# 概率论基础
+# 概率论基础 [1:05:45]
 
 省略，见[机器学习数学基础](https://windmissing.github.io/mathematics_basic_for_ML/)
 
