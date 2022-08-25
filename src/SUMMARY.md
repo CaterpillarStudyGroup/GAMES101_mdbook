@@ -49,6 +49,7 @@
   - [光线与Mesh的交点](RayTracing/RayMeshIntersection.md)
   - [辐射度量学](RayTracing/BasicRadiometry.md)
   - [BRDF - 双向反射分布函数](RayTracing/BRDF.md)
+  - [渲染方程](RayTracing/RenderEquation.md)
   - [蒙特卡罗积分](RayTracing/MontoCarloIntegration.md)
   - [路径追踪](RayTracing/PathTracing.md)
 - [材质]()
