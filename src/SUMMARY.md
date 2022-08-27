@@ -51,6 +51,7 @@
   - [BRDF - 双向反射分布函数](RayTracing/BRDF.md)
   - [渲染方程](RayTracing/RenderEquation.md)
   - [蒙特卡罗积分](RayTracing/MontoCarloIntegration.md)
+  - [Whitted-Style Ray Tracing 的局限性](RayTracing/WhittedAgain.md)
   - [路径追踪](RayTracing/PathTracing.md)
 - [材质]()
   - [漫反射材质](Material/Diffuse.md)
