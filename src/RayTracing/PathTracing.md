@@ -37,55 +37,79 @@ $$
 
 ||采样函数|积分函数|积分结果|
 |---|---|---|---|
-|理论上|\\(X_k \sim p(x)\\)|\\(f(X_k)\\)|
-\\[
-L_o(p, w_o) \approx \frac{1}{N} \sum \frac{L_i(p, w_i)f_r(p, w_i, w_o)(n\dot w_i)dw_i}{1/2\pi}
-\\]
+|理论上|\\(X_k \sim p(x)\\)|\\(f(X_k)\\)|\\(\frac{1}{N}\sum\frac{f(X_i)}{p(X_i)}\\)|
+|实际上|\\(\frac{1}{2\pi}\\)|\\(L_i(p, w_i)f_r(p, w_i, w_o)(n\cdot w_i)\\)<br>均匀采样|\\(\frac{2\pi}{N}L_i(p, w_i)f_r(p, w_i, w_o)(n\cdot w_i)\\)|
 
 其中wi来自采样
 
+![](../assets/135.PNG)  
+
 > &#x1F4A1; 连续问题往往比较难解。通过采样的方式把连续问题转化为离散问题，这样就只是需要考虑几个离散的点，就要好解得多。这是复杂问题简单化的一个思路。
 
-### 场景2[42:41]
+## 场景2[40:40] 引入间接光照
 
-\\[
+![](../assets/133.PNG)  
+
+P接收到的辐射不一定来自光源，也可以来自Q。  
+P接收到的来自Q的辐射 = Q向P发出的辐射。  
+对于P来说，辐射是来自直射光还是反射光，没有区别。  
+
+![](../assets/134.PNG)  
+
+$$
 L_o(p, w_o) \approx \frac{1}{N} \sum \frac{func(w_i)}{1/2\pi}
-\\]
+$$
 
 当wi来自光源时，
 
-\\[
+$$
 fun = Li * Fr * cos
-\\]
+$$
 
 当wi来自其它物体q时，
 
-\\[
+$$
 fun = shade(q - wi) * fr * cos
-\\]
+$$
 
-[46：48] 光线路径数rays = \\(N^{#bouns}\\) 这个量级下计算量会爆炸
+## 场景3：一根光线会向多个方向弹射
 
-因此取 N = l （即 path tracing)
+![](../assets/136.PNG)  
 
-[49：4] path足够多，会缓解N=1带来的噪声
+[46：48] 光线路径数\\(\#rays = N^{\#bouns}\\) 这个量级下计算量会爆炸
 
-## ray generation [51:17]
+因此取 N = l （即 path tracing)，才不会发生爆炸。  
 
-1. 在一个像素内采样N个sample
-2. sample shoot a rag
-3. 如果 ray 碰中物体 p，则pixel-radiance += 1/N * shade (p, sample)
-4. return pixel_radiance
- 
-## 如何解递归问题
+即：每次使用Monto Calio求定积分时，只做一次采样。  
+![](../assets/137.PNG)  
 
-人为定义 bounce 的次数，后面的cut掉，这会带来能量损失。
-解决方案： Russian Roulette 俄罗斯轮盘赌
-即不明确定义次数，而是以一定概率决定是否继续 bounce，最后得到的结果除以p.
-其期望结果与无限 bounce 的理论结果相同
+虽然N取1会导致这个path在求定积分这一步引入较大的噪声。但是穿过像素的不止这一个path。[49：4] path足够多时，多个path的平均会缓解N=1带来的噪声。  
+
+![](../assets/138.PNG)  
+
+![](../assets/139.PNG)  
+
+# 如何解递归问题
+
+从公式或者从上面的伪代码都能看出，这是一个递归问题。  
+递归本身不是问题。问题是这里的递归没有停止条件，会无限地递归下去。  
+
+## 人为定义 bounce 的次数
+
+人为定义 bounce 的次数，当光线bounce这么多次（或者说递归到这个深度）后就强行停止。  
+
+这种方法能解决无限递归的问题，但会带来能量的损失。
+
+## Russian Roulette 俄罗斯轮盘赌
+
+即不明确定义次数，而是以一定概率p决定是否继续 bounce。以此算出能量Lo。    
+最后使用Lo/p该点输出的能量。  
+这个结果的期望与无限 bounce 的理论结果相同，因为：  
 E = P * (Lo/ P) + (1-P) * 0 = Lo
 
-## Path Tracing 的性能与效率[1:00:32]
+![](../assets/140.PNG)  
+
+# Path Tracing 的性能与效率[1:00:32]
 
 ### 分析[1：02：12]
 
