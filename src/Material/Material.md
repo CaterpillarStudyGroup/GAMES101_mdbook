@@ -26,6 +26,16 @@ $$
 
 出射能量一定不多于入射能量。  
 
+- 各向同性：
+
+[1:09:40]   
+
+$$
+fr(\theta_i, \phi_i;\theta_r, \phi_r) = fr(\theta_i, \phi_i, \phi_r - \phi_i)
+$$
+
+其中\\(\theta_r\\), \\(\phi_r\\为方位角)
+
 # BRDF的测量
 
 好像跟算法没关系，不记了。
