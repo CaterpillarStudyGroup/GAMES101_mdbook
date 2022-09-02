@@ -69,7 +69,7 @@
   - [颜色](Color/Color.md)
 - [动画]()
   - [质量弹簧系统](Animation/MassSpringSystem.md)
-  - [单个粒子模拟](Animation/SingleParticleSimulation.md)
+  - [粒子系统](Animation/ParticleSystem.md)
   - [刚体模拟](Animation/RigidSimulation.md)
   - [流体模拟](Animation/FluidSimulation.md)
   - [欧拉 Vs Lagrangion](Animation/EulerVsLagrangian.md)
