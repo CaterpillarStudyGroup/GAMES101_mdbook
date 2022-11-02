@@ -23,6 +23,8 @@
 
 ![](../assets/30.PNG)![](../assets/31.PNG)
 
+> &#x2753; 这个例子想说明什么？
+
 结论2：**时域卷积 = 频域滤波， 卷积kernel = 频域filter**
 
 ## 结论
@@ -50,7 +52,7 @@ d：采样函数的频域表示
 
 e：对a进行采样的结果，即a与c乘积的结果  
 
-f：采样结果的频域表示。由于时域乘积=频域卷积，这也中b与d卷积的结果
+f：采样结果的频域表示。由于时域乘积=频域卷积，这也是b与d卷积的结果
 
 ## 分析
 
@@ -62,7 +64,7 @@ f：采样结果的频域表示。由于时域乘积=频域卷积，这也中b�
 f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \omega \right) \otimes F_2\left( \omega \right) 
 \\]
 
-> &#x1F4A1; \\(f_1\left( x \right)\\) 是信号（a）， \\(f_2\left( x \right)\\)是采样信号（c）， \\(F_1\left( \omega \right)\\) 是a的频谱（b）  \\(F_2\left( \omega \right)\\) 是采样信号的频谱（d）0
+> &#x1F4A1; \\(f_1\left( x \right)\\) 是信号（a）， \\(f_2\left( x \right)\\)是采样信号（c）， \\(F_1\left( \omega \right)\\) 是a的频谱（b）  \\(F_2\left( \omega \right)\\) 是采样信号的频谱
 
 结论：**采样就是把原信号的频谱以特定周期呈现。**
 

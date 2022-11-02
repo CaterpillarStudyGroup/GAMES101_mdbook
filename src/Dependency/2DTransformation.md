@@ -205,6 +205,20 @@ y'=y
 \end{array} \right) 
 \\)
 
+因此
+
+$$
+\left[ \begin{array}{c}
+    x'\\\\
+    y'\\\\
+\end{array} \right] =\left[ \begin{matrix}
+    \cos\theta&        -\sin\theta\\\\
+    \sin\theta&        \cos\theta\\\\
+\end{matrix} \right] \left[ \begin{array}{c}
+    x\\\\
+    y\\\\
+\end{array} \right] 
+$$
 
 # 线性变换
 
