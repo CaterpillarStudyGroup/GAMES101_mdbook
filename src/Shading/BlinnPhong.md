@@ -9,6 +9,11 @@
 - 漫反射(Diffuse reflection): 光线被反射到各个方向上
 - 环境光(Ambient lighting): 假设任何一个点会接收到来自环境的常­量的光
 
+> &#x1F4A1; 问题简化抽象，可以快速得到近似的结果。  
+> 就像五行八卦就是对现实世界的抽象。  
+> 优点是：简化理解。  
+> 缺点是：不一定完全符合真实，用应用的局限性
+
 # 定义
 
 <div align="center"> <img src="../assets/shadingpoint.jpg" width = 290 /> </div>
@@ -29,8 +34,6 @@
 [47:35]
 
 ### 漫反射的特点
-
-漫反射具有以下特点：
 
 1. 打到 point 上的光线被均匀地反射出去（与观测点v没有关系）
 
@@ -92,7 +95,7 @@ L_s=k_s\left( I/r^2 \right) \max \left( 0, \cos \alpha \right) =k_s\left( I/r^2 
 - \\(k_s\\) 吸收率，通常认为高光是白色，也就是全吸收
 - \\(\left( I/r^2 \right)\\) 表示有多少能量到达了point
 - \\(\max \left( 0, n\cdot l \right) ^p\\) 表示n和h的接近程度
-- \\(L_s\\) 同样应该考虑有多少有多少能量被接收，但Blinn Phong模型将这个因素简化了
+- \\(L_s\\) 同样应该考虑有多少能量被接收，但Blinn Phong模型将这个因素简化了
 
 > **&#x1F4A1;** 公式中为什么会有指数p？
 >
@@ -131,7 +134,10 @@ L=L_a+L_d+L_s=k_aI_a+k_d\left( I/r^2 \right) \max \left( 0,n\cdot l \right) +k_s
 >
 > 这部分比较复杂,Blinn-phong模型没有考虑这个问题
 
-
+> &#x1F4A1; 解决复杂问题的几个方法：  
+> 1. 把问题分解为子问题，降低复杂度  
+> 2. 把问题从应用场景、难点等角度划分，每一部分针对其特点解决  
+> 3. 问题近似、简化
 ------------------------------
 
 > 本文出自CaterpillarStudyGroup，转载请注明出处。  
