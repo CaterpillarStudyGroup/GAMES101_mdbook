@@ -14,7 +14,7 @@
 - 几何
   - 曲线
   - 曲面
-- 动画/仿真 Animation/Simulation[31-45]
+- 动画/仿真 Animation/Simulation[31：45]
   - 刚体模拟
   - 弹簧模拟
   - 角色动画
