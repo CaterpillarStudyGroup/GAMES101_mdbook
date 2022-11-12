@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2D线性变换 - GAMES101</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of GAMES101">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>GAMES101</div></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction 介绍</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Dependencies 前置知识</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Dependency/Vector.html"><strong aria-hidden="true">2.1.</strong> Vector 向量</a></li><li class="chapter-item expanded "><a href="../Dependency/Matrix.html"><strong aria-hidden="true">2.2.</strong> Matrix 矩阵</a></li><li class="chapter-item expanded "><a href="../Dependency/2DTransformation.html" class="active"><strong aria-hidden="true">2.3.</strong> 2D线性变换</a></li><li class="chapter-item expanded "><a href="../Dependency/2DAffineTransformation.html"><strong aria-hidden="true">2.4.</strong> 2D仿射变换</a></li><li class="chapter-item expanded "><a href="../Dependency/Inverse.html"><strong aria-hidden="true">2.5.</strong> 逆变换</a></li><li class="chapter-item expanded "><a href="../Dependency/ComplexTransformation.html"><strong aria-hidden="true">2.6.</strong> 变换的合成与分解</a></li><li class="chapter-item expanded "><a href="../Dependency/3DTransformation.html"><strong aria-hidden="true">2.7.</strong> 3D变换</a></li></ol></li><li class="chapter-item expanded "><a href="../MVP/MVP.html"><strong aria-hidden="true">3.</strong> MVP 模型，视图，投影</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MVP/View.html"><strong aria-hidden="true">3.1.</strong> View 视图</a></li><li class="chapter-item expanded "><a href="../MVP/Projection.html"><strong aria-hidden="true">3.2.</strong> Projection 投影</a></li><li class="chapter-item expanded "><a href="../MVP/OrthographicProjection.html"><strong aria-hidden="true">3.3.</strong> 正交投影</a></li><li class="chapter-item expanded "><a href="../MVP/PerspectiveProjection.html"><strong aria-hidden="true">3.4.</strong> 透视投影</a></li><li class="chapter-item expanded "><a href="../MVP/Fov2Frustum.html"><strong aria-hidden="true">3.5.</strong> 根据Fov定义cubic、Frustum</a></li></ol></li><li class="chapter-item expanded "><a href="../Rasterization/Rasterization.html"><strong aria-hidden="true">4.</strong> Rasterization 光栅化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Rasterization/Antialiasing.html"><strong aria-hidden="true">4.1.</strong> Antialiasing 反走样</a></li><li class="chapter-item expanded "><a href="../Rasterization/AntialiasingInFrequency.html"><strong aria-hidden="true">4.2.</strong> 从频域的角度分析走样</a></li><li class="chapter-item expanded "><a href="../Rasterization/TimeVsFrequency.html"><strong aria-hidden="true">4.3.</strong> 时域 VS. 频域</a></li><li class="chapter-item expanded "><a href="../Rasterization/AntialiasingMore.html"><strong aria-hidden="true">4.4.</strong> 反走样算法</a></li><li class="chapter-item expanded "><a href="../Rasterization/Others.html"><strong aria-hidden="true">4.5.</strong> Others</a></li></ol></li><li class="chapter-item expanded "><a href="../Occlusion.html"><strong aria-hidden="true">5.</strong> 可见性/遮挡</a></li><li class="chapter-item expanded "><a href="../Shading/Shading.html"><strong aria-hidden="true">6.</strong> Shading 着色</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Shading/BlinnPhong.html"><strong aria-hidden="true">6.1.</strong> Blinn-Phong 反射模型</a></li><li class="chapter-item expanded "><a href="../Shading/Style.html"><strong aria-hidden="true">6.2.</strong> 着色频率</a></li><li class="chapter-item expanded "><a href="../Shading/Normal.html"><strong aria-hidden="true">6.3.</strong> 计算一个点/像素的法向量</a></li></ol></li><li class="chapter-item expanded "><a href="../Pipeline.html"><strong aria-hidden="true">7.</strong> 实时渲染管线</a></li><li class="chapter-item expanded "><a href="../Texture/Texture.html"><strong aria-hidden="true">8.</strong> Texture Mapping 纹理映射</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Texture/BarycentricCoordinates.html"><strong aria-hidden="true">8.1.</strong> 重心坐标插值</a></li><li class="chapter-item expanded "><a href="../Texture/TextureMapping.html"><strong aria-hidden="true">8.2.</strong> 纹理映射</a></li><li class="chapter-item expanded "><a href="../Texture/TextureMagnification.html"><strong aria-hidden="true">8.3.</strong> 纹理放大</a></li><li class="chapter-item expanded "><a href="../Texture/TextureTooBig.html"><strong aria-hidden="true">8.4.</strong> 纹理像素分辨率过大</a></li><li class="chapter-item expanded "><a href="../Texture/Application.html"><strong aria-hidden="true">8.5.</strong> 2D纹理应用</a></li><li class="chapter-item expanded "><a href="../Texture/3DApplication.html"><strong aria-hidden="true">8.6.</strong> 3D纹理应用</a></li></ol></li><li class="chapter-item expanded "><a href="../Geometry/Geometry.html"><strong aria-hidden="true">9.</strong> 几何</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Geometry/Curve.html"><strong aria-hidden="true">9.1.</strong> 曲线</a></li><li class="chapter-item expanded "><a href="../Geometry/Surface.html"><strong aria-hidden="true">9.2.</strong> 曲面</a></li><li class="chapter-item expanded "><a href="../Geometry/Mesh.html"><strong aria-hidden="true">9.3.</strong> Mesh</a></li></ol></li><li class="chapter-item expanded "><a href="../Shadow.html"><strong aria-hidden="true">10.</strong> 阴影</a></li><li class="chapter-item expanded "><a href="../RayTracing/RayTracing.html"><strong aria-hidden="true">11.</strong> 光线追踪</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../RayTracing/RayCasting.html"><strong aria-hidden="true">11.1.</strong> RayCasting</a></li><li class="chapter-item expanded "><a href="../RayTracing/Whitted.html"><strong aria-hidden="true">11.2.</strong> Whitted-Style算法</a></li><li class="chapter-item expanded "><a href="../RayTracing/RaySurfaceIntersection.html"><strong aria-hidden="true">11.3.</strong> 光线与隐式曲面的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/RayTriangleIntersection.html"><strong aria-hidden="true">11.4.</strong> 光线与三角形的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/RayMeshIntersection.html"><strong aria-hidden="true">11.5.</strong> 光线与Mesh的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/BasicRadiometry.html"><strong aria-hidden="true">11.6.</strong> 辐射度量学</a></li><li class="chapter-item expanded "><a href="../RayTracing/BRDF.html"><strong aria-hidden="true">11.7.</strong> BRDF - 双向反射分布函数</a></li><li class="chapter-item expanded "><a href="../RayTracing/RenderEquation.html"><strong aria-hidden="true">11.8.</strong> 渲染方程</a></li><li class="chapter-item expanded "><a href="../RayTracing/MontoCarloIntegration.html"><strong aria-hidden="true">11.9.</strong> 蒙特卡罗积分</a></li><li class="chapter-item expanded "><a href="../RayTracing/WhittedAgain.html"><strong aria-hidden="true">11.10.</strong> Whitted-Style Ray Tracing 的局限性</a></li><li class="chapter-item expanded "><a href="../RayTracing/PathTracing.html"><strong aria-hidden="true">11.11.</strong> 路径追踪</a></li><li class="chapter-item expanded "><a href="../RayTracing/PathTracingAdvance.html"><strong aria-hidden="true">11.12.</strong> 路径追踪进阶</a></li></ol></li><li class="chapter-item expanded "><a href="../Material/Material.html"><strong aria-hidden="true">12.</strong> 材质和外观</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Material/Diffuse.html"><strong aria-hidden="true">12.1.</strong> 漫反射材质</a></li><li class="chapter-item expanded "><a href="../Material/Glossy.html"><strong aria-hidden="true">12.2.</strong> Glossy材质</a></li><li class="chapter-item expanded "><a href="../Material/Water.html"><strong aria-hidden="true">12.3.</strong> 玻璃和水</a></li><li class="chapter-item expanded "><a href="../Material/Microfacet.html"><strong aria-hidden="true">12.4.</strong> 微表面材质</a></li><li class="chapter-item expanded "><a href="../Material/IsotropicAnisotropic.html"><strong aria-hidden="true">12.5.</strong> 各项同性/各项异性材质</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Advanced Topics in Rendering</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../AdvancedRendering/AdvancedRayTracing.html"><strong aria-hidden="true">13.1.</strong> 高级光线传播</a></li><li class="chapter-item expanded "><a href="../AdvancedRendering/AdcancedAppearcing.html"><strong aria-hidden="true">13.2.</strong> 高级Appreance建模</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> 颜色</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Color/Camera.html"><strong aria-hidden="true">14.1.</strong> 相机</a></li><li class="chapter-item expanded "><a href="../Color/LightField.html"><strong aria-hidden="true">14.2.</strong> 光场</a></li><li class="chapter-item expanded "><a href="../Color/Color.html"><strong aria-hidden="true">14.3.</strong> 颜色</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> 动画</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Animation/MassSpringSystem.html"><strong aria-hidden="true">15.1.</strong> 质量弹簧系统</a></li><li class="chapter-item expanded "><a href="../Animation/ParticleSystem.html"><strong aria-hidden="true">15.2.</strong> 粒子系统</a></li><li class="chapter-item expanded "><a href="../Animation/RigidSimulation.html"><strong aria-hidden="true">15.3.</strong> 刚体模拟</a></li><li class="chapter-item expanded "><a href="../Animation/FluidSimulation.html"><strong aria-hidden="true">15.4.</strong> 流体模拟</a></li><li class="chapter-item expanded "><a href="../Animation/EulerVsLagrangian.html"><strong aria-hidden="true">15.5.</strong> 欧拉 Vs Lagrangion</a></li><li class="chapter-item expanded "><a href="../Animation/Kinematics.html"><strong aria-hidden="true">15.6.</strong> 运动学</a></li><li class="chapter-item expanded "><a href="../Animation/Motion.html"><strong aria-hidden="true">15.7.</strong> 给角色添加指定动作</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">GAMES101</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/GAMES101_mdbook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="2d变换2d-transformation"><a class="header" href="#2d变换2d-transformation">2D变换(2D Transformation)</a></h1>
+<p>[06：52]</p>
+<h2 id="缩放scale"><a class="header" href="#缩放scale">缩放(Scale)</a></h2>
+<div align="center"> <img src="../assets/2d缩放.jpg" width = 500 /> </div>
+<p>图中，横轴和纵轴都缩小了\(\frac{1}{2}\)，用数学形式表达：</p>
+<p>\[
+x'=sx \\
+y'=sy
+\]
+其中，\((x',y')\) 是缩放后的坐标，\(s\) 是缩放尺度，\((x,y)\) 是原坐标。</p>
+<p>将该式子写成矩阵的形式为：</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left[ \begin{matrix}
+s&amp;        0\\
+0&amp;        s\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<p>即，得到缩放矩阵为：</p>
+<p>\[
+S_{0.5}=\left[ \begin{matrix}
+s&amp;		0\\
+0&amp;		s\\
+\end{matrix} \right] =\left[ \begin{matrix}
+0.5&amp;		0\\
+0&amp;		0.5\\
+\end{matrix} \right] 
+\]</p>
+<p>如果缩放不是均匀的，例如 \(x\) 轴缩小0.5，\(y\) 不变，则用矩阵表示为：</p>
+<div align="center"><img src="../assets/2d缩放2.jpg" width = 500 /></div>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left[ \begin{matrix}
+s_x&amp;        0\\
+0&amp;        s_y\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<p>即，得到缩放矩阵为：</p>
+<p>\[
+S_{0.5,1.0}=\left[ \begin{matrix}
+s_x&amp;		0\\
+0&amp;		s_y\\
+\end{matrix} \right] =\left[ \begin{matrix}
+0.5&amp;		0\\
+0&amp;		1.0\\
+\end{matrix} \right] 
+\]</p>
+<h2 id="反射reflection"><a class="header" href="#反射reflection">反射(Reflection)</a></h2>
+<p>反射也称对称。</p>
+<div align="center"><img src="../assets/反射.jpg" width = 500 /></div>
+<p>上图中，原图相对于 \(y\) 轴做了反转，用等式表示为：</p>
+<p>\[
+x'=-x\\
+y'=y
+\]</p>
+<p>该等式可以用矩阵表示为：</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left[ \begin{matrix}
+-1&amp;        0\\
+0&amp;        1\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<h2 id="切变shear"><a class="header" href="#切变shear">切变(Shear)</a></h2>
+<div align="center"><img src="../assets/切变.jpg" width = 500 /></div>
+<p>上图是切变的例子。可以看到，图像上任意一点的 \(y\) 轴坐标值并未改变，仅 \(x\) 轴坐标改变了。则可以确定的是 \(y'=y\)，继续观察，当 \(y\) 为0时， \(x\) 没有变化，当 \(y\) 为1时， \(x\) 都水平右移了 \(a\) 长度，当 \(y\) 为1/2时， \(x\) 移动了 \(\frac{a}{2}\)，所以，找到了规律， \(x\) 移动距离为 \(ay\)。用矩阵表示为：</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left[ \begin{matrix}
+1&amp;        a\\
+0&amp;        1\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<blockquote>
+<p><strong>📌补充：</strong> 找到变化规律，就能写出变换的表达式</p>
+</blockquote>
+<h2 id="旋转rotate"><a class="header" href="#旋转rotate">旋转(Rotate)</a></h2>
+<div align="center"><img src="../assets/旋转.jpg" width = 500 /></div>
+<blockquote>
+<p>✅旋转默认是绕<font color=green>原点</font>(0,0)旋转；默认旋转方向是<font color=green>逆时针</font>旋转。</p>
+</blockquote>
+<div align="center"><img src="../assets/旋转2.jpg" width = 500 /></div>
+<p><strong>旋转的矩阵表达式推导：</strong></p>
+<blockquote>
+<p><strong>💡思路：</strong> 旋转的图像每一点都需要符合表达式，那么，特殊的点也必须符合，所以从特殊点入手，找出旋转的规律，从而推导出旋转的矩阵形式表达。</p>
+</blockquote>
+<p>假设有一个正方形，如图所示。</p>
+<div align="left"><img src="../assets/旋转推导1.jpg" width = 290 /></div>
+<p>将其旋转 \(\theta\) 角度。</p>
+<div align="left"><img src="../assets/旋转推导2.jpg" width = 250 /></div>
+<p>我们的目的是得到 \(\left( x,y \right) -&gt;\left( x',y' \right) \)</p>
+<p>矩阵的形式为：
+\(\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right]  =\left( \begin{matrix}
+A&amp;        B\\
+C&amp;        D\\
+\end{matrix} \right) \left( \begin{array}{c}
+x\\
+y\\
+\end{array} \right) \)</p>
+<p>只要找出规律，求出ABCD即可。</p>
+<p>我们将目光先聚集在下图中的红点。</p>
+<div align="left"><img src="../assets/旋转推导3.jpg" width = 500 /></div>
+<p>最基本的，我们可以知道一些信息，例如，原本的(1,0)点被旋转成为(\(cos\theta，sin\theta\))，</p>
+<div align="left"><img src="../assets/旋转推导4.jpg" width = 500 /></div>
+<p>于是，我们就可以初步得到：</p>
+<p>\(
+\left( \begin{array}{c}
+\cos \theta\\
+\sin \theta\\
+\end{array} \right) =\left( \begin{matrix}
+A&amp;        B\\
+C&amp;        D\\
+\end{matrix} \right) \left( \begin{array}{c}
+1\\
+0\\
+\end{array} \right) 
+\)</p>
+<p>也就是：</p>
+<p>\(\cos \theta =A\cdot 1+B\cdot 0 = A\)</p>
+<p>\(\sin \theta =C\cdot 1+D\cdot 0 =C\)</p>
+<p>现在，已经得到了A和C。接着，我们选择另一个点。</p>
+<div align="left"><img src="../assets/旋转推导5.jpg" width = 500 /></div>
+<p>不难得到，\( B=-sin\theta, D=cos\theta \)</p>
+<p>所以有</p>
+<p>\(
+\left( \begin{array}{c}
+\cos \theta\\
+\sin \theta\\
+\end{array} \right) =\left( \begin{matrix}
+cos\theta&amp;        -sin\theta\\
+sin\theta&amp;        cos\theta\\
+\end{matrix} \right) \left( \begin{array}{c}
+1\\
+0\\
+\end{array} \right) 
+\)</p>
+<p>因此</p>
+<p>$$
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right] =\left[ \begin{matrix}
+\cos\theta&amp;        -\sin\theta\\
+\sin\theta&amp;        \cos\theta\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+$$</p>
+<h1 id="线性变换"><a class="header" href="#线性变换">线性变换</a></h1>
+<p>上述缩放、反射、切变和旋转，都称为<strong>线性变换</strong>，可以统一由下面的表达式来表达：</p>
+<p>\[
+x'=ax+by\\
+y'=cx+dy
+\]</p>
+<p>\[
+\left[ \begin{array}{c}
+x'\\
+y'\\
+\end{array} \right] =\left[ \begin{matrix}
+a&amp;        b\\
+c&amp;        d\\
+\end{matrix} \right] \left[ \begin{array}{c}
+x\\
+y\\
+\end{array} \right] 
+\]</p>
+<p>\[
+X'=MX
+\]</p>
+<blockquote>
+<p><strong>❗注意：</strong> 要用相同维度的向量，去和X相乘。旋转矩阵必须满足\(R^{-1}=R^T\)</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。<br />
+https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Dependency/Matrix.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../Dependency/2DAffineTransformation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Dependency/Matrix.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../Dependency/2DAffineTransformation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>
