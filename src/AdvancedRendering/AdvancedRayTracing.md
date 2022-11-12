@@ -21,6 +21,8 @@ BDPR方法：
 ![](../assets/156.PNG)  
 由于光源向上，场景大部分光来自间接光。因此大多数情况下 path tracing 的第1个 bounce 是 diffuse，导致不好控制它打到能量集中的区域去。
 
+> &#x1F4A1; 分析常规方法的局限场景，针对局限场景做优化。  
+
 ## Metropolis(人名) Light Transport (MLT)
 
 ### 原理：
@@ -49,10 +51,9 @@ Monto Carlo 性质：当f(x)与 p(x) 形状一致时， bias 最小，
 
 ## Photon Mapping光子映射
 
-适用于渲染 caustics.[20：48]
-是有偏算法
-caustics： 由于光线聚集形成非常强的图案。
-适于用 specular-diffuse-specular­
+适用于渲染 caustics.[20：48]  
+是有偏算法  
+caustics： 由于光线聚集形成非常强的图案。适于用 specular-diffuse-specular­
 
 ### 具体方法
 
@@ -77,6 +78,8 @@ N 太小会有噪声，N太大会糊
 由于光子密度是通过 N/A 估计出来的，不是真实的密度，因此该算法是有偏算法  
 当 Stage 1中的光子数趋于\\(\inf\\)时， Stage 3的A趋于0，密度估计趋于正确值。因此该算法是bias but consistent 算法。  
 如果通过固定A数光子数量来计算密度，那么光子数再多也是有偏算法。  
+
+> &#x1F4A1; 共同目的都是找到最能体现光线传播特点的路径。  
 
 ## VCM: Vertex Connection and Merging 双向路经追踪 + 光子映射
 
@@ -110,6 +113,8 @@ N 太小会有噪声，N太大会糊
 1. 有一些地方莫名其妙地发光[34:51]  
 ![](../assets/162.PNG)  
 2. 不能处理 glossy 物体
+
+> &#x1F4A1; 这是与光追不同的另一套简化的建模思想，因为是简化模拟的方法，所以有Artifacts.  
 
 ------------------------------
 

@@ -22,9 +22,9 @@
 
 ## 一些名词
 
-- primary ray
-- secondary ray
-- shadow ray
+- primary ray：眼睛打出的光线  
+- secondary ray： 经过弹射的光线  
+- shadow ray：物体与光源的连线  
 
 ## 效果
 

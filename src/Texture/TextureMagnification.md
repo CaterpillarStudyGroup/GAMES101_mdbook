@@ -45,6 +45,7 @@ Final vertical lerp, to get result:
 
 <img src="../assets/bilinear2.jpg" width = 400 />
 
+> &#x1F4A1; 插值就是以距离为权重求加权平均，加权平均能增加平滑但导致模糊。  
 
 # 双向三次插值 Bicubic
 
@@ -54,6 +55,8 @@ Final vertical lerp, to get result:
 效果：
 
 <img src="../assets/bicubic.jpg" width = 400 />
+
+> &#x1F4A1; 一次插值剂量不够就再插一次。  
 
 ------------------------------
 

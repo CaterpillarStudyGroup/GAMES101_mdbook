@@ -64,7 +64,7 @@
   - [高级光线传播](AdvancedRendering/AdvancedRayTracing.md)
   - [高级Appreance建模](AdvancedRendering/AdcancedAppearcing.md)
 - [颜色]()
-  - [相机](Camera.md)
+  - [相机](Color/Camera.md)
   - [光场](Color/LightField.md)
   - [颜色](Color/Color.md)
 - [动画]()

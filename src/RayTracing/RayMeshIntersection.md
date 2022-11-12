@@ -16,7 +16,7 @@
 
 ![](../assets/91.PNG)  
 
-先判断光线与BV是否相关，然后再求与物体的相交情况。
+先判断光线与BV是否相交，然后再求与物体的相交情况。
 
 最常见的BV是长方体。长方体可以看作是3个不同的对面（slab）形成的交集[58:36]。
 
@@ -40,7 +40,7 @@
 
 ![](../assets/96.PNG)  
 
-4. 分析光线与AABB的相关情况
+4. 分析光线与AABB的相交情况
 
 tenter = max{tmin}, texit = min{tmax}  
 
@@ -51,6 +51,7 @@ texit < 0 || tenter > texit ⇒ 不相交
 tenter < 0 < texit ⇒ 光源在 AABB 内
 
 > &#x2757; 以上方法对三维同样适用。计算每对平面的tmin和tmax，然后求交集。  
+> &#x1F4A1; 对于凸多边形（体），判断点是否在内部，常规方法是依次判断点是否在边（面）的同一侧。但AABB的特点在于两条边（面）是平行的，因此可以一次判断点跟两条边（面）的关系。  
 
 ### 求光线与slab相交的时间
 
@@ -67,6 +68,7 @@ A:光线与Axis Aligned平面求交的计算简单[1:15:49]
 ### 均匀的格子 Uniform Grids [8：13]
 
 > &#x2705; **算法前提：光线与 Grid 求交很快，与 object 求交很慢**
+> &#x1F4A1; 对于复杂操作，先进行快而粗的处理，再进行慢而精的处理，是常见做法。也可以是两者同时进行，前者相当于剪枝。  
 
 所设有以下的场景：
 
@@ -95,6 +97,8 @@ A:光线与Axis Aligned平面求交的计算简单[1:15:49]
 2. 适用于 object 的大小接近且位置均匀
 3. 不适用于 object 分布不均匀的场景
 
+> &#x2753; 什么是位置均匀的？我的理解是稀疏，也就是通过AABB排除的部分越多越好。  
+
 ### 空间划分 Spatial Partition
 
 [18：59] 
@@ -118,7 +122,7 @@ A:光线与Axis Aligned平面求交的计算简单[1:15:49]
 child: 2个  
 object: 不存 object 数据
 
-- 叶子结色
+- 叶子结色  
  存 list of objects.
 
 #### Traverse.
@@ -131,6 +135,8 @@ object: 不存 object 数据
 
 1. 如何判断AABB包围盒与objects中的三角形相交。
 2. object 可能存在于多个叶子结点中
+
+> &#x2705; 基于空间划分，obj会重复。基于obj划分，空间会重复。  
 
 ### 物体划分 Object Partition
 
@@ -148,6 +154,7 @@ BVH：Bounding Volumn Hierarchy  [40：00]
 2. 对BV内的**object**划分
 
 > &#x2705; 对object进行划分，解决了“object 可能存在于多个叶子结点中”的问题。  
+> &#x2705; 已知BV，挑出在BV内的obj;已知obj，画出obj外的BV。  
 
 以上两步交替进行
 
@@ -168,7 +175,7 @@ BVH：Bounding Volumn Hierarchy  [40：00]
 
 包围盒、child: 2个  
 
-- 叶子结色
+- 叶子结色  
  存 list of objects.
 
 #### Traverse
