@@ -3,9 +3,6 @@
 [GAMES101]()
 
 - [Introduction 介绍](README.md)
-- [Dependencies 前置知识]()
-  - [Vector 向量](Dependency/Vector.md)
-  - [Matrix 矩阵](Dependency/Matrix.md)
 - [MVP 模型，视图，投影](MVP/MVP.md)
   - [View 视图](MVP/View.md)
   - [Projection 投影](MVP/Projection.md)

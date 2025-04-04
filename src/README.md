@@ -7,7 +7,7 @@
 # 课程主要内容
 
 - 数学基础
-  - 线代的基本概念
+  - [线代的基本概念](https://caterpillarstudygroup.github.io/mathematics_basic_for_ML/LinearAlgebra/vector.html)
   - 线代的应用 - MVP
 - 几何
   - 曲线
