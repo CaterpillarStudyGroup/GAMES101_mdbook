@@ -1,5 +1,7 @@
 # 向量
 
+> ![关于**向量**戳这里](https://caterpillarstudygroup.github.io/mathematics_basic_for_ML/LinearAlgebra/vector.html)
+
 ## 向量叉乘在图形学中的作用
 
 1. 判定左和右
@@ -49,9 +51,6 @@ $$
    
    - \\(\left( \vec{p}\cdot \vec{u} \right)\\) 是投影长度
    - \\(\vec{u}\\) 是方向
-
- 
- 
 
 ----------------
 
