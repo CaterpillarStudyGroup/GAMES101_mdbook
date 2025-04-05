@@ -3,6 +3,7 @@
 [GAMES101]()
 
 - [Introduction 介绍](README.md)
+- [实时渲染管线](Pipeline.md)
 - [MVP 模型，视图，投影](MVP/MVP.md)
   - [View 视图](MVP/View.md)
   - [Projection 投影](MVP/Projection.md)
@@ -20,7 +21,7 @@
   - [Blinn-Phong 反射模型](Shading/BlinnPhong.md)
   - [着色频率](Shading/Style.md)
   - [计算一个点/像素的法向量](Shading/Normal.md)
-- [实时渲染管线](Pipeline.md)
+
 - [Texture Mapping 纹理映射](Texture/Texture.md)
   - [重心坐标插值](Texture/BarycentricCoordinates.md)
   - [纹理映射](Texture/TextureMapping.md)

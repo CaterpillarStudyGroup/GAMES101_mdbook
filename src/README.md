@@ -1,14 +1,25 @@
-# GAMES 101 现代计算机图形学入门
+# README
 
-[原始课程链接](https://www.bilibili.com/video/BV1X7411F744?spm_id_from=333.337.search-card.all.click)
+这个笔记以GAMES101为原型，保留了其中渲染相关的内容，并做了重新排版与补充。  
+数学、动画、仿真、几何等内容移至其它仓库。  
+
 
 如有侵权，请联系删除
 
 # 课程主要内容
 
-- 数学基础
-  - [线代的基本概念](https://caterpillarstudygroup.github.io/mathematics_basic_for_ML/LinearAlgebra/vector.html)
-  - 线代的应用 - MVP
+- 实时渲染pipeline
+- 投影功能与可见区域裁剪
+  - MVP
+- 光栅化
+  - 反走样
+- 着色
+  - 渲染方程
+  - 简化模型
+  - 大地系统
+  - 天空系统
+- 显示
+
 - 几何
   - 曲线
   - 曲面
@@ -34,20 +45,12 @@
 物理：光学，力学  
 
 其它：信号，数值分析，美学
-  
-# 说明
 
-这个是GAMES-Webinar提供的一个课程系列。  
-作者闫令琪大佬在内容上非常专业。课程逻辑清晰有条理。尤其是光栅化和光线追踪这两个话题，能够把复杂的内容讲得深入浅出。  
-大佬在讲课方面也很专业。每节课都有上集回顾、本集预告，课程以大约半小时为一个段落，按照易-难-答疑编排。
-总之，听大佬上课，不仅能学到知识，更是一种享受。  
+# Reference
 
-# 学习方法
-
-1. 学习课程提供的主要应用与相关算法，知道算法的主要过程。  
-2. 根据算法要解决的问题对算法进行归纳整理，对于一个算法的不同演进版本，进行纵向比较，思考算法为什么这样发展。对于同一算法的不同变种进行横向比较，思考每个算法的优缺点和应用场景。  
-3. 思考算法背后所蕴含的思想，以及对自己的启发。
-
+1. [GAMES101](https://www.bilibili.com/video/BV1X7411F744?spm_id_from=333.337.search-card.all.click)
+2. [GAMES104](https://caterpillarstudygroup.github.io/GAMES104_mdbook/index.html)
+3. [数学基础](https://caterpillarstudygroup.github.io/mathematics_basic_for_ML/index.html)
 
 ---------------------------------------
 
