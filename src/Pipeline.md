@@ -38,6 +38,8 @@ MVP发生在图中的Vertex Processing。
 
 这一步发生在Fragment Processing
 
+### 纹理映射
+
 ### 基于像素的Shading
 
 ![](assets/blinn-phong.jpg)
