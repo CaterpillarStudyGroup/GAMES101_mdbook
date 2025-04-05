@@ -26,6 +26,10 @@
   - [2D纹理应用](Texture/Application.md)
   - [3D纹理应用](Texture/3DApplication.md)
 - [Shading 着色](Shading/Shading.md)
+  - [辐射度量学](RayTracing/BasicRadiometry.md)
+  - [BRDF - 双向反射分布函数](RayTracing/BRDF.md)
+  - [渲染方程](RayTracing/RenderEquation.md)
+- 经验模型
   - [Blinn-Phong 反射模型](Shading/BlinnPhong.md)
   - [着色频率](Shading/Style.md)
   - [计算一个点/像素的法向量](Shading/Normal.md)、
@@ -35,9 +39,6 @@
   - [光线与隐式曲面的交点](RayTracing/RaySurfaceIntersection.md)
   - [光线与三角形的交点](RayTracing/RayTriangleIntersection.md)
   - [光线与Mesh的交点](RayTracing/RayMeshIntersection.md)
-  - [辐射度量学](RayTracing/BasicRadiometry.md)
-  - [BRDF - 双向反射分布函数](RayTracing/BRDF.md)
-  - [渲染方程](RayTracing/RenderEquation.md)
   - [蒙特卡罗积分](RayTracing/MontoCarloIntegration.md)
   - [Whitted-Style Ray Tracing 的局限性](RayTracing/WhittedAgain.md)
   - [路径追踪](RayTracing/PathTracing.md)
