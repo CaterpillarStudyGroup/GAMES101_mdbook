@@ -69,5 +69,3 @@
   - [刚体模拟](Animation/RigidSimulation.md)
   - [流体模拟](Animation/FluidSimulation.md)
   - [欧拉 Vs Lagrangion](Animation/EulerVsLagrangian.md)
-  - [运动学](Animation/Kinematics.md)
-  - [给角色添加指定动作](Animation/Motion.md)
