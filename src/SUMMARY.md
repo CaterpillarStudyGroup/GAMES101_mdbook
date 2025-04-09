@@ -60,8 +60,6 @@
   - [光场](Color/LightField.md)
   - [颜色](Color/Color.md)
 - [几何](Geometry/Geometry.md)
-  - [曲线](Geometry/Curve.md)
-  - [曲面](Geometry/Surface.md)
   - [Mesh](Geometry/Mesh.md)
 - [动画]()
   - [质量弹簧系统](Animation/MassSpringSystem.md)
