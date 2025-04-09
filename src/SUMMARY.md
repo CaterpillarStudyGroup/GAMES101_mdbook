@@ -29,8 +29,10 @@
   - [辐射度量学](RayTracing/BasicRadiometry.md)
   - [BRDF - 双向反射分布函数](RayTracing/BRDF.md)
   - [渲染方程](RayTracing/RenderEquation.md)
-- 经验模型
+- [经验模型]()
   - [Blinn-Phong 反射模型](Shading/BlinnPhong.md)
+  - [环境贴图](Shading/CubeMap.md)
+  - [环境光](Shading/GI.mds)
   - [着色频率](Shading/Style.md)
   - [计算一个点/像素的法向量](Shading/Normal.md)、
 - [光线追踪](RayTracing/RayTracing.md)
