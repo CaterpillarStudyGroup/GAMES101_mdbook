@@ -2,7 +2,6 @@
 authors = ["windmissing", "poloog"]
 language = "en"
 description = "The note of GAMES101"
-multilingual = false
 src = "src"
 title = "GAMES101"
 
