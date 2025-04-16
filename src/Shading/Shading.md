@@ -26,7 +26,7 @@
 
 ![](../assets/v2-78547d4764131258e357a7cedab05711_r.png)
 
-这是著名的Render Equation ，[《GAMES 101》](https://caterpillarstudygroup.github.io/GAMES101_mdbook/RayTracing/BasicRadiometry.html)中花了大量的篇幅来解释这个公式。我们今天几乎做的所有Rendering 相关的工作都是去满足这个Render Equation 。但是至今为止，没有任何一款游戏引擎能够做到实时的完全按照Render Equation来进行渲染，我们能做到的只是在无限的逼近它。
+这是著名的Render Equation ，我们今天几乎做的所有Rendering 相关的工作都是去满足这个Render Equation 。但是至今为止，没有任何一款游戏引擎能够做到实时的完全按照Render Equation来进行渲染，我们能做到的只是在无限的逼近它。
 
 ![](../assets/v2-75ea529e0b2f17fa8d47b69cd4bd92ec_r.png)
 
