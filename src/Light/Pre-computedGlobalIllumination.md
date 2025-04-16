@@ -18,14 +18,15 @@ P26
 How to Represent Input Indirect Light
    
 (1) GI的数据量非常大。     
-用极少的数据表达一整张图像的大致样子    
+使用几个[球谐基](https://caterpillarstudygroup.github.io/mathematics_basic_for_ML/Geometry/SphericalHarmonics.html)系数，可以把球面的光照信号大致表达出来。   
+由于 GI 只需要表达低频，使用到 1 阶就足够了。这样就用极少的数据表达出了一整张图像的大致样子。    
+
 (2) 如何让材质与GI做积分。   
 频域上的一次卷积相当于对图像域上每个像素做加权平均    
 
-&#x1F50E;[傅利叶变换](../Rasterization/TimeVsFrequency.md) 的作用
+&#x1F50E;[傅利叶变换](../Rasterization/TimeVsFrequency.md)
 
-> 使用几个球谐基系数，可以把球面的光照信号大致表达出来。   
-由于 GI 只需要表达低频，使用到 1 阶就足够了。   
+   
 
 P34   
 #### Sampling Irradiance Probe Anywhere
