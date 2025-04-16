@@ -1,7 +1,7 @@
 # Blinn-Phong 反射模型
 
 这是一个简单基础的模型，属于经验模型，并不完全符合物理。  
-它将光分成了三种成分，分别针对这三种成分的光，模拟光源对物体的作用。  
+它利用光的可叠加属性，将光分成了三种成分，分别针对这三种成分的光，模拟光源对物体（光与材质的积分结果）的作用。  
 
 ![](../assets/reflection.jpg)
 
@@ -14,6 +14,15 @@
 > 优点是：简化理解。  
 > 缺点是：不一定完全符合真实，用应用的局限性
 
+$$
+\begin{align*}
+ L_0 &=\int (f_{BRDF}\cdot L_i)dw  \\\\
+  & =\int (f_{BRDF}\cdot (L_a+L_d+L_s))dw  \\\\
+  &=\int (f_{BRDF}\cdot L_a)dw+\int (f_{BRDF}\cdot L_d)dw+\int (f_{BRDF}\cdot L_s)dw   \\\\
+  &=k_a+k_d+k_s 
+\end{align*}
+$$
+    
 # 定义
 
 <div align="center"> <img src="../assets/shadingpoint.jpg" width = 290 /> </div>
@@ -124,11 +133,7 @@ L_a=k_aI_a
 
 # 模型总述
 
-![](../assets/blinn-phong.jpg)
-
-\\[
-L=L_a+L_d+L_s=k_aI_a+k_d\left( I/r^2 \right) \max \left( 0,n\cdot l \right) +k_s\left( I/r^2 \right) \max \left( 0,n\cdot h \right) ^p
-\\]
+![](../assets/69-15-1.png)  
 
 > **&#x1F4A1;** 为什么不考虑point到v的距离对能量的影响？？
 >
@@ -138,6 +143,17 @@ L=L_a+L_d+L_s=k_aI_a+k_d\left( I/r^2 \right) \max \left( 0,n\cdot l \right) +k_s
 > 1. 把问题分解为子问题，降低复杂度  
 > 2. 把问题从应用场景、难点等角度划分，每一部分针对其特点解决  
 > 3. 问题近似、简化
+
+# Problem of Blinn-Phong
+
+- Not energy conservative Unstable in ray-tracing   
+
+![](../assets/69-16-1.png)   
+
+- Hard to model complex realistic material    
+
+![](../assets/69-16-2.png)   
+
 ------------------------------
 
 > 本文出自CaterpillarStudyGroup，转载请注明出处。  

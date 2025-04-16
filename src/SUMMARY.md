@@ -35,7 +35,7 @@
   - [2D纹理应用](Texture/Application.md)
   - [环境光](Shading/GI.mds)
 - [材质和外观](Material/Material.md)
-  - [Blinn-Phong 反射模型](Shading/BlinnPhong.md)
+  - [Blinn-Phong 材质模型](Shading/BlinnPhong.md)
   - [漫反射材质](Material/Diffuse.md)
   - [Glossy材质](Material/Glossy.md)
   - [玻璃和水](Material/Water.md)
