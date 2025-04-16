@@ -24,6 +24,7 @@
   - [纹理像素分辨率过大](Texture/TextureTooBig.md)
 - [阴影](Shadow/Shadow.md)
   - [Shadow Mapping算法](Shadow/ShadowMapping.md)
+  - [Cascade Shadow](Shadow/CascadeShadow.md)
 - [Shading 着色](Shading/Shading.md)
   - [辐射度量学](RayTracing/BasicRadiometry.md)
   - [BRDF - 双向反射分布函数](RayTracing/BRDF.md)
