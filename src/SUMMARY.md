@@ -33,6 +33,7 @@
 - [光](Light/Light.md)
   - [简单方案](Light/SimpleLightSolution.md)
   - [预计算GI](Light/Pre-computedGlobalIllumination.md)
+  - [SH Lightmap](Light/SHLightmap.md)
   - [环境贴图](Experience/EnvironmentMap.md)
   - [2D纹理应用](Texture/Application.md)
 - [材质和外观](Material/Material.md)
