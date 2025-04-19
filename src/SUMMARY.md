@@ -58,6 +58,7 @@
 - [地形系统]()
   - [Height Field](TerrainRendering/HeightField.md)
   - [Non-Heightfield Terrain](TerrainRendering/NonHeightField.md)
+  - [Paint Terrain Materials](TerrainRendering/PaintTerrainMaterials.md)
 - [Advanced Topics in Rendering]()
   - [高级光线传播](AdvancedRendering/AdvancedRayTracing.md)
   - [高级Appreance建模](AdvancedRendering/AdcancedAppearcing.md)

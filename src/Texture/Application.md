@@ -110,6 +110,22 @@ $$
 > &#x1F4A1; 提前准备是空间换时间的通俗表达。提前准备好仍免不了计算，只是把计算提前了，该做的仍然要做。  
 > 提前准备好也有可能会有实际上用不到的风险，那么这一部分提前计算会被浪费。提前计算消耗的是廉价的时间和空间，一但用上了，省去的是昂贵的运行时计算的时间，因此是高回报的投资。  
 
+P43   
+## Parallax and Displacement Mapping
+
+![](../assets/06-19-1.png)   
+
+![](../assets/06-19-2.png)   
+
+Parallax Mapping: Due to the height of the surface, the eye sees point B instead of point A. It creates a sense of dimensionality     
+
+> 视差贴图。    
+
+> 凹凸帧图能产生明暗分明的效果。但仍然会有平面感，因为眼睛看到的点和应该看到的点，有视差。常用做法，ray marching(Parallax mapping)        
+缺点：(1) 几步测一下，比较贵     
+(2) 只是产生视觉上的凹凸感，边界上还能看出 artifacts (光滑)    
+Displacement mapping 真实修改地形     
+
 ------------------------------
 
 > 本文出自CaterpillarStudyGroup，转载请注明出处。  
