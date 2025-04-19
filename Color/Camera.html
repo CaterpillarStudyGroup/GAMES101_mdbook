@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>相机 - GAMES101</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of GAMES101">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>GAMES101</div></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction 介绍</a></li><li class="chapter-item expanded "><a href="../Pipeline.html"><strong aria-hidden="true">2.</strong> 实时渲染管线</a></li><li class="chapter-item expanded "><a href="../MVP/MVP.html"><strong aria-hidden="true">3.</strong> MVP 模型，视图，投影</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MVP/View.html"><strong aria-hidden="true">3.1.</strong> View 视图</a></li><li class="chapter-item expanded "><a href="../MVP/Projection.html"><strong aria-hidden="true">3.2.</strong> Projection 投影</a></li><li class="chapter-item expanded "><a href="../MVP/OrthographicProjection.html"><strong aria-hidden="true">3.3.</strong> 正交投影</a></li><li class="chapter-item expanded "><a href="../MVP/PerspectiveProjection.html"><strong aria-hidden="true">3.4.</strong> 透视投影</a></li><li class="chapter-item expanded "><a href="../MVP/Fov2Frustum.html"><strong aria-hidden="true">3.5.</strong> 根据Fov定义cubic、Frustum</a></li></ol></li><li class="chapter-item expanded "><a href="../Rasterization/Rasterization.html"><strong aria-hidden="true">4.</strong> Rasterization 光栅化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Rasterization/Antialiasing.html"><strong aria-hidden="true">4.1.</strong> Antialiasing 反走样</a></li><li class="chapter-item expanded "><a href="../Rasterization/AntialiasingInFrequency.html"><strong aria-hidden="true">4.2.</strong> 从频域的角度分析走样</a></li><li class="chapter-item expanded "><a href="../Rasterization/TimeVsFrequency.html"><strong aria-hidden="true">4.3.</strong> 时域 VS. 频域</a></li><li class="chapter-item expanded "><a href="../Rasterization/AntialiasingMore.html"><strong aria-hidden="true">4.4.</strong> 反走样算法</a></li><li class="chapter-item expanded "><a href="../Rasterization/Others.html"><strong aria-hidden="true">4.5.</strong> Others</a></li></ol></li><li class="chapter-item expanded "><a href="../Occlusion.html"><strong aria-hidden="true">5.</strong> 可见性/遮挡</a></li><li class="chapter-item expanded "><a href="../Texture/Texture.html"><strong aria-hidden="true">6.</strong> Texture Mapping 纹理映射</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Texture/BarycentricCoordinates.html"><strong aria-hidden="true">6.1.</strong> 重心坐标插值</a></li><li class="chapter-item expanded "><a href="../Texture/TextureMapping.html"><strong aria-hidden="true">6.2.</strong> 纹理映射</a></li><li class="chapter-item expanded "><a href="../Texture/TextureMagnification.html"><strong aria-hidden="true">6.3.</strong> 纹理放大</a></li><li class="chapter-item expanded "><a href="../Texture/TextureTooBig.html"><strong aria-hidden="true">6.4.</strong> 纹理像素分辨率过大</a></li></ol></li><li class="chapter-item expanded "><a href="../Shadow/Shadow.html"><strong aria-hidden="true">7.</strong> 阴影</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Shadow/ShadowMapping.html"><strong aria-hidden="true">7.1.</strong> Shadow Mapping算法</a></li><li class="chapter-item expanded "><a href="../Shadow/CascadeShadow.html"><strong aria-hidden="true">7.2.</strong> Cascade Shadow</a></li></ol></li><li class="chapter-item expanded "><a href="../Shading/Shading.html"><strong aria-hidden="true">8.</strong> Shading 着色</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../RayTracing/BasicRadiometry.html"><strong aria-hidden="true">8.1.</strong> 辐射度量学</a></li><li class="chapter-item expanded "><a href="../RayTracing/BRDF.html"><strong aria-hidden="true">8.2.</strong> BRDF - 双向反射分布函数</a></li><li class="chapter-item expanded "><a href="../RayTracing/RenderEquation.html"><strong aria-hidden="true">8.3.</strong> 渲染方程</a></li><li class="chapter-item expanded "><a href="../Shading/Style.html"><strong aria-hidden="true">8.4.</strong> 着色频率</a></li><li class="chapter-item expanded "><a href="../Shading/Normal.html"><strong aria-hidden="true">8.5.</strong> 计算一个点/像素的法向量</a></li></ol></li><li class="chapter-item expanded "><a href="../Light/Light.html"><strong aria-hidden="true">9.</strong> 光</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Light/SimpleLightSolution.html"><strong aria-hidden="true">9.1.</strong> 简单方案</a></li><li class="chapter-item expanded "><a href="../Light/Pre-computedGlobalIllumination.html"><strong aria-hidden="true">9.2.</strong> 预计算GI</a></li><li class="chapter-item expanded "><a href="../Light/SHLightmap.html"><strong aria-hidden="true">9.3.</strong> SH Lightmap</a></li><li class="chapter-item expanded "><a href="../Light/LightProbe.html"><strong aria-hidden="true">9.4.</strong> Light Probe</a></li><li class="chapter-item expanded "><a href="../Experience/EnvironmentMap.html"><strong aria-hidden="true">9.5.</strong> 环境贴图</a></li><li class="chapter-item expanded "><a href="../Texture/Application.html"><strong aria-hidden="true">9.6.</strong> 2D纹理应用</a></li></ol></li><li class="chapter-item expanded "><a href="../Material/Material.html"><strong aria-hidden="true">10.</strong> 材质和外观</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Shading/BlinnPhong.html"><strong aria-hidden="true">10.1.</strong> Blinn-Phong 材质模型</a></li><li class="chapter-item expanded "><a href="../Material/Diffuse.html"><strong aria-hidden="true">10.2.</strong> 漫反射材质</a></li><li class="chapter-item expanded "><a href="../Material/Glossy.html"><strong aria-hidden="true">10.3.</strong> Glossy材质</a></li><li class="chapter-item expanded "><a href="../Material/Water.html"><strong aria-hidden="true">10.4.</strong> 玻璃和水</a></li><li class="chapter-item expanded "><a href="../Material/Microfacet.html"><strong aria-hidden="true">10.5.</strong> 微表面材质</a></li><li class="chapter-item expanded "><a href="../Material/IsotropicAnisotropic.html"><strong aria-hidden="true">10.6.</strong> 各项同性/各项异性材质</a></li></ol></li><li class="chapter-item expanded "><a href="../RayTracing/RayTracing.html"><strong aria-hidden="true">11.</strong> 光线追踪</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../RayTracing/RayCasting.html"><strong aria-hidden="true">11.1.</strong> RayCasting</a></li><li class="chapter-item expanded "><a href="../RayTracing/Whitted.html"><strong aria-hidden="true">11.2.</strong> Whitted-Style算法</a></li><li class="chapter-item expanded "><a href="../RayTracing/RaySurfaceIntersection.html"><strong aria-hidden="true">11.3.</strong> 光线与隐式曲面的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/RayTriangleIntersection.html"><strong aria-hidden="true">11.4.</strong> 光线与三角形的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/RayMeshIntersection.html"><strong aria-hidden="true">11.5.</strong> 光线与Mesh的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/MontoCarloIntegration.html"><strong aria-hidden="true">11.6.</strong> 蒙特卡罗积分</a></li><li class="chapter-item expanded "><a href="../RayTracing/WhittedAgain.html"><strong aria-hidden="true">11.7.</strong> Whitted-Style Ray Tracing 的局限性</a></li><li class="chapter-item expanded "><a href="../RayTracing/PathTracing.html"><strong aria-hidden="true">11.8.</strong> 路径追踪</a></li><li class="chapter-item expanded "><a href="../RayTracing/PathTracingAdvance.html"><strong aria-hidden="true">11.9.</strong> 路径追踪进阶</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> 地形系统</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../TerrainRendering/HeightField.html"><strong aria-hidden="true">12.1.</strong> Height Field</a></li><li class="chapter-item expanded "><a href="../TerrainRendering/NonHeightField.html"><strong aria-hidden="true">12.2.</strong> Non-Heightfield Terrain</a></li><li class="chapter-item expanded "><a href="../TerrainRendering/PaintTerrainMaterials.html"><strong aria-hidden="true">12.3.</strong> Paint Terrain Materials</a></li></ol></li><li class="chapter-item expanded "><a href="../Sky/SkyAtmosphere.html"><strong aria-hidden="true">13.</strong> Sky and Atmosphere</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Sky/Atmosphere.html"><strong aria-hidden="true">13.1.</strong> Atmosphere</a></li><li class="chapter-item expanded "><a href="../Sky/MultiScattering.html"><strong aria-hidden="true">13.2.</strong> Multi Scattering</a></li><li class="chapter-item expanded "><a href="../Sky/Cloud.html"><strong aria-hidden="true">13.3.</strong> Cloud</a></li><li class="chapter-item expanded "><a href="../Sky/Fog.html"><strong aria-hidden="true">13.4.</strong> Fog</a></li></ol></li><li class="chapter-item expanded "><a href="../AmbientOcclusion/AmbientOcclusion.html"><strong aria-hidden="true">14.</strong> Ambient Occlusion</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Advanced Topics in Rendering</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../AdvancedRendering/AdvancedRayTracing.html"><strong aria-hidden="true">15.1.</strong> 高级光线传播</a></li><li class="chapter-item expanded "><a href="../AdvancedRendering/AdcancedAppearcing.html"><strong aria-hidden="true">15.2.</strong> 高级Appreance建模</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> 纹理生成</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Texture/3DApplication.html"><strong aria-hidden="true">16.1.</strong> 3D纹理应用</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> 颜色</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Color/Camera.html" class="active"><strong aria-hidden="true">17.1.</strong> 相机</a></li><li class="chapter-item expanded "><a href="../Color/LightField.html"><strong aria-hidden="true">17.2.</strong> 光场</a></li><li class="chapter-item expanded "><a href="../Color/Color.html"><strong aria-hidden="true">17.3.</strong> 颜色</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> 动画</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Animation/MassSpringSystem.html"><strong aria-hidden="true">18.1.</strong> 质量弹簧系统</a></li><li class="chapter-item expanded "><a href="../Animation/ParticleSystem.html"><strong aria-hidden="true">18.2.</strong> 粒子系统</a></li><li class="chapter-item expanded "><a href="../Animation/RigidSimulation.html"><strong aria-hidden="true">18.3.</strong> 刚体模拟</a></li><li class="chapter-item expanded "><a href="../Animation/FluidSimulation.html"><strong aria-hidden="true">18.4.</strong> 流体模拟</a></li><li class="chapter-item expanded "><a href="../Animation/EulerVsLagrangian.html"><strong aria-hidden="true">18.5.</strong> 欧拉 Vs Lagrangion</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">GAMES101</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/GAMES101_mdbook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <blockquote>
+<p>📌 本节课大部分跟器件相关的部分都会被跳过，主要关注概念。</p>
+</blockquote>
+<h1 id="视场-fov"><a class="header" href="#视场-fov">视场 FOV</a></h1>
+<p>FOV = Field of View，指能看到的范围</p>
+<p><img src="../assets/171.PNG" alt="" /></p>
+<p>$$
+FOV = 2(\frac{h}{2f})
+$$</p>
+<p>以竖直的FOV为例，h为传感器的高度，f为焦距。</p>
+<p>通常以35mm大小的传感器为标准来定义相机的的FOV。</p>
+<p><img src="../assets/172.PNG" alt="" /></p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。<br />
+https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Texture/3DApplication.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../Color/LightField.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Texture/3DApplication.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../Color/LightField.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>
