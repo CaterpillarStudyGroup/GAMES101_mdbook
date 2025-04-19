@@ -16,9 +16,7 @@ $$
 
 ![](../assets/172.PNG)
 
-# Exposure 爆光
 
-Exposure = Time * irradiance，简写为H = T * E
 
 ------------------------------
 
