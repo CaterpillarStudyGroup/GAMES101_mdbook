@@ -64,6 +64,7 @@
   [Atmosphere经验模型](./Sky/AnalyticAtmosphereAppearanceModeling.md)
   - [Atmosphere](./Sky/Atmosphere.md)
   - [Multi Scattering](./Sky/MultiScattering.md)
+  - [Cloud](./Sky/Cloud.md)
 - [Advanced Topics in Rendering]()
   - [高级光线传播](AdvancedRendering/AdvancedRayTracing.md)
   - [高级Appreance建模](AdvancedRendering/AdcancedAppearcing.md)
