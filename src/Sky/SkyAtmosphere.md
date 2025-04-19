@@ -1,24 +1,8 @@
-# Integration with other world elements (rocks, trees, grass)    
-
-P50    
-- Tree Rendering
-
-P51    
-- Decorator Rendering
-
-P52    
-- Road and Decals Rendering
-
-P54   
-- Procedure Terrain Creation
 
 P55    
-## Sky and Atmosphere
+# Sky and Atmosphere
 
-P59    
-## How to "Paint" Everything in the Sky
-
-![](./assets/06-23.png)   
+![](../assets/06-23.png)   
 
 > 天空是一个球，云是可见的实体。背后是完全不同的表达方法，不可混为一谈。   
 
