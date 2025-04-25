@@ -1,5 +1,4 @@
-P71    
-## Big World and Cascade Shadow
+   ## Big World and Cascade Shadow
 
 - Partition the frustum into multiple frustums   
 - A shadow map is rendered for each sub frustum   
