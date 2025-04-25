@@ -28,13 +28,13 @@ Shadow Mapping是一种基于光栅化的生成阴影的经典算法。
 
 |不在阴影中|在阴影中|
 |---|---|
-|![](assets/74.PNG)|![](assets/75.PNG)|
+|![](../assets/74.PNG)|![](../assets/75.PNG)|
 
 ### 效果
 
 光源是左上角的白点  
 
-![](assets/76.PNG)
+![](../assets/76.PNG)
 
 ### 特点
 
@@ -57,3 +57,8 @@ Shadow Mapping算法具有以下特点：
 4. 只能做硬阴影（点光源）
 
 ![](../assets/69-19.png)  
+
+------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/
