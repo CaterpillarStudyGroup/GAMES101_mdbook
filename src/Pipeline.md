@@ -4,13 +4,13 @@
 
 > **&#x1F4CC;** 一个场景，最后到一张图，中间经历了什么过程，这个过程就是管线（pipeline），即一系列不同的操作。
 
-[35：24]![](assets/37.PNG)
+[35：24]![](./assets/37.PNG)
 
 ## Vertex Processing
 
 ### MVP
 
-![](assets/35.PNG)
+![](./assets/35.PNG)
 > &#x1F446; MVP是图中前三步。最后一步不是。  
 
 MVP发生在图中的Vertex Processing。  
@@ -34,7 +34,7 @@ MVP发生在图中的Vertex Processing。
 
 ### 用z-buff判定可见性
 
-![](assets/zbuffer.jpg)
+![](./assets/zbuffer.jpg)
 
 这一步发生在Fragment Processing
 
@@ -42,7 +42,7 @@ MVP发生在图中的Vertex Processing。
 
 ### 基于像素的Shading
 
-![](assets/blinn-phong.jpg)
+![](./assets/blinn-phong.jpg)
 
 基于像素的着色发生在Fragment Processing。  
 
