@@ -11,7 +11,7 @@
 
 自定义一个常数环境光ambient    
 
-![](./assets/69-12-1.png)     
+![](../assets/69-12-1.png)     
 
 ### 常数环境光存在的问题
 
@@ -26,7 +26,7 @@ P13
 
 > 增加物体反射光线的效果。   
 
-![](./assets/69-13-1.png)     
+![](../assets/69-13-1.png)     
 
 **Early stage exploration of image- based lighting**      
 
