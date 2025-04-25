@@ -82,7 +82,7 @@ P83
 
 Fixed view position and sun position to remove 2 dimensions out of LUT   
 
-![](./assets/06-40.png)  
+![](../assets/06-40.png)  
 
 > 对上文中的 LUT 的简化：    
 (1) 假设人所在的高度不变，去掉 height 维    
@@ -93,7 +93,7 @@ P84
 
 - Generated a 3D LUT to evaluate aerial-perspective effects by ray marching    
 
-![](./assets/06-41.png)  
+![](../assets/06-41.png)  
 
 > 这个方法不保证物理正确，但好处是：    
 (1) 艺术家友好      
@@ -105,7 +105,7 @@ P85
 
 - Scalable from mobile to high-end PCs
 
-![](./assets/06-42.png)  
+![](../assets/06-42.png)  
 
 Performance for each step of method, as measured on PC (NV 1080) and a mobile device (iPhone 6s)    
 
