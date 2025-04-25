@@ -109,3 +109,8 @@ P85
 
 Performance for each step of method, as measured on PC (NV 1080) and a mobile device (iPhone 6s)    
 
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

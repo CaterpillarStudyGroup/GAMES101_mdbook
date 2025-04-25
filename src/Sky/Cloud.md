@@ -87,3 +87,9 @@ P95
 
 > 不会把云转成 Mesh 去渲染，而是当作大气来渲染。     
 但由于云的通透性很低，可以对公式作大量假设和简化。     
+
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

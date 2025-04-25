@@ -93,3 +93,8 @@ P73
 > \\(O_3\\) 和 \\(CH_4\\) 吸收短波，使物体表现出蓝色。    
 假设空气中 \\(O_3\\) 和 \\(CH_4\\) 是均匀分布的。   
 
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/
