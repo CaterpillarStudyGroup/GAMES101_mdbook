@@ -63,7 +63,7 @@ P21
 
 - Aliasing is a series of rendering artifact which is caused by high-frequency signal vs. insufficient sampling of limited rendering resolutions   
 
-![](./assets/07-14.png)   
+![](../assets/07-14.png)   
 
 > 走样的本质：渲染的采样频率与真实世界的频率不一致。    
 
@@ -76,9 +76,9 @@ $$
 p(x,y)=\sum_{i=1}^{n}  w_ic(i,x,y)
 $$
 
-![](./assets/07-15-1.png)   
+![](../assets/07-15-1.png)   
 
-![](./assets/07-15-2.png)   
+![](../assets/07-15-2.png)   
 
 > 多采样再取平均，产生过渡区域。    
 
@@ -87,9 +87,9 @@ P23
 
 - Super sampling is the most straightforward solution to solve **AA**    
 
-![](./assets/07-16-1.png)   
+![](../assets/07-16-1.png)   
 
-![](./assets/07-16-2.png)   
+![](../assets/07-16-2.png)   
 
 > 目前硬件部已支持 MSAA。    
 但现在的高精模型可能比一个像素还小，这种方法就失效了。    
@@ -102,9 +102,9 @@ Anti-aliasing based on 1x rendered image　
 - Compute offset for every edge pixel　　　
 - Re-sample edge pixel by its offset to blend with a neighbor　　　
 
-![](./assets/07-17-1.png)   
+![](../assets/07-17-1.png)   
 
-![](./assets/07-17-2.png)   
+![](../assets/07-17-2.png)   
 
 > 提取边界，并在边界做插值。   
 优点：(1) 效果好    
@@ -114,9 +114,9 @@ Anti-aliasing based on 1x rendered image　
 P26   
 ## Edge Searching Algorithm
 
-![](./assets/07-18-1.png)   
+![](../assets/07-18-1.png)   
 
-![](./assets/07-18-2.png)   
+![](../assets/07-18-2.png)   
 
 P27    
 ## Calculate Blend Coefficient
@@ -125,25 +125,25 @@ P27
 
 **targetP** is the nearer edge end of **CurrentP**    
 
-![](./assets/07-19-2.png)   
+![](../assets/07-19-2.png)   
 
-![](./assets/07-19-5.png)   
+![](../assets/07-19-5.png)   
 
-![](./assets/07-19-4.png)   
+![](../assets/07-19-4.png)   
 
 P28   
 ## Blend Nearby Pixels
 
 - Compute blender coefficient   
 
-![](./assets/07-20.png)   
+![](../assets/07-20.png)   
 
 **PixelNewColor = Texture(CurrentP_UV + offset_direction * offset_magnitude )**
 
 P29   
 ## FXAA Result
 
-![](./assets/07-21.png)   
+![](../assets/07-21.png)   
 
 
 P30   
@@ -151,23 +151,23 @@ P30
 
 Utilize spatial-**temporal** filtering methods to improve AA stability **in motion**   
 
-![](./assets/07-22-1.png)   
+![](../assets/07-22-1.png)   
 
-![](./assets/07-22-2.png)   
+![](../assets/07-22-2.png)   
 
 > 引擎中的主流方法。   
 
 P31   
 ## TAA (Temporal Anti-aliasing)
 
-![](./assets/07-23.png)   
+![](../assets/07-23.png)   
 
 P34   
 ## Post-process
 
 Post-process in 3D Graphics refers to any algorithm that will be applied to the final image. It can be done for stylistic reasons (color correction, contrast, etc.) or for realistic reasons (tone mapping, depth of field, etc.)    
 
-![](./assets/07-24.png)   
+![](../assets/07-24.png)   
 
 P35   
 ## Bloom Effect
@@ -178,12 +178,12 @@ P36
 - The physical basis of bloom is that, in the real world, lenses can never focus perfectly    
 - Even a perfect lens will convolve the incoming image with an <u>**Airy disk**</U>    
 
-![](./assets/07-25.png)   
+![](../assets/07-25.png)   
 
 P37   
 ## Detect Bright Area by Threshold
 
-![](./assets/07-26.png)   
+![](../assets/07-26.png)   
 
 Find Luminance (Y) apply the standard coefficients for sRGB:    
 
@@ -196,12 +196,12 @@ $$
 P38   
 ## Gaussian Blur   
 
-![](./assets/07-27.png)   
+![](../assets/07-27.png)   
 
 P39    
 ## Pyramid Guassian Blur
 
-![](./assets/07-28.png)   
+![](../assets/07-28.png)   
 
 We can't do all that filtering at high resolution, so we need a way to **downsample** and **upsample** the image Need a weight coefficient to tweak final effect   
 
@@ -210,10 +210,10 @@ We can't do all that filtering at high resolution, so we need a way to **downsam
 P40   
 ## Bloom Composite
 
-![](./assets/07-29.png)   
+![](../assets/07-29.png)   
 
 P41   
-![](./assets/07-30.png)   
+![](../assets/07-30.png)   
 
 P42   
 ## Tone Mapping
@@ -226,7 +226,7 @@ P43
 - No way to directly display HDR image in a SDR device    
 - The purpose of the **Tone Mapping** function is to map the wide range of high dynamic range (HDR) colors into standard dynamic range (SDR) that a display can output    
 
-![](./assets/07-31.png)   
+![](../assets/07-31.png)   
 
 > 用一条曲线把 HDR 映射到 SDR。   
 filmic curve 是一个拟合出来的所项式曲线。      
@@ -242,7 +242,7 @@ P45
   - The idea of a fixed pipeline up to the final OTD transforms stage is good   
      - Separates artistic intent from the mechanics of supporting different devices   
 
-![](./assets/07-32-1.png)   
+![](../assets/07-32-1.png)   
 
 > ACES 曲线不但效果更好，还可以通注增加一个后处理，无差别适配到任何终端。    
 
@@ -257,13 +257,13 @@ P46
   - Simple transition from current color pipeline   
   - Minimal additional overhead for mastering HDR *and* SDR   
 
-![](./assets/07-33.png)   
+![](../assets/07-33.png)   
 
 P47    
 ## Tone Mapping Curve Comparison
 
-![](./assets/07-34-1.png)   
-![](./assets/07-34-2.png)   
+![](../assets/07-34-1.png)   
+![](../assets/07-34-2.png)   
 
 P48   
 ## Color Grading
@@ -275,7 +275,7 @@ P49
 
 - A LUT can be considered as a kind of color preset that can be applied to image or footage    
 
-![](./assets/07-35.png) 
+![](../assets/07-35.png) 
 
 > 用一个表格实现从原始色相空间到目标色相空间的映射。    
 
@@ -287,7 +287,7 @@ P59
 
 - **Rendering pipeline** is the management order of all rendering operation execution and resource allocation    
 
-![](./assets/07-36.png) 
+![](../assets/07-36.png) 
 
 P60   
 ## Forward Rendering
@@ -299,7 +299,7 @@ for n meshes
 P61    
 ## Sort and Render Transparent after Opaque Objects
 
-![](./assets/07-37.png) 
+![](../assets/07-37.png) 
 
 > 透明物质必须最后绘制。    
 多个透明物质则由远及近绘制，因为不同绘制顺序产生的结果是不一样的。   
@@ -309,13 +309,13 @@ P61
 P64    
 ## Deferred Rendering
 
-![](./assets/07-38-1.png)   
+![](../assets/07-38-1.png)   
 
-![](./assets/07-38-2.png) 
+![](../assets/07-38-2.png) 
 
-![](./assets/07-38-3.png) 
+![](../assets/07-38-3.png) 
 
-![](./assets/07-38-4.png) 
+![](../assets/07-38-4.png) 
 
 > 由于光的种类非常复杂，引入延迟渲染技术，即先绘制物体，再考虑与光的关系。   
 近十年最主流的 Pipeline.    
@@ -332,21 +332,21 @@ P65
 - Not supporting transparent object     
 - Not friendly to MSAA    
 
-![](./assets/07-39.png)   
+![](../assets/07-39.png)   
 
 P66   
 ## Pilot Engine Deferred Rendering
 
-![](./assets/07-40.png)   
+![](../assets/07-40.png)   
 
 P67    
 ## Tile-based Rendering
 
-![](./assets/07-41-1.png)     
+![](../assets/07-41-1.png)     
 
-![](./assets/07-41-2.png)     
+![](../assets/07-41-2.png)     
 
-![](./assets/07-41-3.png)     
+![](../assets/07-41-3.png)     
 
 > 这个 pipeline 用于移动端。因为移动端最关心发热问题。    
 DRAM 存储大、速度慢、功耗高。On-chip 中的 SRAM 则相反。    
@@ -355,7 +355,7 @@ DRAM 存储大、速度慢、功耗高。On-chip 中的 SRAM 则相反。
 P68   
 ## Light Culling by Tiles
 
-![](./assets/07-42.png)     
+![](../assets/07-42.png)     
 
 P69    
 ## Depth Range Optimization
@@ -363,7 +363,7 @@ P69
 - Get Min/Max depth per tile from Pre-z pass    
 - Test depth bounds for each light   
 
-![](./assets/07-43.png)     
+![](../assets/07-43.png)     
 
 > tile-based 是现代引擎的主流方案。    
 tile 的额外好处是简化光的计算。    
@@ -378,21 +378,21 @@ P71
 P72   
 ## Cluster-based Rendering
 
-![](./assets/07-44.png)     
+![](../assets/07-44.png)     
 
 > 对 Z 空间也做切分。一个小块称为 cluster。    
 
 P73    
 ## Visibility Buffer
 
-![](./assets/07-45.png)     
+![](../assets/07-45.png)     
 
 > 几何信息 (V-Buffer) 和材质信息 (G-Buffer) 剥离开。   
 因为现在的几何越来越复杂，甚至几何密度超过像素密度。    
 这是现代引擎的发展方向。     
 
 P74   
-![](./assets/07-46.png)     
+![](../assets/07-46.png)     
 
 P75   
 ## Challenges
@@ -407,7 +407,7 @@ P76
 
 A Directed Acyclic Graph (DAG) of pass and resource dependency in a frame, not a real visual graph    
 
-![](./assets/07-47.png)     
+![](../assets/07-47.png)     
 
 > Frame Graph 是未来重要的发展方向。    
 
@@ -417,7 +417,7 @@ P77
 P78    
 ## Screen Tearing
 
-![](./assets/07-48.png)     
+![](../assets/07-48.png)     
 
 P79    
 ## Screen Tearing
@@ -425,7 +425,7 @@ P79
 In most games your GPU frame rate will be highly volatile    
 When new GPU frame updates in the middle of last screen frame, screen tearing occurrs       
 
-![](./assets/07-49.png)     
+![](../assets/07-49.png)     
 
 
 P80    
@@ -434,12 +434,12 @@ P80
 Synchronizing buffer swaps with the Vertical refresh is called V-sync    
 V-Sync can be used to prevent tearing but framerates are reduced, the mouse is lagging & stuttering ruins gameplay   
 
-![](./assets/07-50.png)     
+![](../assets/07-50.png)     
 
 P81    
 ## Variable Refresh Rate
 
-![](./assets/07-51.png)     
+![](../assets/07-51.png)     
 
 P82    
 ## Homework 2
@@ -457,7 +457,7 @@ your results
   - Github:   
 <https://github.com/BoomingTech/Pilot/tree/games104/homework02-rendering>    
 
-![](./assets/07-52.png)     
+![](../assets/07-52.png)     
 
 
 ---------------------------------------
