@@ -96,5 +96,8 @@ P48
 - Translates objects by the negated world space camera position before any other geometric transformations affect them    
 - It then sets the world space camera position to 0 and modifies all relevant matrices accordingly    
 
-  
 
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

@@ -30,3 +30,8 @@ $$
 ![](../assets/06-24-3.png)   
 
 > An Analytic Model for Full Spectral Sky-dome Radiance, ACM Trans 2012    
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

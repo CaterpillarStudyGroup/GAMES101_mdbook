@@ -23,3 +23,7 @@ bitmap, voxels themselves do not typically have their position (i.e. coordinates
 实操时，考虑到水密性、LOD 等因素，会稍微复杂一点。     
  
 
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

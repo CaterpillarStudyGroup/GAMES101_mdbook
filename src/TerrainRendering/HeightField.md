@@ -81,3 +81,8 @@ P23
 - Requires certain pre-processing steps   
 - Poor reusability   
 但实际上不常用。  
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/
