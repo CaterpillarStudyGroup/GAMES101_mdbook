@@ -113,3 +113,8 @@ P15
 > (1) 利用 GPU 的 ray casting 能力    
 (2) 每帧只 sample 一个方向，在时序上持续收集遮挡信息。    
 
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

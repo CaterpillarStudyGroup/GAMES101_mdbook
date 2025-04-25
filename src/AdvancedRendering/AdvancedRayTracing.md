@@ -116,7 +116,8 @@ N 太小会有噪声，N太大会糊
 
 > &#x1F4A1; 这是与光追不同的另一套简化的建模思想，因为是简化模拟的方法，所以有Artifacts.  
 
-------------------------------
+
+---------------------------------------
 
 > 本文出自CaterpillarStudyGroup，转载请注明出处。  
 > https://caterpillarstudygroup.github.io/GAMES101_mdbook/
