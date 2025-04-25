@@ -45,3 +45,9 @@ P35
 通一个简单的线性运算，就可以从图中查询出任意一个方     
 
 P37   
+
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

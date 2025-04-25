@@ -8,3 +8,9 @@
 (1) 如何快速地获取来自各个方向的Input Light？  
 (2) 如果预计算Input Light，数据量非常大，怎样高效地存储？      
 (3) 如何让材质与Input Light做积分。    
+
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/
