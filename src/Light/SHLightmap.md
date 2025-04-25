@@ -43,3 +43,8 @@ P42
   - Only can handle **static scene and static light**   
   - Storage cost on package and GPU   
 
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/

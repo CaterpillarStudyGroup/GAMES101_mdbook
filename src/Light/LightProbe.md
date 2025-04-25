@@ -23,3 +23,9 @@ P46
 - **Cons**   
   - A bunch of SH light probes need some precomputation   
   - Can not handle fine detail of GI. I.e, soft shadow on overlapped structures   
+
+
+---------------------------------------
+
+> 本文出自CaterpillarStudyGroup，转载请注明出处。  
+> https://caterpillarstudygroup.github.io/GAMES101_mdbook/
