@@ -14,8 +14,7 @@ P73
 1. A visible seam can be seen where cascades overlap    
 2. between cascade layers because the resolution does not match    
 3. The shader then linearly interpolates between the two values based on the pixel's location in the blend band    
-
-P74    
+  
 ## Pros and Cons of Cascade Shadow
 
 - Pros
@@ -25,7 +24,6 @@ P74
 - Cons   
   - Nearly impossible to generate high quality area shadows   
   - No colored shadows. Translucent surfaces cast opaque shadows   
-
 
 
 --------------------------------
