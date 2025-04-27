@@ -1,9 +1,8 @@
-P8    
+ 
 # Heightfield
 
 ![](../assets/06-1-1.png)   
-
-P10   
+  
 ## Render Terrain with Heightfield
 
 ### 朴素方法
@@ -14,7 +13,6 @@ P10
 
 存在的问题：数据量巨大    
 
-P12    
 ### Adaptive Mesh Tessellation - Level Of Detail     
 
 与角色 LOD 不同的是，地形是连续的。  
@@ -29,12 +27,8 @@ P12
 (2) FOV 小密集，FOV 大稀疏    
 (3) 地型起伏大(有明显误差)密集，起伏小稀疏     
 
-
-P14   
 ## Mesh Subdivision 
 
-
-P15   
 ### Triangle-Based and T-Junctions    
 
 Continuously partitioning triangles and their    
@@ -45,7 +39,6 @@ children based on the idea of binary trees
 > T-Junction：一条边的两边切分不一致导致的 BuG。    
 解决方法：强制稀疏侧向密集侧对齐    
 
-P17    
 ### QuadTree-Based Subdivision
 
 > 三角形不符合构建地形的直觉，更常用是四边形。 
@@ -65,14 +58,12 @@ P17
 
 ![](../assets/06-8.png)      
 
-P21    
 ### Triangulated Irregular Network (TIN)
 
 > 把 height field 转化为不规则三角形。  
 
 ![](../assets/06-9.png)   
  
-P23    
 **Pros**   
 - 与地形特征更匹配(顶点的位置)，Easy in runtime rendeirng   
 - Less triangls in certain terrain types   

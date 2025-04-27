@@ -2,8 +2,7 @@
 
 > 处理有山洞的地形    
 ## 方法1：在普通地形上放一个山洞或桥。   
-
-P31   
+ 
 ## 方法2：Dig a Hole in Terrain
 
 通过将顶点设为无效值的方式把洞口的面片删掉，
@@ -11,8 +10,7 @@ P31
 ![](../assets/06-12.png)   
 
 再放一个隧道的模型上去。 
-
-P32   
+ 
 ## 方法3：Volumetric Representation
 
 In 3D computer graphics, a voxel represents a value on a regular grid in three-dimensional space. As pixels in a 2D     
