@@ -74,7 +74,7 @@ f_1\left( x \right) \times f_2\left( x \right) \Longleftrightarrow F_1\left( \om
 
 \\(\Longrightarrow \\) (b)以更密的形式重复
 
-\\(\Longrightarrow \\) (f)的频谱出现混叠[55:59]
+\\(\Longrightarrow \\) (f)的频谱出现混叠 
 
 \\(\Longrightarrow \\) 时域上表现为走样
 
