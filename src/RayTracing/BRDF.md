@@ -1,4 +1,4 @@
-# BRDF, 双向反射分布函数【29：00】
+# BRDF, 双向反射分布函数
 
 Bidirectional Reflected Distribution Function
 
@@ -34,7 +34,7 @@ $$
 dL_r(\omega_r)
 $$
 
-BRDF为“从某个角度辐射的能量”与“来自某个入射角度并向所有角度辐射的总能量”的比例[36:16]，或者说是“从某个角度辐射的能量”与“从某个角度接收的能量”的比例：
+BRDF为“从某个角度辐射的能量”与“来自某个入射角度并向所有角度辐射的总能量”的比例，或者说是“从某个角度辐射的能量”与“从某个角度接收的能量”的比例：
 
 $$
 f_r(w_i\rightarrow w_r) = \frac{dL_r(w_r)}{dE_i(w_i)} = \frac{dL_r(w_r)}{L_i(w_r)\cos\theta_idw_i}

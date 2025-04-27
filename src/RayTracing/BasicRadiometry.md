@@ -10,13 +10,13 @@ Basic Radiometry 辐射度量学，是对光的物理性质精准建模的方法
 
 |定义|说明|符号|单位|关系|
 |---|---|---|---|---|
-|Radiant Energy[1:04:29]|能量，光源辐射出来的是Energy| Q| J||
-|Radiant Flux|power，即单位时间的能量[1：09：56]|\\(\Phi\\)|Watt或lumen|\\(\Phi = \frac{dQ}{dt}\\)|
+|Radiant Energy|能量，光源辐射出来的是Energy| Q| J||
+|Radiant Flux|power，即单位时间的能量|\\(\Phi\\)|Watt或lumen|\\(\Phi = \frac{dQ}{dt}\\)|
 |Radiant Intensity|power per unit solid angle，即单位时间单位面积上的能量|I|\\([\frac{W}{Sr}]\\)|\\(I(\omega) = \frac{d(\Phi)}{d\omega}\\)，其中分子代码power，分母代表per unit solid angle|
 |Irradiance|power per unit area|E|\\([\frac{W}{m^2}]\\)|\\(E(x) = \frac{d(\Phi(x))}{dA}\\)，其中A代表光线垂直接触的面积|
-|Radiance [19:30]|power per unit solid angle per unit area|L|\\([\frac{W}{Srm^2}]\\)|\\(L(p, \omega) = \frac{d^2(\Phi(p, \omega))}{d\omega dA\cos\theta}\\)|
+|Radiance |power per unit solid angle per unit area|L|\\([\frac{W}{Srm^2}]\\)|\\(L(p, \omega) = \frac{d^2(\Phi(p, \omega))}{d\omega dA\cos\theta}\\)|
 
-# Radiant Intensity [1:09:20]
+# Radiant Intensity 
 
 power per unit solid angle(立体角)，光源向外辐射能量时与方向有关的辐射概念。
 
@@ -24,7 +24,7 @@ $$
 I(\omega) = \frac{d(\Phi)}{d\omega}
 $$
 
-## 立体角 [1：13：19]
+## 立体角 
 
 通常使用弧度制来描述一个角。立体角是2D角度在3D空间中的延伸。用来描述空间中的一个角有多大。  
 
