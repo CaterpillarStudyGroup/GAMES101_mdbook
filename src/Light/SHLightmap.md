@@ -26,13 +26,11 @@
 ## Compress those irradiance probes into SH coefficients    
 ## Store SH coefficients into 2D atlas lightmap textures   
 
-P41   
 ## Final Shading with Materials
 
 **Final frame**    
 - Combined with materials   
-
-P42   
+  
 # Lightmap 总结
 
 - **Pros**   

@@ -6,7 +6,6 @@
 
 > ambient 可以做间接光照效果，但会使整个场景统一变亮。看上去会有平面感。因此真实计算间接光照，而不是用一个简单的常数值。  
 
-P26    
 ## Why Pre-computed Global Illumination    
 
 > 假设场景中90%的东西是不动的，大量数据预计算，空间换时间。    
@@ -28,24 +27,19 @@ How to Represent Input Indirect Light
 
 # Pipeline
 
-P34   
 ## Sampling Irradiance Probe Anywhere
 
 > 在任何一个点取 Irradiance Probe 信息，展开为下图    
 
 ![](../assets/69-34-1.png)  
-
-P35   
+ 
 ## Compress Irradiance Probe to SH1
 
 ![](../assets/69-35.png)      
 
 > 用 1 阶球谐基(对应 4 个系数)压缩后还原得到图 2。     
 图 2 足以表达光的明暗，且数据非常连续。    
-通一个简单的线性运算，就可以从图中查询出任意一个方     
-
-P37   
-
+通一个简单的线性运算，就可以从图中查询出任意一个方      
 
 ---------------------------------------
 
