@@ -4,10 +4,10 @@
 
 ## 原理
 
-谱功率密度 = Spectral Power Distribution = SPD，用于描述混合光中不同波长的光的分布[51：41]  
+谱功率密度 = Spectral Power Distribution = SPD，用于描述混合光中不同波长的光的分布 
 SPD 的特点： 线性，可相加  
 
-> &#x1F4CC; 不关心眼睛的是呈像原理，跳过，结论是：[1：10：43]
+> &#x1F4CC; 不关心眼睛的是呈像原理，跳过，结论是： 
 
 $$
 y = \int r(\lambda)s(\lambda)d\lambda
@@ -27,8 +27,6 @@ color matching：人为调和出\\(s(\lambda)\\)，使得到的效果与 real wo
 
 # Additive Color 加色系统
 
-[1：11：44]
-
 $$
 R = \int  s(\lambda)r(\lambda)d\lambda
 $$
@@ -42,13 +40,12 @@ d：某种光线的所有频谱
 
 # 颜色空间
 
-## CIE XYZ [1：13：02]
+## CIE XYZ  
 
 一套人造的 color system，色域为颜色空间中所有可表示的颜色
 
 ## sRGB
-
-[1：18：28]
+ 
 ![](../assets/182.PNG)  
 
 > &#x1F4A1;这部分内容对我不太重要。有一项内容值得借鉴。
@@ -58,11 +55,11 @@ d：某种光线的所有频谱
 > 2. 固定一个维度。  
 > 选择固定哪个维度是有策略的。可以选择影响最小的维度或最便于观察的维度。也可以画多张图，每次分别固定一个维度.
 
-## HSV [1：20：46]
+## HSV  
 
 ![](../assets/181.PNG)  
 
-## CIELAB [1:22:21]
+## CIELAB  
 
 ![](../assets/183.PNG)  
 

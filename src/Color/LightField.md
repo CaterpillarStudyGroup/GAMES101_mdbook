@@ -59,15 +59,14 @@ t：时间
 
 参数为2D position和2D direction
 
-方式二：[25：04]
+方式二： 
 
 ![](../assets/21.PNG)  
 
 参数为2D position (u, v)和2D position (s, t)
 
 ### 参数化效果
-
-[27:41]
+ 
 ![](../assets/22.PNG)  
 
 图(a)：从同一个位置，看向目标的不同位置，得到的是原图  
