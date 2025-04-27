@@ -1,6 +1,5 @@
 # Atmosphere
 
-P62   
 ## Participating Media
 
 ### 大气粒子的种类
@@ -17,7 +16,6 @@ P62
 
 > 气体分子直径远小于光的波长，气溶胶的直径与光的波长相似，因此表现出完全不同的视觉效果，也对应两种不同的模型。    
 
-P63    
 ### How Light Interacts with Participating Media Particles?
 
 ![](../assets/06-25-1.png)   
@@ -26,7 +24,6 @@ P63
 
 ![](../assets/06-25-2.png)   
 
-P64    
 ### Volume Rendering Equation (VRE)
 
 ![](../assets/06-26-1.png)  
@@ -53,7 +50,6 @@ Rayleigh，用于气体分子。特点：
 
 > \\(\lambda\\)：波长。\\(\theta\\)：夹用。\\(h\\)：海拔高度。   
 
-P69   
 ### Why Sky is Blue
 
 ![](../assets/06-30.png)  
@@ -68,7 +64,6 @@ Mie，用于气溶胶。特点：
 
 ![](../assets/06-31.png)  
 
-P71   
 ### Mie Scattering Equation
 
 ![](../assets/06-32-1.png)  
@@ -78,8 +73,7 @@ P71
 - g = 0, Rayleigh scattering   
 
 ![](../assets/06-32-2.png)  
-
-P72    
+ 
 ### Mie Scattering in Daily Life
 
 - Exhibit a strong forward directivity (halo effects around sun)    
@@ -89,7 +83,6 @@ P72
 
 ![](../assets/06-33-2.png)  
 
-P73   
 > \\(O_3\\) 和 \\(CH_4\\) 吸收短波，使物体表现出蓝色。    
 假设空气中 \\(O_3\\) 和 \\(CH_4\\) 是均匀分布的。   
 
