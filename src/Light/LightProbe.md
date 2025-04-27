@@ -1,9 +1,7 @@
-P43   
-### Light Probe
+ ### Light Probe
 
 ![](../assets/69-43.png)   
-
-P45    
+   
 ### Reflection Probe
 
 ![](../assets/69-45.png)   
@@ -11,8 +9,7 @@ P45
 > Reflection Probe 的特点：    
 (1) 数量少    
 (2) 精度高，因为高光对高频很敏感。    
-
-P46   
+  
 ### Light Probes + Reflection Probes
 
 - **Pros**   

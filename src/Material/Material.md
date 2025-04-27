@@ -29,8 +29,6 @@ $$
 
 - 各向同性：
 
-[1:09:40]   
-
 $$
 fr(\theta_i, \phi_i;\theta_r, \phi_r) = fr(\theta_i, \phi_i, \phi_r - \phi_i)
 $$
