@@ -1,6 +1,6 @@
 当观测结束后，所有物体到了[-1, 1]的三次方这个立方体中，那么，下一步是什么？将其放在屏幕上。
 
-# [14:40] 什么是光栅化
+# 什么是光栅化
 
 > &#x1F50E;  
 > pixel：像素，picture element，一个小方块，且方块内颜色不变  
@@ -119,7 +119,7 @@ https://caterpillarstudygroup.github.io/GAMES101_mdbook/Dependency/Vector.html#%
 
 缺点：必须要依次check每个pixel
 
-### 方法二：Bounding Box [56:00]
+### 方法二：Bounding Box  
 
 对整个屏幕遍历，然后判断每个像素的中心是否在三角形内，这太傻了。
 
@@ -133,7 +133,7 @@ https://caterpillarstudygroup.github.io/GAMES101_mdbook/Dependency/Vector.html#%
 ![](../assets/bbox.PNG)
 
 
-### 方法三：Incremental [56:55]
+### 方法三：Incremental  
 
 一种启发式的方法，比较容易想到，也懒得记了。   
 
@@ -141,8 +141,6 @@ https://caterpillarstudygroup.github.io/GAMES101_mdbook/Dependency/Vector.html#%
 
 
 # 光栅化的结果
-
-[1:02:38], [1:03:01]
 
 <img src="../assets/走样.jpg" title="" alt="" width="425">
 
