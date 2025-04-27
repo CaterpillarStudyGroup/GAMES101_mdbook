@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>纹理像素分辨率过大 - GAMES101</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The note of GAMES101">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><div>GAMES101</div></li><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Introduction 介绍</a></li><li class="chapter-item expanded "><a href="../Pipeline.html"><strong aria-hidden="true">2.</strong> 实时渲染管线</a></li><li class="chapter-item expanded "><a href="../MVP/MVP.html"><strong aria-hidden="true">3.</strong> MVP 模型，视图，投影</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MVP/View.html"><strong aria-hidden="true">3.1.</strong> View 视图</a></li><li class="chapter-item expanded "><a href="../MVP/Projection.html"><strong aria-hidden="true">3.2.</strong> Projection 投影</a></li><li class="chapter-item expanded "><a href="../MVP/OrthographicProjection.html"><strong aria-hidden="true">3.3.</strong> 正交投影</a></li><li class="chapter-item expanded "><a href="../MVP/PerspectiveProjection.html"><strong aria-hidden="true">3.4.</strong> 透视投影</a></li><li class="chapter-item expanded "><a href="../MVP/Fov2Frustum.html"><strong aria-hidden="true">3.5.</strong> 根据Fov定义cubic、Frustum</a></li></ol></li><li class="chapter-item expanded "><a href="../Rasterization/Rasterization.html"><strong aria-hidden="true">4.</strong> Rasterization 光栅化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Rasterization/Antialiasing.html"><strong aria-hidden="true">4.1.</strong> Antialiasing 反走样</a></li><li class="chapter-item expanded "><a href="../Rasterization/AntialiasingInFrequency.html"><strong aria-hidden="true">4.2.</strong> 从频域的角度分析走样</a></li><li class="chapter-item expanded "><a href="../Rasterization/TimeVsFrequency.html"><strong aria-hidden="true">4.3.</strong> 时域 VS. 频域</a></li><li class="chapter-item expanded "><a href="../Rasterization/AntialiasingMore.html"><strong aria-hidden="true">4.4.</strong> 反走样算法</a></li><li class="chapter-item expanded "><a href="../Rasterization/Others.html"><strong aria-hidden="true">4.5.</strong> Others</a></li></ol></li><li class="chapter-item expanded "><a href="../Occlusion.html"><strong aria-hidden="true">5.</strong> 可见性/遮挡</a></li><li class="chapter-item expanded "><a href="../Texture/Texture.html"><strong aria-hidden="true">6.</strong> Texture Mapping 纹理映射</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Texture/BarycentricCoordinates.html"><strong aria-hidden="true">6.1.</strong> 重心坐标插值</a></li><li class="chapter-item expanded "><a href="../Texture/TextureMapping.html"><strong aria-hidden="true">6.2.</strong> 纹理映射</a></li><li class="chapter-item expanded "><a href="../Texture/TextureMagnification.html"><strong aria-hidden="true">6.3.</strong> 纹理放大</a></li><li class="chapter-item expanded "><a href="../Texture/TextureTooBig.html" class="active"><strong aria-hidden="true">6.4.</strong> 纹理像素分辨率过大</a></li></ol></li><li class="chapter-item expanded "><a href="../Shadow/Shadow.html"><strong aria-hidden="true">7.</strong> 阴影</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Shadow/ShadowMapping.html"><strong aria-hidden="true">7.1.</strong> Shadow Mapping算法</a></li><li class="chapter-item expanded "><a href="../Shadow/CascadeShadow.html"><strong aria-hidden="true">7.2.</strong> Cascade Shadow</a></li></ol></li><li class="chapter-item expanded "><a href="../Shading/Shading.html"><strong aria-hidden="true">8.</strong> Shading 着色</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../RayTracing/BasicRadiometry.html"><strong aria-hidden="true">8.1.</strong> 辐射度量学</a></li><li class="chapter-item expanded "><a href="../RayTracing/BRDF.html"><strong aria-hidden="true">8.2.</strong> BRDF - 双向反射分布函数</a></li><li class="chapter-item expanded "><a href="../RayTracing/RenderEquation.html"><strong aria-hidden="true">8.3.</strong> 渲染方程</a></li><li class="chapter-item expanded "><a href="../Shading/Style.html"><strong aria-hidden="true">8.4.</strong> 着色频率</a></li><li class="chapter-item expanded "><a href="../Shading/Normal.html"><strong aria-hidden="true">8.5.</strong> 计算一个点/像素的法向量</a></li></ol></li><li class="chapter-item expanded "><a href="../Light/Light.html"><strong aria-hidden="true">9.</strong> 光</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Light/SimpleLightSolution.html"><strong aria-hidden="true">9.1.</strong> 简单方案</a></li><li class="chapter-item expanded "><a href="../Light/Pre-computedGlobalIllumination.html"><strong aria-hidden="true">9.2.</strong> 预计算GI</a></li><li class="chapter-item expanded "><a href="../Light/SHLightmap.html"><strong aria-hidden="true">9.3.</strong> SH Lightmap</a></li><li class="chapter-item expanded "><a href="../Light/LightProbe.html"><strong aria-hidden="true">9.4.</strong> Light Probe</a></li><li class="chapter-item expanded "><a href="../Experience/EnvironmentMap.html"><strong aria-hidden="true">9.5.</strong> 环境贴图</a></li><li class="chapter-item expanded "><a href="../Texture/Application.html"><strong aria-hidden="true">9.6.</strong> 2D纹理应用</a></li></ol></li><li class="chapter-item expanded "><a href="../Material/Material.html"><strong aria-hidden="true">10.</strong> 材质和外观</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Shading/BlinnPhong.html"><strong aria-hidden="true">10.1.</strong> Blinn-Phong 材质模型</a></li><li class="chapter-item expanded "><a href="../Material/Diffuse.html"><strong aria-hidden="true">10.2.</strong> 漫反射材质</a></li><li class="chapter-item expanded "><a href="../Material/Glossy.html"><strong aria-hidden="true">10.3.</strong> Glossy材质</a></li><li class="chapter-item expanded "><a href="../Material/Water.html"><strong aria-hidden="true">10.4.</strong> 玻璃和水</a></li><li class="chapter-item expanded "><a href="../Material/Microfacet.html"><strong aria-hidden="true">10.5.</strong> 微表面材质</a></li><li class="chapter-item expanded "><a href="../Material/IsotropicAnisotropic.html"><strong aria-hidden="true">10.6.</strong> 各项同性/各项异性材质</a></li></ol></li><li class="chapter-item expanded "><a href="../RayTracing/RayTracing.html"><strong aria-hidden="true">11.</strong> 光线追踪</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../RayTracing/RayCasting.html"><strong aria-hidden="true">11.1.</strong> RayCasting</a></li><li class="chapter-item expanded "><a href="../RayTracing/Whitted.html"><strong aria-hidden="true">11.2.</strong> Whitted-Style算法</a></li><li class="chapter-item expanded "><a href="../RayTracing/RaySurfaceIntersection.html"><strong aria-hidden="true">11.3.</strong> 光线与隐式曲面的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/RayTriangleIntersection.html"><strong aria-hidden="true">11.4.</strong> 光线与三角形的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/RayMeshIntersection.html"><strong aria-hidden="true">11.5.</strong> 光线与Mesh的交点</a></li><li class="chapter-item expanded "><a href="../RayTracing/MontoCarloIntegration.html"><strong aria-hidden="true">11.6.</strong> 蒙特卡罗积分</a></li><li class="chapter-item expanded "><a href="../RayTracing/WhittedAgain.html"><strong aria-hidden="true">11.7.</strong> Whitted-Style Ray Tracing 的局限性</a></li><li class="chapter-item expanded "><a href="../RayTracing/PathTracing.html"><strong aria-hidden="true">11.8.</strong> 路径追踪</a></li><li class="chapter-item expanded "><a href="../RayTracing/PathTracingAdvance.html"><strong aria-hidden="true">11.9.</strong> 路径追踪进阶</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> 地形系统</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../TerrainRendering/HeightField.html"><strong aria-hidden="true">12.1.</strong> Height Field</a></li><li class="chapter-item expanded "><a href="../TerrainRendering/NonHeightField.html"><strong aria-hidden="true">12.2.</strong> Non-Heightfield Terrain</a></li><li class="chapter-item expanded "><a href="../TerrainRendering/PaintTerrainMaterials.html"><strong aria-hidden="true">12.3.</strong> Paint Terrain Materials</a></li></ol></li><li class="chapter-item expanded "><a href="../Sky/SkyAtmosphere.html"><strong aria-hidden="true">13.</strong> Sky and Atmosphere</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Sky/Atmosphere.html"><strong aria-hidden="true">13.1.</strong> Atmosphere</a></li><li class="chapter-item expanded "><a href="../Sky/MultiScattering.html"><strong aria-hidden="true">13.2.</strong> Multi Scattering</a></li><li class="chapter-item expanded "><a href="../Sky/Cloud.html"><strong aria-hidden="true">13.3.</strong> Cloud</a></li><li class="chapter-item expanded "><a href="../Sky/Fog.html"><strong aria-hidden="true">13.4.</strong> Fog</a></li></ol></li><li class="chapter-item expanded "><a href="../AmbientOcclusion/AmbientOcclusion.html"><strong aria-hidden="true">14.</strong> Ambient Occlusion</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Advanced Topics in Rendering</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../AdvancedRendering/AdvancedRayTracing.html"><strong aria-hidden="true">15.1.</strong> 高级光线传播</a></li><li class="chapter-item expanded "><a href="../AdvancedRendering/AdcancedAppearcing.html"><strong aria-hidden="true">15.2.</strong> 高级Appreance建模</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> 纹理生成</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Texture/3DApplication.html"><strong aria-hidden="true">16.1.</strong> 3D纹理应用</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> 颜色</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Color/Camera.html"><strong aria-hidden="true">17.1.</strong> 相机</a></li><li class="chapter-item expanded "><a href="../Color/LightField.html"><strong aria-hidden="true">17.2.</strong> 光场</a></li><li class="chapter-item expanded "><a href="../Color/Color.html"><strong aria-hidden="true">17.3.</strong> 颜色</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> 动画</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Animation/MassSpringSystem.html"><strong aria-hidden="true">18.1.</strong> 质量弹簧系统</a></li><li class="chapter-item expanded "><a href="../Animation/ParticleSystem.html"><strong aria-hidden="true">18.2.</strong> 粒子系统</a></li><li class="chapter-item expanded "><a href="../Animation/RigidSimulation.html"><strong aria-hidden="true">18.3.</strong> 刚体模拟</a></li><li class="chapter-item expanded "><a href="../Animation/FluidSimulation.html"><strong aria-hidden="true">18.4.</strong> 流体模拟</a></li><li class="chapter-item expanded "><a href="../Animation/EulerVsLagrangian.html"><strong aria-hidden="true">18.5.</strong> 欧拉 Vs Lagrangion</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">GAMES101</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CaterpillarStudyGroup/GAMES101_mdbook" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="问题描述"><a class="header" href="#问题描述">问题描述</a></h1>
+<h2 id="现象"><a class="header" href="#现象">现象</a></h2>
+<p>纹理像素分辨率过大，比被贴图的表面更精细，也会出现问题。例如：</p>
+<img src="../assets/problem2.jpg" width = 600 />   
+<blockquote>
+<p>👆 左：期待效果 右：实际效果</p>
+</blockquote>
+<h2 id="原因"><a class="header" href="#原因">原因</a></h2>
+<p>由于透视的原因，不同距离的屏幕像素对应的纹理像素区域不同</p>
+<p><img src="../assets/footprint.jpg" alt="" /></p>
+<blockquote>
+<p><strong>👆</strong> 有的像素对应一小部分纹理像素，有的像素对应较大区域的纹理像素</p>
+</blockquote>
+<ul>
+<li>在近处，物体表面比纹理图更精细，即Texture Magnification问题，见上一页，表现为锯齿。</li>
+</ul>
+<blockquote>
+<p>🔎<a href="TextureMagnification.html">Texture Magnification</a></p>
+</blockquote>
+<ul>
+<li>在远处，纹理图比物体表面精细，一个屏幕像素对应一片纹理像素，但只取一个纹理像素来代表这一片点，也会出现问题，表现为摩尔纹</li>
+</ul>
+<p>进一步解释，从纹理图中取一个texel的过程可以看作是对纹理图的采样。alias的本质是信号变化过快而采样跟不上信号变化的速度。纹理的变化快而采样点稀疏就导致了这种现象。</p>
+<blockquote>
+<p>💡 两个空间的映射，任何一方的不匹配都会现alias，那就对变化快的一块做平均，或对变化慢的一方做细分。</p>
+</blockquote>
+<h1 id="解决方法一超采样-msaa"><a class="header" href="#解决方法一超采样-msaa">解决方法一：超采样 MSAA</a></h1>
+<blockquote>
+<p>🔎<a href="../Rasterization/AntialiasingMore.html">MSAA</a></p>
+</blockquote>
+<ul>
+<li>原理</li>
+</ul>
+<p>对于远处的一个点，取512个texel的value的平均值。</p>
+<ul>
+<li>效果</li>
+</ul>
+<p><img src="../assets/40.PNG" alt="" /></p>
+<ul>
+<li>局限性</li>
+</ul>
+<p>可解决，但costly。</p>
+<h1 id="解决方法二-mip-map"><a class="header" href="#解决方法二-mip-map">解决方法二： Mip map</a></h1>
+<h2 id="原理"><a class="header" href="#原理">原理</a></h2>
+<p>点查询（采样）--&gt;范围查询（取一个范围的平均）。</p>
+<blockquote>
+<p>📌<br />
+范围查询的应用场景非常广泛，除了CG，还有其它很多领域会用到。<br />
+范围查询的目标也有多种，例如取范围内的最大值、最小值、平均值。在这里要查的是平均值。<br />
+范围查询的算法也有很多种，在当前场景下使用同MIP Map算法来做范围平均值的查询。</p>
+</blockquote>
+<h2 id="mip-map算法"><a class="header" href="#mip-map算法">Mip Map算法</a></h2>
+<ul>
+<li>作用：用于范围内平均值的查询</li>
+<li>特点：快，不精确（近似），只能查询正方形区域</li>
+</ul>
+<ol>
+<li>
+<p>原始纹理称为第0层纹理，根据第0层纹理预先生成出第1-7层纹理。每一层都是上一层缩小一倍。1-7层低分辨率纹理总共仅消耗额外1/3存储。</p>
+<p><img src="../assets/mip.jpg" alt="" /></p>
+</li>
+<li>
+<p>找出屏幕上的一个像素对应的纹理上的近似方形区域。</p>
+<p><img src="../assets/mipmap3.jpg" alt="" /></p>
+</li>
+</ol>
+<p><strong>第一步：画出像素对应的四边形区域</strong></p>
+<p>已知某像素及其邻居像素对应的texel的位置。像素与上面邻居像素对应的texel位置的中线，认为是像素对应的texel的上边界。<br />
+以这种方法，可以在纹理上画出一个不规则四边形区域。</p>
+<p><img src="../assets/41.PNG" alt="" /></p>
+<p><strong>第二步：用一个正方形来近似这个不规则四边形区域。</strong></p>
+<p><img src="../assets/42.PNG" alt="" /></p>
+<p>边长L为：</p>
+<p>$$
+L = \max(\sqrt{(\frac{du}{dx})^2+(\frac{dv}{dx})^2}, \sqrt{(\frac{du}{dy})^2+(\frac{dv}{dy})^2})
+$$</p>
+<blockquote>
+<p>❓ 问：这个公式没有看懂。x和y分别是指什么呢？公式里的变化量是什么呢？是什么和什么之间取最大值？<br />
+✅ 答：x和y分别是两个邻居。L是当前texel与两个邻居之间的距离的最大值。（为什么是两个？为什么是这两个邻居？）公式中的两项，分别代表当前texel和x、y的距离。距离是用勾股定理算出来的。里面的微分量是当前texel到邻居的位置变化，分别对应横轴的变化和纵轴的变化。<br />
+这只是一种近似方法。可以用其它达到近似目的的方法。</p>
+</blockquote>
+<ol start="3">
+<li>根据mipmap计算边长为L的纹理方形区域的均值。边长为L的方形区域，会在第\(\log_2L\)层变成一个像素。直接查在\(\log_2L\)层纹理上查(u,v)的值即可。</li>
+</ol>
+<p><img src="../assets/43.PNG" alt="" /></p>
+<h2 id="效果"><a class="header" href="#效果">效果</a></h2>
+<p><img src="../assets/mipmapresult.jpg" alt="" /></p>
+<blockquote>
+<p>👆 不同颜色代表查询不同的层。</p>
+</blockquote>
+<p>整体上颜色变化反应了需要的纹理大小。但是，存在两层之间的边界，边界处可能存在突变。</p>
+<blockquote>
+<p>💡 提前算好部分范围的值，结果是不同范围的组合。<br />
+空间换时间，要想换得好，就要能分解出可以提前计算的部分，且这部分满足：</p>
+<ol>
+<li>是计算的瓶颈</li>
+<li>不依赖输入</li>
+<li>分解与组合方便</li>
+</ol>
+</blockquote>
+<h1 id="改进三线性插值"><a class="header" href="#改进三线性插值">改进：三线性插值</a></h1>
+<h2 id="原理-1"><a class="header" href="#原理-1">原理</a></h2>
+<p>这是一种基于mip map的改进，把层数变成一个连续的值，能够解决层数边界上的突变</p>
+<p>方法：根据层数再做一次插值，例如需要计算第1.8层的值，就把第1层的插值结果与第2层的插值结果再做一次插值</p>
+<p><img src="../assets/44.PNG" alt="" /></p>
+<h2 id="效果-1"><a class="header" href="#效果-1">效果</a></h2>
+<p><img src="../assets/mipmapresult2.jpg" alt="" /></p>
+<blockquote>
+<p>👆 不同颜色代表查询不同的层。层与层之间存在渐变的过渡。</p>
+</blockquote>
+<blockquote>
+<p>💡 层数很明显是离散信息，连续的层数没有意义，但可以用来插值。总之，万物皆可插。</p>
+</blockquote>
+<p>回到原来那个问题，假设把512超采样的结果看作是这个问题的GT，对比三线性插值后的效果：</p>
+<table><thead><tr><th>512超采样</th><th>三线性插值</th></tr></thead><tbody>
+<tr><td><img src="../assets/45.PNG" alt="" /></td><td><img src="../assets/46.PNG" alt="" /></td></tr>
+</tbody></table>
+<p>远处没有摩尔纹，但是变成了一片灰色，这种情况称为overblur。<br />
+这是因为mipmap只能计算方形区域。而根据上图可以看出，屏幕的方形区域不对应纹理图上的方形区域。</p>
+<h1 id="改进ripmap各项异性过滤anisotropic-littering"><a class="header" href="#改进ripmap各项异性过滤anisotropic-littering">改进：Ripmap：各项异性过滤(Anisotropic littering)</a></h1>
+<h2 id="原理-2"><a class="header" href="#原理-2">原理</a></h2>
+<p>MipMap只预计算图中对角线上的图片，它假设纹理是按同比例压缩的。但事实上不是这样。</p>
+<p><img src="../assets/47.PNG" alt="" /></p>
+<blockquote>
+<p>👆 屏幕的方形区域实际上是对应纹理空间的不规律形状，如果用正方形来代表这长条，会发生过渡blur。 </p>
+</blockquote>
+<blockquote>
+<p>💡 如果我来解这个问题，我会把一个倾斜成多个大小不同的正方式。再以正方形的大小为权重对正方形结果求平均。</p>
+</blockquote>
+<p>各项异性过滤对原始纹理做不均匀压缩，这样，就可以查询到在纹理上一块长形区域，或宽形区域的值。 </p>
+<p><img src="../assets/anisotropic.jpg" alt="" /></p>
+<p>各项异性过滤能解决水平或竖直长方形的问题，不能解决倾斜长方形的问题。</p>
+<p>存储开销增加了3倍。</p>
+<h1 id="改进ewa-filtering"><a class="header" href="#改进ewa-filtering">改进：EWA Filtering</a></h1>
+<p><img src="../assets/EWA.jpg" alt="" /></p>
+<ol>
+<li>把不规则形状拆成很多不同的<strong>圆形</strong>去覆盖这个不规则形状。</li>
+<li>每次查询一个圆形区域，进行多次查询。</li>
+</ol>
+<blockquote>
+<p>❓ 为什么是圆形？</p>
+</blockquote>
+<p>特点：质量越好，代价越大</p>
+<hr />
+<blockquote>
+<p>本文出自CaterpillarStudyGroup，转载请注明出处。<br />
+https://caterpillarstudygroup.github.io/GAMES101_mdbook/</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Texture/TextureMagnification.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../Shadow/Shadow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Texture/TextureMagnification.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../Shadow/Shadow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../theme/pagetoc.js"></script>
+    </body>
+</html>
