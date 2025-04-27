@@ -7,8 +7,7 @@
 ![](../assets/69-71.png)   
 
 > 不同远近的物体的 shadow，对精度的要求是不一样的。这样，近处 shadow 足够清晰，远处 shadow 足够稀疏。     
-
-P73   
+  
 ## Blend between Cascade Layers
 
 1. A visible seam can be seen where cascades overlap    
