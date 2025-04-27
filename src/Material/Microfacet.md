@@ -43,8 +43,7 @@ DFG 中每个字母代表一种光学现象。
 ![](../assets/69-50-3.png)   
 
 > GGX 曲线的特点：高频更具表现力，低频不会那么快消失。    
-
-P51   
+  
 ## Geometric Attenuation Term (self-shadowing)由于表面不平导致的自遮挡
 
 ![](../assets/69-51-3.png)   
@@ -56,9 +55,7 @@ P51
 (4) 与 D 方式中的 (\\( \alpha \\)) 有关    
 
 ![](../assets/69-51-2.png)   
-
-
-P52   
+  
 ## Fresnel Equation
 
 ![](../assets/69-52-2.png)   
@@ -68,7 +65,6 @@ P52
 
 ![](../assets/69-52-3.png)   
 
-P53   
 # Physical Measured Material
 
 ![](../assets/69-53-1.png)   
