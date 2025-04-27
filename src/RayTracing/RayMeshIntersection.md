@@ -10,7 +10,7 @@
 
 因此需要使用一些方法来加速。
 
-## Bounding Volumes 包围盒[56：40]
+## Bounding Volumes 包围盒 
 
 一种可以把物体包围起来的简单几何形状。可用于简体计算。
 
@@ -18,7 +18,7 @@
 
 先判断光线与BV是否相交，然后再求与物体的相交情况。
 
-最常见的BV是长方体。长方体可以看作是3个不同的对面（slab）形成的交集[58:36]。
+最常见的BV是长方体。长方体可以看作是3个不同的对面（slab）形成的交集。
 
 ![](../assets/92.PNG)![](../assets/93.PNG)![](../assets/94.PNG)  
 
@@ -56,7 +56,7 @@ tenter < 0 < texit ⇒ 光源在 AABB 内
 ### 求光线与slab相交的时间
 
 Q:为什么要用 AABB？
-A:光线与Axis Aligned平面求交的计算简单[1:15:49]
+A:光线与Axis Aligned平面求交的计算简单
 
 |普通平面|AA平面|
 |---|---|
@@ -65,7 +65,7 @@ A:光线与Axis Aligned平面求交的计算简单[1:15:49]
 
 ## 利用 AABB 加速 场景中的光线与所有物体求交的过程
 
-### 均匀的格子 Uniform Grids [8：13]
+### 均匀的格子 Uniform Grids  
 
 > &#x2705; **算法前提：光线与 Grid 求交很快，与 object 求交很慢**
 > &#x1F4A1; 对于复杂操作，先进行快而粗的处理，再进行慢而精的处理，是常见做法。也可以是两者同时进行，前者相当于剪枝。  
@@ -100,8 +100,6 @@ A:光线与Axis Aligned平面求交的计算简单[1:15:49]
 > &#x2753; 什么是位置均匀的？我的理解是稀疏，也就是通过AABB排除的部分越多越好。  
 
 ### 空间划分 Spatial Partition
-
-[18：59] 
 
 ![](../assets/103.PNG)
 
@@ -140,7 +138,7 @@ object: 不存 object 数据
 
 ### 物体划分 Object Partition
 
-BVH：Bounding Volumn Hierarchy  [40：00]
+BVH：Bounding Volumn Hierarchy  
 
 优点：解决以上2个问题  
 局限性： BV 有重叠，好的划分使重叠尽量少
@@ -182,7 +180,7 @@ BVH：Bounding Volumn Hierarchy  [40：00]
 
 同上
 
-### KD Tree VS. BVH [54:25]
+### KD Tree VS. BVH  
 
 ![](../assets/111.PNG)
 ![](../assets/112.PNG)
