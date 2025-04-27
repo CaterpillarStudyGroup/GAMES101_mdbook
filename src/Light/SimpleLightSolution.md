@@ -18,8 +18,7 @@
 > ambient 可以做间接光照效果，但会使整个场景统一变亮。看上去会有平面感。    
 
 ![](../assets/69-28-3.png)   
-
-P13     
+ 
 ## 光在材质上的效果
 
 ### Environment Map Reflection
