@@ -79,7 +79,6 @@ Multi Sample Anti-aliasing算法，反走样算法的近似算法
 
 ![](../assets/07-18-2.png)   
 
-P27    
 ### Calculate Blend Coefficient
 
 - Compute blender coefficient
@@ -92,7 +91,6 @@ P27
 
 ![](../assets/07-19-4.png)   
 
-P28   
 ### Blend Nearby Pixels
 
 - Compute blender coefficient   
@@ -101,7 +99,6 @@ P28
 
 **PixelNewColor = Texture(CurrentP_UV + offset_direction * offset_magnitude )**
 
-P29   
 ### Result
 
 ![](../assets/07-21.png)   
