@@ -1,4 +1,4 @@
-# Ray Casting 算法[20：40]
+# Ray Casting 算法 
 
 Ray Casting目标是找到从眼睛到光源之间的光路。  
 
